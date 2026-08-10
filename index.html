@@ -1,0 +1,355 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+<title>The V15 Company - Influencer Marketing Agency</title>  
+<style>  
+  * { box-sizing: border-box; margin: 0; padding: 0; }  
+  html { scroll-behavior: smooth; }  
+  body {  
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;  
+    background: #fff;  
+    color: #111;  
+    overflow-x: hidden;  
+  }  
+  a { text-decoration: none; color: inherit; }  
+  ::-webkit-scrollbar { width: 6px; }  
+  ::-webkit-scrollbar-track { background: #f5f5f5; }  
+  ::-webkit-scrollbar-thumb { background: #EFB5BB; border-radius: 10px; }  /* ── Top bar ── */
+.topbar {
+position: sticky; top: 0; left: 0; right: 0; z-index: 1000;
+background: rgba(255,255,255,0.97);
+border-bottom: 1px solid #ECECEC;
+}
+.topbar-inner {
+max-width: 1200px; margin: 0 auto; padding: 14px 24px;
+display: flex; align-items: center; justify-content: space-between;
+flex-wrap: wrap; gap: 12px;
+}
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo-badge {
+width: 36px; height: 36px; border-radius: 10px;
+background: linear-gradient(135deg, #EFB5BB, #c0667a);
+display: flex; align-items: center; justify-content: center;
+font-weight: 900; font-size: 15px; color: #fff;
+}
+.logo-text { font-weight: 700; font-size: 17px; color: #111; }
+.top-links { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+.top-link {
+padding: 6px 12px; border-radius: 8px;
+font-size: 13px; font-weight: 500; color: #444;
+}
+.top-link:hover { background: #f5f5f5; color: #111; }
+
+/* ── Hero ── */
+.hero {
+position: relative; overflow: hidden;
+background: linear-gradient(160deg, #fff 60%, #fdf0f2 100%);
+text-align: center;
+}
+.hero-blob {
+position: absolute; width: 600px; height: 600px; border-radius: 50%;
+background: radial-gradient(circle, rgba(239,181,187,0.15) 0%, transparent 70%);
+top: 10%; left: 50%; transform: translateX(-50%);
+}
+.hero-inner { max-width: 720px; margin: 0 auto; padding: 90px 24px 70px; position: relative; z-index: 2; }
+.badge {
+display: inline-block; margin-bottom: 20px;
+background: rgba(239,181,187,0.13); border: 1px solid #EFB5BB;
+color: #c0667a; border-radius: 20px; padding: 5px 16px;
+font-size: 13px; font-weight: 600;
+}
+.hero h1 {
+font-size: clamp(32px, 6vw, 60px); font-weight: 800;
+letter-spacing: -2px; line-height: 1.15; margin-bottom: 20px;
+}
+.hero-highlight { color: #EFB5BB; -webkit-text-stroke: 1px #c0667a; }
+.hero p {
+font-size: clamp(16px, 2.2vw, 20px); color: #666;
+line-height: 1.65; margin-bottom: 36px;
+}
+.hero-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.cta-link {
+display: inline-block; padding: 14px 28px; border-radius: 12px;
+font-size: 14px; font-weight: 700; letter-spacing: 0.5px;
+}
+.cta-dark { background: #111; color: #fff; }
+.cta-dark:hover { background: #333; }
+.cta-pink { background: #EFB5BB; color: #7a2d3c; }
+.cta-pink:hover { background: #E8A4AB; }
+.hero-stats { display: flex; gap: 32px; justify-content: center; margin-top: 50px; flex-wrap: wrap; }
+.stat { text-align: center; }
+.stat-num { font-size: 20px; font-weight: 800; }
+.stat-label { font-size: 13px; color: #888; font-weight: 500; }
+
+/* ── Sections general ── */
+section { padding: 90px 24px; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.eyebrow {
+font-size: 13px; color: #EFB5BB; font-weight: 700;
+letter-spacing: 2px; margin-bottom: 12px; text-transform: uppercase; text-align: center;
+}
+.section-title {
+font-size: clamp(28px, 4vw, 44px); font-weight: 800;
+letter-spacing: -1.5px; text-align: center; margin-bottom: 12px;
+}
+.section-sub { text-align: center; color: #666; font-size: 16px; margin-bottom: 40px; }
+.section-header { margin-bottom: 56px; }
+
+/* ── Niche grid ── */
+.bg-grey { background: #F8F8F8; }
+.niche-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
+.niche-card {
+background: #fff; border-radius: 16px; padding: 28px 20px;
+text-align: center; border: 1px solid #ECECEC;
+}
+.niche-card:hover { border-color: #EFB5BB; box-shadow: 0 12px 32px rgba(239,181,187,0.25); }
+.niche-icon { font-size: 28px; margin-bottom: 10px; }
+.niche-name { font-weight: 700; font-size: 14px; }
+
+/* ── How it works ── */
+.how-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.how-card { background: #F8F8F8; border-radius: 20px; padding: 40px; border: 1px solid #ECECEC; }
+.how-tag {
+display: inline-block; padding: 4px 14px; border-radius: 20px;
+font-size: 12px; font-weight: 700; margin-bottom: 28px;
+}
+.how-step { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.how-step:last-child { margin-bottom: 0; }
+.how-icon-box {
+width: 40px; height: 40px; border-radius: 12px;
+background: #fff; border: 1px solid #ECECEC;
+display: flex; align-items: center; justify-content: center;
+font-size: 18px; flex-shrink: 0;
+}
+.how-step-label { font-size: 13px; color: #888; font-weight: 600; }
+.how-step-title { font-size: 15px; font-weight: 700; }
+@media (max-width: 640px) { .how-grid { grid-template-columns: 1fr; } }
+
+/* ── Info cards ── */
+.info-card { background: #fff; border-radius: 20px; padding: 40px; border: 1px solid #ECECEC; }
+.info-card.grey { background: #F8F8F8; }
+.info-row { display: flex; gap: 10px; margin-bottom: 14px; align-items: flex-start; }
+.info-bullet { color: #EFB5BB; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+.info-text { color: #444; font-size: 15px; line-height: 1.6; }
+.no-fee-pill {
+display: inline-flex; align-items: center; gap: 8px; margin: 8px auto 0; width: fit-content;
+background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.33);
+border-radius: 20px; padding: 6px 16px;
+color: #16a34a; font-weight: 700; font-size: 13px;
+}
+
+/* ── Services ── */
+.services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+.service-card { background: #fff; border-radius: 18px; padding: 32px; border: 1px solid #ECECEC; }
+.service-card:hover { border-color: #EFB5BB; box-shadow: 0 16px 40px rgba(0,0,0,0.08); }
+.service-icon { font-size: 32px; margin-bottom: 16px; }
+.service-title { font-weight: 800; font-size: 18px; margin-bottom: 8px; }
+.service-desc { color: #666; font-size: 14px; line-height: 1.6; }
+
+/* ── Trust ── */
+.trust-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
+.trust-card { background: #F8F8F8; border-radius: 18px; padding: 28px 24px; border: 1px solid #ECECEC; text-align: center; }
+.trust-icon-box {
+width: 52px; height: 52px; border-radius: 16px;
+background: rgba(239,181,187,0.13); border: 1px solid #EFB5BB;
+display: flex; align-items: center; justify-content: center;
+font-size: 24px; margin: 0 auto 16px;
+}
+.trust-title { font-weight: 700; font-size: 15px; margin-bottom: 8px; }
+.trust-desc { color: #666; font-size: 13px; line-height: 1.6; }
+
+/* ── Payment terms ── */
+.payment-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+.payment-card { background: #fff; border-radius: 18px; padding: 32px; border: 1px solid #ECECEC; }
+.payment-icon { font-size: 28px; margin-bottom: 12px; }
+.payment-title { font-weight: 800; font-size: 17px; margin-bottom: 16px; }
+.payment-item { display: flex; gap: 10px; margin-bottom: 10px; }
+.payment-bullet { color: #EFB5BB; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+.payment-text { color: #555; font-size: 14px; line-height: 1.6; }
+.general-terms {
+margin-top: 24px; background: #fff; border-radius: 16px; padding: 24px; border: 1px solid #ECECEC;
+}
+.general-terms-title { font-weight: 700; font-size: 15px; margin-bottom: 8px; }
+.general-terms-text { color: #666; font-size: 14px; line-height: 1.7; }
+
+/* ── Safety ── */
+.safety-box {
+max-width: 860px; margin: 0 auto;
+background: linear-gradient(135deg, #fff5f6, #fff);
+border: 2px solid #EFB5BB; border-radius: 20px; padding: 40px;
+text-align: center;
+}
+.safety-icon { font-size: 40px; margin-bottom: 12px; }
+.safety-title { font-size: 26px; font-weight: 800; margin-bottom: 16px; }
+.safety-list { max-width: 560px; margin: 0 auto; }
+.safety-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; text-align: left; }
+.safety-mark { color: #c0667a; font-weight: 800; flex-shrink: 0; font-size: 16px; }
+.safety-text { color: #444; font-size: 15px; line-height: 1.6; }
+.safety-link {
+display: inline-block; margin-top: 20px;
+background: #EFB5BB; color: #7a2d3c;
+padding: 10px 24px; border-radius: 10px; font-weight: 700; font-size: 14px;
+}
+
+/* ── FAQ (details/summary, no JS needed) ── */
+.faq-wrap { max-width: 760px; margin: 0 auto; }
+.faq-cat-label {
+font-size: 13px; font-weight: 700; color: #c0667a;
+letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px;
+}
+.faq-item { background: #fff; border: 1px solid #ECECEC; border-radius: 14px; margin-bottom: 8px; overflow: hidden; }
+.faq-item summary {
+cursor: pointer;
+padding: 18px 20px; display: flex; justify-content: space-between; align-items: center;
+font-weight: 700; font-size: 15px; color: #111;
+list-style: none;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-plus { color: #EFB5BB; font-weight: 700; font-size: 18px; }
+.faq-a { padding: 0 20px 18px; color: #555; font-size: 14px; line-height: 1.7; }
+
+/* ── Contact ── */
+.contact-wrap { max-width: 640px; margin: 0 auto; text-align: center; }
+.contact-links { display: flex; gap: 12px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap; }
+.contact-link {
+display: flex; align-items: center; gap: 8px;
+padding: 10px 20px; border-radius: 10px; font-weight: 700; font-size: 14px;
+}
+.contact-link.ig { background: rgba(239,181,187,0.13); border: 1px solid #EFB5BB; color: #c0667a; }
+.contact-link.wa { background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.4); color: #16a34a; }
+.contact-link.form { background: #111; color: #fff; }
+
+/* ── Footer ── */
+footer { background: #111; color: #fff; padding: 60px 24px 32px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; }
+.footer-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; margin-bottom: 48px; }
+.footer-desc { color: #888; font-size: 14px; line-height: 1.6; max-width: 280px; margin-top: 12px; }
+.footer-ig { display: inline-flex; align-items: center; gap: 6px; margin-top: 16px; color: #EFB5BB; font-size: 14px; font-weight: 600; }
+.footer-cols { display: flex; gap: 48px; flex-wrap: wrap; }
+.footer-col-title { color: #666; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+.footer-item { color: #888; font-size: 14px; margin-bottom: 10px; }
+.footer-item:hover { color: #fff; }
+.footer-bottom { border-top: 1px solid #222; padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; color: #555; font-size: 13px; }
+</style>
+
+</head>  
+<body>  <div class="topbar">  
+  <div class="topbar-inner">  
+    <a class="logo" href="https://techvinch.in/#home">  
+      <div class="logo-badge">V15</div>  
+      <span class="logo-text">The V15 Company</span>  
+    </a>  
+    <div class="top-links">  
+      <a class="top-link" href="https://techvinch.in/#home">Home</a>  
+      <a class="top-link" href="https://techvinch.in/#for-brands">For Brands</a>  
+      <a class="top-link" href="https://techvinch.in/#for-creators">For Creators</a>  
+      <a class="top-link" href="https://techvinch.in/#services">Services</a>  
+      <a class="top-link" href="https://techvinch.in/#payment-terms">Payment Terms</a>  
+      <a class="top-link" href="https://techvinch.in/#faqs">FAQs</a>  
+      <a class="top-link" href="https://techvinch.in/#contact">Contact</a>  
+    </div>  
+  </div>  
+</div>  <section id="home" class="hero">  
+  <div class="hero-blob"></div>  
+  <div class="hero-inner">  
+    <div class="badge">✦ Influencer Marketing Agency</div>  
+    <h1>Connecting Brands With<br><span class="hero-highlight">Creators</span> That Actually Convert.</h1>  
+    <p>The V15 Company helps brands discover creators and helps creators discover opportunities.</p>  
+    <div class="hero-cta">  
+      <a class="cta-link cta-dark" href="https://techvinch.in/#for-brands">ARE YOU A BRAND? →</a>  
+      <a class="cta-link cta-pink" href="https://docs.google.com/forms/d/e/1FAIpQLSeoomDc90iD9DKcZVXvdyBtIHyqpBXOLBO3ygloHplNweQ8iQ/viewform?usp=header">ARE YOU A CREATOR? →</a>  
+    </div>  
+    <div class="hero-stats">  
+      <div class="stat"><div class="stat-num">Growing</div><div class="stat-label">Creator Network</div></div>  
+      <div class="stat"><div class="stat-num">Multiple</div><div class="stat-label">Niches Covered</div></div>  
+      <div class="stat"><div class="stat-num">Open For</div><div class="stat-label">Brand Collabs</div></div>  
+    </div>  
+  </div>  
+</section>  <section class="bg-grey">  
+  <div class="section-inner">  
+    <div class="section-header">  
+      <div class="eyebrow">Growing Creator Network</div>  
+      <h2 class="section-title">Creators Across Multiple Niches</h2>  
+    </div>  
+    <div class="niche-grid">  
+      <div class="niche-card"><div class="niche-icon">💄</div><div class="niche-name">Beauty</div></div>  
+      <div class="niche-card"><div class="niche-icon">✨</div><div class="niche-name">Lifestyle</div></div>  
+      <div class="niche-card"><div class="niche-icon">💻</div><div class="niche-name">Tech</div></div>  
+      <div class="niche-card"><div class="niche-icon">📸</div><div class="niche-name">UGC</div></div>  
+      <div class="niche-card"><div class="niche-icon">📚</div><div class="niche-name">Education</div></div>  
+      <div class="niche-card"><div class="niche-icon">💰</div><div class="niche-name">Finance</div></div>  
+      <div class="niche-card"><div class="niche-icon">🎮</div><div class="niche-name">Gaming</div></div>  
+      <div class="niche-card"><div class="niche-icon">✈️</div><div class="niche-name">Travel</div></div>  
+      <div class="niche-card"><div class="niche-icon">🍜</div><div class="niche-name">Food</div></div>  
+      <div class="niche-card"><div class="niche-icon">👗</div><div class="niche-name">Fashion</div></div>  
+    </div>  
+  </div>  
+</section>  <section>  
+  <div class="section-inner">  
+    <div class="section-header">  
+      <div class="eyebrow">Simple Process</div>  
+      <h2 class="section-title">How It Works</h2>  
+    </div>  
+    <div class="how-grid">  
+      <div class="how-card">  
+        <div class="how-tag" style="background:#111;color:#fff;">For Brands</div>  
+        <div class="how-step"><div class="how-icon-box">📋</div><div><div class="how-step-label">Step 1</div><div class="how-step-title">Submit Campaign Requirements</div></div></div>  
+        <div class="how-step"><div class="how-icon-box">🔗</div><div><div class="how-step-label">Step 2</div><div class="how-step-title">Get Matched With Creators</div></div></div>  
+        <div class="how-step"><div class="how-icon-box">🚀</div><div><div class="how-step-label">Step 3</div><div class="how-step-title">Launch Campaign</div></div></div>  
+      </div>  
+      <div class="how-card">  
+        <div class="how-tag" style="background:#EFB5BB;color:#7a2d3c;">For Creators</div>  
+        <div class="how-step"><div class="how-icon-box">👤</div><div><div class="how-step-label">Step 1</div><div class="how-step-title">Join Creator Network</div></div></div>  
+        <div class="how-step"><div class="how-icon-box">⭐</div><div><div class="how-step-label">Step 2</div><div class="how-step-title">Get Shortlisted</div></div></div>  
+        <div class="how-step"><div class="how-icon-box">📨</div><div><div class="how-step-label">Step 3</div><div class="how-step-title">Receive Opportunities</div></div></div>  
+      </div>  
+    </div>  
+  </div>  
+</section>  <section id="for-brands" class="bg-grey">  
+  <div class="section-inner" style="max-width:760px;">  
+    <div class="section-header">  
+      <div class="eyebrow">Are You A Brand?</div>  
+      <h2 class="section-title">Tell Us About Your Campaign</h2>  
+      <p class="section-sub">Share your brand name, campaign objective, target niche, budget, and timeline — we'll match you with the right creators.</p>  
+    </div>  
+    <div class="info-card">  
+      <div class="info-row"><span class="info-bullet">✦</span><span class="info-text">Brand name, contact person, and WhatsApp / email</span></div>  
+      <div class="info-row"><span class="info-bullet">✦</span><span class="info-text">Campaign objective (awareness, launch, sales, etc.)</span></div>  
+      <div class="info-row"><span class="info-bullet">✦</span><span class="info-text">Preferred creator niche and number of creators needed</span></div>  
+      <div class="info-row"><span class="info-bullet">✦</span><span class="info-text">Budget, deliverables, and timeline</span></div>  
+      <a class="cta-link cta-dark" style="display:block;text-align:center;margin-top:20px;" href="https://docs.google.com/forms/d/e/1FAIpQLSeoomDc90iD9DKcZVXvdyBtIHyqpBXOLBO3ygloHplNweQ8iQ/viewform?usp=header">Submit Campaign Requirement →</a>  
+    </div>  
+  </div>  
+</section>  <section id="for-creators">  
+  <div class="section-inner" style="max-width:760px;">  
+    <div class="section-header">  
+      <div class="eyebrow">Are You A Creator?</div>  
+      <h2 class="section-title">Join Our Creator Network</h2>  
+      <div class="no-fee-pill">🚫 We do not charge creators any upfront fee.</div>  
+    </div>  
+    <div class="info-card grey">  
+      <div class="info-row"><span class="info-bullet">✦</span><span class="info-text">Share your name, Instagram handle, and follower count</span></div>  
+      <div class="info-row"><span class="info-bullet">✦</span><span class="info-text">Tell us your niche and city</span></div>  
+      <div class="info-row"><span class="info-bullet">✦</span><span class="info-text">Add your portfolio / media kit and past brand collaborations</span></div>  
+      <a class="cta-link cta-pink" style="display:block;text-align:center;margin-top:20px;" href="https://docs.google.com/forms/d/e/1FAIpQLSeoomDc90iD9DKcZVXvdyBtIHyqpBXOLBO3ygloHplNweQ8iQ/viewform?usp=header">JOIN AS CREATOR →</a>  
+    </div>  
+  </div>  
+</section>  <section id="services" class="bg-grey">  
+  <div class="section-inner">  
+    <div class="section-header">  
+      <div class="eyebrow">What We Offer</div>  
+      <h2 class="section-title">Our Services</h2>  
+    </div>  
+    <div class="services-grid">  
+      <div class="service-card"><div class="service-icon">👥</div><div class="service-title">Influencer Marketing</div><div class="service-desc">End-to-end influencer campaigns tailored to your brand's goals and audience.</div></div>  
+      <div class="service-card"><div class="service-icon">🎥</div><div class="service-title">UGC Campaigns</div><div class="service-desc">Authentic user-generated content that builds trust and drives conversions.</div></div>  
+      <div class="service-card"><div class="service-icon">🔍</div><div class="service-title">Creator Discovery</div><div class="service-desc">We find the right creators for your niche — from micro to macro influencers.</div></div>  
+      <div class="service-card"><div class="service-icon">📦</div><div class="service-title">Product Seeding</div><div class="service-desc">Strategic product gifting campaigns that generate organic buzz.</div></div>  
+      <div class="service-card"><div class="service-icon">📊</div><div class="service-title">Campaign Management</div><div class="service-desc">Full-service management from briefing to reporting and deliverable tracking.</div></div>  
+      <div class="service-card"><div class="service-icon">🤝</div><div class="service-title">Brand Partnerships</div><div class="service-desc">Long-term creator partnerships that build authentic brand affinity.</div></div>  
+    </div>  
+  </div>  
+</section>  <section>  
+  <div class="section-inner">  
+    <div class="section-header">  
+      <h2 class="section-title">Why Creators Trust<br><span style="color:#c0667a;">The V15 Company</span></h2>  
+  
