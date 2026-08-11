@@ -1,93 +1,101 @@
-cat > /mnt/user-data/outputs/index.html << 'HTMLEOF'
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The V15 Company — Influencer Marketing Agency</title>
-  <meta name="description" content="The V15 Company helps brands discover creators and helps creators discover opportunities. Influencer marketing agency connecting brands with creators that actually convert." />
-  <meta property="og:title" content="The V15 Company — Influencer Marketing Agency" />
-  <meta property="og:description" content="Connecting Brands With Creators That Actually Convert." />
-  <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#EFB5BB" />
+  <meta name="description" content="The V15 Company connects brands with creators that actually convert. Influencer marketing, UGC campaigns, and creator partnerships." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
-    /* ── Reset & Base ── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    /* ── Reset & base ─────────────────────────────────────────────── */
+    * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #fff; color: #111; overflow-x: hidden; }
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #fff;
+      overflow-x: hidden;
+      color: #111;
+    }
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: #f5f5f5; }
     ::-webkit-scrollbar-thumb { background: #EFB5BB; border-radius: 10px; }
 
-    /* ── Animations ── */
-    @keyframes floatCard {
-      0%   { transform: translateY(0px) translateX(0px); }
-      33%  { transform: translateY(-14px) translateX(6px); }
-      66%  { transform: translateY(-8px) translateX(-5px); }
-      100% { transform: translateY(-18px) translateX(3px); }
+    section { position: relative; }
+    .section-label {
+      font-size: 13px; color: #EFB5BB; font-weight: 700;
+      letter-spacing: 2px; margin-bottom: 12px; text-transform: uppercase;
     }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(28px); }
-      to   { opacity: 1; transform: translateY(0); }
+    .section-title {
+      font-size: clamp(28px, 4vw, 44px); font-weight: 800;
+      color: #111; margin: 0; letter-spacing: -1.5px;
     }
-    .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .btn-hover-dark:hover { background: #333 !important; }
 
-    /* ── Navbar ── */
-    #navbar {
+    /* ── Fade-in on scroll ────────────────────────────────────────── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Navbar ────────────────────────────────────────────────────── */
+    .navbar {
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-      background: rgba(255,255,255,0.85); backdrop-filter: blur(16px);
-      border-bottom: 1px solid transparent; transition: all 0.3s ease;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid transparent;
+      transition: all 0.3s ease;
     }
-    #navbar.scrolled { background: rgba(255,255,255,0.97); border-bottom-color: #ECECEC; }
-    .nav-inner {
-      max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px;
-      display: flex; align-items: center; justify-content: space-between;
+    .navbar.scrolled {
+      background: rgba(255,255,255,0.95);
+      border-bottom: 1px solid #ECECEC;
     }
-    .nav-logo { display: flex; align-items: center; gap: 10; cursor: pointer; text-decoration: none; }
-    .nav-logo-badge {
+    .navbar-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      height: 64px; display: flex; align-items: center;
+      justify-content: space-between;
+    }
+    .navbar-brand { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+    .navbar-logo {
       width: 36px; height: 36px; border-radius: 10px;
       background: linear-gradient(135deg, #EFB5BB, #c0667a);
       display: flex; align-items: center; justify-content: center;
-      font-weight: 900; font-size: 14px; color: #fff; letter-spacing: -0.5px;
-      flex-shrink: 0;
+      font-weight: 900; font-size: 15px; color: #fff; letter-spacing: -0.5px;
     }
-    .nav-logo-text { font-weight: 700; font-size: 17px; color: #111; letter-spacing: -0.5px; }
-    .nav-links { display: flex; gap: 4; align-items: center; }
-    .nav-links a {
-      background: none; border: none; cursor: pointer; padding: 6px 12px;
-      border-radius: 8px; font-size: 14px; font-weight: 500; color: #444;
-      text-decoration: none; transition: color 0.2s, background 0.2s; font-family: inherit;
+    .navbar-brand-name { font-weight: 700; font-size: 17px; color: #111; letter-spacing: -0.5px; }
+    .desktop-nav { display: flex; gap: 4px; align-items: center; }
+    .nav-link {
+      background: none; border: none; cursor: pointer;
+      padding: 6px 12px; border-radius: 8px;
+      font-size: 14px; font-weight: 500; color: #444;
+      font-family: inherit; transition: color 0.2s, background 0.2s;
     }
-    .nav-links a:hover { background: #f5f5f5; color: #111; }
-    .hamburger { display: none; background: none; border: none; cursor: pointer; font-size: 22px; color: #111; }
-    .mobile-menu { display: none; background: #fff; border-top: 1px solid #ECECEC; padding: 12px 24px 20px; }
+    .nav-link:hover { background: #f5f5f5; color: #111; }
+    .mobile-menu-btn {
+      display: none; background: none; border: none; cursor: pointer;
+      font-size: 22px; color: #111; font-family: inherit;
+    }
+    .mobile-menu {
+      display: none; background: #fff; border-top: 1px solid #ECECEC;
+      padding: 12px 24px 20px;
+    }
     .mobile-menu.open { display: block; }
-    .mobile-menu a {
-      display: block; padding: 10px 0; font-size: 15px; font-weight: 500; color: #333;
-      border-bottom: 1px solid #f5f5f5; text-decoration: none; font-family: inherit;
+    .mobile-menu button {
+      display: block; width: 100%; text-align: left;
+      background: none; border: none; cursor: pointer;
+      padding: 10px 0; font-size: 15px; font-weight: 500; color: #333;
+      font-family: inherit; border-bottom: 1px solid #f5f5f5;
     }
 
-    /* ── Buttons ── */
-    .btn-dark {
-      background: #111; color: #fff; border: none; cursor: pointer;
-      padding: 14px 28px; border-radius: 12px; font-size: 14px; font-weight: 700;
-      letter-spacing: 0.5px; transition: background 0.2s; font-family: inherit;
-      text-decoration: none; display: inline-block;
-    }
-    .btn-dark:hover { background: #333; }
-    .btn-pink {
-      background: #EFB5BB; color: #7a2d3c; border: none; cursor: pointer;
-      padding: 14px 28px; border-radius: 12px; font-size: 14px; font-weight: 700;
-      letter-spacing: 0.5px; transition: background 0.2s; font-family: inherit;
-      text-decoration: none; display: inline-block;
-    }
-    .btn-pink:hover { background: #E8A4AB; }
-
-    /* ── Hero ── */
+    /* ── Hero ──────────────────────────────────────────────────────── */
     #home {
       min-height: 100vh; position: relative; overflow: hidden;
       background: linear-gradient(160deg, #fff 60%, #fdf0f2 100%);
@@ -95,158 +103,151 @@ cat > /mnt/user-data/outputs/index.html << 'HTMLEOF'
     }
     .hero-blob {
       position: absolute; width: 600px; height: 600px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(239,181,187,0.13) 0%, transparent 70%);
-      top: 20%; left: 50%; transform: translateX(-50%); pointer-events: none;
+      background: radial-gradient(circle, rgba(239,181,187,0.133) 0%, transparent 70%);
+      top: 20%; left: 50%; transform: translateX(-50%);
+      pointer-events: none;
     }
     .hero-content {
-      text-align: center; max-width: 720px; padding: 130px 24px 80px;
+      text-align: center; max-width: 720px; padding: 120px 24px 80px;
       position: relative; z-index: 2;
     }
     .hero-badge {
       display: inline-block; margin-bottom: 20px;
-      background: rgba(239,181,187,0.13); border: 1px solid #EFB5BB;
+      background: rgba(239,181,187,0.133); border: 1px solid #EFB5BB;
       color: #c0667a; border-radius: 20px; padding: 5px 16px;
       font-size: 13px; font-weight: 600; letter-spacing: 0.5px;
     }
-    h1 {
-      font-size: clamp(34px, 6vw, 62px); font-weight: 800;
-      color: #111; letter-spacing: -2px; line-height: 1.1; margin-bottom: 20px;
+    .hero-title {
+      font-size: clamp(36px, 6vw, 64px); font-weight: 800;
+      color: #111; letter-spacing: -2px; line-height: 1.1;
+      margin: 0 0 20px;
     }
-    .h1-accent { color: #EFB5BB; -webkit-text-stroke: 1px #c0667a; }
+    .hero-title .accent {
+      color: #EFB5BB;
+      -webkit-text-stroke: 1px #c0667a;
+      text-stroke: 1px #c0667a;
+    }
     .hero-sub {
       font-size: clamp(16px, 2.2vw, 20px); color: #666;
-      line-height: 1.65; margin-bottom: 40px; font-weight: 400;
+      line-height: 1.65; margin: 0 0 40px; font-weight: 400;
     }
-    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-    .hero-stats {
-      display: flex; gap: 32px; justify-content: center;
-      margin-top: 60px; flex-wrap: wrap;
+    .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      border: none; cursor: pointer; padding: 14px 28px; border-radius: 12px;
+      font-size: 14px; font-weight: 700; letter-spacing: 0.5px;
+      font-family: inherit; transition: all 0.2s;
     }
-    .hero-stat-val { font-size: 20px; font-weight: 800; color: #111; }
-    .hero-stat-label { font-size: 13px; color: #888; font-weight: 500; }
+    .btn-dark { background: #111; color: #fff; }
+    .btn-pink { background: #EFB5BB; color: #7a2d3c; }
+    .btn-pink:hover { background: #E8A4AB; }
+    .hero-stats { display: flex; gap: 32px; justify-content: center; margin-top: 60px; flex-wrap: wrap; }
+    .hero-stat .stat-a { font-size: 20px; font-weight: 800; color: #111; }
+    .hero-stat .stat-b { font-size: 13px; color: #888; font-weight: 500; }
 
-    /* ── Floating Cards ── */
-    #floating-cards {
-      position: absolute; inset: 0; pointer-events: none; overflow: hidden;
-    }
-    .fc {
+    /* ── Floating creator cards ────────────────────────────────────── */
+    .floating-layer { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+    .float-card {
       position: absolute; background: #fff; border-radius: 18px;
       box-shadow: 0 8px 36px rgba(0,0,0,0.09); padding: 13px 17px;
       display: flex; align-items: center; gap: 11px;
-      border: 1px solid #f0e4e6; min-width: 205px; opacity: 0.93;
-      will-change: transform;
+      border: 1px solid #f0e4e6; min-width: 205px;
+      will-change: transform; opacity: 0.93;
     }
-    .fc-avatar {
+    .float-card .avatar {
       width: 42px; height: 42px; border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       font-weight: 700; font-size: 14px; color: #444; flex-shrink: 0;
       border: 2px solid #EFB5BB;
     }
-    .fc-username { font-weight: 700; font-size: 12.5px; color: #111; letter-spacing: -0.2px; }
-    .fc-meta { font-size: 11.5px; color: #888; margin-top: 2px; }
-    .fc-badge {
+    .float-card .fc-user { font-weight: 700; font-size: 12.5px; color: #111; letter-spacing: -0.2px; }
+    .float-card .fc-meta { font-size: 11.5px; color: #888; margin-top: 2px; }
+    .float-card .fc-tag {
       display: inline-block; margin-top: 5px; font-size: 10px; font-weight: 600;
-      background: rgba(239,181,187,0.13); color: #c0667a; border-radius: 20px;
+      background: rgba(239,181,187,0.133); color: #c0667a; border-radius: 20px;
       padding: 2px 8px; border: 1px solid #EFB5BB;
     }
-
-    /* ── Sections ── */
-    .section { padding: 100px 24px; }
-    .section-alt { background: #F8F8F8; }
-    .section-inner { max-width: 1100px; margin: 0 auto; }
-    .section-inner-sm { max-width: 860px; margin: 0 auto; }
-    .section-inner-xs { max-width: 760px; margin: 0 auto; }
-    .section-inner-xxs { max-width: 640px; margin: 0 auto; }
-
-    .section-eyebrow {
-      font-size: 13px; color: #EFB5BB; font-weight: 700;
-      letter-spacing: 2px; margin-bottom: 12px; text-transform: uppercase;
+    @keyframes floatCard {
+      0%   { transform: translateY(0px) translateX(0px); }
+      33%  { transform: translateY(-14px) translateX(6px); }
+      66%  { transform: translateY(-8px) translateX(-5px); }
+      100% { transform: translateY(-18px) translateX(3px); }
     }
-    .section-title {
-      font-size: clamp(28px, 4vw, 44px); font-weight: 800;
-      color: #111; letter-spacing: -1.5px;
-    }
-    .section-head { text-align: center; margin-bottom: 60px; }
-    .section-head-lg { text-align: center; margin-bottom: 56px; }
 
-    /* ── Niche Cards ── */
-    .niche-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 16px;
-    }
+    /* ── Niche grid ────────────────────────────────────────────────── */
+    .niche-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
     .niche-card {
       background: #fff; border-radius: 16px; padding: 28px 20px;
       text-align: center; border: 1px solid #ECECEC;
-      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; cursor: default;
+      transition: all 0.25s; cursor: default;
     }
     .niche-card:hover {
-      transform: translateY(-4px); border-color: #EFB5BB;
+      transform: translateY(-4px);
       box-shadow: 0 12px 32px rgba(239,181,187,0.25);
+      border-color: #EFB5BB;
     }
     .niche-icon { font-size: 28px; margin-bottom: 10px; }
-    .niche-label { font-weight: 700; font-size: 14px; color: #111; }
+    .niche-name { font-weight: 700; font-size: 14px; color: #111; }
 
-    /* ── How It Works ── */
+    /* ── How it works ──────────────────────────────────────────────── */
     .how-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
     .how-card { background: #F8F8F8; border-radius: 20px; padding: 40px; border: 1px solid #ECECEC; }
-    .how-tag {
+    .how-badge {
       display: inline-block; padding: 4px 14px; border-radius: 20px;
       font-size: 12px; font-weight: 700; margin-bottom: 28px; letter-spacing: 0.5px;
     }
-    .how-tag-dark { background: #111; color: #fff; }
-    .how-tag-pink { background: #EFB5BB; color: #7a2d3c; }
-    .how-step { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
-    .how-step:last-child { margin-bottom: 0; }
-    .how-step-icon {
+    .how-step { display: flex; align-items: center; gap: 16px; }
+    .how-step + .how-step { margin-top: 20px; }
+    .step-icon {
       width: 40px; height: 40px; border-radius: 12px;
       background: #fff; border: 1px solid #ECECEC;
       display: flex; align-items: center; justify-content: center;
       font-size: 18px; flex-shrink: 0;
     }
-    .how-step-num { font-size: 13px; color: #888; font-weight: 600; }
-    .how-step-label { font-size: 15px; color: #111; font-weight: 700; }
+    .step-num { font-size: 13px; color: #888; font-weight: 600; }
+    .step-title { font-size: 15px; color: #111; font-weight: 700; }
 
-    /* ── Forms ── */
-    .form-card { background: #fff; border-radius: 20px; padding: 40px; border: 1px solid #ECECEC; }
-    .form-card-gray { background: #F8F8F8; border-radius: 20px; padding: 40px; border: 1px solid #ECECEC; }
-    .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    /* ── Forms ─────────────────────────────────────────────────────── */
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
     .form-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
-    .form-group { margin-bottom: 0; }
-    .form-group + .form-group-mt { margin-top: 20px; }
-    .form-mt { margin-top: 20px; }
-    label { display: block; font-size: 13px; font-weight: 600; color: #444; margin-bottom: 6px; }
-    input, textarea, select {
+    .form-card { background: #fff; border-radius: 20px; padding: 40px; border: 1px solid #ECECEC; }
+    .form-card.gray { background: #F8F8F8; }
+    .field { display: block; }
+    .field label { display: block; font-size: 13px; font-weight: 600; color: #444; margin-bottom: 6px; }
+    .field input, .field textarea {
       width: 100%; padding: 12px 14px; border-radius: 10px;
       border: 1px solid #ECECEC; font-size: 14px; color: #111;
-      background: #fff; outline: none; font-family: inherit;
-      transition: border-color 0.2s;
+      background: #fff; outline: none; box-sizing: border-box;
+      font-family: inherit; transition: border-color 0.2s;
+      margin-bottom: 0;
     }
-    input:focus, textarea:focus { border-color: #EFB5BB; }
-    textarea { resize: vertical; }
-    .btn-submit-dark {
+    .field textarea { resize: vertical; min-height: 80px; }
+    .field input:focus, .field textarea:focus { border-color: #EFB5BB; }
+    .field + .field { margin-top: 20px; }
+    .submit-btn {
       width: 100%; margin-top: 28px; background: #111; color: #fff;
       border: none; cursor: pointer; padding: 15px; border-radius: 12px;
       font-size: 15px; font-weight: 700; letter-spacing: 0.3px;
-      transition: background 0.2s; font-family: inherit;
+      font-family: inherit; transition: background 0.2s;
     }
-    .btn-submit-dark:hover { background: #333; }
-    .btn-submit-dark:disabled { background: #ccc; cursor: not-allowed; }
-    .btn-submit-pink {
-      width: 100%; margin-top: 28px;
+    .submit-btn:hover { background: #333; }
+    .submit-btn:disabled { background: #ccc; cursor: not-allowed; }
+    .submit-btn:disabled:hover { background: #ccc; }
+    .submit-btn.pink-grad {
       background: linear-gradient(135deg, #EFB5BB, #c0667a);
-      color: #fff; border: none; cursor: pointer; padding: 15px; border-radius: 12px;
-      font-size: 15px; font-weight: 700; letter-spacing: 0.3px;
-      transition: opacity 0.2s; font-family: inherit;
+      transition: opacity 0.2s;
     }
-    .btn-submit-pink:hover { opacity: 0.9; }
-    .btn-submit-pink:disabled { opacity: 0.5; cursor: not-allowed; }
-    .success-box {
+    .submit-btn.pink-grad:hover { opacity: 0.9; background: linear-gradient(135deg, #EFB5BB, #c0667a); }
+    .submit-btn.pink-grad:disabled:hover { opacity: 1; }
+    .success-card {
       background: #fff; border-radius: 20px; padding: 64px 40px;
-      text-align: center; border: 2px solid #22C55E; display: none;
+      text-align: center; border: 2px solid #22C55E;
     }
-    .success-box.show { display: block; }
-    .success-badge {
+    .success-emoji { font-size: 56px; margin-bottom: 16px; }
+    .success-card h3 { font-size: 26px; font-weight: 800; color: #111; margin: 0 0 12px; }
+    .success-card p { color: #666; font-size: 16px; }
+    .success-tag {
       display: inline-block; margin-top: 24px;
-      background: rgba(34,197,94,0.13); color: #16a34a; border-radius: 20px;
+      background: rgba(34,197,94,0.133); color: #16a34a; border-radius: 20px;
       padding: 8px 20px; font-weight: 700; font-size: 14px;
     }
     .no-fee-badge {
@@ -254,1150 +255,896 @@ cat > /mnt/user-data/outputs/index.html << 'HTMLEOF'
       background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.33);
       border-radius: 20px; padding: 6px 16px;
     }
-    .no-fee-text { color: #16a34a; font-weight: 700; font-size: 13px; }
+    .no-fee-badge span { color: #16a34a; font-weight: 700; font-size: 13px; }
 
-    /* ── Service Cards ── */
-    .service-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    /* ── Services ──────────────────────────────────────────────────── */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
     .service-card {
       background: #fff; border-radius: 18px; padding: 32px;
       border: 1px solid #ECECEC; transition: all 0.25s; cursor: default;
     }
     .service-card:hover {
-      transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); border-color: #EFB5BB;
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+      border-color: #EFB5BB;
     }
     .service-icon { font-size: 32px; margin-bottom: 16px; }
     .service-title { font-weight: 800; font-size: 18px; color: #111; margin-bottom: 8px; }
     .service-desc { color: #666; font-size: 14px; line-height: 1.6; }
 
-    /* ── Trust Cards ── */
+    /* ── Trust ─────────────────────────────────────────────────────── */
     .trust-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
     .trust-card {
       background: #F8F8F8; border-radius: 18px; padding: 28px 24px;
       border: 1px solid #ECECEC; text-align: center;
     }
-    .trust-icon-wrap {
+    .trust-icon {
       width: 52px; height: 52px; border-radius: 16px;
-      background: rgba(239,181,187,0.13); border: 1px solid #EFB5BB;
+      background: rgba(239,181,187,0.133); border: 1px solid #EFB5BB;
       display: flex; align-items: center; justify-content: center;
       font-size: 24px; margin: 0 auto 16px;
     }
     .trust-title { font-weight: 700; font-size: 15px; color: #111; margin-bottom: 8px; }
     .trust-desc { color: #666; font-size: 13px; line-height: 1.6; }
 
-    /* ── Payment Terms ── */
-    .payment-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
-    .payment-card { background: #fff; border-radius: 18px; padding: 32px; border: 1px solid #ECECEC; }
-    .payment-icon { font-size: 28px; margin-bottom: 12px; }
-    .payment-title { font-weight: 800; font-size: 17px; color: #111; margin-bottom: 16px; }
-    .payment-item { display: flex; gap: 10px; margin-bottom: 10px; }
-    .payment-bullet { color: #EFB5BB; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-    .payment-text { color: #555; font-size: 14px; line-height: 1.6; }
-    .general-terms { margin-top: 24px; background: #fff; border-radius: 16px; padding: 24px; border: 1px solid #ECECEC; }
-    .general-terms-title { font-weight: 700; font-size: 15px; color: #111; margin-bottom: 8px; }
-    .general-terms-text { color: #666; font-size: 14px; line-height: 1.7; }
+    /* ── Payment terms ─────────────────────────────────────────────── */
+    .terms-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+    .terms-card { background: #fff; border-radius: 18px; padding: 32px; border: 1px solid #ECECEC; }
+    .terms-title { font-weight: 800; font-size: 17px; color: #111; margin-bottom: 16px; }
+    .terms-item { display: flex; gap: 10px; margin-bottom: 10px; }
+    .terms-bullet { color: #EFB5BB; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .terms-text { color: #555; font-size: 14px; line-height: 1.6; }
+    .general-terms {
+      margin-top: 24px; background: #fff; border-radius: 16px; padding: 24px;
+      border: 1px solid #ECECEC;
+    }
+    .general-terms .gt-title { font-weight: 700; font-size: 15px; color: #111; margin-bottom: 8px; }
+    .general-terms p { color: #666; font-size: 14px; line-height: 1.7; margin: 0; }
 
-    /* ── Safety Notice ── */
+    /* ── Safety notice ─────────────────────────────────────────────── */
     .safety-card {
       background: linear-gradient(135deg, #fff5f6, #fff);
-      border: 2px solid #EFB5BB; border-radius: 20px; padding: 40px; text-align: center;
+      border: 2px solid #EFB5BB; border-radius: 20px; padding: 40px;
+      text-align: center;
     }
-    .safety-icon { font-size: 40px; margin-bottom: 12px; }
-    .safety-title { font-size: 26px; font-weight: 800; color: #111; margin-bottom: 16px; letter-spacing: -0.5px; }
-    .safety-items { max-width: 560px; margin: 0 auto; }
+    .safety-card h2 { font-size: 26px; font-weight: 800; color: #111; margin: 0 0 16px; letter-spacing: -0.5px; }
     .safety-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; text-align: left; }
-    .safety-warn { color: #c0667a; font-weight: 800; flex-shrink: 0; font-size: 16px; }
-    .safety-text { color: #444; font-size: 15px; line-height: 1.6; }
-
-    /* ── FAQ ── */
-    .faq-category {
-      font-size: 13px; font-weight: 700; color: #c0667a;
-      letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; margin-top: 32px;
+    .safety-item .warn { color: #c0667a; font-weight: 800; flex-shrink: 0; font-size: 16px; }
+    .safety-item .text { color: #444; font-size: 15px; line-height: 1.6; }
+    .link-chip {
+      display: inline-block; margin-top: 20px;
+      background: #EFB5BB; color: #7a2d3c; text-decoration: none;
+      padding: 10px 24px; border-radius: 10px; font-weight: 700; font-size: 14px;
     }
-    .faq-item { background: #fff; border: 1px solid #ECECEC; border-radius: 14px; margin-bottom: 8px; overflow: hidden; }
-    .faq-trigger {
-      width: 100%; text-align: left; background: none; border: none; cursor: pointer;
-      padding: 18px 20px; display: flex; justify-content: space-between; align-items: center;
+
+    /* ── FAQ accordion ─────────────────────────────────────────────── */
+    .faq-category { font-size: 13px; font-weight: 700; color: #c0667a; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+    .faq-item {
+      background: #fff; border: 1px solid #ECECEC;
+      border-radius: 14px; margin-bottom: 8px; overflow: hidden;
+    }
+    .faq-question {
+      width: 100%; text-align: left; background: none;
+      border: none; cursor: pointer; padding: 18px 20px;
+      display: flex; justify-content: space-between; align-items: center;
       font-family: inherit;
     }
-    .faq-q { font-weight: 700; font-size: 15px; color: #111; }
-    .faq-plus { color: #EFB5BB; font-weight: 700; font-size: 18px; transition: transform 0.2s; }
-    .faq-plus.open { transform: rotate(45deg); }
-    .faq-answer { padding: 0 20px 18px; color: #555; font-size: 14px; line-height: 1.7; display: none; }
-    .faq-answer.open { display: block; }
+    .faq-question .q-text { font-weight: 700; font-size: 15px; color: #111; }
+    .faq-question .q-toggle { color: #EFB5BB; font-weight: 700; font-size: 18px; transition: transform 0.2s; }
+    .faq-item.open .q-toggle { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; }
+    .faq-answer-inner { padding: 0 20px 18px; color: #555; font-size: 14px; line-height: 1.7; }
 
-    /* ── Contact ── */
-    .contact-btns { display: flex; gap: 12px; justify-content: center; margin-bottom: 36px; flex-wrap: wrap; }
-    .btn-insta {
-      display: flex; align-items: center; gap: 8px;
-      background: rgba(239,181,187,0.13); border: 1px solid #EFB5BB;
-      color: #c0667a; text-decoration: none; padding: 10px 20px;
-      border-radius: 10px; font-weight: 700; font-size: 14px; transition: background 0.2s;
+    /* ── Contact ───────────────────────────────────────────────────── */
+    .contact-chips { display: flex; gap: 12px; justify-content: center; margin-bottom: 36px; flex-wrap: wrap; }
+    .chip {
+      display: flex; align-items: center; gap: 8px; text-decoration: none;
+      padding: 10px 20px; border-radius: 10px; font-weight: 700; font-size: 14px;
     }
-    .btn-insta:hover { background: rgba(239,181,187,0.25); }
-    .btn-wa {
-      display: flex; align-items: center; gap: 8px;
-      background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.4);
-      color: #16a34a; text-decoration: none; padding: 10px 20px;
-      border-radius: 10px; font-weight: 700; font-size: 14px; transition: background 0.2s;
+    .chip-instagram { background: rgba(239,181,187,0.133); border: 1px solid #EFB5BB; color: #c0667a; }
+    .chip-whatsapp { background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.4); color: #16a34a; }
+    .contact-success {
+      background: #F8F8F8; border-radius: 20px; padding: 40px;
+      text-align: center; border: 2px solid #22C55E;
     }
-    .btn-wa:hover { background: rgba(34,197,94,0.16); }
-    .contact-sent { background: #F8F8F8; border-radius: 20px; padding: 40px; text-align: center; border: 2px solid #22C55E; display: none; }
-    .contact-sent.show { display: block; }
-    .btn-contact-submit {
-      width: 100%; background: #111; color: #fff; border: none; cursor: pointer;
-      padding: 14px; border-radius: 12px; font-size: 15px; font-weight: 700;
-      transition: background 0.2s; font-family: inherit;
-    }
-    .btn-contact-submit:hover { background: #333; }
+    .contact-success h3 { font-size: 22px; font-weight: 800; color: #111; margin: 0 0 8px; }
+    .contact-success p { color: #666; font-size: 15px; }
 
-    /* ── Footer ── */
+    /* ── Footer ────────────────────────────────────────────────────── */
     footer { background: #111; color: #fff; padding: 60px 24px 32px; }
     .footer-inner { max-width: 1100px; margin: 0 auto; }
     .footer-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; margin-bottom: 48px; }
-    .footer-logo { display: flex; align-items: center; gap: 10; margin-bottom: 12px; }
-    .footer-logo-badge {
-      width: 36px; height: 36px; border-radius: 10px;
-      background: linear-gradient(135deg, #EFB5BB, #c0667a);
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 900; font-size: 14px; color: #fff;
+    .footer-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .footer-brand-name { font-weight: 700; font-size: 17px; }
+    .footer-tagline { color: #888; font-size: 14px; line-height: 1.6; max-width: 280px; }
+    .footer-ig {
+      display: inline-flex; align-items: center; gap: 6px; margin-top: 16px;
+      color: #EFB5BB; text-decoration: none; font-size: 14px; font-weight: 600;
     }
-    .footer-logo-text { font-weight: 700; font-size: 17px; color: #fff; }
-    .footer-tagline { color: #888; font-size: 14px; line-height: 1.6; max-width: 280px; margin-bottom: 16px; }
-    .footer-insta { color: #EFB5BB; text-decoration: none; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
     .footer-cols { display: flex; gap: 48px; flex-wrap: wrap; }
-    .footer-col-head { color: #666; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+    .footer-col-title { color: #666; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
     .footer-link {
-      display: block; color: #888; font-size: 14px; margin-bottom: 10px;
-      background: none; border: none; cursor: pointer; text-align: left;
-      padding: 0; font-family: inherit; transition: color 0.2s; text-decoration: none;
+      display: block; background: none; border: none; cursor: pointer;
+      color: #888; font-size: 14px; margin-bottom: 10px; padding: 0; text-align: left;
+      font-family: inherit; transition: color 0.2s;
     }
     .footer-link:hover { color: #fff; }
-    .footer-bottom { border-top: 1px solid #222; padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-    .footer-copy { color: #555; font-size: 13px; }
-
-    /* ── Responsive ── */
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .hamburger { display: block; }
-      .how-grid { grid-template-columns: 1fr; }
-      .form-grid-2 { grid-template-columns: 1fr; }
-      .form-grid-3 { grid-template-columns: 1fr; }
-      .fc { display: none; }
-      .footer-top { flex-direction: column; }
+    .footer-bottom {
+      border-top: 1px solid #222; padding-top: 24px;
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
     }
-    @media (max-width: 480px) {
-      .section { padding: 70px 16px; }
-      .hero-content { padding: 110px 16px 60px; }
+    .footer-bottom div { color: #555; font-size: 13px; }
+
+    /* ── Responsive ────────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .desktop-nav { display: none !important; }
+      .mobile-menu-btn { display: block !important; }
+    }
+    @media (max-width: 640px) {
+      .how-grid { grid-template-columns: 1fr !important; }
+      .form-grid { grid-template-columns: 1fr !important; }
+      .form-grid-3 { grid-template-columns: 1fr !important; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ── NAVBAR ─────────────────────────────────────────────── -->
-  <nav id="navbar">
-    <div class="nav-inner">
-      <a class="nav-logo" href="#home">
-        <div class="nav-logo-badge">V15</div>
-        <span class="nav-logo-text">The V
-  const positions = [
-    { top: "8%", left: "-2%", animY: Math.sin(tick * 0.018) * 12, animX: Math.cos(tick * 0.012) * 6 },
-    { top: "22%", right: "-1%", animY: Math.cos(tick * 0.022) * 10, animX: Math.sin(tick * 0.016) * 5 },
-    { top: "48%", left: "-4%", animY: Math.sin(tick * 0.015 + 1) * 14, animX: Math.cos(tick * 0.010) * 7 },
-    { top: "68%", right: "0%", animY: Math.cos(tick * 0.020 + 2) * 11, animX: Math.sin(tick * 0.014) * 6 },
-    { top: "78%", left: "5%", animY: Math.sin(tick * 0.017 + 3) * 9, animX: Math.cos(tick * 0.013) * 5 },
-    { top: "12%", right: "6%", animY: Math.cos(tick * 0.019 + 1) * 13, animX: Math.sin(tick * 0.015) * 4 },
-    { top: "55%", right: "2%", animY: Math.sin(tick * 0.021 + 2) * 10, animX: Math.cos(tick * 0.011) * 6 },
-    { top: "38%", left: "0%", animY: Math.cos(tick * 0.016 + 3) * 8, animX: Math.sin(tick * 0.017) * 5 },
+  <!-- ═══ Navbar ═══ -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <div class="navbar-brand" onclick="scrollToId('home')">
+        <div class="navbar-logo">V15</div>
+        <span class="navbar-brand-name">The V15 Company</span>
+      </div>
+      <div class="desktop-nav" id="desktopNav"></div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu"></div>
+  </nav>
+
+  <!-- ═══ Hero ═══ -->
+  <section id="home">
+    <div class="floating-layer" id="floatingLayer"></div>
+    <div class="hero-blob"></div>
+    <div class="hero-content">
+      <div class="hero-badge">✦ Influencer Marketing Agency</div>
+      <h1 class="hero-title">
+        Connecting Brands With<br />
+        <span class="accent">Creators</span> That Actually Convert.
+      </h1>
+      <p class="hero-sub">
+        The V15 Company helps brands discover creators and helps creators discover opportunities.
+      </p>
+      <div class="hero-ctas">
+        <button class="btn btn-dark btn-hover-dark" onclick="scrollToId('for-brands')">ARE YOU A BRAND? →</button>
+        <button class="btn btn-pink" onclick="scrollToId('for-creators')">ARE YOU A CREATOR? →</button>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="stat-a">Growing</div><div class="stat-b">Creator Network</div></div>
+        <div class="hero-stat"><div class="stat-a">Multiple</div><div class="stat-b">Niches Covered</div></div>
+        <div class="hero-stat"><div class="stat-a">Open For</div><div class="stat-b">Brand Collabs</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Creator Network ═══ -->
+  <section id="creator-network" style="background: #F8F8F8; padding: 100px 24px;">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <div class="fade-in" style="text-align: center; margin-bottom: 60px;">
+        <div class="section-label">Growing Creator Network</div>
+        <h2 class="section-title">Creators Across Multiple Niches</h2>
+      </div>
+      <div class="niche-grid" id="nicheGrid"></div>
+    </div>
+  </section>
+
+  <!-- ═══ How It Works ═══ -->
+  <section style="background: #fff; padding: 100px 24px;">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <div class="fade-in" style="text-align: center; margin-bottom: 64px;">
+        <div class="section-label">Simple Process</div>
+        <h2 class="section-title">How It Works</h2>
+      </div>
+      <div class="how-grid" id="howGrid"></div>
+    </div>
+  </section>
+
+  <!-- ═══ Brand Form ═══ -->
+  <section id="for-brands" style="background: #F8F8F8; padding: 100px 24px;">
+    <div style="max-width: 860px; margin: 0 auto;">
+      <div class="fade-in" style="text-align: center; margin-bottom: 56px;">
+        <div class="section-label">Are You A Brand?</div>
+        <h2 class="section-title" style="margin: 0 0 12px;">Submit Your Campaign Requirement</h2>
+        <p style="color: #666; font-size: 16px; margin: 0;">Tell us about your campaign and we'll match you with the right creators.</p>
+      </div>
+      <div id="brandFormWrap"></div>
+    </div>
+  </section>
+
+  <!-- ═══ Creator Form ═══ -->
+  <section id="for-creators" style="background: #fff; padding: 100px 24px;">
+    <div style="max-width: 860px; margin: 0 auto;">
+      <div class="fade-in" style="text-align: center; margin-bottom: 56px;">
+        <div class="section-label">Are You A Creator?</div>
+        <h2 class="section-title" style="margin: 0 0 12px;">Join Our Creator Network</h2>
+        <div class="no-fee-badge">
+          <span>🚫</span>
+          <span>We do not charge creators any upfront fee.</span>
+        </div>
+      </div>
+      <div id="creatorFormWrap"></div>
+    </div>
+  </section>
+
+  <!-- ═══ Services ═══ -->
+  <section id="services" style="background: #F8F8F8; padding: 100px 24px;">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <div class="fade-in" style="text-align: center; margin-bottom: 60px;">
+        <div class="section-label">What We Offer</div>
+        <h2 class="section-title">Our Services</h2>
+      </div>
+      <div class="services-grid" id="servicesGrid"></div>
+    </div>
+  </section>
+
+  <!-- ═══ Trust ═══ -->
+  <section style="background: #fff; padding: 100px 24px;">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <div class="fade-in" style="text-align: center; margin-bottom: 60px;">
+        <h2 class="section-title">Why Creators Trust<br /><span style="color: #c0667a;">The V15 Company</span></h2>
+      </div>
+      <div class="trust-grid" id="trustGrid"></div>
+    </div>
+  </section>
+
+  <!-- ═══ Payment Terms ═══ -->
+  <section id="payment-terms" style="background: #F8F8F8; padding: 100px 24px;">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <div class="fade-in" style="text-align: center; margin-bottom: 60px;">
+        <div class="section-label">Clarity First</div>
+        <h2 class="section-title" style="margin: 0 0 16px;">Transparent Payment Terms</h2>
+      </div>
+      <div class="terms-grid" id="termsGrid"></div>
+      <div class="fade-in" style="transition-delay: 0.2s;">
+        <div class="general-terms">
+          <div class="gt-title">📜 General Terms</div>
+          <p>The V15 Company reserves the right to decline campaigns that do not align with company values and standards. All payment terms are subject to individual campaign agreements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Safety Notice ═══ -->
+  <section style="background: #fff; padding: 60px 24px;">
+    <div style="max-width: 860px; margin: 0 auto;">
+      <div class="fade-in">
+        <div class="safety-card">
+          <div style="font-size: 40px; margin-bottom: 12px;">🛡️</div>
+          <h2>Creator Safety First</h2>
+          <div style="max-width: 560px; margin: 0 auto;">
+            <div class="safety-item"><span class="warn">⚠</span><span class="text">We never charge creators any upfront fee.</span></div>
+            <div class="safety-item"><span class="warn">⚠</span><span class="text">Do not transfer money to anyone claiming to offer campaigns on behalf of The V15 Company.</span></div>
+            <div class="safety-item"><span class="warn">⚠</span><span class="text">If in doubt, contact us directly through our official Instagram or WhatsApp.</span></div>
+          </div>
+          <a class="link-chip" href="https://www.instagram.com/the_v15_company" target="_blank" rel="noreferrer">Contact Us on Instagram →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <section id="faqs" style="background: #F8F8F8; padding: 100px 24px;">
+    <div style="max-width: 760px; margin: 0 auto;">
+      <div class="fade-in" style="text-align: center; margin-bottom: 48px;">
+        <div class="section-label">Got Questions?</div>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+      </div>
+      <div id="faqWrap"></div>
+    </div>
+  </section>
+
+  <!-- ═══ Contact ═══ -->
+  <section id="contact" style="background: #fff; padding: 100px 24px;">
+    <div style="max-width: 640px; margin: 0 auto;">
+      <div class="fade-in" style="text-align: center; margin-bottom: 48px;">
+        <div class="section-label">Get In Touch</div>
+        <h2 class="section-title" style="margin: 0 0 12px;">Contact Us</h2>
+      </div>
+      <div class="fade-in" style="transition-delay: 0.1s;">
+        <div class="contact-chips">
+          <a class="chip chip-instagram" href="https://www.instagram.com/the_v15_company" target="_blank" rel="noreferrer">📸 Instagram</a>
+          <a class="chip chip-whatsapp" href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noreferrer">💬 WhatsApp</a>
+        </div>
+      </div>
+      <div class="fade-in" style="transition-delay: 0.15s;" id="contactWrap"></div>
+    </div>
+  </section>
+
+  <!-- ═══ Footer ═══ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand">
+            <div class="navbar-logo">V15</div>
+            <span class="footer-brand-name">The V15 Company</span>
+          </div>
+          <p class="footer-tagline">Building Meaningful Creator Partnerships.</p>
+          <a class="footer-ig" href="https://www.instagram.com/the_v15_company" target="_blank" rel="noreferrer">📸 @the_v15_company</a>
+        </div>
+        <div class="footer-cols">
+          <div id="footerNav"></div>
+          <div>
+            <div class="footer-col-title">Legal</div>
+            <div style="color: #888; font-size: 14px; margin-bottom: 10px; cursor: pointer;">Privacy Policy</div>
+            <div style="color: #888; font-size: 14px; margin-bottom: 10px; cursor: pointer;">Terms &amp; Conditions</div>
+            <div style="color: #888; font-size: 14px; margin-bottom: 10px; cursor: pointer;">Creator Terms</div>
+            <div style="color: #888; font-size: 14px; margin-bottom: 10px; cursor: pointer;">Brand Terms</div>
+            <div style="color: #888; font-size: 14px; margin-bottom: 10px; cursor: pointer;">Payment Terms</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2025 The V15 Company. All rights reserved.</div>
+        <div>Made with ❤️ for creators.</div>
+      </div>
+    </div>
+  </footer>
+
+<script>
+/* ══════════════════════════════════════════════════════════════════
+   Data
+   ══════════════════════════════════════════════════════════════════ */
+var CREATOR_CARDS = [
+  { username: "@techvinch.in",       followers: "142K", niche: "Tech",      initials: "TV", color: "#c7e9f9" },
+  { username: "@who.know.snatasha",  followers: "89K",  niche: "Lifestyle", initials: "SN", color: "#fdd9e0" },
+  { username: "@ugc.by.kabikavya",   followers: "56K",  niche: "UGC",       initials: "KK", color: "#d4f4dc" },
+  { username: "@financewithatmm",    followers: "210K", niche: "Finance",   initials: "AT", color: "#fce4b0" },
+  { username: "@foodwithachatori",   followers: "178K", niche: "Food",      initials: "FC", color: "#e8d5f5" },
+  { username: "@travelwithabagkaran",followers: "95K",  niche: "Travel",    initials: "TK", color: "#c9f0e8" },
+  { username: "@beautybyriara",      followers: "320K", niche: "Beauty",    initials: "BR", color: "#fdd9e0" },
+  { username: "@gamewith.veer",      followers: "445K", niche: "Gaming",    initials: "VG", color: "#c7e9f9" }
+];
+
+var NICHES = ["Beauty", "Lifestyle", "Tech", "UGC", "Education", "Finance", "Gaming", "Travel", "Food", "Fashion"];
+var NICHE_ICONS = ["💄", "✨", "💻", "📸", "📚", "💰", "🎮", "✈️", "🍜", "👗"];
+
+var SERVICES = [
+  { icon: "👥", title: "Influencer Marketing", desc: "End-to-end influencer campaigns tailored to your brand's goals and audience." },
+  { icon: "🎥", title: "UGC Campaigns", desc: "Authentic user-generated content that builds trust and drives conversions." },
+  { icon: "🔍", title: "Creator Discovery", desc: "We find the right creators for your niche — from micro to macro influencers." },
+  { icon: "📦", title: "Product Seeding", desc: "Strategic product gifting campaigns that generate organic buzz." },
+  { icon: "📊", title: "Campaign Management", desc: "Full-service management from briefing to reporting and deliverable tracking." },
+  { icon: "🤝", title: "Brand Partnerships", desc: "Long-term creator partnerships that build authentic brand affinity." }
+];
+
+var TRUST_CARDS = [
+  { icon: "🚫", title: "No Upfront Creator Fees", desc: "We never charge creators to join or access campaigns." },
+  { icon: "💬", title: "Transparent Communication", desc: "Clear timelines, honest briefs, and direct support — always." },
+  { icon: "🛟", title: "Dedicated Campaign Support", desc: "A dedicated point of contact throughout every campaign." },
+  { icon: "🌱", title: "Growing Creator Network", desc: "A fast-growing, vetted network across diverse niches." },
+  { icon: "❤️", title: "Creator First Approach", desc: "We advocate for fair pay and respect for every creator's work." }
+];
+
+var PAYMENT_CARDS = [
+  {
+    icon: "👤", title: "For Creators",
+    items: [
+      "No upfront fee — ever.",
+      "A 10% service fee is deducted only after successful campaign completion and payment receipt.",
+      "Creators should never transfer money to claim campaigns."
+    ]
+  },
+  {
+    icon: "🏢", title: "For Brands",
+    items: [
+      "A 10% management fee on the final campaign value.",
+      "Minimum 50% advance required before campaign execution.",
+      "Remaining balance due within 5 business days after campaign completion."
+    ]
+  },
+  {
+    icon: "💸", title: "Creator Payments",
+    items: [
+      "Payments processed within 15 business days after brand payment is received.",
+      "Deliverables must be approved before payment is released.",
+      "Campaign requirements must be fully fulfilled."
+    ]
+  },
+  {
+    icon: "🎁", title: "Barter Campaigns",
+    items: [
+      "Separate coordination charges may apply for barter/gifting campaigns.",
+      "Details shared during campaign briefing."
+    ]
+  }
+];
+
+var FAQS = [
+  { category: "For Brands", q: "How quickly can creators be sourced?", a: "We typically share a curated creator shortlist within 3–5 business days of receiving your campaign brief." },
+  { category: "For Brands", q: "Can I request creators from a specific niche?", a: "Absolutely. We have creators across Beauty, Tech, Finance, Lifestyle, Food, Travel, Gaming, UGC, Education, Fashion, and more." },
+  { category: "For Brands", q: "Can I request creators from a specific city?", a: "Yes. We can filter our network by city or region to ensure hyper-local relevance for your campaign." },
+  { category: "For Creators", q: "How do I join the network?", a: "Fill out the Creator Application form on this page. Our team reviews all applications and reaches out to eligible creators." },
+  { category: "For Creators", q: "When will I receive opportunities?", a: "Once approved, you'll be considered for every relevant campaign. Opportunities depend on brand requirements and your niche." },
+  { category: "For Creators", q: "Are there any joining fees?", a: "Absolutely not. The V15 Company never charges creators any upfront or joining fee. Our 10% service fee is only deducted after a successful campaign payment." }
+];
+
+var HOW_IT_WORKS = [
+  {
+    label: "For Brands", color: "#fff", bg: "#111",
+    steps: ["Submit Campaign Requirements", "Get Matched With Creators", "Launch Campaign"],
+    icons: ["📋", "🔗", "🚀"]
+  },
+  {
+    label: "For Creators", color: "#7a2d3c", bg: "#EFB5BB",
+    steps: ["Join Creator Network", "Get Shortlisted", "Receive Opportunities"],
+    icons: ["👤", "⭐", "📨"]
+  }
+];
+
+var NAV_LINKS = [
+  { id: "home", label: "Home" },
+  { id: "for-brands", label: "For Brands" },
+  { id: "for-creators", label: "For Creators" },
+  { id: "services", label: "Services" },
+  { id: "payment-terms", label: "Payment Terms" },
+  { id: "faqs", label: "FAQs" },
+  { id: "contact", label: "Contact" }
+];
+
+/* ══════════════════════════════════════════════════════════════════
+   Utilities
+   ══════════════════════════════════════════════════════════════════ */
+function scrollToId(id) {
+  closeMobileMenu();
+  var el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function esc(s) {
+  return String(s == null ? "" : s)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+}
+
+/* Fade-in on scroll (IntersectionObserver) */
+function initFadeIns() {
+  var els = document.querySelectorAll(".fade-in");
+  if (!("IntersectionObserver" in window)) {
+    for (var i = 0; i < els.length; i++) els[i].classList.add("in-view");
+    return;
+  }
+  var obs = new IntersectionObserver(function(entries) {
+    for (var i = 0; i < entries.length; i++) {
+      if (entries[i].isIntersecting) {
+        entries[i].target.classList.add("in-view");
+        obs.unobserve(entries[i].target);
+      }
+    }
+  }, { threshold: 0.15 });
+  for (var i = 0; i < els.length; i++) obs.observe(els[i]);
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   Navbar
+   ══════════════════════════════════════════════════════════════════ */
+(function initNavbar() {
+  var navbar = document.getElementById("navbar");
+  var desktopNav = document.getElementById("desktopNav");
+  var mobileMenu = document.getElementById("mobileMenu");
+  var mobileBtn = document.getElementById("mobileMenuBtn");
+
+  /* Build links */
+  var html = "";
+  for (var i = 0; i < NAV_LINKS.length; i++) {
+    html += '<button class="nav-link" data-target="' + NAV_LINKS[i].id + '">' + NAV_LINKS[i].label + "</button>";
+  }
+  desktopNav.innerHTML = html;
+  mobileMenu.innerHTML = html;
+
+  function handleLink(e) {
+    var target = e.currentTarget.getAttribute("data-target");
+    if (target) scrollToId(target);
+  }
+  var desktopButtons = desktopNav.querySelectorAll(".nav-link");
+  for (var i = 0; i < desktopButtons.length; i++) desktopButtons[i].addEventListener("click", handleLink);
+  var mobileButtons = mobileMenu.querySelectorAll("button");
+  for (var i = 0; i < mobileButtons.length; i++) mobileButtons[i].addEventListener("click", handleLink);
+
+  mobileBtn.addEventListener("click", function () {
+    var isOpen = mobileMenu.classList.toggle("open");
+    mobileBtn.textContent = isOpen ? "✕" : "☰";
+  });
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 20) navbar.classList.add("scrolled");
+    else navbar.classList.remove("scrolled");
+  });
+})();
+
+function closeMobileMenu() {
+  var mobileMenu = document.getElementById("mobileMenu");
+  var mobileBtn = document.getElementById("mobileMenuBtn");
+  mobileMenu.classList.remove("open");
+  mobileBtn.textContent = "☰";
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   Floating hero cards
+   ══════════════════════════════════════════════════════════════════ */
+(function initFloatingCards() {
+  var layer = document.getElementById("floatingLayer");
+  var configs = [
+    { top: "7%",  left: "1%",   dur: 7.2, delay: 0   },
+    { top: "18%", right: "2%",  dur: 8.5, delay: 1.3 },
+    { top: "38%", left: "-1%",  dur: 6.8, delay: 0.7 },
+    { top: "57%", right: "0%",  dur: 9.1, delay: 2.1 },
+    { top: "74%", left: "3%",   dur: 7.6, delay: 1.8 },
+    { top: "11%", right: "4%",  dur: 8.0, delay: 0.4 },
+    { top: "52%", right: "1%",  dur: 6.5, delay: 2.8 },
+    { top: "83%", left: "0%",   dur: 7.9, delay: 3.2 }
   ];
 
-  return (
-    <div style={{ position: "absolute", inset: 0, pointerEvents: "none", overflow: "hidden" }}>
-      {CREATOR_CARDS.map((card, i) => {
-        const pos = positions[i];
-        const transform = `translateY(${pos.animY}px) translateX(${pos.animX}px)`;
-        const style = {
-          top: pos.top, left: pos.left, right: pos.right,
-          transform,
-          transition: "transform 0.3s ease",
-          opacity: 0.92,
-        };
-        return <FloatingCard key={i} card={card} style={style} />;
-      })}
-    </div>
-  );
-}
+  for (var i = 0; i < CREATOR_CARDS.length && i < configs.length; i++) {
+    var card = CREATOR_CARDS[i];
+    var cfg = configs[i];
+    var div = document.createElement("div");
+    div.className = "float-card";
+    div.style.top = cfg.top;
+    if (cfg.left) div.style.left = cfg.left;
+    if (cfg.right) div.style.right = cfg.right;
+    div.style.animation = "floatCard " + cfg.dur + "s ease-in-out " + cfg.delay + "s infinite alternate";
+    div.innerHTML =
+      '<div class="avatar" style="background:' + card.color + ';">' + card.initials + "</div>" +
+      "<div>" +
+        '<div class="fc-user">' + esc(card.username) + "</div>" +
+        '<div class="fc-meta">' + esc(card.followers) + " · " + esc(card.niche) + "</div>" +
+        '<div class="fc-tag">✦ Creator</div>' +
+      "</div>";
+    layer.appendChild(div);
+  }
+})();
 
-// ── Navbar ───────────────────────────────────────────────────────────────────
-function Navbar({ activeSection, setSection }) {
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-  useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", fn);
-    return () => window.removeEventListener("scroll", fn);
-  }, []);
+/* ══════════════════════════════════════════════════════════════════
+   Niche grid
+   ══════════════════════════════════════════════════════════════════ */
+(function initNicheGrid() {
+  var grid = document.getElementById("nicheGrid");
+  for (var i = 0; i < NICHES.length; i++) {
+    var div = document.createElement("div");
+    div.className = "niche-card fade-in";
+    div.style.transitionDelay = (i * 0.05) + "s";
+    div.innerHTML =
+      '<div class="niche-icon">' + NICHE_ICONS[i] + "</div>" +
+      '<div class="niche-name">' + esc(NICHES[i]) + "</div>";
+    grid.appendChild(div);
+  }
+})();
 
-  const navLinks = ["home", "for-brands", "for-creators", "services", "payment-terms", "faqs", "contact"];
-  const labels = { "home": "Home", "for-brands": "For Brands", "for-creators": "For Creators", "services": "Services", "payment-terms": "Payment Terms", "faqs": "FAQs", "contact": "Contact" };
+/* ══════════════════════════════════════════════════════════════════
+   How it works
+   ══════════════════════════════════════════════════════════════════ */
+(function initHowItWorks() {
+  var grid = document.getElementById("howGrid");
+  for (var c = 0; c < HOW_IT_WORKS.length; c++) {
+    var h = HOW_IT_WORKS[c];
+    var div = document.createElement("div");
+    div.className = "how-card fade-in";
+    var steps = "";
+    for (var i = 0; i < h.steps.length; i++) {
+      steps +=
+        '<div class="how-step">' +
+          '<div class="step-icon">' + h.icons[i] + "</div>" +
+          "<div>" +
+            '<div class="step-num">Step ' + (i + 1) + "</div>" +
+            '<div class="step-title">' + esc(h.steps[i]) + "</div>" +
+          "</div>" +
+        "</div>";
+    }
+    div.innerHTML =
+      '<div class="how-badge" style="background:' + h.bg + "; color:" + h.color + ';">' + esc(h.label) + "</div>" + steps;
+    grid.appendChild(div);
+  }
+})();
 
-  const scrollTo = (id) => {
-    setMenuOpen(false);
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
+/* ══════════════════════════════════════════════════════════════════
+   Brand form
+   ══════════════════════════════════════════════════════════════════ */
+(function initBrandForm() {
+  var wrap = document.getElementById("brandFormWrap");
 
-  return (
-    <nav style={{
-      position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000,
-      background: scrolled ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0.85)",
-      backdropFilter: "blur(16px)",
-      borderBottom: scrolled ? "1px solid #ECECEC" : "1px solid transparent",
-      transition: "all 0.3s ease",
-    }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", height: 64, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-        {/* Logo */}
-        <div style={{ display: "flex", alignItems: "center", gap: 10, cursor: "pointer" }} onClick={() => scrollTo("home")}>
-          <div style={{
-            width: 36, height: 36, borderRadius: 10, background: "linear-gradient(135deg, #EFB5BB, #c0667a)",
-            display: "flex", alignItems: "center", justifyContent: "center",
-            fontWeight: 900, fontSize: 15, color: "#fff", letterSpacing: "-0.5px",
-          }}>V15</div>
-          <span style={{ fontWeight: 700, fontSize: 17, color: "#111", letterSpacing: "-0.5px" }}>The V15 Company</span>
-        </div>
+  var twoRow = [
+    ["brand_name", "Brand Name", "text", "Your brand name"],
+    ["contact_person", "Contact Person", "text", "Your name"],
+    ["email", "Email Address", "email", "you@brand.com"],
+    ["whatsapp", "WhatsApp Number", "tel", "+91 98765 43210"],
+    ["instagram", "Instagram Handle", "text", "@yourbrand"],
+    ["website", "Website", "url", "https://yourbrand.com"]
+  ];
+  var threeRow = [
+    ["niche", "Creator Niche Required", "text", "E.g. Beauty, Tech..."],
+    ["num_creators", "Number of Creators", "number", "E.g. 5"],
+    ["budget", "Campaign Budget (₹)", "text", "E.g. ₹50,000"]
+  ];
 
-        {/* Desktop links */}
-        <div style={{ display: "flex", gap: 4, alignItems: "center" }} className="desktop-nav">
-          {navLinks.map(link => (
-            <button key={link} onClick={() => scrollTo(link)} style={{
-              background: "none", border: "none", cursor: "pointer",
-              padding: "6px 12px", borderRadius: 8,
-              fontSize: 14, fontWeight: 500,
-              color: "#444",
-              transition: "color 0.2s, background 0.2s",
-            }}
-              onMouseEnter={e => { e.target.style.background = "#f5f5f5"; e.target.style.color = "#111"; }}
-              onMouseLeave={e => { e.target.style.background = "none"; e.target.style.color = "#444"; }}
-            >{labels[link]}</button>
-          ))}
-        </div>
+  function buildField(k, label, type, placeholder) {
+    return '<div class="field"><label for="bf-' + k + '">' + label +
+      '</label><input id="bf-' + k + '" name="' + k + '" type="' + type + '" placeholder="' + esc(placeholder) + '" /></div>';
+  }
 
-        {/* Mobile hamburger */}
-        <button onClick={() => setMenuOpen(!menuOpen)} style={{
-          display: "none", background: "none", border: "none", cursor: "pointer",
-          fontSize: 22, color: "#111",
-        }} className="mobile-menu-btn">{menuOpen ? "✕" : "☰"}</button>
-      </div>
+  var twoCols = "";
+  for (var i = 0; i < twoRow.length; i++) twoCols += buildField(twoRow[i][0], twoRow[i][1], twoRow[i][2], twoRow[i][3]);
 
-      {/* Mobile menu */}
-      {menuOpen && (
-        <div style={{ background: "#fff", borderTop: "1px solid #ECECEC", padding: "12px 24px 20px" }}>
-          {navLinks.map(link => (
-            <button key={link} onClick={() => scrollTo(link)} style={{
-              display: "block", width: "100%", textAlign: "left",
-              background: "none", border: "none", cursor: "pointer",
-              padding: "10px 0", fontSize: 15, fontWeight: 500, color: "#333",
-              borderBottom: "1px solid #f5f5f5",
-            }}>{labels[link]}</button>
-          ))}
-        </div>
-      )}
+  var threeCols = "";
+  for (var i = 0; i < threeRow.length; i++) threeCols += buildField(threeRow[i][0], threeRow[i][1], threeRow[i][2], threeRow[i][3]);
 
-      <style>{`
-        @media (max-width: 768px) {
-          .desktop-nav { display: none !important; }
-          .mobile-menu-btn { display: block !important; }
-        }
-      `}</style>
-    </nav>
-  );
-}
+  wrap.innerHTML =
+    '<div class="form-card fade-in" id="brandFormCard">' +
+      '<div class="form-grid">' + twoCols + "</div>" +
+      buildField("objective", "Campaign Objective", "text", "E.g. Brand awareness, product launch, driving sales...").replace('<div class="field">', '<div class="field" style="margin-top: 20px;">') +
+      '<textarea name="objective" placeholder="E.g. Brand awareness, product launch, driving sales..." rows="3"></textarea></div>' +
+      '<div class="form-grid-3" style="margin-top: 20px;">' + threeCols + "</div>" +
+      '<div class="form-grid" style="margin-top: 20px;">' +
+        buildField("deliverables", "Deliverables Required", "text", "E.g. 1 Reel + 3 Stories") +
+        buildField("timeline", "Campaign Timeline", "text", "E.g. Within 30 days") +
+      "</div>" +
+      buildField("notes", "Additional Notes", "text", "Any specific requirements, preferences, or questions...").replace('<div class="field">', '<div class="field" style="margin-top: 20px;">') +
+      '<textarea name="notes" placeholder="Any specific requirements, preferences, or questions..." rows="3"></textarea></div>' +
+      '<button class="submit-btn" id="brandSubmitBtn">Submit Campaign Requirement →</button>' +
+    "</div>";
 
-// ── Hero ─────────────────────────────────────────────────────────────────────
-function Hero() {
-  const scrollTo = (id) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
-  return (
-    <section id="home" style={{
-      minHeight: "100vh", position: "relative", overflow: "hidden",
-      background: "linear-gradient(160deg, #fff 60%, #fdf0f2 100%)",
-      display: "flex", alignItems: "center", justifyContent: "center",
-    }}>
-      <FloatingCards />
-
-      {/* Soft gradient blob */}
-      <div style={{
-        position: "absolute", width: 600, height: 600, borderRadius: "50%",
-        background: "radial-gradient(circle, #EFB5BB22 0%, transparent 70%)",
-        top: "20%", left: "50%", transform: "translateX(-50%)",
-        pointerEvents: "none",
-      }} />
-
-      <div style={{ textAlign: "center", maxWidth: 720, padding: "120px 24px 80px", position: "relative", zIndex: 2 }}>
-        <div style={{
-          display: "inline-block", marginBottom: 20,
-          background: "#EFB5BB22", border: "1px solid #EFB5BB",
-          color: "#c0667a", borderRadius: 20, padding: "5px 16px",
-          fontSize: 13, fontWeight: 600, letterSpacing: "0.5px",
-        }}>✦ Influencer Marketing Agency</div>
-
-        <h1 style={{
-          fontSize: "clamp(36px, 6vw, 64px)", fontWeight: 800,
-          color: "#111", letterSpacing: "-2px", lineHeight: 1.1,
-          margin: "0 0 20px",
-        }}>
-          Connecting Brands With<br />
-          <span style={{ color: "#EFB5BB", WebkitTextStroke: "1px #c0667a" }}>Creators</span> That Actually Convert.
-        </h1>
-
-        <p style={{
-          fontSize: "clamp(16px, 2.2vw, 20px)", color: "#666",
-          lineHeight: 1.65, margin: "0 0 40px", fontWeight: 400,
-        }}>
-          The V15 Company helps brands discover creators and helps creators discover opportunities.
-        </p>
-
-        <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-          <button onClick={() => scrollTo("for-brands")} style={{
-            background: "#111", color: "#fff", border: "none", cursor: "pointer",
-            padding: "14px 28px", borderRadius: 12, fontSize: 14, fontWeight: 700,
-            letterSpacing: "0.5px", transition: "all 0.2s",
-          }}
-            onMouseEnter={e => e.target.style.background = "#333"}
-            onMouseLeave={e => e.target.style.background = "#111"}
-          >ARE YOU A BRAND? →</button>
-
-          <button onClick={() => scrollTo("for-creators")} style={{
-            background: "#EFB5BB", color: "#7a2d3c", border: "none", cursor: "pointer",
-            padding: "14px 28px", borderRadius: 12, fontSize: 14, fontWeight: 700,
-            letterSpacing: "0.5px", transition: "all 0.2s",
-          }}
-            onMouseEnter={e => e.target.style.background = "#E8A4AB"}
-            onMouseLeave={e => e.target.style.background = "#EFB5BB"}
-          >ARE YOU A CREATOR? →</button>
-        </div>
-
-        <div style={{ display: "flex", gap: 32, justifyContent: "center", marginTop: 60, flexWrap: "wrap" }}>
-          {[
-            ["Growing", "Creator Network"],
-            ["Multiple", "Niches Covered"],
-            ["Open For", "Brand Collabs"],
-          ].map(([a, b]) => (
-            <div key={b} style={{ textAlign: "center" }}>
-              <div style={{ fontSize: 20, fontWeight: 800, color: "#111" }}>{a}</div>
-              <div style={{ fontSize: 13, color: "#888", fontWeight: 500 }}>{b}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ── Section 1: Creator Network ───────────────────────────────────────────────
-function CreatorNetwork() {
-  return (
-    <section id="creator-network" style={{ background: "#F8F8F8", padding: "100px 24px" }}>
-      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-        <FadeIn>
-          <div style={{ textAlign: "center", marginBottom: 60 }}>
-            <div style={{ fontSize: 13, color: "#EFB5BB", fontWeight: 700, letterSpacing: "2px", marginBottom: 12, textTransform: "uppercase" }}>Growing Creator Network</div>
-            <h2 style={{ fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 800, color: "#111", margin: 0, letterSpacing: "-1.5px" }}>Creators Across Multiple Niches</h2>
-          </div>
-        </FadeIn>
-
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))", gap: 16 }}>
-          {NICHES.map((niche, i) => (
-            <FadeIn key={niche} delay={i * 0.05}>
-              <div style={{
-                background: "#fff", borderRadius: 16, padding: "28px 20px",
-                textAlign: "center", border: "1px solid #ECECEC",
-                transition: "all 0.25s",
-                cursor: "default",
-              }}
-                onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 12px 32px rgba(239,181,187,0.25)"; e.currentTarget.style.borderColor = "#EFB5BB"; }}
-                onMouseLeave={e => { e.currentTarget.style.transform = ""; e.currentTarget.style.boxShadow = ""; e.currentTarget.style.borderColor = "#ECECEC"; }}
-              >
-                <div style={{ fontSize: 28, marginBottom: 10 }}>
-                  {["💄", "✨", "💻", "📸", "📚", "💰", "🎮", "✈️", "🍜", "👗"][i]}
-                </div>
-                <div style={{ fontWeight: 700, fontSize: 14, color: "#111" }}>{niche}</div>
-              </div>
-            </FadeIn>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ── Section 2: How It Works ──────────────────────────────────────────────────
-function HowItWorks() {
-  return (
-    <section style={{ background: "#fff", padding: "100px 24px" }}>
-      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-        <FadeIn>
-          <div style={{ textAlign: "center", marginBottom: 64 }}>
-            <div style={{ fontSize: 13, color: "#EFB5BB", fontWeight: 700, letterSpacing: "2px", marginBottom: 12, textTransform: "uppercase" }}>Simple Process</div>
-            <h2 style={{ fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 800, color: "#111", margin: 0, letterSpacing: "-1.5px" }}>How It Works</h2>
-          </div>
-        </FadeIn>
-
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }} className="how-grid">
-          {[
-            {
-              label: "For Brands", color: "#111", bg: "#111",
-              steps: ["Submit Campaign Requirements", "Get Matched With Creators", "Launch Campaign"],
-              icons: ["📋", "🔗", "🚀"],
-            },
-            {
-              label: "For Creators", color: "#c0667a", bg: "#EFB5BB",
-              steps: ["Join Creator Network", "Get Shortlisted", "Receive Opportunities"],
-              icons: ["👤", "⭐", "📨"],
-            },
-          ].map(({ label, color, bg, steps, icons }) => (
-            <FadeIn key={label}>
-              <div style={{ background: "#F8F8F8", borderRadius: 20, padding: 40, border: "1px solid #ECECEC" }}>
-                <div style={{
-                  display: "inline-block", padding: "4px 14px", borderRadius: 20,
-                  background: bg, color: bg === "#111" ? "#fff" : "#7a2d3c",
-                  fontSize: 12, fontWeight: 700, marginBottom: 28, letterSpacing: "0.5px",
-                }}>{label}</div>
-                {steps.map((step, i) => (
-                  <div key={step} style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: i < steps.length - 1 ? 20 : 0 }}>
-                    <div style={{
-                      width: 40, height: 40, borderRadius: 12,
-                      background: "#fff", border: "1px solid #ECECEC",
-                      display: "flex", alignItems: "center", justifyContent: "center",
-                      fontSize: 18, flexShrink: 0,
-                    }}>{icons[i]}</div>
-                    <div>
-                      <div style={{ fontSize: 13, color: "#888", fontWeight: 600 }}>Step {i + 1}</div>
-                      <div style={{ fontSize: 15, color: "#111", fontWeight: 700 }}>{step}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </FadeIn>
-          ))}
-        </div>
-      </div>
-      <style>{`@media(max-width:640px){.how-grid{grid-template-columns:1fr!important;}}`}</style>
-    </section>
-  );
-}
-
-// ── Brand Form ───────────────────────────────────────────────────────────────
-function BrandForm() {
-  const [form, setForm] = useState({
-    brand_name: "", contact_person: "", email: "", whatsapp: "",
-    instagram: "", website: "", objective: "", niche: "",
-    num_creators: "", budget: "", deliverables: "", timeline: "", notes: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-
-  const set = (k) => (e) => setForm(f => ({ ...f, [k]: e.target.value }));
-
-  const handleSubmit = async () => {
-    if (!form.brand_name || !form.email || !form.whatsapp) {
+  var btn = document.getElementById("brandSubmitBtn");
+  btn.addEventListener("click", function () {
+    var card = document.getElementById("brandFormCard");
+    var name = card.querySelector('input[name="brand_name"]').value.trim();
+    var email = card.querySelector('input[name="email"]').value.trim();
+    var whatsapp = card.querySelector('input[name="whatsapp"]').value.trim();
+    if (!name || !email || !whatsapp) {
       alert("Please fill in Brand Name, Email, and WhatsApp Number.");
       return;
     }
-    setLoading(true);
-    await new Promise(r => setTimeout(r, 1200));
-    setLoading(false);
-    setSubmitted(true);
-  };
-
-  const inputStyle = {
-    width: "100%", padding: "12px 14px", borderRadius: 10,
-    border: "1px solid #ECECEC", fontSize: 14, color: "#111",
-    background: "#fff", outline: "none", boxSizing: "border-box",
-    fontFamily: "inherit", transition: "border-color 0.2s",
-  };
-  const labelStyle = { display: "block", fontSize: 13, fontWeight: 600, color: "#444", marginBottom: 6 };
-
-  return (
-    <section id="for-brands" style={{ background: "#F8F8F8", padding: "100px 24px" }}>
-      <div style={{ maxWidth: 860, margin: "0 auto" }}>
-        <FadeIn>
-          <div style={{ textAlign: "center", marginBottom: 56 }}>
-            <div style={{ fontSize: 13, color: "#EFB5BB", fontWeight: 700, letterSpacing: "2px", marginBottom: 12, textTransform: "uppercase" }}>Are You A Brand?</div>
-            <h2 style={{ fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 800, color: "#111", margin: "0 0 12px", letterSpacing: "-1.5px" }}>Submit Your Campaign Requirement</h2>
-            <p style={{ color: "#666", fontSize: 16 }}>Tell us about your campaign and we'll match you with the right creators.</p>
-          </div>
-        </FadeIn>
-
-        {submitted ? (
-          <FadeIn>
-            <div style={{
-              background: "#fff", borderRadius: 20, padding: "64px 40px",
-              textAlign: "center", border: "2px solid #22C55E",
-            }}>
-              <div style={{ fontSize: 56, marginBottom: 16 }}>🎉</div>
-              <h3 style={{ fontSize: 26, fontWeight: 800, color: "#111", margin: "0 0 12px" }}>Campaign Requirement Submitted!</h3>
-              <p style={{ color: "#666", fontSize: 16 }}>Our team will review your requirement and reach out within 1–2 business days.</p>
-              <div style={{
-                display: "inline-block", marginTop: 24,
-                background: "#22C55E22", color: "#16a34a", borderRadius: 20,
-                padding: "8px 20px", fontWeight: 700, fontSize: 14,
-              }}>✓ Submitted Successfully</div>
-            </div>
-          </FadeIn>
-        ) : (
-          <FadeIn>
-            <div style={{ background: "#fff", borderRadius: 20, padding: "40px", border: "1px solid #ECECEC" }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }} className="form-grid">
-                {[
-                  ["brand_name", "Brand Name", "text", "Your brand name"],
-                  ["contact_person", "Contact Person", "text", "Your name"],
-                  ["email", "Email Address", "email", "you@brand.com"],
-                  ["whatsapp", "WhatsApp Number", "tel", "+91 98765 43210"],
-                  ["instagram", "Instagram Handle", "text", "@yourbrand"],
-                  ["website", "Website", "url", "https://yourbrand.com"],
-                ].map(([key, label, type, placeholder]) => (
-                  <div key={key}>
-                    <label style={labelStyle}>{label}</label>
-                    <input type={type} placeholder={placeholder} value={form[key]} onChange={set(key)}
-                      style={inputStyle}
-                      onFocus={e => e.target.style.borderColor = "#EFB5BB"}
-                      onBlur={e => e.target.style.borderColor = "#ECECEC"}
-                    />
-                  </div>
-                ))}
-              </div>
-
-              <div style={{ marginTop: 20 }}>
-                <label style={labelStyle}>Campaign Objective</label>
-                <textarea placeholder="E.g. Brand awareness, product launch, driving sales..." value={form.objective} onChange={set("objective")}
-                  style={{ ...inputStyle, minHeight: 80, resize: "vertical" }}
-                  onFocus={e => e.target.style.borderColor = "#EFB5BB"}
-                  onBlur={e => e.target.style.borderColor = "#ECECEC"}
-                />
-              </div>
-
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 20, marginTop: 20 }} className="form-grid-3">
-                {[
-                  ["niche", "Creator Niche Required", "text", "E.g. Beauty, Tech..."],
-                  ["num_creators", "Number of Creators", "number", "E.g. 5"],
-                  ["budget", "Campaign Budget (₹)", "text", "E.g. ₹50,000"],
-                ].map(([key, label, type, placeholder]) => (
-                  <div key={key}>
-                    <label style={labelStyle}>{label}</label>
-                    <input type={type} placeholder={placeholder} value={form[key]} onChange={set(key)}
-                      style={inputStyle}
-                      onFocus={e => e.target.style.borderColor = "#EFB5BB"}
-                      onBlur={e => e.target.style.borderColor = "#ECECEC"}
-                    />
-                  </div>
-                ))}
-              </div>
-
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginTop: 20 }} className="form-grid">
-                <div>
-                  <label style={labelStyle}>Deliverables Required</label>
-                  <input type="text" placeholder="E.g. 1 Reel + 3 Stories" value={form.deliverables} onChange={set("deliverables")}
-                    style={inputStyle}
-                    onFocus={e => e.target.style.borderColor = "#EFB5BB"}
-                    onBlur={e => e.target.style.borderColor = "#ECECEC"}
-                  />
-                </div>
-                <div>
-                  <label style={labelStyle}>Campaign Timeline</label>
-                  <input type="text" placeholder="E.g. Within 30 days" value={form.timeline} onChange={set("timeline")}
-                    style={inputStyle}
-                    onFocus={e => e.target.style.borderColor = "#EFB5BB"}
-                    onBlur={e => e.target.style.borderColor = "#ECECEC"}
-                  />
-                </div>
-              </div>
-
-              <div style={{ marginTop: 20 }}>
-                <label style={labelStyle}>Additional Notes</label>
-                <textarea placeholder="Any specific requirements, preferences, or questions..." value={form.notes} onChange={set("notes")}
-                  style={{ ...inputStyle, minHeight: 80, resize: "vertical" }}
-                  onFocus={e => e.target.style.borderColor = "#EFB5BB"}
-                  onBlur={e => e.target.style.borderColor = "#ECECEC"}
-                />
-              </div>
-
-              <button onClick={handleSubmit} disabled={loading} style={{
-                width: "100%", marginTop: 28,
-                background: loading ? "#ccc" : "#111", color: "#fff",
-                border: "none", cursor: loading ? "not-allowed" : "pointer",
-                padding: "15px", borderRadius: 12, fontSize: 15, fontWeight: 700,
-                letterSpacing: "0.3px", transition: "background 0.2s",
-              }}
-                onMouseEnter={e => { if (!loading) e.target.style.background = "#333"; }}
-                onMouseLeave={e => { if (!loading) e.target.style.background = "#111"; }}
-              >{loading ? "Submitting..." : "Submit Campaign Requirement →"}</button>
-            </div>
-          </FadeIn>
-        )}
-      </div>
-      <style>{`@media(max-width:640px){.form-grid{grid-template-columns:1fr!important;}.form-grid-3{grid-template-columns:1fr!important;}}`}</style>
-    </section>
-  );
-}
-
-// ── Creator Form ─────────────────────────────────────────────────────────────
-function CreatorForm() {
-  const [form, setForm] = useState({
-    full_name: "", email: "", whatsapp: "", instagram: "",
-    followers: "", niche: "", city: "", portfolio: "",
-    media_kit: "", past_collabs: "", notes: "",
+    btn.disabled = true;
+    btn.textContent = "Submitting...";
+    setTimeout(function () {
+      card.outerHTML =
+        '<div class="success-card fade-in in-view" style="transition: none;">' +
+          '<div class="success-emoji">🎉</div>' +
+          "<h3>Campaign Requirement Submitted!</h3>" +
+          "<p>Our team will review your requirement and reach out within 1–2 business days.</p>" +
+          '<div class="success-tag">✓ Submitted Successfully</div>' +
+        "</div>";
+    }, 1200);
   });
-  const [loading, setLoading] = useState(false);
-  const set = (k) => (e) => setForm(f => ({ ...f, [k]: e.target.value }));
+})();
 
-  const handleSubmit = async () => {
-    if (!form.full_name || !form.email || !form.instagram) {
+/* ══════════════════════════════════════════════════════════════════
+   Creator form
+   ══════════════════════════════════════════════════════════════════ */
+(function initCreatorForm() {
+  var wrap = document.getElementById("creatorFormWrap");
+
+  var fields = [
+    ["full_name", "Full Name", "text", "Your full name"],
+    ["email", "Email Address", "email", "you@email.com"],
+    ["whatsapp", "WhatsApp Number", "tel", "+91 98765 43210"],
+    ["instagram", "Instagram Username", "text", "@yourhandle"],
+    ["followers", "Follower Count", "text", "E.g. 25K"],
+    ["city", "City", "text", "E.g. Mumbai"]
+  ];
+  var links = [
+    ["portfolio", "Portfolio Link", "url", "https://..."],
+    ["media_kit", "Media Kit Link", "url", "https://..."]
+  ];
+
+  function fieldHtml(k, label, type, placeholder, extra) {
+    return '<div class="field"' + (extra || "") + '><label for="cf-' + k + '">' + label +
+      '</label><input id="cf-' + k + '" name="' + k + '" type="' + type + '" placeholder="' + esc(placeholder) + '" /></div>';
+  }
+
+  var twoCols = "";
+  for (var i = 0; i < fields.length; i++) twoCols += fieldHtml(fields[i][0], fields[i][1], fields[i][2], fields[i][3]);
+
+  var linkCols = "";
+  for (var i = 0; i < links.length; i++) linkCols += fieldHtml(links[i][0], links[i][1], links[i][2], links[i][3]);
+
+  wrap.innerHTML =
+    '<div class="form-card gray fade-in" id="creatorFormCard" style="transition-delay: 0.1s;">' +
+      '<div class="form-grid">' + twoCols + "</div>" +
+      fieldHtml("niche", "Creator Niche", "text", "E.g. Beauty, Tech, Food...", ' style="margin-top: 20px;"') +
+      '<div class="form-grid" style="margin-top: 20px;">' + linkCols + "</div>" +
+      '<div class="field" style="margin-top: 20px;"><label for="cf-past_collabs">Previous Brand Collaborations</label>' +
+      '<textarea id="cf-past_collabs" name="past_collabs" placeholder="List any brands you\'ve worked with before..." rows="3"></textarea></div>' +
+      '<div class="field" style="margin-top: 20px;"><label for="cf-notes">Additional Notes</label>' +
+      '<textarea id="cf-notes" name="notes" placeholder="Anything else you\'d like us to know..." rows="3"></textarea></div>' +
+      '<button class="submit-btn pink-grad" id="creatorSubmitBtn">Join Creator Network →</button>' +
+    "</div>";
+
+  var btn = document.getElementById("creatorSubmitBtn");
+  btn.addEventListener("click", function () {
+    var card = document.getElementById("creatorFormCard");
+    var name = card.querySelector('input[name="full_name"]').value.trim();
+    var email = card.querySelector('input[name="email"]').value.trim();
+    var instagram = card.querySelector('input[name="instagram"]').value.trim();
+    if (!name || !email || !instagram) {
       alert("Please fill in Full Name, Email, and Instagram Username.");
       return;
     }
-    setLoading(true);
-    await new Promise(r => setTimeout(r, 1200));
-    setLoading(false);
-    window.open("https://forms.google.com", "_blank");
-  };
+    btn.disabled = true;
+    btn.textContent = "Submitting...";
+    setTimeout(function () {
+      window.open("https://forms.google.com", "_blank");
+      btn.disabled = false;
+      btn.textContent = "Join Creator Network →";
+    }, 1200);
+  });
+})();
 
-  const inputStyle = {
-    width: "100%", padding: "12px 14px", borderRadius: 10,
-    border: "1px solid #ECECEC", fontSize: 14, color: "#111",
-    background: "#fff", outline: "none", boxSizing: "border-box",
-    fontFamily: "inherit", transition: "border-color 0.2s",
-  };
-  const labelStyle = { display: "block", fontSize: 13, fontWeight: 600, color: "#444", marginBottom: 6 };
+/* ══════════════════════════════════════════════════════════════════
+   Services
+   ══════════════════════════════════════════════════════════════════ */
+(function initServices() {
+  var grid = document.getElementById("servicesGrid");
+  for (var i = 0; i < SERVICES.length; i++) {
+    var s = SERVICES[i];
+    var div = document.createElement("div");
+    div.className = "service-card fade-in";
+    div.style.transitionDelay = (i * 0.08) + "s";
+    div.innerHTML =
+      '<div class="service-icon">' + s.icon + "</div>" +
+      '<div class="service-title">' + esc(s.title) + "</div>" +
+      '<div class="service-desc">' + esc(s.desc) + "</div>";
+    grid.appendChild(div);
+  }
+})();
 
-  return (
-    <section id="for-creators" style={{ background: "#fff", padding: "100px 24px" }}>
-      <div style={{ maxWidth: 860, margin: "0 auto" }}>
-        <FadeIn>
-          <div style={{ textAlign: "center", marginBottom: 56 }}>
-            <div style={{ fontSize: 13, color: "#EFB5BB", fontWeight: 700, letterSpacing: "2px", marginBottom: 12, textTransform: "uppercase" }}>Are You A Creator?</div>
-            <h2 style={{ fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 800, color: "#111", margin: "0 0 12px", letterSpacing: "-1.5px" }}>Join Our Creator Network</h2>
-            <div style={{
-              display: "inline-flex", alignItems: "center", gap: 8, marginTop: 8,
-              background: "#22C55E15", border: "1px solid #22C55E55",
-              borderRadius: 20, padding: "6px 16px",
-            }}>
-              <span style={{ fontSize: 14 }}>🚫</span>
-              <span style={{ color: "#16a34a", fontWeight: 700, fontSize: 13 }}>We do not charge creators any upfront fee.</span>
-            </div>
-          </div>
-        </FadeIn>
+/* ══════════════════════════════════════════════════════════════════
+   Trust
+   ══════════════════════════════════════════════════════════════════ */
+(function initTrust() {
+  var grid = document.getElementById("trustGrid");
+  for (var i = 0; i < TRUST_CARDS.length; i++) {
+    var c = TRUST_CARDS[i];
+    var div = document.createElement("div");
+    div.className = "trust-card fade-in";
+    div.style.transitionDelay = (i * 0.08) + "s";
+    div.innerHTML =
+      '<div class="trust-icon">' + c.icon + "</div>" +
+      '<div class="trust-title">' + esc(c.title) + "</div>" +
+      '<div class="trust-desc">' + esc(c.desc) + "</div>";
+    grid.appendChild(div);
+  }
+})();
 
-        <FadeIn delay={0.1}>
-          <div style={{ background: "#F8F8F8", borderRadius: 20, padding: "40px", border: "1px solid #ECECEC" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }} className="form-grid">
-              {[
-                ["full_name", "Full Name", "text", "Your full name"],
-                ["email", "Email Address", "email", "you@email.com"],
-                ["whatsapp", "WhatsApp Number", "tel", "+91 98765 43210"],
-                ["instagram", "Instagram Username", "text", "@yourhandle"],
-                ["followers", "Follower Count", "text", "E.g. 25K"],
-                ["city", "City", "text", "E.g. Mumbai"],
-              ].map(([key, label, type, placeholder]) => (
-                <div key={key}>
-                  <label style={labelStyle}>{label}</label>
-                  <input type={type} placeholder={placeholder} value={form[key]} onChange={set(key)}
-                    style={inputStyle}
-                    onFocus={e => e.target.style.borderColor = "#EFB5BB"}
-                    onBlur={e => e.target.style.borderColor = "#ECECEC"}
-                  />
-                </div>
-              ))}
-            </div>
+/* ══════════════════════════════════════════════════════════════════
+   Payment terms
+   ══════════════════════════════════════════════════════════════════ */
+(function initPaymentTerms() {
+  var grid = document.getElementById("termsGrid");
+  for (var i = 0; i < PAYMENT_CARDS.length; i++) {
+    var card = PAYMENT_CARDS[i];
+    var div = document.createElement("div");
+    div.className = "terms-card fade-in";
+    div.style.transitionDelay = (i * 0.08) + "s";
+    var items = "";
+    for (var j = 0; j < card.items.length; j++) {
+      items +=
+        '<div class="terms-item">' +
+          '<span class="terms-bullet">✦</span>' +
+          '<span class="terms-text">' + esc(card.items[j]) + "</span>" +
+        "</div>";
+    }
+    div.innerHTML =
+      '<div style="font-size: 28px; margin-bottom: 12px;">' + card.icon + "</div>" +
+      '<div class="terms-title">' + esc(card.title) + "</div>" + items;
+    grid.appendChild(div);
+  }
+})();
 
-            <div style={{ marginTop: 20 }}>
-              <label style={labelStyle}>Creator Niche</label>
-              <input type="text" placeholder="E.g. Beauty, Tech, Food..." value={form.niche} onChange={set("niche")}
-                style={inputStyle}
-                onFocus={e => e.target.style.borderColor = "#EFB5BB"}
-                onBlur={e => e.target.style.borderColor = "#ECECEC"}
-              />
-            </div>
+/* ══════════════════════════════════════════════════════════════════
+   FAQ accordion
+   ══════════════════════════════════════════════════════════════════ */
+(function initFAQ() {
+  var wrap = document.getElementById("faqWrap");
+  var cats = ["For Brands", "For Creators"];
 
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginTop: 20 }} className="form-grid">
-              <div>
-                <label style={labelStyle}>Portfolio Link</label>
-                <input type="url" placeholder="https://..." value={form.portfolio} onChange={set("portfolio")}
-                  style={inputStyle}
-                  onFocus={e => e.target.style.borderColor = "#EFB5BB"}
-                  onBlur={e => e.target.style.borderColor = "#ECECEC"}
-                />
-              </div>
-              <div>
-                <label style={labelStyle}>Media Kit Link</label>
-                <input type="url" placeholder="https://..." value={form.media_kit} onChange={set("media_kit")}
-                  style={inputStyle}
-                  onFocus={e => e.target.style.borderColor = "#EFB5BB"}
-                  onBlur={e => e.target.style.borderColor = "#ECECEC"}
-                />
-              </div>
-            </div>
+  for (var c = 0; c < cats.length; c++) {
+    var cat = cats[c];
+    var catDiv = document.createElement("div");
+    catDiv.style.marginBottom = "32px";
 
-            <div style={{ marginTop: 20 }}>
-              <label style={labelStyle}>Previous Brand Collaborations</label>
-              <textarea placeholder="List any brands you've worked with before..." value={form.past_collabs} onChange={set("past_collabs")}
-                style={{ ...inputStyle, minHeight: 80, resize: "vertical" }}
-                onFocus={e => e.target.style.borderColor = "#EFB5BB"}
-                onBlur={e => e.target.style.borderColor = "#ECECEC"}
-              />
-            </div>
+    var heading = document.createElement("div");
+    heading.className = "faq-category";
+    heading.textContent = cat;
+    catDiv.appendChild(heading);
 
-            <div style={{ marginTop: 20 }}>
-              <label style={labelStyle}>Additional Notes</label>
-              <textarea placeholder="Anything else you'd like us to know..." value={form.notes} onChange={set("notes")}
-                style={{ ...inputStyle, minHeight: 80, resize: "vertical" }}
-                onFocus={e => e.target.style.borderColor = "#EFB5BB"}
-                onBlur={e => e.target.style.borderColor = "#ECECEC"}
-              />
-            </div>
+    var faqs = FAQS.filter(function (f) { return f.category === cat; });
+    for (var i = 0; i < faqs.length; i++) {
+      var faq = faqs[i];
+      var item = document.createElement("div");
+      item.className = "faq-item fade-in";
+      item.style.transitionDelay = (i * 0.05) + "s";
 
-            <button onClick={handleSubmit} disabled={loading} style={{
-              width: "100%", marginTop: 28,
-              background: loading ? "#ccc" : "linear-gradient(135deg, #EFB5BB, #c0667a)",
-              color: "#fff", border: "none", cursor: loading ? "not-allowed" : "pointer",
-              padding: "15px", borderRadius: 12, fontSize: 15, fontWeight: 700,
-              letterSpacing: "0.3px", transition: "opacity 0.2s",
-            }}
-              onMouseEnter={e => { if (!loading) e.target.style.opacity = "0.9"; }}
-              onMouseLeave={e => { e.target.style.opacity = "1"; }}
-            >{loading ? "Submitting..." : "Join Creator Network →"}</button>
-          </div>
-        </FadeIn>
-      </div>
-      <style>{`@media(max-width:640px){.form-grid{grid-template-columns:1fr!important;}}`}</style>
-    </section>
-  );
-}
+      var qBtn = document.createElement("button");
+      qBtn.className = "faq-question";
+      qBtn.innerHTML = '<span class="q-text">' + esc(faq.q) + "</span>" + '<span class="q-toggle">+</span>';
+      qBtn.addEventListener("click", function () {
+        item.classList.toggle("open");
+      });
 
-// ── Services ─────────────────────────────────────────────────────────────────
-function Services() {
-  return (
-    <section id="services" style={{ background: "#F8F8F8", padding: "100px 24px" }}>
-      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-        <FadeIn>
-          <div style={{ textAlign: "center", marginBottom: 60 }}>
-            <div style={{ fontSize: 13, color: "#EFB5BB", fontWeight: 700, letterSpacing: "2px", marginBottom: 12, textTransform: "uppercase" }}>What We Offer</div>
-            <h2 style={{ fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 800, color: "#111", margin: 0, letterSpacing: "-1.5px" }}>Our Services</h2>
-          </div>
-        </FadeIn>
+      var answer = document.createElement("div");
+      answer.className = "faq-answer";
+      answer.innerHTML = '<div class="faq-answer-inner">' + esc(faq.a) + "</div>";
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 20 }}>
-          {SERVICES.map((s, i) => (
-            <FadeIn key={s.title} delay={i * 0.08}>
-              <div style={{
-                background: "#fff", borderRadius: 18, padding: 32,
-                border: "1px solid #ECECEC", transition: "all 0.25s", cursor: "default",
-              }}
-                onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 16px 40px rgba(0,0,0,0.08)"; e.currentTarget.style.borderColor = "#EFB5BB"; }}
-                onMouseLeave={e => { e.currentTarget.style.transform = ""; e.currentTarget.style.boxShadow = ""; e.currentTarget.style.borderColor = "#ECECEC"; }}
-              >
-                <div style={{ fontSize: 32, marginBottom: 16 }}>{s.icon}</div>
-                <div style={{ fontWeight: 800, fontSize: 18, color: "#111", marginBottom: 8 }}>{s.title}</div>
-                <div style={{ color: "#666", fontSize: 14, lineHeight: 1.6 }}>{s.desc}</div>
-              </div>
-            </FadeIn>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+      item.appendChild(qBtn);
+      item.appendChild(answer);
+      catDiv.appendChild(item);
+    }
+    wrap.appendChild(catDiv);
+  }
+})();
 
-// ── Trust Section ─────────────────────────────────────────────────────────────
-function Trust() {
-  return (
-    <section style={{ background: "#fff", padding: "100px 24px" }}>
-      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-        <FadeIn>
-          <div style={{ textAlign: "center", marginBottom: 60 }}>
-            <h2 style={{ fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 800, color: "#111", margin: 0, letterSpacing: "-1.5px" }}>
-              Why Creators Trust<br /><span style={{ color: "#c0667a" }}>The V15 Company</span>
-            </h2>
-          </div>
-        </FadeIn>
+/* ══════════════════════════════════════════════════════════════════
+   Contact form
+   ══════════════════════════════════════════════════════════════════ */
+(function initContact() {
+  var wrap = document.getElementById("contactWrap");
+  wrap.innerHTML =
+    '<div id="contactFormCard" style="background: #F8F8F8; border-radius: 20px; padding: 36px; border: 1px solid #ECECEC;">' +
+      '<div class="field"><label for="ct-name">Name</label><input id="ct-name" name="name" type="text" placeholder="Your name" /></div>' +
+      '<div class="field"><label for="ct-email">Email</label><input id="ct-email" name="email" type="email" placeholder="you@email.com" /></div>' +
+      '<div class="field"><label for="ct-message">Message</label><textarea id="ct-message" name="message" placeholder="How can we help?" style="min-height: 120px;"></textarea></div>' +
+      '<button class="submit-btn" id="contactSubmitBtn">Send Message →</button>' +
+    "</div>";
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 20 }}>
-          {TRUST_CARDS.map((c, i) => (
-            <FadeIn key={c.title} delay={i * 0.08}>
-              <div style={{
-                background: "#F8F8F8", borderRadius: 18, padding: "28px 24px",
-                border: "1px solid #ECECEC", textAlign: "center",
-              }}>
-                <div style={{
-                  width: 52, height: 52, borderRadius: 16,
-                  background: "#EFB5BB22", border: "1px solid #EFB5BB",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  fontSize: 24, margin: "0 auto 16px",
-                }}>{c.icon}</div>
-                <div style={{ fontWeight: 700, fontSize: 15, color: "#111", marginBottom: 8 }}>{c.title}</div>
-                <div style={{ color: "#666", fontSize: 13, lineHeight: 1.6 }}>{c.desc}</div>
-              </div>
-            </FadeIn>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+  var btn = document.getElementById("contactSubmitBtn");
+  btn.addEventListener("click", function () {
+    var card = document.getElementById("contactFormCard");
+    var name = card.querySelector('input[name="name"]').value.trim();
+    var email = card.querySelector('input[name="email"]').value.trim();
+    var message = card.querySelector('textarea[name="message"]').value.trim();
+    if (!name || !email || !message) {
+      alert("Please fill all fields.");
+      return;
+    }
+    btn.disabled = true;
+    btn.textContent = "Sending...";
+    setTimeout(function () {
+      card.outerHTML =
+        '<div class="contact-success fade-in in-view" style="transition: none;">' +
+          '<div style="font-size: 40px; margin-bottom: 12px;">✅</div>' +
+          '<h3>Message Sent!</h3>' +
+          "<p>We'll get back to you soon.</p>" +
+        "</div>";
+    }, 800);
+  });
+})();
 
-// ── Payment Terms ─────────────────────────────────────────────────────────────
-function PaymentTerms() {
-  const cards = [
-    {
-      icon: "👤", title: "For Creators",
-      items: [
-        "No upfront fee — ever.",
-        "A 10% service fee is deducted only after successful campaign completion and payment receipt.",
-        "Creators should never transfer money to claim campaigns.",
-      ],
-    },
-    {
-      icon: "🏢", title: "For Brands",
-      items: [
-        "A 10% management fee on the final campaign value.",
-        "Minimum 50% advance required before campaign execution.",
-        "Remaining balance due within 5 business days after campaign completion.",
-      ],
-    },
-    {
-      icon: "💸", title: "Creator Payments",
-      items: [
-        "Payments processed within 15 business days after brand payment is received.",
-        "Deliverables must be approved before payment is released.",
-        "Campaign requirements must be fully fulfilled.",
-      ],
-    },
-    {
-      icon: "🎁", title: "Barter Campaigns",
-      items: [
-        "Separate coordination charges may apply for barter/gifting campaigns.",
-        "Details shared during campaign briefing.",
-      ],
-    },
-  ];
+/* ══════════════════════════════════════════════════════════════════
+   Footer navigation
+   ══════════════════════════════════════════════════════════════════ */
+(function initFooterNav() {
+  var col = document.getElementById("footerNav");
+  var html = '<div class="footer-col-title">Navigation</div>';
+  for (var i = 0; i < NAV_LINKS.length; i++) {
+    html += '<button class="footer-link" data-target="' + NAV_LINKS[i].id + '">' + NAV_LINKS[i].label + "</button>";
+  }
+  col.innerHTML = html;
+  var buttons = col.querySelectorAll(".footer-link");
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", function (e) {
+      var target = e.currentTarget.getAttribute("data-target");
+      if (target) scrollToId(target);
+    });
+  }
+})();
 
-  return (
-    <section id="payment-terms" style={{ background: "#F8F8F8", padding: "100px 24px" }}>
-      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-        <FadeIn>
-          <div style={{ textAlign: "center", marginBottom: 60 }}>
-            <div style={{ fontSize: 13, color: "#EFB5BB", fontWeight: 700, letterSpacing: "2px", marginBottom: 12, textTransform: "uppercase" }}>Clarity First</div>
-            <h2 style={{ fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 800, color: "#111", margin: "0 0 16px", letterSpacing: "-1.5px" }}>Transparent Payment Terms</h2>
-          </div>
-        </FadeIn>
+/* Boot fade-ins after the DOM is built */
+initFadeIns();
+</script>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 20 }}>
-          {cards.map((card, i) => (
-            <FadeIn key={card.title} delay={i * 0.08}>
-              <div style={{
-                background: "#fff", borderRadius: 18, padding: 32,
-                border: "1px solid #ECECEC",
-              }}>
-                <div style={{ fontSize: 28, marginBottom: 12 }}>{card.icon}</div>
-                <div style={{ fontWeight: 800, fontSize: 17, color: "#111", marginBottom: 16 }}>{card.title}</div>
-                {card.items.map((item, j) => (
-                  <div key={j} style={{ display: "flex", gap: 10, marginBottom: 10 }}>
-                    <div style={{ color: "#EFB5BB", fontWeight: 700, flexShrink: 0, marginTop: 1 }}>✦</div>
-                    <div style={{ color: "#555", fontSize: 14, lineHeight: 1.6 }}>{item}</div>
-                  </div>
-                ))}
-              </div>
-            </FadeIn>
-          ))}
-        </div>
-
-        <FadeIn delay={0.2}>
-          <div style={{
-            marginTop: 24, background: "#fff", borderRadius: 16, padding: 24,
-            border: "1px solid #ECECEC",
-          }}>
-            <div style={{ fontWeight: 700, fontSize: 15, color: "#111", marginBottom: 8 }}>📜 General Terms</div>
-            <p style={{ color: "#666", fontSize: 14, lineHeight: 1.7, margin: 0 }}>
-              The V15 Company reserves the right to decline campaigns that do not align with company values and standards. All payment terms are subject to individual campaign agreements.
-            </p>
-          </div>
-        </FadeIn>
-      </div>
-    </section>
-  );
-}
-
-// ── Safety Notice ─────────────────────────────────────────────────────────────
-function SafetyNotice() {
-  return (
-    <section style={{ background: "#fff", padding: "60px 24px" }}>
-      <div style={{ maxWidth: 860, margin: "0 auto" }}>
-        <FadeIn>
-          <div style={{
-            background: "linear-gradient(135deg, #fff5f6, #fff)",
-            border: "2px solid #EFB5BB", borderRadius: 20, padding: "40px",
-            textAlign: "center",
-          }}>
-            <div style={{ fontSize: 40, marginBottom: 12 }}>🛡️</div>
-            <h2 style={{ fontSize: 26, fontWeight: 800, color: "#111", margin: "0 0 16px", letterSpacing: "-0.5px" }}>Creator Safety First</h2>
-            <div style={{ maxWidth: 560, margin: "0 auto" }}>
-              {[
-                "We never charge creators any upfront fee.",
-                "Do not transfer money to anyone claiming to offer campaigns on behalf of The V15 Company.",
-                "If in doubt, contact us directly through our official Instagram or WhatsApp.",
-              ].map((item, i) => (
-                <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 12, marginBottom: 12, textAlign: "left" }}>
-                  <span style={{ color: "#c0667a", fontWeight: 800, flexShrink: 0, fontSize: 16 }}>⚠</span>
-                  <span style={{ color: "#444", fontSize: 15, lineHeight: 1.6 }}>{item}</span>
-                </div>
-              ))}
-            </div>
-            <a href="https://www.instagram.com/the_v15_company" target="_blank" rel="noreferrer" style={{
-              display: "inline-block", marginTop: 20,
-              background: "#EFB5BB", color: "#7a2d3c", textDecoration: "none",
-              padding: "10px 24px", borderRadius: 10, fontWeight: 700, fontSize: 14,
-            }}>Contact Us on Instagram →</a>
-          </div>
-        </FadeIn>
-      </div>
-    </section>
-  );
-}
-
-// ── FAQ ───────────────────────────────────────────────────────────────────────
-function FAQ() {
-  const [open, setOpen] = useState(null);
-  return (
-    <section id="faqs" style={{ background: "#F8F8F8", padding: "100px 24px" }}>
-      <div style={{ maxWidth: 760, margin: "0 auto" }}>
-        <FadeIn>
-          <div style={{ textAlign: "center", marginBottom: 56 }}>
-            <div style={{ fontSize: 13, color: "#EFB5BB", fontWeight: 700, letterSpacing: "2px", marginBottom: 12, textTransform: "uppercase" }}>Got Questions?</div>
-            <h2 style={{ fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 800, color: "#111", margin: 0, letterSpacing: "-1.5px" }}>Frequently Asked Questions</h2>
-          </div>
-        </FadeIn>
-
-        {["For Brands", "For Creators"].map(cat => (
-          <div key={cat} style={{ marginBottom: 32 }}>
-            <div style={{
-              fontSize: 13, fontWeight: 700, color: "#c0667a",
-              letterSpacing: "1px", textTransform: "uppercase", marginBottom: 12,
-            }}>{cat}</div>
-            {FAQS.filter(f => f.category === cat).map((faq, i) => {
-              const key = `${cat}-${i}`;
-              const isOpen = open === key;
-              return (
-                <FadeIn key={key} delay={i * 0.05}>
-                  <div style={{
-                    background: "#fff", border: "1px solid #ECECEC",
-                    borderRadius: 14, marginBottom: 8, overflow: "hidden",
-                  }}>
-                    <button onClick={() => setOpen(isOpen ? null : key)} style={{
-                      width: "100%", textAlign: "left", background: "none",
-                      border: "none", cursor: "pointer", padding: "18px 20px",
-                      display: "flex", justifyContent: "space-between", alignItems: "center",
-                    }}>
-                      <span style={{ fontWeight: 700, fontSize: 15, color: "#111" }}>{faq.q}</span>
-                      <span style={{ color: "#EFB5BB", fontWeight: 700, fontSize: 18, transition: "transform 0.2s", transform: isOpen ? "rotate(45deg)" : "" }}>+</span>
-                    </button>
-                    {isOpen && (
-                      <div style={{ padding: "0 20px 18px", color: "#555", fontSize: 14, lineHeight: 1.7 }}>{faq.a}</div>
-                    )}
-                  </div>
-                </FadeIn>
-              );
-            })}
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-// ── Contact ───────────────────────────────────────────────────────────────────
-function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [sent, setSent] = useState(false);
-  const set = (k) => (e) => setForm(f => ({ ...f, [k]: e.target.value }));
-
-  const handleSubmit = async () => {
-    if (!form.name || !form.email || !form.message) { alert("Please fill all fields."); return; }
-    await new Promise(r => setTimeout(r, 800));
-    setSent(true);
-  };
-
-  const inputStyle = {
-    width: "100%", padding: "12px 14px", borderRadius: 10,
-    border: "1px solid #ECECEC", fontSize: 14, color: "#111",
-    background: "#fff", outline: "none", boxSizing: "border-box",
-    fontFamily: "inherit", transition: "border-color 0.2s",
-  };
-
-  return (
-    <section id="contact" style={{ background: "#fff", padding: "100px 24px" }}>
-      <div style={{ maxWidth: 640, margin: "0 auto" }}>
-        <FadeIn>
-          <div style={{ textAlign: "center", marginBottom: 48 }}>
-            <div style={{ fontSize: 13, color: "#EFB5BB", fontWeight: 700, letterSpacing: "2px", marginBottom: 12, textTransform: "uppercase" }}>Get In Touch</div>
-            <h2 style={{ fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 800, color: "#111", margin: "0 0 12px", letterSpacing: "-1.5px" }}>Contact Us</h2>
-          </div>
-        </FadeIn>
-
-        <FadeIn delay={0.1}>
-          <div style={{ display: "flex", gap: 12, justifyContent: "center", marginBottom: 36, flexWrap: "wrap" }}>
-            <a href="https://www.instagram.com/the_v15_company" target="_blank" rel="noreferrer" style={{
-              display: "flex", alignItems: "center", gap: 8,
-              background: "#EFB5BB22", border: "1px solid #EFB5BB",
-              color: "#c0667a", textDecoration: "none",
-              padding: "10px 20px", borderRadius: 10, fontWeight: 700, fontSize: 14,
-            }}>📸 Instagram</a>
-            <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noreferrer" style={{
-              display: "flex", alignItems: "center", gap: 8,
-              background: "#22C55E15", border: "1px solid #22C55E66",
-              color: "#16a34a", textDecoration: "none",
-              padding: "10px 20px", borderRadius: 10, fontWeight: 700, fontSize: 14,
-            }}>💬 WhatsApp</a>
-          </div>
-        </FadeIn>
-
-        <FadeIn delay={0.15}>
-          {sent ? (
-            <div style={{
-              background: "#F8F8F8", borderRadius: 20, padding: 40,
-              textAlign: "center", border: "2px solid #22C55E",
-            }}>
-              <div style={{ fontSize: 40, marginBottom: 12 }}>✅</div>
-              <h3 style={{ fontSize: 22, fontWeight: 800, color: "#111", margin: "0 0 8px" }}>Message Sent!</h3>
-              <p style={{ color: "#666", fontSize: 15 }}>We'll get back to you soon.</p>
-            </div>
-          ) : (
-            <div style={{ background: "#F8F8F8", borderRadius: 20, padding: 36, border: "1px solid #ECECEC" }}>
-              {[["name", "Name", "text", "Your name"], ["email", "Email", "email", "you@email.com"]].map(([k, l, t, p]) => (
-                <div key={k} style={{ marginBottom: 18 }}>
-                  <label style={{ display: "block", fontSize: 13, fontWeight: 600, color: "#444", marginBottom: 6 }}>{l}</label>
-                  <input type={t} placeholder={p} value={form[k]} onChange={set(k)}
-                    style={inputStyle}
-                    onFocus={e => e.target.style.borderColor = "#EFB5BB"}
-                    onBlur={e => e.target.style.borderColor = "#ECECEC"}
-                  />
-                </div>
-              ))}
-              <div style={{ marginBottom: 20 }}>
-                <label style={{ display: "block", fontSize: 13, fontWeight: 600, color: "#444", marginBottom: 6 }}>Message</label>
-                <textarea placeholder="How can we help?" value={form.message} onChange={set("message")}
-                  style={{ ...inputStyle, minHeight: 120, resize: "vertical" }}
-                  onFocus={e => e.target.style.borderColor = "#EFB5BB"}
-                  onBlur={e => e.target.style.borderColor = "#ECECEC"}
-                />
-              </div>
-              <button onClick={handleSubmit} style={{
-                width: "100%", background: "#111", color: "#fff",
-                border: "none", cursor: "pointer", padding: "14px",
-                borderRadius: 12, fontSize: 15, fontWeight: 700,
-              }}
-                onMouseEnter={e => e.target.style.background = "#333"}
-                onMouseLeave={e => e.target.style.background = "#111"}
-              >Send Message →</button>
-            </div>
-          )}
-        </FadeIn>
-      </div>
-    </section>
-  );
-}
-
-// ── Footer ────────────────────────────────────────────────────────────────────
-function Footer() {
-  const scrollTo = (id) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
-  return (
-    <footer style={{ background: "#111", color: "#fff", padding: "60px 24px 32px" }}>
-      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 40, marginBottom: 48 }}>
-          <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
-              <div style={{
-                width: 36, height: 36, borderRadius: 10,
-                background: "linear-gradient(135deg, #EFB5BB, #c0667a)",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                fontWeight: 900, fontSize: 14, color: "#fff",
-              }}>V15</div>
-              <span style={{ fontWeight: 700, fontSize: 17 }}>The V15 Company</span>
-            </div>
-            <p style={{ color: "#888", fontSize: 14, lineHeight: 1.6, maxWidth: 280 }}>
-              Building Meaningful Creator Partnerships.
-            </p>
-            <a href="https://www.instagram.com/the_v15_company" target="_blank" rel="noreferrer" style={{
-              display: "inline-flex", alignItems: "center", gap: 6, marginTop: 16,
-              color: "#EFB5BB", textDecoration: "none", fontSize: 14, fontWeight: 600,
-            }}>📸 @the_v15_company</a>
-          </div>
-
-          <div style={{ display: "flex", gap: 48, flexWrap: "wrap" }}>
-            <div>
-              <div style={{ color: "#666", fontSize: 12, fontWeight: 700, letterSpacing: "1px", textTransform: "uppercase", marginBottom: 16 }}>Navigation</div>
-              {["home", "for-brands", "for-creators", "services", "payment-terms", "faqs", "contact"].map(link => (
-                <button key={link} onClick={() => scrollTo(link)} style={{
-                  display: "block", background: "none", border: "none", cursor: "pointer",
-                  color: "#888", fontSize: 14, marginBottom: 10, padding: 0, textAlign: "left",
-                  transition: "color 0.2s",
-                }}
-                  onMouseEnter={e => e.target.style.color = "#fff"}
-                  onMouseLeave={e => e.target.style.color = "#888"}
-                >{{ "home": "Home", "for-brands": "For Brands", "for-creators": "For Creators", "services": "Services", "payment-terms": "Payment Terms", "faqs": "FAQs", "contact": "Contact" }[link]}</button>
-              ))}
-            </div>
-
-            <div>
-              <div style={{ color: "#666", fontSize: 12, fontWeight: 700, letterSpacing: "1px", textTransform: "uppercase", marginBottom: 16 }}>Legal</div>
-              {["Privacy Policy", "Terms & Conditions", "Creator Terms", "Brand Terms", "Payment Terms"].map(item => (
-                <div key={item} style={{ color: "#888", fontSize: 14, marginBottom: 10, cursor: "pointer" }}>{item}</div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div style={{ borderTop: "1px solid #222", paddingTop: 24, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
-          <div style={{ color: "#555", fontSize: 13 }}>© 2025 The V15 Company. All rights reserved.</div>
-          <div style={{ color: "#555", fontSize: 13 }}>Made with ❤️ for creators.</div>
-        </div>
-      </div>
-    </footer>
-  );
-}
-
-// ── App ───────────────────────────────────────────────────────────────────────
-export default function App() {
-  return (
-    <div style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", background: "#fff", overflowX: "hidden" }}>
-      <style>{`
-        * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { margin: 0; }
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #f5f5f5; }
-        ::-webkit-scrollbar-thumb { background: #EFB5BB; border-radius: 10px; }
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-      `}</style>
-
-      <Navbar />
-      <Hero />
-      <CreatorNetwork />
-      <HowItWorks />
-      <BrandForm />
-      <CreatorForm />
-      <Services />
-      <Trust />
-      <PaymentTerms />
-      <SafetyNotice />
-      <FAQ />
-      <Contact />
-      <Footer />
-    </div>
-  );
-}
+</body>
+</html>
