@@ -1,7 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,928 +10,1067 @@
 <meta name="description" content="The V15 Company connects brands with relevant creators and helps creators discover meaningful brand opportunities.">
 
 <style>
+
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-  scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-  color:#111;
-  background:#fff;
-  overflow-x:hidden;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+color:#101828;
+background:#fff;
+overflow-x:hidden;
 }
 
 a{
-  text-decoration:none;
-  color:inherit;
+text-decoration:none;
+color:inherit;
 }
 
 
 /* =========================
-   NAVBAR
+NAVBAR
 ========================= */
 
 .navbar{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(255,255,255,.96);
-  backdrop-filter:blur(18px);
-  -webkit-backdrop-filter:blur(18px);
-  border-bottom:1px solid #eee;
+position:sticky;
+top:0;
+z-index:1000;
+background:rgba(255,255,255,.94);
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+border-bottom:1px solid #e8eef6;
 }
 
 .nav-inner{
-  max-width:1180px;
-  margin:auto;
-  padding:12px 24px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+max-width:1180px;
+margin:auto;
+padding:12px 24px;
+display:flex;
+align-items:center;
+justify-content:space-between;
 }
 
 .logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
+display:flex;
+align-items:center;
+gap:10px;
 }
 
 .logo-box{
-  width:48px;
-  height:48px;
-  border-radius:14px;
-  overflow:hidden;
-  background:#efb5bb;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-shrink:0;
+width:46px;
+height:46px;
+border-radius:13px;
+overflow:hidden;
+background:#eaf4ff;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-shrink:0;
 }
 
 .logo-box img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
 }
 
 .logo-name{
-  font-size:18px;
-  font-weight:800;
+font-size:18px;
+font-weight:750;
+color:#101828;
 }
 
 .nav-links{
-  display:flex;
-  gap:5px;
-  align-items:center;
+display:flex;
+gap:5px;
+align-items:center;
 }
 
 .nav-links a{
-  padding:9px 12px;
-  font-size:13px;
-  color:#444;
-  border-radius:9px;
+padding:9px 12px;
+font-size:13px;
+color:#475467;
+border-radius:9px;
 }
 
 .nav-links a:hover{
-  background:#f6f6f6;
+background:#f2f7fc;
+color:#1769aa;
 }
 
 .menu-btn{
-  display:none;
-  border:0;
-  background:transparent;
-  font-size:29px;
-  cursor:pointer;
+display:none;
+border:0;
+background:transparent;
+font-size:29px;
+cursor:pointer;
+color:#101828;
 }
 
 
 /* =========================
-   HERO
+HERO
 ========================= */
 
 .hero{
-  position:relative;
-  overflow:hidden;
-  background:
-    radial-gradient(circle at 50% 15%,rgba(239,181,187,.25),transparent 35%),
-    linear-gradient(180deg,#fff,#fff8f9);
+position:relative;
+overflow:hidden;
+background:
+radial-gradient(circle at 50% 8%,rgba(69,155,226,.13),transparent 34%),
+linear-gradient(180deg,#ffffff 0%,#f7fbff 100%);
 }
 
 .hero-inner{
-  max-width:1050px;
-  margin:auto;
-  padding:70px 24px 75px;
-  text-align:center;
+max-width:1080px;
+margin:auto;
+padding:76px 24px 72px;
+text-align:center;
 }
 
 .hero-badge{
-  display:inline-block;
-  padding:9px 18px;
-  border:1px solid #efb5bb;
-  border-radius:30px;
-  background:rgba(239,181,187,.1);
-  color:#b85c70;
-  font-weight:700;
-  font-size:13px;
-  margin-bottom:25px;
+display:inline-block;
+padding:8px 18px;
+border:1px solid #b9d9f5;
+border-radius:30px;
+background:#f0f8ff;
+color:#1769aa;
+font-weight:650;
+font-size:13px;
+margin-bottom:27px;
 }
 
 .hero h1{
-  max-width:850px;
-  margin:auto;
-  font-size:clamp(42px,7vw,76px);
-  line-height:1.02;
-  letter-spacing:-3.5px;
-  font-weight:850;
+max-width:900px;
+margin:auto;
+font-size:clamp(39px,6vw,66px);
+line-height:1.08;
+letter-spacing:-2.5px;
+font-weight:700;
+color:#101828;
 }
 
 .hero-highlight{
-  color:#d27a8b;
+color:#1769aa;
 }
 
 .hero-description{
-  max-width:680px;
-  margin:28px auto 34px;
-  color:#666;
-  font-size:18px;
-  line-height:1.7;
+max-width:700px;
+margin:25px auto 34px;
+color:#667085;
+font-size:18px;
+line-height:1.7;
 }
 
 .hero-buttons{
-  display:flex;
-  justify-content:center;
-  gap:14px;
-  flex-wrap:wrap;
+display:flex;
+justify-content:center;
+gap:14px;
+flex-wrap:wrap;
 }
 
 .btn{
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-  min-height:52px;
-  padding:14px 28px;
-  border-radius:13px;
-  font-size:14px;
-  font-weight:800;
-  transition:.25s ease;
+display:inline-flex;
+justify-content:center;
+align-items:center;
+min-height:52px;
+padding:14px 28px;
+border-radius:12px;
+font-size:14px;
+font-weight:700;
+transition:.25s ease;
 }
 
 .btn-dark{
-  background:#111;
-  color:#fff;
+background:#101828;
+color:#fff;
 }
 
 .btn-dark:hover{
-  transform:translateY(-2px);
-  background:#292929;
+transform:translateY(-2px);
+background:#1d2939;
 }
 
-.btn-pink{
-  background:#efb5bb;
-  color:#702f3d;
+.btn-blue{
+background:#1769aa;
+color:#fff;
+box-shadow:0 8px 24px rgba(23,105,170,.18);
 }
 
-.btn-pink:hover{
-  transform:translateY(-2px);
-  background:#e7a5ad;
+.btn-blue:hover{
+transform:translateY(-2px);
+background:#12598f;
 }
 
 
 /* =========================
-   CREATOR CARDS
+FEATURED CREATORS
+========================= */
+
+.featured-creators{
+margin:58px auto 0;
+}
+
+.featured-heading{
+margin-bottom:24px;
+}
+
+.featured-label{
+font-size:12px;
+font-weight:750;
+letter-spacing:2px;
+text-transform:uppercase;
+color:#1769aa;
+margin-bottom:7px;
+}
+
+.featured-title{
+font-size:24px;
+font-weight:700;
+letter-spacing:-.5px;
+color:#101828;
+}
+
+.featured-subtitle{
+margin-top:7px;
+font-size:14px;
+color:#667085;
+}
+
+
+/* =========================
+CREATOR CARDS
 ========================= */
 
 .creator-stage{
-  max-width:900px;
-  margin:55px auto 0;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:22px;
+max-width:920px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:18px;
 }
 
 .creator-card{
-  width:100%;
-  min-height:105px;
-  background:rgba(255,255,255,.97);
-  border:1px solid #eee;
-  border-radius:22px;
-  padding:17px;
-  display:flex;
-  align-items:center;
-  gap:14px;
-  box-shadow:0 15px 40px rgba(0,0,0,.07);
-  transition:.3s ease;
+width:100%;
+min-height:104px;
+background:rgba(255,255,255,.98);
+border:1px solid #dbe8f5;
+border-radius:19px;
+padding:16px;
+display:flex;
+align-items:center;
+gap:14px;
+box-shadow:0 12px 35px rgba(16,56,92,.07);
+transition:.3s ease;
 }
 
 .creator-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 20px 45px rgba(0,0,0,.11);
+transform:translateY(-4px);
+border-color:#9cc8ed;
+box-shadow:0 18px 40px rgba(23,105,170,.12);
 }
 
 .creator-avatar{
-  width:58px;
-  height:58px;
-  border-radius:50%;
-  background:#f3e7e9;
-  border:2px solid #efb5bb;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-  flex-shrink:0;
-  font-weight:800;
-  color:#555;
-  font-size:17px;
+width:58px;
+height:58px;
+border-radius:50%;
+background:#edf6ff;
+border:2px solid #b9d9f5;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+flex-shrink:0;
+font-weight:750;
+color:#1769aa;
+font-size:17px;
 }
 
 .creator-avatar img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
 }
 
 .creator-info{
-  text-align:left;
-  min-width:0;
+text-align:left;
+min-width:0;
 }
 
 .creator-name{
-  font-size:16px;
-  font-weight:800;
-  margin-bottom:4px;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+font-size:16px;
+font-weight:750;
+margin-bottom:4px;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+color:#101828;
 }
 
 .creator-meta{
-  color:#777;
-  font-size:13px;
-  margin-bottom:8px;
-  line-height:1.4;
+color:#667085;
+font-size:13px;
+margin-bottom:8px;
+line-height:1.4;
 }
 
 .creator-tag{
-  display:inline-block;
-  border:1px solid #efb5bb;
-  color:#b85c70;
-  border-radius:20px;
-  padding:4px 10px;
-  font-size:10px;
-  font-weight:700;
+display:inline-block;
+border:1px solid #b9d9f5;
+background:#f3f9ff;
+color:#1769aa;
+border-radius:20px;
+padding:4px 10px;
+font-size:10px;
+font-weight:700;
 }
 
 
 /* =========================
-   STATS
+STATS
 ========================= */
 
 .stats{
-  max-width:850px;
-  margin:38px auto 0;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
+max-width:850px;
+margin:42px auto 0;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
 }
 
 .stat{
-  padding:20px;
+padding:18px;
 }
 
 .stat-number{
-  font-size:24px;
-  font-weight:850;
+font-size:23px;
+font-weight:750;
+color:#101828;
 }
 
 .stat-label{
-  margin-top:5px;
-  color:#888;
-  font-size:13px;
+margin-top:5px;
+color:#98a2b3;
+font-size:13px;
 }
 
 
 /* =========================
-   GENERAL
+GENERAL
 ========================= */
 
 section{
-  padding:90px 24px;
+padding:90px 24px;
 }
 
 .section-inner{
-  max-width:1100px;
-  margin:auto;
+max-width:1100px;
+margin:auto;
 }
 
 .section-header{
-  text-align:center;
-  margin-bottom:50px;
+text-align:center;
+margin-bottom:50px;
 }
 
 .eyebrow{
-  color:#c0667a;
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  margin-bottom:12px;
+color:#1769aa;
+font-size:12px;
+font-weight:750;
+letter-spacing:2px;
+text-transform:uppercase;
+margin-bottom:12px;
 }
 
 .section-title{
-  font-size:clamp(30px,5vw,46px);
-  letter-spacing:-1.8px;
-  line-height:1.1;
-  font-weight:850;
+font-size:clamp(30px,5vw,46px);
+letter-spacing:-1.6px;
+line-height:1.1;
+font-weight:750;
+color:#101828;
 }
 
 .section-subtitle{
-  max-width:650px;
-  margin:15px auto 0;
-  color:#666;
-  line-height:1.7;
+max-width:650px;
+margin:15px auto 0;
+color:#667085;
+line-height:1.7;
 }
 
 .grey{
-  background:#f8f8f8;
+background:#f7faff;
 }
 
 
 /* =========================
-   NICHES
+NICHES
 ========================= */
 
 .niche-grid{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:16px;
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:16px;
 }
 
 .niche-card{
-  background:#fff;
-  border:1px solid #eaeaea;
-  border-radius:18px;
-  padding:28px 15px;
-  text-align:center;
-  transition:.25s ease;
+background:#fff;
+border:1px solid #e1eaf3;
+border-radius:18px;
+padding:28px 15px;
+text-align:center;
+transition:.25s ease;
 }
 
 .niche-card:hover{
-  transform:translateY(-5px);
-  border-color:#efb5bb;
-  box-shadow:0 15px 35px rgba(239,181,187,.2);
+transform:translateY(-5px);
+border-color:#9cc8ed;
+box-shadow:0 15px 35px rgba(23,105,170,.09);
 }
 
 .niche-icon{
-  font-size:28px;
-  margin-bottom:10px;
+font-size:28px;
+margin-bottom:10px;
 }
 
 .niche-name{
-  font-weight:750;
-  font-size:14px;
+font-weight:700;
+font-size:14px;
+color:#344054;
 }
 
 
 /* =========================
-   PROCESS
+PROCESS
 ========================= */
 
 .process-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:25px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
 }
 
 .process-card{
-  background:#f8f8f8;
-  border:1px solid #e8e8e8;
-  border-radius:22px;
-  padding:35px;
+background:#f8fbff;
+border:1px solid #e0ebf6;
+border-radius:22px;
+padding:35px;
 }
 
 .process-label{
-  display:inline-block;
-  padding:7px 14px;
-  border-radius:20px;
-  font-size:12px;
-  font-weight:800;
-  margin-bottom:30px;
+display:inline-block;
+padding:7px 14px;
+border-radius:20px;
+font-size:12px;
+font-weight:750;
+margin-bottom:30px;
 }
 
 .brand-label{
-  background:#111;
-  color:#fff;
+background:#101828;
+color:#fff;
 }
 
 .creator-label{
-  background:#efb5bb;
-  color:#6d2b3b;
+background:#e8f4ff;
+color:#1769aa;
 }
 
 .process-step{
-  display:flex;
-  align-items:center;
-  gap:15px;
-  margin-bottom:22px;
+display:flex;
+align-items:center;
+gap:15px;
+margin-bottom:22px;
 }
 
 .process-icon{
-  width:44px;
-  height:44px;
-  border-radius:13px;
-  background:#fff;
-  border:1px solid #e8e8e8;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-shrink:0;
+width:44px;
+height:44px;
+border-radius:13px;
+background:#fff;
+border:1px solid #dce8f3;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-shrink:0;
+font-size:13px;
+font-weight:700;
+color:#1769aa;
 }
 
 .step-small{
-  font-size:11px;
-  color:#999;
-  font-weight:700;
+font-size:11px;
+color:#98a2b3;
+font-weight:700;
 }
 
 .step-title{
-  font-weight:750;
-  margin-top:3px;
+font-weight:700;
+margin-top:3px;
+color:#344054;
 }
 
 
 /* =========================
-   SERVICES
+SERVICES
 ========================= */
 
 .services-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
 }
 
 .service-card{
-  background:#fff;
-  border:1px solid #e9e9e9;
-  border-radius:20px;
-  padding:30px;
-  transition:.25s ease;
+background:#fff;
+border:1px solid #e1eaf3;
+border-radius:20px;
+padding:30px;
+transition:.25s ease;
 }
 
 .service-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 18px 40px rgba(0,0,0,.07);
+transform:translateY(-5px);
+box-shadow:0 18px 40px rgba(23,105,170,.08);
 }
 
 .service-icon{
-  font-size:30px;
-  margin-bottom:15px;
+font-size:30px;
+margin-bottom:15px;
 }
 
 .service-title{
-  font-size:17px;
-  font-weight:800;
-  margin-bottom:8px;
+font-size:17px;
+font-weight:750;
+margin-bottom:8px;
+color:#101828;
 }
 
 .service-description{
-  color:#666;
-  font-size:14px;
-  line-height:1.6;
+color:#667085;
+font-size:14px;
+line-height:1.6;
 }
 
 
 /* =========================
-   TRUST
+TRUST
 ========================= */
 
 .trust-grid{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:15px;
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:15px;
 }
 
 .trust-card{
-  background:#f8f8f8;
-  border:1px solid #e9e9e9;
-  border-radius:18px;
-  padding:25px 15px;
-  text-align:center;
+background:#f8fbff;
+border:1px solid #e1eaf3;
+border-radius:18px;
+padding:25px 15px;
+text-align:center;
 }
 
 .trust-icon{
-  font-size:25px;
-  margin-bottom:12px;
+font-size:25px;
+margin-bottom:12px;
 }
 
 .trust-title{
-  font-size:14px;
-  font-weight:800;
-  margin-bottom:7px;
+font-size:14px;
+font-weight:750;
+margin-bottom:7px;
+color:#344054;
 }
 
 .trust-text{
-  color:#666;
-  font-size:12px;
-  line-height:1.5;
+color:#667085;
+font-size:12px;
+line-height:1.5;
 }
 
 
 /* =========================
-   PAYMENT
+PAYMENT
 ========================= */
 
 .payment-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:20px;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
 }
 
 .payment-card{
-  background:#fff;
-  border:1px solid #e9e9e9;
-  border-radius:20px;
-  padding:30px;
+background:#fff;
+border:1px solid #e1eaf3;
+border-radius:20px;
+padding:30px;
 }
 
 .payment-title{
-  font-size:18px;
-  font-weight:800;
-  margin-bottom:18px;
+font-size:18px;
+font-weight:750;
+margin-bottom:18px;
 }
 
 .payment-item{
-  display:flex;
-  gap:10px;
-  margin-bottom:12px;
-  color:#555;
-  font-size:14px;
-  line-height:1.6;
+display:flex;
+gap:10px;
+margin-bottom:12px;
+color:#667085;
+font-size:14px;
+line-height:1.6;
 }
 
 .payment-star{
-  color:#c0667a;
+color:#1769aa;
 }
 
 
 /* =========================
-   SAFETY
+SAFETY
 ========================= */
 
 .safety-box{
-  max-width:850px;
-  margin:auto;
-  padding:40px;
-  background:linear-gradient(135deg,#fff6f7,#fff);
-  border:1px solid #efb5bb;
-  border-radius:25px;
-  text-align:center;
+max-width:850px;
+margin:auto;
+padding:40px;
+background:linear-gradient(135deg,#f1f8ff,#fff);
+border:1px solid #b9d9f5;
+border-radius:25px;
+text-align:center;
 }
 
 .safety-icon{
-  font-size:38px;
-  margin-bottom:12px;
+font-size:38px;
+margin-bottom:12px;
 }
 
 .safety-box h2{
-  font-size:28px;
-  margin-bottom:20px;
+font-size:28px;
+margin-bottom:20px;
+font-weight:750;
 }
 
 .safety-list{
-  max-width:600px;
-  margin:auto;
-  text-align:left;
+max-width:600px;
+margin:auto;
+text-align:left;
 }
 
 .safety-item{
-  display:flex;
-  gap:10px;
-  margin-bottom:12px;
-  color:#444;
-  font-size:14px;
-  line-height:1.6;
+display:flex;
+gap:10px;
+margin-bottom:12px;
+color:#475467;
+font-size:14px;
+line-height:1.6;
 }
 
 
 /* =========================
-   FAQ
+FAQ
 ========================= */
 
 .faq{
-  max-width:760px;
-  margin:auto;
+max-width:760px;
+margin:auto;
 }
 
 .faq-item{
-  background:#fff;
-  border:1px solid #e8e8e8;
-  border-radius:14px;
-  margin-bottom:9px;
-  overflow:hidden;
+background:#fff;
+border:1px solid #e1eaf3;
+border-radius:14px;
+margin-bottom:9px;
+overflow:hidden;
 }
 
 .faq-question{
-  cursor:pointer;
-  padding:18px;
-  display:flex;
-  justify-content:space-between;
-  gap:15px;
-  font-size:14px;
-  font-weight:750;
+cursor:pointer;
+padding:18px;
+display:flex;
+justify-content:space-between;
+gap:15px;
+font-size:14px;
+font-weight:700;
 }
 
 .faq-answer{
-  display:none;
-  padding:0 18px 18px;
-  color:#666;
-  font-size:14px;
-  line-height:1.7;
+display:none;
+padding:0 18px 18px;
+color:#667085;
+font-size:14px;
+line-height:1.7;
 }
 
 .faq-item.active .faq-answer{
-  display:block;
+display:block;
 }
 
 .faq-plus{
-  color:#c0667a;
-  font-size:18px;
+color:#1769aa;
+font-size:18px;
 }
 
 
 /* =========================
-   CONTACT
+CREATOR FEEDBACK
+========================= */
+
+.feedback-section{
+background:#f7faff;
+}
+
+.feedback-wrap{
+max-width:850px;
+margin:auto;
+}
+
+.feedback-card{
+background:#fff;
+border:1px solid #dce9f5;
+border-radius:24px;
+padding:38px;
+box-shadow:0 18px 45px rgba(23,105,170,.07);
+position:relative;
+}
+
+.feedback-quote{
+font-size:52px;
+line-height:1;
+color:#1769aa;
+font-weight:800;
+margin-bottom:8px;
+}
+
+.feedback-text{
+color:#475467;
+font-size:15px;
+line-height:1.8;
+}
+
+.feedback-author{
+display:flex;
+align-items:center;
+gap:12px;
+margin-top:26px;
+padding-top:20px;
+border-top:1px solid #edf2f7;
+}
+
+.feedback-avatar{
+width:46px;
+height:46px;
+border-radius:50%;
+background:#eaf4ff;
+border:1px solid #b9d9f5;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#1769aa;
+font-weight:800;
+}
+
+.feedback-name{
+font-size:15px;
+font-weight:750;
+color:#101828;
+}
+
+.feedback-role{
+font-size:12px;
+color:#98a2b3;
+margin-top:3px;
+}
+
+
+/* =========================
+CONTACT
 ========================= */
 
 .contact{
-  text-align:center;
+text-align:center;
 }
 
 .contact-buttons{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:30px;
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+margin-top:30px;
 }
 
 .contact-btn{
-  padding:13px 22px;
-  border-radius:12px;
-  font-weight:750;
-  font-size:14px;
+padding:13px 22px;
+border-radius:12px;
+font-weight:700;
+font-size:14px;
 }
 
 .instagram{
-  background:#fff0f3;
-  border:1px solid #efb5bb;
-  color:#b85c70;
+background:#eef7ff;
+border:1px solid #b9d9f5;
+color:#1769aa;
 }
 
 .creator{
-  background:#efb5bb;
-  color:#702f3d;
+background:#1769aa;
+color:#fff;
 }
 
 
 /* =========================
-   FOOTER
+FOOTER
 ========================= */
 
 footer{
-  background:#111;
-  color:#fff;
-  padding:60px 24px 30px;
+background:#101828;
+color:#fff;
+padding:60px 24px 30px;
 }
 
 .footer-inner{
-  max-width:1100px;
-  margin:auto;
+max-width:1100px;
+margin:auto;
 }
 
 .footer-top{
-  display:flex;
-  justify-content:space-between;
-  gap:40px;
-  flex-wrap:wrap;
-  margin-bottom:40px;
+display:flex;
+justify-content:space-between;
+gap:40px;
+flex-wrap:wrap;
+margin-bottom:40px;
 }
 
 .footer-description{
-  color:#888;
-  max-width:300px;
-  margin-top:14px;
-  line-height:1.6;
-  font-size:14px;
+color:#98a2b3;
+max-width:300px;
+margin-top:14px;
+line-height:1.6;
+font-size:14px;
 }
 
 .footer-links{
-  display:flex;
-  gap:40px;
+display:flex;
+gap:40px;
 }
 
 .footer-column h4{
-  font-size:12px;
-  color:#666;
-  text-transform:uppercase;
-  letter-spacing:1px;
-  margin-bottom:15px;
+font-size:12px;
+color:#667085;
+text-transform:uppercase;
+letter-spacing:1px;
+margin-bottom:15px;
 }
 
 .footer-column a{
-  display:block;
-  color:#888;
-  font-size:13px;
-  margin-bottom:10px;
+display:block;
+color:#98a2b3;
+font-size:13px;
+margin-bottom:10px;
 }
 
 .footer-column a:hover{
-  color:#fff;
+color:#fff;
 }
 
 .footer-bottom{
-  border-top:1px solid #222;
-  padding-top:22px;
-  color:#555;
-  font-size:12px;
-  display:flex;
-  justify-content:space-between;
-  gap:15px;
-  flex-wrap:wrap;
+border-top:1px solid #1d2939;
+padding-top:22px;
+color:#667085;
+font-size:12px;
+display:flex;
+justify-content:space-between;
+gap:15px;
+flex-wrap:wrap;
 }
 
 
 /* =========================
-   MOBILE
+MOBILE
 ========================= */
 
 @media(max-width:800px){
 
-  .nav-inner{
-    padding:12px 18px;
-  }
+.nav-inner{
+padding:12px 18px;
+}
 
-  .logo-box{
-    width:48px;
-    height:48px;
-  }
+.logo-name{
+font-size:16px;
+}
 
-  .logo-name{
-    font-size:16px;
-  }
+.nav-links{
+display:none;
+position:absolute;
+top:70px;
+left:12px;
+right:12px;
+background:#fff;
+border:1px solid #e1eaf3;
+border-radius:16px;
+padding:10px;
+box-shadow:0 15px 40px rgba(0,0,0,.1);
+flex-direction:column;
+align-items:stretch;
+}
 
-  .nav-links{
-    display:none;
-    position:absolute;
-    top:73px;
-    left:12px;
-    right:12px;
-    background:#fff;
-    border:1px solid #eee;
-    border-radius:16px;
-    padding:10px;
-    box-shadow:0 15px 40px rgba(0,0,0,.1);
-    flex-direction:column;
-    align-items:stretch;
-  }
+.nav-links.show{
+display:flex;
+}
 
-  .nav-links.show{
-    display:flex;
-  }
+.nav-links a{
+padding:13px;
+}
 
-  .nav-links a{
-    padding:13px;
-  }
+.menu-btn{
+display:block;
+}
 
-  .menu-btn{
-    display:block;
-  }
+.hero-inner{
+padding:55px 18px 45px;
+}
 
-  .hero-inner{
-    padding:55px 18px 45px;
-  }
+.hero h1{
+font-size:clamp(38px,11vw,58px);
+letter-spacing:-2px;
+}
 
-  .hero h1{
-    font-size:clamp(39px,12vw,60px);
-    letter-spacing:-2.5px;
-  }
+.hero-description{
+font-size:16px;
+}
 
-  .hero-description{
-    font-size:16px;
-  }
+.hero-buttons{
+flex-direction:column;
+}
 
-  .hero-buttons{
-    flex-direction:column;
-  }
+.btn{
+width:100%;
+}
 
-  .btn{
-    width:100%;
-  }
+.featured-creators{
+margin-top:45px;
+}
 
-  .creator-stage{
-    grid-template-columns:1fr;
-    gap:18px;
-    margin-top:38px;
-  }
+.featured-title{
+font-size:22px;
+}
 
-  .creator-card{
-    min-height:92px;
-  }
+.creator-stage{
+grid-template-columns:1fr;
+gap:15px;
+}
 
-  .stats{
-    grid-template-columns:1fr;
-    gap:0;
-    margin-top:20px;
-  }
+.creator-card{
+min-height:94px;
+}
 
-  .stat{
-    padding:10px;
-  }
+.stats{
+grid-template-columns:1fr;
+gap:0;
+margin-top:20px;
+}
 
-  section{
-    padding:65px 18px;
-  }
+.stat{
+padding:10px;
+}
 
-  .niche-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
+section{
+padding:65px 18px;
+}
 
-  .process-grid{
-    grid-template-columns:1fr;
-  }
+.niche-grid{
+grid-template-columns:repeat(2,1fr);
+}
 
-  .services-grid{
-    grid-template-columns:1fr;
-  }
+.process-grid{
+grid-template-columns:1fr;
+}
 
-  .trust-grid{
-    grid-template-columns:1fr 1fr;
-  }
+.services-grid{
+grid-template-columns:1fr;
+}
 
-  .payment-grid{
-    grid-template-columns:1fr;
-  }
+.trust-grid{
+grid-template-columns:1fr 1fr;
+}
 
-  .process-card,
-  .payment-card{
-    padding:25px;
-  }
+.payment-grid{
+grid-template-columns:1fr;
+}
 
-  .safety-box{
-    padding:28px 20px;
-  }
+.process-card,
+.payment-card{
+padding:25px;
+}
 
-  .footer-links{
-    width:100%;
-    gap:35px;
-  }
+.safety-box{
+padding:28px 20px;
+}
+
+.feedback-card{
+padding:26px 22px;
+}
+
+.feedback-text{
+font-size:14px;
+line-height:1.75;
+}
+
+.footer-links{
+width:100%;
+gap:35px;
+}
+
 }
 
 
 @media(max-width:430px){
 
-  .creator-card{
-    padding:14px;
-  }
+.creator-card{
+padding:14px;
+}
 
-  .creator-avatar{
-    width:55px;
-    height:55px;
-  }
+.creator-avatar{
+width:55px;
+height:55px;
+}
 
-  .creator-name{
-    font-size:15px;
-  }
+.creator-name{
+font-size:15px;
+}
 
-  .creator-meta{
-    font-size:12px;
-  }
+.creator-meta{
+font-size:12px;
+}
 
-  .trust-grid{
-    grid-template-columns:1fr;
-  }
+.trust-grid{
+grid-template-columns:1fr;
+}
 
-  .niche-grid{
-    gap:10px;
-  }
+.niche-grid{
+gap:10px;
+}
 
-  .niche-card{
-    padding:22px 10px;
-  }
+.niche-card{
+padding:22px 10px;
+}
 
-  .footer-bottom{
-    flex-direction:column;
-  }
+.footer-bottom{
+flex-direction:column;
+}
+
 }
 
 </style>
+
 </head>
 
 
@@ -939,314 +1078,1564 @@ footer{
 
 
 <!-- =========================
-     NAVBAR
+NAVBAR
 ========================= -->
 
 <header class="navbar">
 
-  <div class="nav-inner">
+<div class="nav-inner">
 
-    <a href="#home" class="logo">
+<a href="#home" class="logo">
 
-      <div class="logo-box">
+<div class="logo-box">
 
-        <img
-          src="images/logo-v15.png"
-          alt="The V15 Company Logo"
-          onerror="this.style.display='none';this.parentElement.innerHTML='<strong>V15</strong>';"
-        >
+<img
+src="images/logo-v15.png"
+alt="The V15 Company Logo"
+onerror="this.style.display='none';this.parentElement.innerHTML='<strong style=&quot;color:#1769aa&quot;>V15</strong>';"
+>
 
-      </div>
+</div>
 
-      <span class="logo-name">
-        The V15 Company
-      </span>
+<span class="logo-name">
+The V15 Company
+</span>
 
-    </a>
-
-
-    <button
-      class="menu-btn"
-      onclick="toggleMenu()"
-    >
-      ☰
-    </button>
+</a>
 
 
-    <nav class="nav-links" id="navLinks">
+<button
+class="menu-btn"
+onclick="toggleMenu()"
+>
+☰
+</button>
 
-      <a href="#home">Home</a>
 
-      <a href="#for-brands">
-        For Brands
-      </a>
+<nav
+class="nav-links"
+id="navLinks"
+>
 
-      <a href="#for-creators">
-        For Creators
-      </a>
+<a href="#home">
+Home
+</a>
 
-      <a href="#services">
-        Services
-      </a>
+<a href="#for-brands">
+For Brands
+</a>
 
-      <a href="#payment-terms">
-        Payment Terms
-      </a>
+<a href="#for-creators">
+For Creators
+</a>
 
-      <a href="#faqs">
-        FAQs
-      </a>
+<a href="#services">
+Services
+</a>
 
-      <a href="#contact">
-        Contact
-      </a>
+<a href="#payment-terms">
+Payment Terms
+</a>
 
-    </nav>
+<a href="#faqs">
+FAQs
+</a>
 
-  </div>
+<a href="#contact">
+Contact
+</a>
+
+</nav>
+
+</div>
 
 </header>
 
 
 
 <!-- =========================
-     HERO
+HERO
 ========================= -->
 
-<section class="hero" id="home">
+<section
+class="hero"
+id="home"
+>
 
-  <div class="hero-inner">
+<div class="hero-inner">
 
-    <div class="hero-badge">
-      ✦ Influencer Marketing Agency
-    </div>
 
+<div class="hero-badge">
+✦ Influencer Marketing Agency
+</div>
 
-    <h1>
-      Connecting Brands With
-      <span class="hero-highlight">
-        Creators
-      </span>
-      That Actually Convert.
-    </h1>
 
+<h1>
 
-    <p class="hero-description">
-      The V15 Company helps brands discover relevant
-      creators and helps creators discover meaningful
-      opportunities.
-    </p>
+Building Meaningful
+<span class="hero-highlight">
+Brand–Creator
+</span>
+Connections.
 
+</h1>
 
-    <div class="hero-buttons">
 
-      <a
-        href="#for-brands"
-        class="btn btn-dark"
-      >
-        ARE YOU A BRAND? →
-      </a>
+<p class="hero-description">
 
+The V15 Company helps brands discover the right creators
+and helps creators discover meaningful opportunities.
 
-      <a
-        href="https://openinapp.link/zic87"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn btn-pink"
-      >
-        JOIN AS CREATOR →
-      </a>
+</p>
 
-    </div>
 
+<div class="hero-buttons">
 
+<a
+href="#for-brands"
+class="btn btn-dark"
+>
+ARE YOU A BRAND? →
+</a>
 
-    <!-- =========================
-         CREATOR NETWORK
-    ========================= -->
 
-    <div class="creator-stage">
+<a
+href="https://openinapp.link/zic87"
+target="_blank"
+rel="noopener noreferrer"
+class="btn btn-blue"
+>
+JOIN AS CREATOR →
+</a>
 
+</div>
 
-      <!-- 1. NANDINI JAISWANI -->
 
-      <a
-        class="creator-card"
-        href="https://www.instagram.com/ca.nandini_jaiswani/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
 
-        <div class="creator-avatar">
+<!-- =========================
+FEATURED CREATORS
+========================= -->
 
-          <img
-            src="images/nandini.jpg"
-            alt="Nandini Jaiswani"
-            onerror="this.style.display='none';this.parentElement.innerHTML='NJ';"
-          >
+<div class="featured-creators">
 
-        </div>
 
+<div class="featured-heading">
 
-        <div class="creator-info">
+<div class="featured-label">
+Our Network
+</div>
 
-          <div class="creator-name">
-            Nandini Jaiswani
-          </div>
+<div class="featured-title">
+Featured Creators
+</div>
 
-          <div class="creator-meta">
-            149K · Lifestyle / Fashion / Travel
-          </div>
+<div class="featured-subtitle">
+A glimpse of creators from our growing network
+</div>
 
-          <span class="creator-tag">
-            ✦ Creator
-          </span>
+</div>
 
-        </div>
 
-      </a>
 
+<div class="creator-stage">
 
 
-      <!-- 2. SONIA MISHRA -->
+<!-- 1 NANDINI -->
 
-      <a
-        class="creator-card"
-        href="https://www.instagram.com/sonia__mishra__/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+<a
+class="creator-card"
+href="https://www.instagram.com/ca.nandini_jaiswani/"
+target="_blank"
+rel="noopener noreferrer"
+>
 
-        <div class="creator-avatar">
+<div class="creator-avatar">
 
-          <img
-            src="images/Sonia.jpg"
-            alt="Sonia Mishra"
-            onerror="this.style.display='none';this.parentElement.innerHTML='SM';"
-          >
+<img
+src="images/nandini.jpg"
+alt="Nandini Jaiswani"
+onerror="this.style.display='none';this.parentElement.innerHTML='NJ';"
+>
 
-        </div>
+</div>
 
+<div class="creator-info">
 
-        <div class="creator-info">
+<div class="creator-name">
+Nandini Jaiswani
+</div>
 
-          <div class="creator-name">
-            Sonia Mishra
-          </div>
+<div class="creator-meta">
+149K · Lifestyle / Fashion / Travel
+</div>
 
-          <div class="creator-meta">
-            48.5K · Fashion / Beauty / Lifestyle / Travel
-          </div>
+<span class="creator-tag">
+✦ Creator
+</span>
 
-          <span class="creator-tag">
-            ✦ Creator
-          </span>
+</div>
 
-        </div>
+</a>
 
-      </a>
 
 
+<!-- 2 SONIA -->
 
-      <!-- 3. RITIKA.CREATE -->
+<a
+class="creator-card"
+href="https://www.instagram.com/sonia__mishra__/"
+target="_blank"
+rel="noopener noreferrer"
+>
 
-      <a
-        class="creator-card"
-        href="https://www.instagram.com/ritika.create/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+<div class="creator-avatar">
 
-        <div class="creator-avatar">
+<img
+src="images/Sonia.jpg"
+alt="Sonia Mishra"
+onerror="this.style.display='none';this.parentElement.innerHTML='SM';"
+>
 
-          <img
-            src="images/ritika.jpg"
-            alt="Ritika.Create"
-            onerror="this.style.display='none';this.parentElement.innerHTML='RC';"
-          >
+</div>
 
-        </div>
+<div class="creator-info">
 
+<div class="creator-name">
+Sonia Mishra
+</div>
 
-        <div class="creator-info">
+<div class="creator-meta">
+48.5K · Fashion / Beauty / Lifestyle / Travel
+</div>
 
-          <div class="creator-name">
-            Ritika.Create
-          </div>
+<span class="creator-tag">
+✦ Creator
+</span>
 
-          <div class="creator-meta">
-            13.2K · Digital Brand Designer
-          </div>
+</div>
 
-          <span class="creator-tag">
-            ✦ Creator
-          </span>
+</a>
 
-        </div>
 
-      </a>
 
+<!-- 3 RITIKA -->
 
+<a
+class="creator-card"
+href="https://www.instagram.com/ritika.create/"
+target="_blank"
+rel="noopener noreferrer"
+>
 
-      <!-- 4. VISHAL HAJARE -->
+<div class="creator-avatar">
 
-      <a
-        class="creator-card"
-        href="https://www.instagram.com/tech_tricks.marathi/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+<img
+src="images/ritika.jpg"
+alt="Ritika.Create"
+onerror="this.style.display='none';this.parentElement.innerHTML='RC';"
+>
 
-        <div class="creator-avatar">
+</div>
 
-          <img
-            src="images/vishal.jpg"
-            alt="Vishal Hajare"
-            onerror="this.style.display='none';this.parentElement.innerHTML='VH';"
-          >
+<div class="creator-info">
 
-        </div>
+<div class="creator-name">
+Ritika.Create
+</div>
 
+<div class="creator-meta">
+13.2K · Digital Brand Designer
+</div>
 
-        <div class="creator-info">
+<span class="creator-tag">
+✦ Creator
+</span>
 
-          <div class="creator-name">
-            Vishal Hajare
-          </div>
+</div>
 
-          <div class="creator-meta">
-            78.1K · Tech
-          </div
-          <span class="creator-tag">
-            ✦ Creator
-          </span>
+</a>
 
-        </div>
 
-      </a>
 
+<!-- 4 VISHAL -->
 
+<a
+class="creator-card"
+href="https://www.instagram.com/tech_tricks.marathi/"
+target="_blank"
+rel="noopener noreferrer"
+>
 
-      <!-- 5. TECHVINCH -->
+<div class="creator-avatar">
 
-      <div class="creator-card">
+<img
+src="images/vishal.jpg"
+alt="Vishal Hajare"
+onerror="this.style.display='none';this.parentElement.innerHTML='VH';"
+>
 
-        <div class="creator-avatar">
-          TV
-        </div>
+</div>
 
-        <div class="creator-info">
+<div class="creator-info">
 
-          <div class="creator-name">
-            @techvinch.in
-          </div>
+<div class="creator-name">
+Vishal Hajare
+</div>
 
-          <div class="creator-meta">
-            142K · Tech
-          </div>
+<div class="creator-meta">
+78.1K · Tech
+</div>
 
-          <span class="creator-tag">
-            ✦ Creator
-          </span>
+<span class="creator-tag">
+✦ Creator
+</span>
 
-        </div>
+</div>
+
+</a>
+
+
+
+<!-- 5 TECHVINCH -->
+
+<div class="creator-card">
+
+<div class="creator-avatar">
+TV
+</div>
+
+<div class="creator-info">
+
+<div class="creator-name">
+@techvinch.in
+</div>
+
+<div class="creator-meta">
+142K · Tech
+</div>
+
+<span class="creator-tag">
+✦ Creator
+</span>
+
+</div>
+
+</div>
+
+
+
+<!-- 6 FOOD -->
+
+<div class="creator-card">
+
+<div class="creator-avatar">
+FC
+</div>
+
+<div class="creator-info">
+
+<div class="creator-name">
+@foodwithachatori
+</div>
+
+<div class="creator-meta">
+178K · Food
+</div>
+
+<span class="creator-tag">
+✦ Creator
+</span>
+
+</div>
+
+</div>
+
+
+
+<!-- 7 GAMING -->
+
+<div class="creator-card">
+
+<div class="creator-avatar">
+VG
+</div>
+
+<div class="creator-info">
+
+<div class="creator-name">
+@gamewith.veer
+</div>
+
+<div class="creator-meta">
+445K · Gaming
+</div>
+
+<span class="creator-tag">
+✦ Creator
+</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- STATS -->
+
+<div class="stats">
+
+<div class="stat">
+
+<div class="stat-number">
+Growing
+</div>
+
+<div class="stat-label">
+Creator Network
+</div>
+
+</div>
+
+
+<div class="stat">
+
+<div class="stat-number">
+Multiple
+</div>
+
+<div class="stat-label">
+Niches Covered
+</div>
+
+</div>
+
+
+<div class="stat">
+
+<div class="stat-number">
+Open For
+</div>
+
+<div class="stat-label">
+Brand Collaborations
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+CREATOR NETWORK
+========================= -->
+
+<section
+class="grey"
+id="for-creators"
+>
+
+<div class="section-inner">
+
+<div class="section-header">
+
+<div class="eyebrow">
+Growing Creator Network
+</div>
+
+<h2 class="section-title">
+Creators Across Multiple Niches
+</h2>
+
+<p class="section-subtitle">
+A growing network of creators across different
+categories, audiences and content styles.
+</p>
+
+</div>
+
+
+<div class="niche-grid">
+
+
+<div class="niche-card">
+<div class="niche-icon">💄</div>
+<div class="niche-name">Beauty</div>
+</div>
+
+<div class="niche-card">
+<div class="niche-icon">✨</div>
+<div class="niche-name">Lifestyle</div>
+</div>
+
+<div class="niche-card">
+<div class="niche-icon">💻</div>
+<div class="niche-name">Tech</div>
+</div>
+
+<div class="niche-card">
+<div class="niche-icon">📸</div>
+<div class="niche-name">UGC</div>
+</div>
+
+<div class="niche-card">
+<div class="niche-icon">📚</div>
+<div class="niche-name">Education</div>
+</div>
+
+<div class="niche-card">
+<div class="niche-icon">💰</div>
+<div class="niche-name">Finance</div>
+</div>
+
+<div class="niche-card">
+<div class="niche-icon">🎮</div>
+<div class="niche-name">Gaming</div>
+</div>
+
+<div class="niche-card">
+<div class="niche-icon">✈️</div>
+<div class="niche-name">Travel</div>
+</div>
+
+<div class="niche-card">
+<div class="niche-icon">🍜</div>
+<div class="niche-name">Food</div>
+</div>
+
+<div class="niche-card">
+<div class="niche-icon">👗</div>
+<div class="niche-name">Fashion</div>
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+FOR BRANDS
+========================= -->
+
+<section id="for-brands">
+
+<div class="section-inner">
+
+<div class="section-header">
+
+<div class="eyebrow">
+For Brands
+</div>
+
+<h2 class="section-title">
+From Brief To Creator
+</h2>
+
+<p class="section-subtitle">
+We help brands discover relevant creators
+for campaigns that are authentic and effective.
+</p>
+
+</div>
+
+
+<div class="process-grid">
+
+
+<div class="process-card">
+
+<span class="process-label brand-label">
+FOR BRANDS
+</span>
+
+
+<div class="process-step">
+
+<div class="process-icon">
+01
+</div>
+
+<div>
+
+<div class="step-small">
+STEP 01
+</div>
+
+<div class="step-title">
+Share Campaign Brief
+</div>
+
+</div>
+
+</div>
+
+
+<div class="process-step">
+
+<div class="process-icon">
+02
+</div>
+
+<div>
+
+<div class="step-small">
+STEP 02
+</div>
+
+<div class="step-title">
+We Shortlist Creators
+</div>
+
+</div>
+
+</div>
+
+
+<div class="process-step">
+
+<div class="process-icon">
+03
+</div>
+
+<div>
+
+<div class="step-small">
+STEP 03
+</div>
+
+<div class="step-title">
+Campaign Execution
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="process-card">
+
+<span class="process-label creator-label">
+FOR CREATORS
+</span>
+
+
+<div class="process-step">
+
+<div class="process-icon">
+01
+</div>
+
+<div>
+
+<div class="step-small">
+STEP 01
+</div>
+
+<div class="step-title">
+Join Our Network
+</div>
+
+</div>
+
+</div>
+
+
+<div class="process-step">
+
+<div class="process-icon">
+02
+</div>
+
+<div>
+
+<div class="step-small">
+STEP 02
+</div>
+
+<div class="step-title">
+Get Shortlisted
+</div>
+
+</div>
+
+</div>
+
+
+<div class="process-step">
+
+<div class="process-icon">
+03
+</div>
+
+<div>
+
+<div class="step-small">
+STEP 03
+</div>
+
+<div class="step-title">
+Discover Opportunities
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+SERVICES
+========================= -->
+
+<section
+class="grey"
+id="services"
+>
+
+<div class="section-inner">
+
+<div class="section-header">
+
+<div class="eyebrow">
+What We Do
+</div>
+
+<h2 class="section-title">
+Influencer Marketing Services
+</h2>
+
+</div>
+
+
+<div class="services-grid">
+
+
+<div class="service-card">
+
+<div class="service-icon">
+🎯
+</div>
+
+<div class="service-title">
+Creator Discovery
+</div>
+
+<div class="service-description">
+Find relevant creators based on niche,
+audience, content style and campaign goals.
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+📢
+</div>
+
+<div class="service-title">
+Campaign Management
+</div>
+
+<div class="service-description">
+From creator shortlisting to campaign
+coordination and execution.
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+📊
+</div>
+
+<div class="service-title">
+Performance Focus
+</div>
+
+<div class="service-description">
+We focus on finding creators who can
+connect with the right audience.
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+TRUST
+========================= -->
+
+<section>
+
+<div class="section-inner">
+
+<div class="section-header">
+
+<div class="eyebrow">
+Why The V15 Company
+</div>
+
+<h2 class="section-title">
+Built Around Creators & Brands
+</h2>
+
+</div>
+
+
+<div class="trust-grid">
+
+
+<div class="trust-card">
+
+<div class="trust-icon">
+🎯
+</div>
+
+<div class="trust-title">
+Relevant
+</div>
+
+<div class="trust-text">
+Creators matched with campaign requirements.
+</div>
+
+</div>
+
+
+<div class="trust-card">
+
+<div class="trust-icon">
+🤝
+</div>
+
+<div class="trust-title">
+Transparent
+</div>
+
+<div class="trust-text">
+Clear communication between brands and creators.
+</div>
+
+</div>
+
+
+<div class="trust-card">
+
+<div class="trust-icon">
+⚡
+</div>
+
+<div class="trust-title">
+Efficient
+</div>
+
+<div class="trust-text">
+Streamlined creator discovery and coordination.
+</div>
+
+</div>
+
+
+<div class="trust-card">
+
+<div class="trust-icon">
+🌱
+</div>
+
+<div class="trust-title">
+Growing
+</div>
+
+<div class="trust-text">
+A continuously growing creator network.
+</div>
+
+</div>
+
+
+<div class="trust-card">
+
+<div class="trust-icon">
+💡
+</div>
+
+<div class="trust-title">
+Creator First
+</div>
+
+<div class="trust-text">
+Opportunities built around relevant creators.
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+PAYMENT TERMS
+========================= -->
+
+<section
+class="grey"
+id="payment-terms"
+>
+
+<div class="section-inner">
+
+<div class="section-header">
+
+<div class="eyebrow">
+Payment Terms
+</div>
+
+<h2 class="section-title">
+Clear & Transparent Terms
+</h2>
+
+</div>
+
+
+<div class="payment-grid">
+
+
+<div class="payment-card">
+
+<div class="payment-title">
+Creator Terms
+</div>
+
+<div class="payment-item">
+<span class="payment-star">✦</span>
+<span>
+10% agency fee from the final creator amount.
+</span>
+</div>
+
+<div class="payment-item">
+<span class="payment-star">✦</span>
+<span>
+Creator payments are targeted within 15 days.
+</span>
+</div>
+
+<div class="payment-item">
+<span class="payment-star">✦</span>
+<span>
+Barter campaign charges may vary separately.
+</span>
+</div>
+
+</div>
+
+
+<div class="payment-card">
+
+<div class="payment-title">
+Brand Terms
+</div>
+
+<div class="payment-item">
+<span class="payment-star">✦</span>
+<span>
+10% agency fee from the final campaign amount.
+</span>
+</div>
+
+<div class="payment-item">
+<span class="payment-star">✦</span>
+<span>
+Brand payment cycle targeted within 5 days.
+</span>
+</div>
+
+<div class="payment-item">
+<span class="payment-star">✦</span>
+<span>
+Advance payment may be required for campaign security.
+</span>
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+SAFETY
+========================= -->
+
+<section>
+
+<div class="safety-box">
+
+<div class="safety-icon">
+🛡️
+</div>
+
+<h2>
+Creator Safety Matters
+</h2>
+
+
+<div class="safety-list">
+
+
+<div class="safety-item">
+<span>✓</span>
+<span>
+Never share OTPs, UPI PINs or banking passwords.
+</span>
+</div>
+
+
+<div class="safety-item">
+<span>✓</span>
+<span>
+Always verify campaign details before accepting an offer.
+</span>
+</div>
+
+
+<div class="safety-item">
+<span>✓</span>
+<span>
+Be careful with suspicious links and unknown payment requests.
+</span>
+</div>
+
+
+<div class="safety-item">
+<span>✓</span>
+<span>
+When in doubt, contact the agency through an official channel.
+</span>
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+FAQ
+========================= -->
+
+<section
+class="grey"
+id="faqs"
+>
+
+<div class="section-inner">
+
+<div class="section-header">
+
+<div class="eyebrow">
+FAQs
+</div>
+
+<h2 class="section-title">
+Frequently Asked Questions
+</h2>
+
+</div>
+
+
+<div class="faq">
+
+
+<div
+class="faq-item"
+onclick="toggleFAQ(this)"
+>
+
+<div class="faq-question">
+
+<span>
+How can creators join The V15 Company?
+</span>
+
+<span class="faq-plus">
++
+</span>
+
+</div>
+
+<div class="faq-answer">
+Creators can join our network by submitting
+their details through our creator registration form.
+</div>
+
+</div>
+
+
+
+<div
+class="faq-item"
+onclick="toggleFAQ(this)"
+>
+
+<div class="faq-question">
+
+<span>
+Do creators have to pay to join?
+</span>
+
+<span class="faq-plus">
++
+</span>
+
+</div>
+
+<div class="faq-answer">
+Joining the creator network is for discovering
+relevant opportunities. Campaign-specific terms may vary.
+</div>
+
+</div>
+
+
+
+<div
+class="faq-item"
+onclick="toggleFAQ(this)"
+>
+
+<div class="faq-question">
+
+<span>
+How can brands work with you?
+</span>
+
+<span class="faq-plus">
++
+</span>
+
+</div>
+
+<div class="faq-answer">
+Brands can contact us with their campaign requirements,
+target audience, niche, deliverables and budget.
+</div>
+
+</div>
+
+
+
+<div
+class="faq-item"
+onclick="toggleFAQ(this)"
+>
+
+<div class="faq-question">
+
+<span>
+Which niches do you cover?
+</span>
+
+<span class="faq-plus">
++
+</span>
+
+</div>
+
+<div class="faq-answer">
+Our growing network covers categories such as Tech,
+Lifestyle, Fashion, Beauty, Travel, Food, Gaming,
+Education, Finance and UGC.
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+CREATOR FEEDBACK
+========================= -->
+
+<section class="feedback-section">
+
+<div class="feedback-wrap">
+
+
+<div class="section-header">
+
+<div class="eyebrow">
+Creator Feedback
+</div>
+
+<h2 class="section-title">
+What Creators Say
+</h2>
+
+<p class="section-subtitle">
+Real experiences from creators in our network.
+</p>
+
+</div>
+
+
+
+<div class="feedback-card">
+
+
+<div class="feedback-quote">
+“
+</div>
+
+
+<p class="feedback-text">
+
+I just wanted to say thank you for connecting me with this opportunity.
+Being introduced to the software company and getting the chance to work
+on their sales and marketing has been an incredible experience so far.
+
+<br><br>
+
+I really appreciate the trust you’ve placed in me. The way V15 works,
+with transparency, professionalism, and genuine industry connections,
+has honestly been impressive. Everything has been exactly as communicated,
+and that says a lot about the way you do business.
+
+<br><br>
+
+Hope this is the beginning of a long-term association. Looking forward
+to working with you on many more projects in the future.
+
+<br><br>
+
+Thank you once again!
+
+</p>
+
+
+
+<div class="feedback-author">
+
+
+<div class="feedback-avatar">
+NS
+</div>
+
+
+<div>
+
+<div class="feedback-name">
+Nikita Suri
+</div>
+
+<div class="feedback-role">
+Creator · The V15 Company Network
+</div>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+CONTACT
+========================= -->
+
+<section
+id="contact"
+class="contact"
+>
+
+<div class="section-inner">
+
+<div class="eyebrow">
+Let's Work Together
+</div>
+
+<h2 class="section-title">
+Ready To Connect?
+</h2>
+
+<p class="section-subtitle">
+Whether you're a brand looking for creators
+or a creator looking for opportunities,
+we'd love to hear from you.
+</p>
+
+
+<div class="contact-buttons">
+
+
+<a
+href="https://www.instagram.com/the_v15_company/"
+target="_blank"
+rel="noopener noreferrer"
+class="contact-btn instagram"
+>
+Instagram
+</a>
+
+
+<a
+href="https://openinapp.link/zic87"
+target="_blank"
+rel="noopener noreferrer"
+class="contact-btn creator"
+>
+Join As Creator
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+FOOTER
+========================= -->
+
+<footer>
+
+<div class="footer-inner">
+
+
+<div class="footer-top">
+
+
+<div>
+
+<div class="logo">
+
+<div class="logo-box">
+
+<img
+src="images/logo-v15.png"
+alt="The V15 Company Logo"
+>
+
+</div>
+
+<span
+class="logo-name"
+style="color:#fff;"
+>
+The V15 Company
+</span>
+
+</div>
+
+
+<p class="footer-description">
+Connecting brands with relevant creators
+and creators with meaningful opportunities.
+</p>
+
+</div>
+
+
+
+<div class="footer-links">
+
+
+<div class="footer-column">
+
+<h4>
+Explore
+</h4>
+
+<a href="#home">
+Home
+</a>
+
+<a href="#for-brands">
+For Brands
+</a>
+
+<a href="#for-creators">
+For Creators
+</a>
+
+</div>
+
+
+
+<div class="footer-column">
+
+<h4>
+Company
+</h4>
+
+<a href="#services">
+Services
+</a>
+
+<a href="#payment-terms">
+Payment Terms
+</a>
+
+<a href="#faqs">
+FAQs
+</a>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="footer-bottom">
+
+<span>
+© 2026 The V15 Company. All rights reserved.
+</span>
+
+<span>
+Influencer Marketing Agency
+</span>
+
+</div>
+
+
+</div>
+
+</footer>
+
+
+
+<script>
+
+function toggleMenu(){
+
+const menu=document.getElementById("navLinks");
+
+menu.classList.toggle("show");
+
+}
+
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+link.addEventListener("click",function(){
+
+document
+.getElementById("navLinks")
+.classList.remove("show");
+
+});
+
+});
+
+
+function toggleFAQ(item){
+
+const isActive=item.classList.contains("active");
+
+document
+.querySelectorAll(".faq-item")
+.forEach(function(faq){
+
+faq.classList.remove("active");
+
+const plus=faq.querySelector(".faq-plus");
+
+if(plus){
+plus.textContent="+";
+}
+
+});
+
+
+if(!isActive){
+
+item.classList.add("active");
+
+const plus=item.querySelector(".faq-plus");
+
+if(plus){
+plus.textContent="−";
+}
+
+}
+
+}
+
+</script>
+
+
+</body>
+</html>
