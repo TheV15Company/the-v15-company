@@ -9,6 +9,11 @@
 <meta name="description" content="The V15 Company connects brands with relevant creators for authentic influencer marketing campaigns and helps creators discover meaningful opportunities.">
 
 <style>
+
+/* =========================
+   RESET
+========================= */
+
 *{
   margin:0;
   padding:0;
@@ -31,10 +36,11 @@ a{
   color:inherit;
 }
 
-button,
-a{
+button{
+  font-family:inherit;
   -webkit-tap-highlight-color:transparent;
 }
+
 
 /* =========================
    NAVBAR
@@ -44,10 +50,10 @@ a{
   position:sticky;
   top:0;
   z-index:1000;
-  background:rgba(255,255,255,.94);
+  background:rgba(255,255,255,.95);
   backdrop-filter:blur(18px);
   -webkit-backdrop-filter:blur(18px);
-  border-bottom:1px solid #eeeeee;
+  border-bottom:1px solid #eee;
 }
 
 .nav-inner{
@@ -66,20 +72,26 @@ a{
 }
 
 .logo-box{
-  width:42px;
-  height:42px;
-  border-radius:12px;
-  background:linear-gradient(135deg,#efb5bb,#c96c7c);
-  color:#fff;
+  width:48px;
+  height:48px;
+  border-radius:14px;
+  overflow:hidden;
+  background:#efb5bb;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-weight:900;
-  font-size:15px;
+  flex-shrink:0;
+}
+
+.logo-box img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
 
 .logo-name{
-  font-size:17px;
+  font-size:18px;
   font-weight:800;
 }
 
@@ -104,9 +116,10 @@ a{
   display:none;
   border:0;
   background:transparent;
-  font-size:28px;
+  font-size:29px;
   cursor:pointer;
 }
+
 
 /* =========================
    HERO
@@ -116,22 +129,24 @@ a{
   position:relative;
   overflow:hidden;
   background:
-    radial-gradient(circle at 50% 15%,rgba(239,181,187,.22),transparent 35%),
+    radial-gradient(
+      circle at 50% 15%,
+      rgba(239,181,187,.25),
+      transparent 35%
+    ),
     linear-gradient(180deg,#fff,#fff8f9);
 }
 
 .hero-inner{
   max-width:1050px;
   margin:auto;
-  padding:70px 24px 80px;
+  padding:70px 24px 75px;
   text-align:center;
-  position:relative;
-  z-index:2;
 }
 
 .hero-badge{
   display:inline-block;
-  padding:8px 18px;
+  padding:9px 18px;
   border:1px solid #efb5bb;
   border-radius:30px;
   background:rgba(239,181,187,.1);
@@ -181,13 +196,14 @@ a{
   transition:.25s ease;
 }
 
-.btn:hover{
-  transform:translateY(-2px);
-}
-
 .btn-dark{
   background:#111;
   color:#fff;
+}
+
+.btn-dark:hover{
+  transform:translateY(-2px);
+  background:#292929;
 }
 
 .btn-pink{
@@ -195,58 +211,64 @@ a{
   color:#702f3d;
 }
 
+.btn-pink:hover{
+  transform:translateY(-2px);
+  background:#e7a5ad;
+}
+
+
 /* =========================
-   CREATOR FLOATING CARDS
+   CREATOR NETWORK
 ========================= */
 
 .creator-stage{
-  position:relative;
-  max-width:1050px;
-  margin:60px auto 0;
-  min-height:330px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  max-width:850px;
+  margin:55px auto 0;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
 }
 
 .creator-card{
-  position:absolute;
-  width:260px;
-  min-height:95px;
+  width:100%;
+  min-height:105px;
   background:rgba(255,255,255,.96);
-  border:1px solid #eeeeee;
-  border-radius:20px;
-  padding:15px;
+  border:1px solid #eee;
+  border-radius:22px;
+  padding:17px;
   display:flex;
   align-items:center;
-  gap:12px;
-  box-shadow:0 18px 45px rgba(0,0,0,.09);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-  animation:floating 4s ease-in-out infinite;
+  gap:14px;
+  box-shadow:0 15px 40px rgba(0,0,0,.07);
+  transition:.3s ease;
+}
+
+.creator-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 20px 45px rgba(0,0,0,.11);
 }
 
 .creator-avatar{
   width:58px;
   height:58px;
   border-radius:50%;
-  object-fit:cover;
+  background:#dff2fa;
   border:2px solid #efb5bb;
-  flex-shrink:0;
-  display:block;
-}
-
-.creator-avatar-placeholder{
-  width:58px;
-  height:58px;
-  border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
-  border:2px solid #efb5bb;
+  overflow:hidden;
   flex-shrink:0;
   font-weight:800;
   color:#555;
+  font-size:17px;
+}
+
+.creator-avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
 
 .creator-info{
@@ -255,9 +277,9 @@ a{
 }
 
 .creator-name{
-  font-size:15px;
+  font-size:16px;
   font-weight:800;
-  margin-bottom:3px;
+  margin-bottom:4px;
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
@@ -266,7 +288,7 @@ a{
 .creator-meta{
   color:#777;
   font-size:13px;
-  margin-bottom:7px;
+  margin-bottom:8px;
   line-height:1.35;
 }
 
@@ -275,44 +297,11 @@ a{
   border:1px solid #efb5bb;
   color:#b85c70;
   border-radius:20px;
-  padding:3px 9px;
+  padding:4px 10px;
   font-size:10px;
   font-weight:700;
 }
 
-.card-1{
-  left:20px;
-  top:20px;
-  animation-delay:0s;
-}
-
-.card-2{
-  right:20px;
-  top:20px;
-  animation-delay:1s;
-}
-
-.card-3{
-  left:110px;
-  bottom:0;
-  animation-delay:2s;
-}
-
-.card-4{
-  right:110px;
-  bottom:0;
-  animation-delay:3s;
-}
-
-@keyframes floating{
-  0%,100%{
-    transform:translateY(0);
-  }
-
-  50%{
-    transform:translateY(-10px);
-  }
-}
 
 /* =========================
    STATS
@@ -320,7 +309,7 @@ a{
 
 .stats{
   max-width:850px;
-  margin:35px auto 0;
+  margin:38px auto 0;
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:20px;
@@ -340,6 +329,7 @@ a{
   color:#888;
   font-size:13px;
 }
+
 
 /* =========================
    GENERAL SECTIONS
@@ -386,6 +376,7 @@ section{
   background:#f8f8f8;
 }
 
+
 /* =========================
    NICHES
 ========================= */
@@ -420,6 +411,7 @@ section{
   font-weight:750;
   font-size:14px;
 }
+
 
 /* =========================
    PROCESS
@@ -487,6 +479,7 @@ section{
   margin-top:3px;
 }
 
+
 /* =========================
    SERVICES
 ========================= */
@@ -527,6 +520,7 @@ section{
   line-height:1.6;
 }
 
+
 /* =========================
    TRUST
 ========================= */
@@ -562,6 +556,7 @@ section{
   line-height:1.5;
 }
 
+
 /* =========================
    PAYMENT
 ========================= */
@@ -593,6 +588,51 @@ section{
   font-size:14px;
   line-height:1.6;
 }
+
+.payment-star{
+  color:#c0667a;
+}
+
+
+/* =========================
+   SAFETY
+========================= */
+
+.safety-box{
+  max-width:850px;
+  margin:auto;
+  padding:40px;
+  background:linear-gradient(135deg,#fff6f7,#fff);
+  border:1px solid #efb5bb;
+  border-radius:25px;
+  text-align:center;
+}
+
+.safety-icon{
+  font-size:38px;
+  margin-bottom:12px;
+}
+
+.safety-box h2{
+  font-size:28px;
+  margin-bottom:20px;
+}
+
+.safety-list{
+  max-width:600px;
+  margin:auto;
+  text-align:left;
+}
+
+.safety-item{
+  display:flex;
+  gap:10px;
+  margin-bottom:12px;
+  color:#444;
+  font-size:14px;
+  line-height:1.6;
+}
+
 
 /* =========================
    FAQ
@@ -638,6 +678,7 @@ section{
   font-size:18px;
 }
 
+
 /* =========================
    CONTACT
 ========================= */
@@ -672,6 +713,13 @@ section{
   color:#702f3d;
 }
 
+.whatsapp{
+  background:#edf9f0;
+  border:1px solid #b8e4c2;
+  color:#16843c;
+}
+
+
 /* =========================
    FOOTER
 ========================= */
@@ -703,12 +751,41 @@ footer{
   font-size:14px;
 }
 
+.footer-links{
+  display:flex;
+  gap:40px;
+}
+
+.footer-column h4{
+  font-size:12px;
+  color:#666;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin-bottom:15px;
+}
+
+.footer-column a{
+  display:block;
+  color:#888;
+  font-size:13px;
+  margin-bottom:10px;
+}
+
+.footer-column a:hover{
+  color:#fff;
+}
+
 .footer-bottom{
   border-top:1px solid #222;
   padding-top:22px;
   color:#555;
   font-size:12px;
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  flex-wrap:wrap;
 }
+
 
 /* =========================
    MOBILE
@@ -720,6 +797,11 @@ footer{
     padding:12px 18px;
   }
 
+  .logo-box{
+    width:48px;
+    height:48px;
+  }
+
   .logo-name{
     font-size:16px;
   }
@@ -727,7 +809,7 @@ footer{
   .nav-links{
     display:none;
     position:absolute;
-    top:67px;
+    top:73px;
     left:12px;
     right:12px;
     background:#fff;
@@ -752,7 +834,7 @@ footer{
   }
 
   .hero-inner{
-    padding:55px 18px 40px;
+    padding:55px 18px 45px;
   }
 
   .hero h1{
@@ -772,51 +854,20 @@ footer{
     width:100%;
   }
 
-  /* MOBILE CREATOR CARDS */
-
   .creator-stage{
-    min-height:500px;
-    margin-top:35px;
-    display:block;
+    grid-template-columns:1fr;
+    gap:18px;
+    margin-top:38px;
   }
 
   .creator-card{
-    position:absolute;
-    width:calc(100% - 30px);
-    max-width:330px;
-    min-height:90px;
-  }
-
-  .card-1{
-    left:15px;
-    right:auto;
-    top:0;
-  }
-
-  .card-2{
-    right:15px;
-    left:auto;
-    top:125px;
-  }
-
-  .card-3{
-    left:15px;
-    right:auto;
-    top:250px;
-    bottom:auto;
-  }
-
-  .card-4{
-    right:15px;
-    left:auto;
-    top:375px;
-    bottom:auto;
+    min-height:92px;
   }
 
   .stats{
     grid-template-columns:1fr;
     gap:0;
-    margin-top:10px;
+    margin-top:20px;
   }
 
   .stat{
@@ -851,28 +902,35 @@ footer{
   .payment-card{
     padding:25px;
   }
+
+  .safety-box{
+    padding:28px 20px;
+  }
+
+  .footer-links{
+    width:100%;
+    gap:35px;
+  }
 }
+
 
 @media(max-width:430px){
 
   .creator-card{
-    max-width:310px;
+    padding:14px;
   }
 
-  .card-1{
-    left:5px;
+  .creator-avatar{
+    width:55px;
+    height:55px;
   }
 
-  .card-2{
-    right:5px;
+  .creator-name{
+    font-size:15px;
   }
 
-  .card-3{
-    left:5px;
-  }
-
-  .card-4{
-    right:5px;
+  .creator-meta{
+    font-size:12px;
   }
 
   .trust-grid{
@@ -886,11 +944,18 @@ footer{
   .niche-card{
     padding:22px 10px;
   }
+
+  .footer-bottom{
+    flex-direction:column;
+  }
 }
+
 </style>
 </head>
 
+
 <body>
+
 
 <!-- =========================
      NAVBAR
@@ -898,39 +963,70 @@ footer{
 
 <header class="navbar">
 
-<div class="nav-inner">
+  <div class="nav-inner">
 
-<a href="#home" class="logo">
+    <a href="#home" class="logo">
 
-<div class="logo-box">
-V15
-</div>
+      <div class="logo-box">
 
-<span class="logo-name">
-The V15 Company
-</span>
+        <img
+          src="images/logo-v15.png"
+          alt="The V15 Company Logo"
+          onerror="this.style.display='none';this.parentElement.innerHTML='<strong>V15</strong>';"
+        >
 
-</a>
+      </div>
 
-<button class="menu-btn" onclick="toggleMenu()">
-☰
-</button>
+      <span class="logo-name">
+        The V15 Company
+      </span>
 
-<nav class="nav-links" id="navLinks">
+    </a>
 
-<a href="#home">Home</a>
-<a href="#for-brands">For Brands</a>
-<a href="#for-creators">For Creators</a>
-<a href="#services">Services</a>
-<a href="#payment-terms">Payment Terms</a>
-<a href="#faqs">FAQs</a>
-<a href="#contact">Contact</a>
 
-</nav>
+    <button
+      class="menu-btn"
+      onclick="toggleMenu()"
+      aria-label="Open Menu"
+    >
+      ☰
+    </button>
 
-</div>
+
+    <nav class="nav-links" id="navLinks">
+
+      <a href="#home">Home</a>
+
+      <a href="#for-brands">
+        For Brands
+      </a>
+
+      <a href="#for-creators">
+        For Creators
+      </a>
+
+      <a href="#services">
+        Services
+      </a>
+
+      <a href="#payment-terms">
+        Payment Terms
+      </a>
+
+      <a href="#faqs">
+        FAQs
+      </a>
+
+      <a href="#contact">
+        Contact
+      </a>
+
+    </nav>
+
+  </div>
 
 </header>
+
 
 
 <!-- =========================
@@ -939,232 +1035,246 @@ The V15 Company
 
 <section class="hero" id="home">
 
-<div class="hero-inner">
+  <div class="hero-inner">
 
-<div class="hero-badge">
-✦ Influencer Marketing Agency
-</div>
+    <div class="hero-badge">
+      ✦ Influencer Marketing Agency
+    </div>
 
-<h1>
 
-Connecting Brands With
-<span class="hero-highlight">
-Creators
-</span>
-That Actually Convert.
+    <h1>
 
-</h1>
+      Connecting Brands With
 
-<p class="hero-description">
+      <span class="hero-highlight">
+        Creators
+      </span>
 
-The V15 Company helps brands discover relevant creators
-and helps creators discover meaningful opportunities.
+      That Actually Convert.
 
-</p>
+    </h1>
 
-<div class="hero-buttons">
 
-<a
-href="#for-brands"
-class="btn btn-dark">
+    <p class="hero-description">
 
-ARE YOU A BRAND? →
+      The V15 Company helps brands discover relevant
+      creators and helps creators discover meaningful
+      opportunities.
 
-</a>
+    </p>
 
-<a
-href="https://openinapp.link/zic87"
-target="_blank"
-rel="noopener"
-class="btn btn-pink">
 
-JOIN AS CREATOR →
+    <div class="hero-buttons">
 
-</a>
+      <a
+        href="#for-brands"
+        class="btn btn-dark"
+      >
+        ARE YOU A BRAND? →
+      </a>
 
-</div>
 
+      <a
+        href="https://openinapp.link/zic87"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-pink"
+      >
+        JOIN AS CREATOR →
+      </a>
 
-<!-- =========================
-     CREATOR CARDS
-========================= -->
+    </div>
 
-<div class="creator-stage">
 
 
-<!-- NANDINI -->
+    <!-- =========================
+         CREATOR CARDS
+    ========================= -->
 
-<a
-href="https://www.instagram.com/ca.nandini_jaiswani/"
-target="_blank"
-rel="noopener"
-class="creator-card card-1"
->
+    <div class="creator-stage">
 
-<img
-src="images/nandini.jpg"
-alt="Nandini Jaiswani"
-class="creator-avatar"
->
 
-<div class="creator-info">
+      <!-- NANDINI -->
 
-<div class="creator-name">
-@ca.nandini_jaiswani
-</div>
+      <a
+        class="creator-card"
+        href="https://www.instagram.com/ca.nandini_jaiswani/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
 
-<div class="creator-meta">
-149K · Lifestyle / Fashion / Travel
-</div>
+        <div class="creator-avatar">
 
-<span class="creator-tag">
-✦ Creator
-</span>
+          <img
+            src="images/nandini.jpg"
+            alt="@ca.nandini_jaiswani"
+            onerror="this.style.display='none';this.parentElement.innerHTML='NJ';"
+          >
 
-</div>
+        </div>
 
-</a>
 
+        <div class="creator-info">
 
-<!-- TECHVINCH -->
+          <div class="creator-name">
+            @ca.nandini_jaiswani
+          </div>
 
-<div class="creator-card card-2">
+          <div class="creator-meta">
+            149K · Lifestyle / Fashion / Travel
+          </div>
 
-<div
-class="creator-avatar-placeholder"
-style="background:#dff2fa;"
->
-TV
-</div>
+          <span class="creator-tag">
+            ✦ Creator
+          </span>
 
-<div class="creator-info">
+        </div>
 
-<div class="creator-name">
-@techvinch.in
-</div>
+      </a>
 
-<div class="creator-meta">
-142K · Tech
-</div>
 
-<span class="creator-tag">
-✦ Creator
-</span>
 
-</div>
+      <!-- TECHVINCH -->
 
-</div>
+      <div class="creator-card">
 
+        <div class="creator-avatar">
+          TV
+        </div>
 
-<!-- FOOD -->
+        <div class="creator-info">
 
-<div class="creator-card card-3">
+          <div class="creator-name">
+            @techvinch.in
+          </div>
 
-<div
-class="creator-avatar-placeholder"
-style="background:#fff0d9;"
->
-FC
-</div>
+          <div class="creator-meta">
+            142K · Tech
+          </div>
 
-<div class="creator-info">
+          <span class="creator-tag">
+            ✦ Creator
+          </span>
 
-<div class="creator-name">
-@foodwithachatori
-</div>
+        </div>
 
-<div class="creator-meta">
-178K · Food
-</div>
+      </div>
 
-<span class="creator-tag">
-✦ Creator
-</span>
 
-</div>
 
-</div>
+      <!-- FOOD -->
 
+      <div class="creator-card">
 
-<!-- GAMING -->
+        <div
+          class="creator-avatar"
+          style="background:#fff0d0;"
+        >
+          FC
+        </div>
 
-<div class="creator-card card-4">
+        <div class="creator-info">
 
-<div
-class="creator-avatar-placeholder"
-style="background:#e8e2ff;"
->
-VG
-</div>
+          <div class="creator-name">
+            @foodwithachatori
+          </div>
 
-<div class="creator-info">
+          <div class="creator-meta">
+            178K · Food
+          </div>
 
-<div class="creator-name">
-@gamewith.veer
-</div>
+          <span class="creator-tag">
+            ✦ Creator
+          </span>
 
-<div class="creator-meta">
-445K · Gaming
-</div>
+        </div>
 
-<span class="creator-tag">
-✦ Creator
-</span>
+      </div>
 
-</div>
 
-</div>
 
-</div>
+      <!-- GAMING -->
 
+      <div class="creator-card">
 
-<!-- STATS -->
+        <div
+          class="creator-avatar"
+          style="background:#eee5ff;"
+        >
+          VG
+        </div>
 
-<div class="stats">
+        <div class="creator-info">
 
-<div class="stat">
+          <div class="creator-name">
+            @gamewith.veer
+          </div>
 
-<div class="stat-number">
-Growing
-</div>
+          <div class="creator-meta">
+            445K · Gaming
+          </div>
 
-<div class="stat-label">
-Creator Network
-</div>
+          <span class="creator-tag">
+            ✦ Creator
+          </span>
 
-</div>
+        </div>
 
+      </div>
 
-<div class="stat">
 
-<div class="stat-number">
-Multiple
-</div>
+    </div>
 
-<div class="stat-label">
-Niches Covered
-</div>
 
-</div>
 
+    <!-- STATS -->
 
-<div class="stat">
+    <div class="stats">
 
-<div class="stat-number">
-Open For
-</div>
+      <div class="stat">
 
-<div class="stat-label">
-Brand Collaborations
-</div>
+        <div class="stat-number">
+          Growing
+        </div>
 
-</div>
+        <div class="stat-label">
+          Creator Network
+        </div>
 
-</div>
+      </div>
 
-</div>
+
+      <div class="stat">
+
+        <div class="stat-number">
+          Multiple
+        </div>
+
+        <div class="stat-label">
+          Niches Covered
+        </div>
+
+      </div>
+
+
+      <div class="stat">
+
+        <div class="stat-number">
+          Open For
+        </div>
+
+        <div class="stat-label">
+          Brand Collaborations
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -1172,265 +1282,258 @@ Brand Collaborations
 ========================= -->
 
 <section
-class="grey"
-id="for-creators">
+  class="grey"
+  id="for-creators"
+>
 
-<div class="section-inner">
+  <div class="section-inner">
 
-<div class="section-header">
+    <div class="section-header">
 
-<div class="eyebrow">
-Growing Creator Network
-</div>
+      <div class="eyebrow">
+        Growing Creator Network
+      </div>
 
-<h2 class="section-title">
-Creators Across Multiple Niches
-</h2>
+      <h2 class="section-title">
+        Creators Across Multiple Niches
+      </h2>
 
-<p class="section-subtitle">
+      <p class="section-subtitle">
+        A growing network of creators across different
+        categories, audiences and content styles.
+      </p>
 
-A growing network of creators across different categories,
-audiences and content styles.
-
-</p>
-
-</div>
+    </div>
 
 
-<div class="niche-grid">
+    <div class="niche-grid">
 
-<div class="niche-card">
-<div class="niche-icon">💄</div>
-<div class="niche-name">Beauty</div>
-</div>
+      <div class="niche-card">
+        <div class="niche-icon">💄</div>
+        <div class="niche-name">Beauty</div>
+      </div>
 
-<div class="niche-card">
-<div class="niche-icon">✨</div>
-<div class="niche-name">Lifestyle</div>
-</div>
+      <div class="niche-card">
+        <div class="niche-icon">✨</div>
+        <div class="niche-name">Lifestyle</div>
+      </div>
 
-<div class="niche-card">
-<div class="niche-icon">💻</div>
-<div class="niche-name">Tech</div>
-</div>
+      <div class="niche-card">
+        <div class="niche-icon">💻</div>
+        <div class="niche-name">Tech</div>
+      </div>
 
-<div class="niche-card">
-<div class="niche-icon">📸</div>
-<div class="niche-name">UGC</div>
-</div>
+      <div class="niche-card">
+        <div class="niche-icon">📸</div>
+        <div class="niche-name">UGC</div>
+      </div>
 
-<div class="niche-card">
-<div class="niche-icon">📚</div>
-<div class="niche-name">Education</div>
-</div>
+      <div class="niche-card">
+        <div class="niche-icon">📚</div>
+        <div class="niche-name">Education</div>
+      </div>
 
-<div class="niche-card">
-<div class="niche-icon">💰</div>
-<div class="niche-name">Finance</div>
-</div>
+      <div class="niche-card">
+        <div class="niche-icon">💰</div>
+        <div class="niche-name">Finance</div>
+      </div>
 
-<div class="niche-card">
-<div class="niche-icon">🎮</div>
-<div class="niche-name">Gaming</div>
-</div>
+      <div class="niche-card">
+        <div class="niche-icon">🎮</div>
+        <div class="niche-name">Gaming</div>
+      </div>
 
-<div class="niche-card">
-<div class="niche-icon">✈️</div>
-<div class="niche-name">Travel</div>
-</div>
+      <div class="niche-card">
+        <div class="niche-icon">✈️</div>
+        <div class="niche-name">Travel</div>
+      </div>
 
-<div class="niche-card">
-<div class="niche-icon">🍜</div>
-<div class="niche-name">Food</div>
-</div>
+      <div class="niche-card">
+        <div class="niche-icon">🍜</div>
+        <div class="niche-name">Food</div>
+      </div>
 
-<div class="niche-card">
-<div class="niche-icon">👗</div>
-<div class="niche-name">Fashion</div>
-</div>
+      <div class="niche-card">
+        <div class="niche-icon">👗</div>
+        <div class="niche-name">Fashion</div>
+      </div>
 
-</div>
+    </div>
 
-</div>
+  </div>
 
 </section>
 
 
+
 <!-- =========================
-     HOW IT WORKS
+     FOR BRANDS
 ========================= -->
 
 <section id="for-brands">
 
-<div class="section-inner">
+  <div class="section-inner">
 
-<div class="section-header">
+    <div class="section-header">
 
-<div class="eyebrow">
-Simple Process
-</div>
+      <div class="eyebrow">
+        For Brands
+      </div>
 
-<h2 class="section-title">
-How It Works
-</h2>
+      <h2 class="section-title">
+        From Brief To Creator
+      </h2>
 
-<p class="section-subtitle">
-A simple process designed to connect the right brands
-with the right creators.
-</p>
+      <p class="section-subtitle">
+        We help brands discover relevant creators
+        for campaigns that are authentic and effective.
+      </p>
 
-</div>
-
-
-<div class="process-grid">
+    </div>
 
 
-<div class="process-card">
-
-<div class="process-label brand-label">
-For Brands
-</div>
-
-<div class="process-step">
-
-<div class="process-icon">
-🏢
-</div>
-
-<div>
-
-<div class="step-small">
-STEP 1
-</div>
-
-<div class="step-title">
-Share Your Campaign
-</div>
-
-</div>
-
-</div>
+    <div class="process-grid">
 
 
-<div class="process-step">
+      <div class="process-card">
 
-<div class="process-icon">
-🎯
-</div>
-
-<div>
-
-<div class="step-small">
-STEP 2
-</div>
-
-<div class="step-title">
-Get Matched With Creators
-</div>
-
-</div>
-
-</div>
+        <span class="process-label brand-label">
+          FOR BRANDS
+        </span>
 
 
-<div class="process-step">
+        <div class="process-step">
 
-<div class="process-icon">
-🚀
-</div>
+          <div class="process-icon">
+            01
+          </div>
 
-<div>
+          <div>
+            <div class="step-small">
+              STEP 01
+            </div>
 
-<div class="step-small">
-STEP 3
-</div>
+            <div class="step-title">
+              Share Campaign Brief
+            </div>
+          </div>
 
-<div class="step-title">
-Launch Campaign
-</div>
-
-</div>
-
-</div>
-
-</div>
+        </div>
 
 
-<div class="process-card">
+        <div class="process-step">
 
-<div class="process-label creator-label">
-For Creators
-</div>
+          <div class="process-icon">
+            02
+          </div>
 
-<div class="process-step">
+          <div>
+            <div class="step-small">
+              STEP 02
+            </div>
 
-<div class="process-icon">
-👤
-</div>
+            <div class="step-title">
+              We Shortlist Creators
+            </div>
+          </div>
 
-<div>
-
-<div class="step-small">
-STEP 1
-</div>
-
-<div class="step-title">
-Join Creator Network
-</div>
-
-</div>
-
-</div>
+        </div>
 
 
-<div class="process-step">
+        <div class="process-step">
 
-<div class="process-icon">
-⭐
-</div>
+          <div class="process-icon">
+            03
+          </div>
 
-<div>
+          <div>
+            <div class="step-small">
+              STEP 03
+            </div>
 
-<div class="step-small">
-STEP 2
-</div>
+            <div class="step-title">
+              Campaign Execution
+            </div>
+          </div>
 
-<div class="step-title">
-Get Shortlisted
-</div>
+        </div>
 
-</div>
-
-</div>
+      </div>
 
 
-<div class="process-step">
 
-<div class="process-icon">
-💌
-</div>
+      <div class="process-card">
 
-<div>
+        <span class="process-label creator-label">
+          FOR CREATORS
+        </span>
 
-<div class="step-small">
-STEP 3
-</div>
 
-<div class="step-title">
-Discover Opportunities
-</div>
+        <div class="process-step">
 
-</div>
+          <div class="process-icon">
+            01
+          </div>
 
-</div>
+          <div>
+            <div class="step-small">
+              STEP 01
+            </div>
 
-</div>
+            <div class="step-title">
+              Join Our Network
+            </div>
+          </div>
 
-</div>
+        </div>
 
-</div>
+
+        <div class="process-step">
+
+          <div class="process-icon">
+            02
+          </div>
+
+          <div>
+            <div class="step-small">
+              STEP 02
+            </div>
+
+            <div class="step-title">
+              Get Shortlisted
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="process-step">
+
+          <div class="process-icon">
+            03
+          </div>
+
+          <div>
+            <div class="step-small">
+              STEP 03
+            </div>
+
+            <div class="step-title">
+              Discover Opportunities
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -1438,82 +1541,88 @@ Discover Opportunities
 ========================= -->
 
 <section
-id="services"
-class="grey">
+  class="grey"
+  id="services"
+>
 
-<div class="section-inner">
+  <div class="section-inner">
 
-<div class="section-header">
+    <div class="section-header">
 
-<div class="eyebrow">
-What We Do
-</div>
+      <div class="eyebrow">
+        What We Do
+      </div>
 
-<h2 class="section-title">
-Our Services
-</h2>
+      <h2 class="section-title">
+        Influencer Marketing Services
+      </h2>
 
-</div>
-
-
-<div class="services-grid">
+    </div>
 
 
-<div class="service-card">
-
-<div class="service-icon">
-🎯
-</div>
-
-<div class="service-title">
-Influencer Marketing
-</div>
-
-<div class="service-description">
-Connect your brand with relevant creators and build authentic campaigns.
-</div>
-
-</div>
+    <div class="services-grid">
 
 
-<div class="service-card">
+      <div class="service-card">
 
-<div class="service-icon">
-📱
-</div>
+        <div class="service-icon">
+          🎯
+        </div>
 
-<div class="service-title">
-Creator Campaigns
-</div>
+        <div class="service-title">
+          Creator Discovery
+        </div>
 
-<div class="service-description">
-End-to-end creator campaigns designed around your campaign goals.
-</div>
+        <div class="service-description">
+          Find relevant creators based on niche,
+          audience, content style and campaign goals.
+        </div>
 
-</div>
+      </div>
 
 
-<div class="service-card">
+      <div class="service-card">
 
-<div class="service-icon">
-🤝
-</div>
+        <div class="service-icon">
+          📢
+        </div>
 
-<div class="service-title">
-Creator Network
-</div>
+        <div class="service-title">
+          Campaign Management
+        </div>
 
-<div class="service-description">
-Access a growing network of creators across multiple niches.
-</div>
+        <div class="service-description">
+          From creator shortlisting to campaign
+          coordination and execution.
+        </div>
 
-</div>
+      </div>
 
-</div>
 
-</div>
+      <div class="service-card">
+
+        <div class="service-icon">
+          📊
+        </div>
+
+        <div class="service-title">
+          Performance Focus
+        </div>
+
+        <div class="service-description">
+          We focus on finding creators who can
+          connect with the right audience.
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -1522,113 +1631,115 @@ Access a growing network of creators across multiple niches.
 
 <section>
 
-<div class="section-inner">
+  <div class="section-inner">
 
-<div class="section-header">
+    <div class="section-header">
 
-<div class="eyebrow">
-Built Around Trust
-</div>
+      <div class="eyebrow">
+        Why The V15 Company
+      </div>
 
-<h2 class="section-title">
-Simple. Transparent. Creator Friendly.
-</h2>
+      <h2 class="section-title">
+        Built Around Creators & Brands
+      </h2>
 
-</div>
-
-
-<div class="trust-grid">
+    </div>
 
 
-<div class="trust-card">
-
-<div class="trust-icon">
-🔎
-</div>
-
-<div class="trust-title">
-Relevant Creators
-</div>
-
-<div class="trust-text">
-Creators selected according to campaign requirements.
-</div>
-
-</div>
+    <div class="trust-grid">
 
 
-<div class="trust-card">
+      <div class="trust-card">
 
-<div class="trust-icon">
-🤝
-</div>
+        <div class="trust-icon">
+          🎯
+        </div>
 
-<div class="trust-title">
-Transparent
-</div>
+        <div class="trust-title">
+          Relevant
+        </div>
 
-<div class="trust-text">
-Clear communication throughout the campaign.
-</div>
+        <div class="trust-text">
+          Creators matched with campaign requirements.
+        </div>
 
-</div>
-
-
-<div class="trust-card">
-
-<div class="trust-icon">
-📈
-</div>
-
-<div class="trust-title">
-Performance
-</div>
-
-<div class="trust-text">
-Campaigns focused on meaningful results.
-</div>
-
-</div>
+      </div>
 
 
-<div class="trust-card">
+      <div class="trust-card">
 
-<div class="trust-icon">
-💬
-</div>
+        <div class="trust-icon">
+          🤝
+        </div>
 
-<div class="trust-title">
-Communication
-</div>
+        <div class="trust-title">
+          Transparent
+        </div>
 
-<div class="trust-text">
-Smooth communication between brands and creators.
-</div>
+        <div class="trust-text">
+          Clear communication between brands and creators.
+        </div>
 
-</div>
+      </div>
 
 
-<div class="trust-card">
+      <div class="trust-card">
 
-<div class="trust-icon">
-🛡️
-</div>
+        <div class="trust-icon">
+          ⚡
+        </div>
 
-<div class="trust-title">
-Safety
-</div>
+        <div class="trust-title">
+          Efficient
+        </div>
 
-<div class="trust-text">
-Creator and brand information handled responsibly.
-</div>
+        <div class="trust-text">
+          Streamlined creator discovery and coordination.
+        </div>
 
-</div>
+      </div>
 
-</div>
 
-</div>
+      <div class="trust-card">
+
+        <div class="trust-icon">
+          🌱
+        </div>
+
+        <div class="trust-title">
+          Growing
+        </div>
+
+        <div class="trust-text">
+          A continuously growing creator network.
+        </div>
+
+      </div>
+
+
+      <div class="trust-card">
+
+        <div class="trust-icon">
+          💡
+        </div>
+
+        <div class="trust-title">
+          Creator First
+        </div>
+
+        <div class="trust-text">
+          Opportunities built around relevant creators.
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -1636,188 +1747,314 @@ Creator and brand information handled responsibly.
 ========================= -->
 
 <section
-id="payment-terms"
-class="grey">
+  class="grey"
+  id="payment-terms"
+>
 
-<div class="section-inner">
+  <div class="section-inner">
 
-<div class="section-header">
+    <div class="section-header">
 
-<div class="eyebrow">
-Payment Terms
-</div>
+      <div class="eyebrow">
+        Payment Terms
+      </div>
 
-<h2 class="section-title">
-Clear Payment Structure
-</h2>
+      <h2 class="section-title">
+        Clear & Transparent Terms
+      </h2>
 
-</div>
-
-
-<div class="payment-grid">
+    </div>
 
 
-<div class="payment-card">
-
-<div class="payment-title">
-For Creators
-</div>
-
-<div class="payment-item">
-✓ Creator payment terms are discussed before confirmation.
-</div>
-
-<div class="payment-item">
-✓ Campaign details and deliverables are shared clearly.
-</div>
-
-<div class="payment-item">
-✓ Payment process is communicated before campaign execution.
-</div>
-
-</div>
+    <div class="payment-grid">
 
 
-<div class="payment-card">
+      <div class="payment-card">
 
-<div class="payment-title">
-For Brands
-</div>
+        <div class="payment-title">
+          Creator Terms
+        </div>
 
-<div class="payment-item">
-✓ Campaign budget is discussed before execution.
-</div>
 
-<div class="payment-item">
-✓ Creator requirements and deliverables are clearly defined.
-</div>
+        <div class="payment-item">
+          <span class="payment-star">✦</span>
+          <span>
+            10% agency fee from the final creator amount.
+          </span>
+        </div>
 
-<div class="payment-item">
-✓ Transparent campaign coordination.
-</div>
 
-</div>
+        <div class="payment-item">
+          <span class="payment-star">✦</span>
+          <span>
+            Creator payments are targeted within 15 days.
+          </span>
+        </div>
 
-</div>
 
-</div>
+        <div class="payment-item">
+          <span class="payment-star">✦</span>
+          <span>
+            Barter campaign charges may vary separately.
+          </span>
+        </div>
+
+      </div>
+
+
+
+      <div class="payment-card">
+
+        <div class="payment-title">
+          Brand Terms
+        </div>
+
+
+        <div class="payment-item">
+          <span class="payment-star">✦</span>
+          <span>
+            10% agency fee from the final campaign amount.
+          </span>
+        </div>
+
+
+        <div class="payment-item">
+          <span class="payment-star">✦</span>
+          <span>
+            Brand payment cycle targeted within 5 days.
+          </span>
+        </div>
+
+
+        <div class="payment-item">
+          <span class="payment-star">✦</span>
+          <span>
+            Advance payment may be required for campaign security.
+          </span>
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
 
 </section>
+
+
+
+<!-- =========================
+     SAFETY
+========================= -->
+
+<section>
+
+  <div class="safety-box">
+
+    <div class="safety-icon">
+      🛡️
+    </div>
+
+    <h2>
+      Creator Safety Matters
+    </h2>
+
+
+    <div class="safety-list">
+
+
+      <div class="safety-item">
+        <span>✓</span>
+        <span>
+          Never share OTPs, UPI PINs or banking passwords.
+        </span>
+      </div>
+
+
+      <div class="safety-item">
+        <span>✓</span>
+        <span>
+          Always verify campaign details before accepting an offer.
+        </span>
+      </div>
+
+
+      <div class="safety-item">
+        <span>✓</span>
+        <span>
+          Be careful with suspicious links and unknown payment requests.
+        </span>
+      </div>
+
+
+      <div class="safety-item">
+        <span>✓</span>
+        <span>
+          When in doubt, contact the agency through an official channel.
+        </span>
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
 
 
 <!-- =========================
      FAQ
 ========================= -->
 
-<section id="faqs">
+<section
+  class="grey"
+  id="faqs"
+>
 
-<div class="section-inner">
+  <div class="section-inner">
 
-<div class="section-header">
+    <div class="section-header">
 
-<div class="eyebrow">
-FAQs
-</div>
+      <div class="eyebrow">
+        FAQs
+      </div>
 
-<h2 class="section-title">
-Frequently Asked Questions
-</h2>
+      <h2 class="section-title">
+        Frequently Asked Questions
+      </h2>
 
-</div>
-
-
-<div class="faq">
-
-
-<div class="faq-item">
-
-<div
-class="faq-question"
-onclick="toggleFAQ(this)">
-
-How can I join The V15 Company as a creator?
-
-<span class="faq-plus">+</span>
-
-</div>
-
-<div class="faq-answer">
-
-You can join our creator network by filling out the creator registration form.
-
-</div>
-
-</div>
+    </div>
 
 
-<div class="faq-item">
-
-<div
-class="faq-question"
-onclick="toggleFAQ(this)">
-
-Do creators have to pay to join?
-
-<span class="faq-plus">+</span>
-
-</div>
-
-<div class="faq-answer">
-
-Joining the creator network does not mean that every creator will automatically receive campaigns. Campaign opportunities depend on campaign requirements and creator suitability.
-
-</div>
-
-</div>
+    <div class="faq">
 
 
-<div class="faq-item">
+      <div
+        class="faq-item"
+        onclick="toggleFAQ(this)"
+      >
 
-<div
-class="faq-question"
-onclick="toggleFAQ(this)">
+        <div class="faq-question">
 
-How can brands work with The V15 Company?
+          <span>
+            How can creators join The V15 Company?
+          </span>
 
-<span class="faq-plus">+</span>
+          <span class="faq-plus">
+            +
+          </span>
 
-</div>
-
-<div class="faq-answer">
-
-Brands can contact us with their campaign requirements, budget, niche and deliverables. We can then shortlist relevant creators.
-
-</div>
-
-</div>
+        </div>
 
 
-<div class="faq-item">
+        <div class="faq-answer">
 
-<div
-class="faq-question"
-onclick="toggleFAQ(this)">
+          Creators can join our network by submitting
+          their details through our creator registration form.
 
-Which creator niches do you cover?
+        </div>
 
-<span class="faq-plus">+</span>
-
-</div>
-
-<div class="faq-answer">
-
-We work with creators across lifestyle, fashion, travel, beauty, technology, food, gaming, education, finance and other categories.
-
-</div>
-
-</div>
+      </div>
 
 
-</div>
 
-</div>
+      <div
+        class="faq-item"
+        onclick="toggleFAQ(this)"
+      >
+
+        <div class="faq-question">
+
+          <span>
+            Do creators have to pay to join?
+          </span>
+
+          <span class="faq-plus">
+            +
+          </span>
+
+        </div>
+
+
+        <div class="faq-answer">
+
+          Joining the creator network is for
+          discovering relevant opportunities.
+          Campaign-specific terms may vary.
+
+        </div>
+
+      </div>
+
+
+
+      <div
+        class="faq-item"
+        onclick="toggleFAQ(this)"
+      >
+
+        <div class="faq-question">
+
+          <span>
+            How can brands work with you?
+          </span>
+
+          <span class="faq-plus">
+            +
+          </span>
+
+        </div>
+
+
+        <div class="faq-answer">
+
+          Brands can contact us with their campaign
+          requirements, target audience, niche,
+          deliverables and budget.
+
+        </div>
+
+      </div>
+
+
+
+      <div
+        class="faq-item"
+        onclick="toggleFAQ(this)"
+      >
+
+        <div class="faq-question">
+
+          <span>
+            Which niches do you cover?
+          </span>
+
+          <span class="faq-plus">
+            +
+          </span>
+
+        </div>
+
+
+        <div class="faq-answer">
+
+          Our growing network covers categories such
+          as Tech, Lifestyle, Fashion, Beauty, Travel,
+          Food, Gaming, Education, Finance and UGC.
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -1825,57 +2062,68 @@ We work with creators across lifestyle, fashion, travel, beauty, technology, foo
 ========================= -->
 
 <section
-id="contact"
-class="contact grey">
+  id="contact"
+  class="contact"
+>
 
-<div class="section-inner">
+  <div class="section-inner">
 
-<div class="eyebrow">
-Let's Work Together
-</div>
-
-<h2 class="section-title">
-Have a Campaign in Mind?
-</h2>
-
-<p class="section-subtitle">
-
-Let's connect and explore the right creator opportunities
-for your brand.
-
-</p>
+    <div class="eyebrow">
+      Let's Work Together
+    </div>
 
 
-<div class="contact-buttons">
+    <h2 class="section-title">
+      Ready To Connect?
+    </h2>
 
 
-<a
-href="https://www.instagram.com/thev15company/"
-target="_blank"
-rel="noopener"
-class="contact-btn instagram">
-
-Instagram →
-
-</a>
+    <p class="section-subtitle">
+      Whether you're a brand looking for creators
+      or a creator looking for opportunities,
+      we'd love to hear from you.
+    </p>
 
 
-<a
-href="https://openinapp.link/zic87"
-target="_blank"
-rel="noopener"
-class="contact-btn creator">
-
-Join As Creator →
-
-</a>
+    <div class="contact-buttons">
 
 
-</div>
+      <a
+        href="https://www.instagram.com/thev15company/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-btn instagram"
+      >
+        Instagram
+      </a>
 
-</div>
+
+      <a
+        href="https://openinapp.link/zic87"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-btn creator"
+      >
+        Join As Creator
+      </a>
+
+
+      <a
+        href="https://wa.me/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-btn whatsapp"
+      >
+        WhatsApp
+      </a>
+
+
+    </div>
+
+  </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -1884,65 +2132,181 @@ Join As Creator →
 
 <footer>
 
-<div class="footer-inner">
-
-<div class="footer-top">
-
-<div>
-
-<div class="logo">
-
-<div class="logo-box">
-V15
-</div>
-
-<span class="logo-name">
-The V15 Company
-</span>
-
-</div>
-
-<p class="footer-description">
-Influencer marketing agency connecting brands with relevant creators.
-</p>
-
-</div>
-
-</div>
+  <div class="footer-inner">
 
 
-<div class="footer-bottom">
+    <div class="footer-top">
 
-© 2026 The V15 Company. All rights reserved.
 
-</div>
+      <div>
 
-</div>
+        <div class="logo">
+
+          <div class="logo-box">
+
+            <img
+              src="images/logo-v15.png"
+              alt="The V15 Company Logo"
+              onerror="this.style.display='none';this.parentElement.innerHTML='<strong>V15</strong>';"
+            >
+
+          </div>
+
+          <span class="logo-name">
+            The V15 Company
+          </span>
+
+        </div>
+
+
+        <p class="footer-description">
+
+          Connecting brands with relevant creators
+          and creators with meaningful opportunities.
+
+        </p>
+
+      </div>
+
+
+
+      <div class="footer-links">
+
+
+        <div class="footer-column">
+
+          <h4>
+            Explore
+          </h4>
+
+          <a href="#home">
+            Home
+          </a>
+
+          <a href="#for-brands">
+            For Brands
+          </a>
+
+          <a href="#for-creators">
+            For Creators
+          </a>
+
+        </div>
+
+
+
+        <div class="footer-column">
+
+          <h4>
+            Company
+          </h4>
+
+          <a href="#services">
+            Services
+          </a>
+
+          <a href="#payment-terms">
+            Payment Terms
+          </a>
+
+          <a href="#faqs">
+            FAQs
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 The V15 Company. All rights reserved.
+      </span>
+
+      <span>
+        Influencer Marketing Agency
+      </span>
+
+    </div>
+
+
+  </div>
 
 </footer>
 
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
 <script>
 
 function toggleMenu(){
 
-document
-.getElementById("navLinks")
-.classList
-.toggle("show");
+  const menu = document.getElementById("navLinks");
+
+  menu.classList.toggle("show");
 
 }
 
 
-function toggleFAQ(element){
+/* Close mobile menu after clicking link */
 
-const item = element.parentElement;
+document.querySelectorAll(".nav-links a").forEach(function(link){
 
-item.classList.toggle("active");
+  link.addEventListener("click",function(){
+
+    document.getElementById("navLinks").classList.remove("show");
+
+  });
+
+});
+
+
+/* FAQ */
+
+function toggleFAQ(item){
+
+  const currentlyActive =
+    item.classList.contains("active");
+
+  document.querySelectorAll(".faq-item").forEach(function(faq){
+
+    faq.classList.remove("active");
+
+    const plus =
+      faq.querySelector(".faq-plus");
+
+    if(plus){
+      plus.textContent = "+";
+    }
+
+  });
+
+
+  if(!currentlyActive){
+
+    item.classList.add("active");
+
+    const plus =
+      item.querySelector(".faq-plus");
+
+    if(plus){
+      plus.textContent = "−";
+    }
+
+  }
 
 }
 
 </script>
+
 
 </body>
 </html>
