@@ -1679,4 +1679,2287 @@ footer strong{
 }
 
 
-/* =============
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:950px){
+
+    .network-grid{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .niche-grid{
+        grid-template-columns:
+        repeat(3,1fr);
+    }
+
+    .services-grid{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .profile-grid{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:700px){
+
+    .nav-inner{
+        padding:12px 18px;
+    }
+
+    .logo-box{
+        width:42px;
+        height:42px;
+    }
+
+    .logo-name{
+        font-size:16px;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .nav-links{
+
+        display:none;
+
+        position:absolute;
+
+        top:67px;
+
+        left:0;
+        right:0;
+
+        padding:12px 18px 18px;
+
+        background:#fff;
+
+        border-bottom:1px solid #e5edf5;
+
+        flex-direction:column;
+
+        align-items:stretch;
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .hero-inner{
+        padding:65px 20px 70px;
+    }
+
+    .hero h1{
+
+        font-size:42px;
+
+        letter-spacing:-1.8px;
+    }
+
+    .hero-description{
+        font-size:16px;
+    }
+
+    .section{
+        padding:65px 15px;
+    }
+
+    .section-title{
+        font-size:32px;
+    }
+
+    .creator-card{
+
+        min-height:112px;
+
+        padding:16px;
+
+        border-radius:21px;
+    }
+
+    .creator-avatar{
+
+        width:68px;
+        height:68px;
+
+        flex-basis:68px;
+    }
+
+    .creator-name{
+        font-size:16px;
+    }
+
+    .creator-meta{
+        font-size:12px;
+    }
+
+    .network-grid{
+        grid-template-columns:1fr;
+    }
+
+    .niche-grid{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .services-grid{
+        grid-template-columns:1fr;
+    }
+
+    .profile-grid{
+        grid-template-columns:1fr;
+    }
+
+    .professional-profile{
+
+        grid-template-columns:1fr;
+
+        padding:25px;
+
+        text-align:center;
+    }
+
+    .professional-photo{
+
+        width:130px;
+        height:130px;
+
+        margin:auto;
+    }
+
+    .professional-tags,
+    .professional-actions{
+
+        justify-content:center;
+    }
+
+    .professional-name{
+        font-size:24px;
+    }
+
+    .feedback-box{
+        padding:25px 20px;
+    }
+
+    .social-image-link{
+
+        width:180px;
+        height:105px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media(max-width:430px){
+
+    .social-images{
+        gap:14px;
+    }
+
+    .social-image-link{
+
+        width:155px;
+        height:95px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+    <div class="nav-inner">
+
+
+        <a
+            href="#home"
+            class="logo"
+        >
+
+            <div class="logo-box">
+
+                <img
+                    src="images/logo-v15.png"
+                    alt="The V15 Company"
+                >
+
+            </div>
+
+            <span class="logo-name">
+                The V15 Company
+            </span>
+
+        </a>
+
+
+        <button
+            class="menu-btn"
+            onclick="toggleMenu()"
+            aria-label="Menu"
+        >
+            ☰
+        </button>
+
+
+        <nav
+            class="nav-links"
+            id="navLinks"
+        >
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#creators">
+                Creators
+            </a>
+
+            <a href="#network">
+                Our Network
+            </a>
+
+            <a href="#niches">
+                Niches
+            </a>
+
+            <a href="#services">
+                Services
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+    <div class="hero-inner">
+
+
+        <div class="hero-badge">
+            The V15 Company
+        </div>
+
+
+        <h1>
+
+            Connecting Brands With
+
+            <span class="hero-highlight">
+                Creators & Digital Talent.
+            </span>
+
+        </h1>
+
+
+        <p class="hero-description">
+
+            We help brands build meaningful digital presence
+            through creator collaborations, social media management,
+            copywriting, graphic design and video content.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#contact"
+                class="btn btn-dark"
+            >
+                I'm a Brand →
+            </a>
+
+
+            <a
+                href="#creators"
+                class="btn btn-blue"
+            >
+                I'm a Creator →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FEATURED CREATORS
+===================================================== -->
+
+<section
+    class="section creators-section"
+    id="creators"
+>
+
+    <div class="section-inner">
+
+
+        <div class="section-header">
+
+            <div class="eyebrow">
+                Our Featured Creators
+            </div>
+
+            <h2 class="section-title">
+                Top Creators In Our Network
+            </h2>
+
+            <p class="section-subtitle">
+
+                Explore creators across multiple niches,
+                audience sizes and content styles.
+
+            </p>
+
+        </div>
+
+
+        <div
+            class="creator-carousel"
+            id="creatorCarousel"
+        >
+
+            <div
+                class="creator-track"
+                id="creatorTrack"
+            >
+
+
+                <!-- PAGE 1 -->
+
+                <div class="creator-page">
+
+
+                    <div class="creator-card">
+
+                        <div class="creator-avatar">
+
+                            <img
+                                src="images/nandini.jpg"
+                                alt="Nandini Jaiswani"
+                            >
+
+                        </div>
+
+                        <div class="creator-info">
+
+                            <div class="creator-name">
+                                Nandini Jaiswani
+                            </div>
+
+                            <div class="creator-meta">
+                                149K · Lifestyle / Fashion / Travel
+                            </div>
+
+                            <span class="creator-tag">
+                                Creator
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="creator-card">
+
+                        <div class="creator-avatar">
+
+                            <img
+                                src="images/Sonia.jpg"
+                                alt="Sonia Mishra"
+                            >
+
+                        </div>
+
+                        <div class="creator-info">
+
+                            <div class="creator-name">
+                                Sonia Mishra
+                            </div>
+
+                            <div class="creator-meta">
+                                48.5K · Fashion / Beauty / Lifestyle / Travel
+                            </div>
+
+                            <span class="creator-tag">
+                                Creator
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="creator-card">
+
+                        <div class="creator-avatar">
+
+                            <img
+                                src="images/ritika.jpg"
+                                alt="Ritika.Create"
+                            >
+
+                        </div>
+
+                        <div class="creator-info">
+
+                            <div class="creator-name">
+                                Ritika.Create
+                            </div>
+
+                            <div class="creator-meta">
+                                13.2K · Digital Brand Designer
+                            </div>
+
+                            <span class="creator-tag">
+                                Creator
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- PAGE 2 -->
+
+                <div class="creator-page">
+
+
+                    <div class="creator-card">
+
+                        <div class="creator-avatar">
+
+                            <img
+                                src="images/siblingsfinance.jpg"
+                                alt="Siblings Finance"
+                            >
+
+                        </div>
+
+                        <div class="creator-info">
+
+                            <div class="creator-name">
+                                Siblings Finance
+                            </div>
+
+                            <div class="creator-meta">
+                                116K · Finance
+                            </div>
+
+                            <span class="creator-tag">
+                                Creator
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="creator-card">
+
+                        <div class="creator-avatar">
+
+                            <img
+                                src="images/vishal.jpg"
+                                alt="Vishal Hajare"
+                            >
+
+                        </div>
+
+                        <div class="creator-info">
+
+                            <div class="creator-name">
+                                Vishal Hajare
+                            </div>
+
+                            <div class="creator-meta">
+                                78.1K · Tech
+                            </div>
+
+                            <span class="creator-tag">
+                                Creator
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="creator-card">
+
+                        <div class="creator-avatar">
+
+                            <img
+                                src="images/gullu.era.jpg"
+                                alt="Anant Mishra"
+                            >
+
+                        </div>
+
+                        <div class="creator-info">
+
+                            <div class="creator-name">
+                                Anant Mishra
+                            </div>
+
+                            <div class="creator-meta">
+                                193K · Skincare & Lifestyle
+                            </div>
+
+                            <span class="creator-tag">
+                                Creator
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- PAGE 3 -->
+
+                <div class="creator-page">
+
+
+                    <div class="creator-card">
+
+                        <div class="creator-avatar">
+
+                            <img
+                                src="images/created.by.radhika.jpg"
+                                alt="created.by.radhika"
+                            >
+
+                        </div>
+
+                        <div class="creator-info">
+
+                            <div class="creator-name">
+                                created.by.radhika
+                            </div>
+
+                            <div class="creator-meta">
+                                2,221 · Tech & AI UGC
+                            </div>
+
+                            <span class="creator-tag">
+                                Creator
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="creator-card">
+
+                        <div class="creator-avatar">
+                            TV
+                        </div>
+
+                        <div class="creator-info">
+
+                            <div class="creator-name">
+                                @techvinch.in
+                            </div>
+
+                            <div class="creator-meta">
+                                Tech
+                            </div>
+
+                            <span class="creator-tag">
+                                Creator
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="creator-card">
+
+                        <div class="creator-avatar">
+                            FC
+                        </div>
+
+                        <div class="creator-info">
+
+                            <div class="creator-name">
+                                @foodwithachatori
+                            </div>
+
+                            <div class="creator-meta">
+                                Food
+                            </div>
+
+                            <span class="creator-tag">
+                                Creator
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- PAGE 4 -->
+
+                <div class="creator-page">
+
+
+                    <div class="creator-card">
+
+                        <div class="creator-avatar">
+                            VG
+                        </div>
+
+                        <div class="creator-info">
+
+                            <div class="creator-name">
+                                @gamewith.veer
+                            </div>
+
+                            <div class="creator-meta">
+                                Gaming
+                            </div>
+
+                            <span class="creator-tag">
+                                Creator
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="creator-card">
+
+                        <div class="creator-avatar">
+                            TV
+                        </div>
+
+                        <div class="creator-info">
+
+                            <div class="creator-name">
+                                @techvinch.in
+                            </div>
+
+                            <div class="creator-meta">
+                                Tech
+                            </div>
+
+                            <span class="creator-tag">
+                                Creator
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="creator-card">
+
+                        <div class="creator-avatar">
+                            FC
+                        </div>
+
+                        <div class="creator-info">
+
+                            <div class="creator-name">
+                                @foodwithachatori
+                            </div>
+
+                            <div class="creator-meta">
+                                Food
+                            </div>
+
+                            <span class="creator-tag">
+                                Creator
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="carousel-controls">
+
+            <button
+                class="carousel-btn"
+                id="prevBtn"
+            >
+                ←
+            </button>
+
+            <span class="carousel-hint">
+                Swipe left or right to explore
+            </span>
+
+            <button
+                class="carousel-btn"
+                id="nextBtn"
+            >
+                →
+            </button>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     OUR NETWORK
+===================================================== -->
+
+<section
+    class="section network-section"
+    id="network"
+>
+
+    <div class="section-inner">
+
+
+        <div class="section-header">
+
+            <div class="eyebrow">
+                Our Network
+            </div>
+
+            <h2 class="section-title">
+                Explore Our Digital Talent Network
+            </h2>
+
+            <p class="section-subtitle">
+
+                Find creators and professionals
+                for different digital requirements.
+
+            </p>
+
+        </div>
+
+
+        <div class="network-grid">
+
+
+            <div class="network-card">
+
+                <div class="network-line"></div>
+
+                <h3>
+                    Influencer Marketing
+                </h3>
+
+                <p>
+                    Discover creators across multiple
+                    niches and audience sizes.
+                </p>
+
+                <button
+                    class="explore-btn"
+                    onclick="openCreators()"
+                >
+                    Explore Creators →
+                </button>
+
+            </div>
+
+
+            <div class="network-card">
+
+                <div class="network-line"></div>
+
+                <h3>
+                    Social Media Management
+                </h3>
+
+                <p>
+                    Explore professionals focused on
+                    strategy, content and social growth.
+                </p>
+
+                <button
+                    class="explore-btn"
+                    onclick="openSocialManagers()"
+                >
+                    Explore Social Media Managers →
+                </button>
+
+            </div>
+
+
+            <div class="network-card">
+
+                <div class="network-line"></div>
+
+                <h3>
+                    Copywriting
+                </h3>
+
+                <p>
+                    Professional writers for LinkedIn,
+                    social media and brand communication.
+                </p>
+
+                <button
+                    class="explore-btn"
+                    onclick="openComingSoon('Copywriters')"
+                >
+                    Explore Copywriters →
+                </button>
+
+            </div>
+
+
+            <div class="network-card">
+
+                <div class="network-line"></div>
+
+                <h3>
+                    Graphic Design
+                </h3>
+
+                <p>
+                    Creative professionals for digital
+                    content and brand communication.
+                </p>
+
+                <button
+                    class="explore-btn"
+                    onclick="openComingSoon('Graphic Designers')"
+                >
+                    Explore Graphic Designers →
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     NICHES
+===================================================== -->
+
+<section
+    class="section niches-section"
+    id="niches"
+>
+
+    <div class="section-inner">
+
+
+        <div class="section-header">
+
+            <div class="eyebrow">
+                Creator Categories
+            </div>
+
+            <h2 class="section-title">
+                Explore Creators By Niche
+            </h2>
+
+            <p class="section-subtitle">
+
+                Select a category to discover
+                relevant creators in our network.
+
+            </p>
+
+        </div>
+
+
+        <div class="niche-grid">
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('Tech')"
+            >
+                <div class="niche-name">
+                    Tech
+                </div>
+
+                <div class="niche-sub">
+                    Explore creators
+                </div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('AI')"
+            >
+                <div class="niche-name">
+                    AI
+                </div>
+
+                <div class="niche-sub">
+                    Explore creators
+                </div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('Beauty')"
+            >
+                <div class="niche-name">
+                    Beauty
+                </div>
+
+                <div class="niche-sub">
+                    Explore creators
+                </div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('Fashion')"
+            >
+                <div class="niche-name">
+                    Fashion
+                </div>
+
+                <div class="niche-sub">
+                    Explore creators
+                </div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('Lifestyle')"
+            >
+                <div class="niche-name">
+                    Lifestyle
+                </div>
+
+                <div class="niche-sub">
+                    Explore creators
+                </div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('Travel')"
+            >
+                <div class="niche-name">
+                    Travel
+                </div>
+
+                <div class="niche-sub">
+                    Explore creators
+                </div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('Finance')"
+            >
+                <div class="niche-name">
+                    Finance
+                </div>
+
+                <div class="niche-sub">
+                    Explore creators
+                </div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('Gaming')"
+            >
+                <div class="niche-name">
+                    Gaming
+                </div>
+
+                <div class="niche-sub">
+                    Explore creators
+                </div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('Food')"
+            >
+                <div class="niche-name">
+                    Food
+                </div>
+
+                <div class="niche-sub">
+                    Explore creators
+                </div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('Education')"
+            >
+                <div class="niche-name">
+                    Education
+                </div>
+
+                <div class="niche-sub">
+                    Explore creators
+                </div>
+            </button>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section
+    class="section services-section"
+    id="services"
+>
+
+    <div class="section-inner">
+
+
+        <div class="section-header">
+
+            <div class="eyebrow">
+                What We Do
+            </div>
+
+            <h2 class="section-title">
+                Digital Solutions For Growing Brands
+            </h2>
+
+        </div>
+
+
+        <div class="services-grid">
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    C
+                </div>
+
+                <h3>
+                    Creator Collaborations
+                </h3>
+
+                <p>
+                    Relevant creators and campaign
+                    coordination for brands.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    S
+                </div>
+
+                <h3>
+                    Social Media Management
+                </h3>
+
+                <p>
+                    Strategy, content planning and
+                    social media management.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    W
+                </div>
+
+                <h3>
+                    Copywriting
+                </h3>
+
+                <p>
+                    Social media, LinkedIn and
+                    brand communication copy.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    V
+                </div>
+
+                <h3>
+                    Video Editing
+                </h3>
+
+                <p>
+                    Reels, short-form videos and
+                    digital video content.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FEEDBACK
+===================================================== -->
+
+<section
+    class="section feedback-section"
+    id="feedback"
+>
+
+    <div class="section-inner">
+
+
+        <div class="section-header">
+
+            <div class="eyebrow">
+                Creator Feedback
+            </div>
+
+            <h2 class="section-title">
+                What Creators Say
+            </h2>
+
+        </div>
+
+
+        <div class="feedback-box">
+
+            <p class="feedback-text">
+
+                "I just wanted to say thank you for connecting
+                me with this opportunity. Being introduced to
+                the software company and getting the chance to
+                work on their sales and marketing has been an
+                incredible experience so far.
+
+                I really appreciate the trust you've placed in me.
+                The way V15 works, with transparency,
+                professionalism, and genuine industry connections,
+                has honestly been impressive.
+
+                Everything has been exactly as communicated,
+                and that says a lot about the way you do business.
+                Hope this is the beginning of a long-term association.
+                Looking forward to working with you on many more
+                projects in the future. Thank you once again!"
+
+            </p>
+
+
+            <div class="feedback-name">
+                Nikita Suri
+            </div>
+
+
+            <div class="feedback-role">
+                Creator
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section
+    class="section contact-section"
+    id="contact"
+>
+
+    <div class="section-inner">
+
+
+        <div class="eyebrow">
+            Let's Work Together
+        </div>
+
+
+        <h2 class="section-title">
+            Have A Brand Requirement?
+        </h2>
+
+
+        <p>
+
+            Tell us what you're looking to build
+            and let's discuss how The V15 Company
+            can help.
+
+        </p>
+
+
+        <a
+            href="mailto:contact@thev15company.in"
+            class="contact-btn"
+        >
+            Get In Touch →
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     OFFICIAL SOCIAL PROFILES
+     ONLY IMAGES - NO TEXT
+===================================================== -->
+
+<section class="social-section">
+
+    <div class="social-section-inner">
+
+
+        <div class="social-images">
+
+
+            <!-- Official Instagram Image -->
+
+            <a
+                class="social-image-link"
+                href="https://www.instagram.com/the_v15_company?igsh=Y253OXJjeXJ5ejU0"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="The V15 Company Instagram"
+            >
+
+                <img
+                    src="images/Official Instagram.jpg"
+                    alt="The V15 Company"
+                >
+
+            </a>
+
+
+            <!-- Official LinkedIn Image -->
+
+            <a
+                class="social-image-link"
+                href="https://www.linkedin.com/company/the-v15-company/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="The V15 Company LinkedIn"
+            >
+
+                <img
+                    src="images/Official Linkedin.jpg"
+                    alt="The V15 Company"
+                >
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+
+    <div class="footer-logo">
+
+        <img
+            src="images/logo-v15.png"
+            alt="The V15 Company"
+        >
+
+    </div>
+
+
+    <div>
+
+        © 2026
+
+        <strong>
+            The V15 Company
+        </strong>
+
+        · All rights reserved.
+
+    </div>
+
+
+</footer>
+
+
+<!-- =====================================================
+     EXPLORER OVERLAY
+===================================================== -->
+
+<div
+    class="explorer"
+    id="explorer"
+>
+
+
+    <div class="explorer-inner">
+
+
+        <div class="explorer-top">
+
+
+            <button
+                class="back-btn"
+                onclick="closeExplorer()"
+            >
+                ← Back
+            </button>
+
+
+            <button
+                class="close-btn"
+                onclick="closeExplorer()"
+            >
+                ×
+            </button>
+
+
+        </div>
+
+
+        <div id="explorerContent">
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+function toggleMenu(){
+
+    const menu =
+        document.getElementById("navLinks");
+
+    menu.classList.toggle("show");
+
+}
+
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(link => {
+
+    link.addEventListener(
+        "click",
+        () => {
+
+            document
+            .getElementById("navLinks")
+            .classList.remove("show");
+
+        }
+    );
+
+});
+
+
+/* =====================================================
+   CREATOR CAROUSEL
+===================================================== */
+
+const creatorTrack =
+    document.getElementById("creatorTrack");
+
+const creatorCarousel =
+    document.getElementById("creatorCarousel");
+
+const creatorPages =
+    Array.from(
+        document.querySelectorAll(".creator-page")
+    );
+
+const prevBtn =
+    document.getElementById("prevBtn");
+
+const nextBtn =
+    document.getElementById("nextBtn");
+
+let creatorPosition = 1;
+
+
+/* Clone last */
+
+const creatorLastClone =
+    creatorPages[
+        creatorPages.length - 1
+    ].cloneNode(true);
+
+
+/* Clone first */
+
+const creatorFirstClone =
+    creatorPages[0].cloneNode(true);
+
+
+creatorTrack.insertBefore(
+    creatorLastClone,
+    creatorTrack.firstElementChild
+);
+
+creatorTrack.appendChild(
+    creatorFirstClone
+);
+
+
+creatorTrack.style.transform =
+`translateX(-${creatorPosition * 100}%)`;
+
+
+/* Next */
+
+function nextCreators(){
+
+    creatorPosition++;
+
+    creatorTrack.style.transition =
+    "transform .55s cubic-bezier(.22,.61,.36,1)";
+
+    creatorTrack.style.transform =
+    `translateX(-${creatorPosition * 100}%)`;
+
+}
+
+
+/* Previous */
+
+function previousCreators(){
+
+    creatorPosition--;
+
+    creatorTrack.style.transition =
+    "transform .55s cubic-bezier(.22,.61,.36,1)";
+
+    creatorTrack.style.transform =
+    `translateX(-${creatorPosition * 100}%)`;
+
+}
+
+
+nextBtn.addEventListener(
+    "click",
+    nextCreators
+);
+
+
+prevBtn.addEventListener(
+    "click",
+    previousCreators
+);
+
+
+/* Infinite loop */
+
+creatorTrack.addEventListener(
+    "transitionend",
+    () => {
+
+        if(
+            creatorPosition === 0
+        ){
+
+            creatorTrack.style.transition =
+            "none";
+
+            creatorPosition =
+            creatorPages.length;
+
+            creatorTrack.style.transform =
+            `translateX(-${creatorPosition * 100}%)`;
+
+        }
+
+
+        if(
+            creatorPosition ===
+            creatorPages.length + 1
+        ){
+
+            creatorTrack.style.transition =
+            "none";
+
+            creatorPosition = 1;
+
+            creatorTrack.style.transform =
+            `translateX(-${creatorPosition * 100}%)`;
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   TOUCH SWIPE
+===================================================== */
+
+let creatorStartX = 0;
+let creatorStartY = 0;
+
+
+creatorCarousel.addEventListener(
+    "touchstart",
+    event => {
+
+        const touch =
+            event.touches[0];
+
+        creatorStartX =
+            touch.clientX;
+
+        creatorStartY =
+            touch.clientY;
+
+    },
+    {passive:true}
+);
+
+
+creatorCarousel.addEventListener(
+    "touchend",
+    event => {
+
+        const touch =
+            event.changedTouches[0];
+
+        const diffX =
+            touch.clientX -
+            creatorStartX;
+
+        const diffY =
+            touch.clientY -
+            creatorStartY;
+
+
+        if(
+            Math.abs(diffX) < 45 ||
+            Math.abs(diffX) <
+            Math.abs(diffY)
+        ){
+
+            return;
+
+        }
+
+
+        if(diffX < 0){
+
+            nextCreators();
+
+        }
+        else{
+
+            previousCreators();
+
+        }
+
+    },
+    {passive:true}
+);
+
+
+/* =====================================================
+   CREATOR DATABASE
+===================================================== */
+
+const creators = [
+
+    {
+        name:"Nandini Jaiswani",
+        followers:"149K",
+        niche:"Lifestyle / Fashion / Travel",
+        niches:[
+            "Lifestyle",
+            "Fashion",
+            "Travel"
+        ],
+        image:"images/nandini.jpg",
+        instagram:"#"
+    },
+
+
+    {
+        name:"Sonia Mishra",
+        followers:"48.5K",
+        niche:"Fashion / Beauty / Lifestyle / Travel",
+        niches:[
+            "Fashion",
+            "Beauty",
+            "Lifestyle",
+            "Travel"
+        ],
+        image:"images/Sonia.jpg",
+        instagram:
+        "https://www.instagram.com/sonia__mishra__/"
+    },
+
+
+    {
+        name:"Ritika.Create",
+        followers:"13.2K",
+        niche:"Digital Brand Designer",
+        niches:[
+            "Design",
+            "Digital"
+        ],
+        image:"images/ritika.jpg",
+        instagram:
+        "https://www.instagram.com/ritika.create/"
+    },
+
+
+    {
+        name:"Siblings Finance",
+        followers:"116K",
+        niche:"Finance",
+        niches:[
+            "Finance"
+        ],
+        image:"images/siblingsfinance.jpg",
+        instagram:
+        "https://www.instagram.com/siblingsfinance/"
+    },
+
+
+    {
+        name:"Vishal Hajare",
+        followers:"78.1K",
+        niche:"Tech",
+        niches:[
+            "Tech"
+        ],
+        image:"images/vishal.jpg",
+        instagram:
+        "https://www.instagram.com/tech_tricks.marathi/"
+    },
+
+
+    {
+        name:"Anant Mishra",
+        followers:"193K",
+        niche:"Skincare & Lifestyle",
+        niches:[
+            "Beauty",
+            "Lifestyle"
+        ],
+        image:"images/gullu.era.jpg",
+        instagram:
+        "https://www.instagram.com/gullu.era/"
+    },
+
+
+    {
+        name:"created.by.radhika",
+        followers:"2,221",
+        niche:"Tech & AI UGC",
+        niches:[
+            "Tech",
+            "AI"
+        ],
+        image:"images/created.by.radhika.jpg",
+        instagram:
+        "https://www.instagram.com/created.by.radhika/"
+    }
+
+];
+
+
+/* =====================================================
+   OPEN / CLOSE EXPLORER
+===================================================== */
+
+function openExplorer(){
+
+    document
+    .getElementById("explorer")
+    .classList.add("active");
+
+    document
+    .body
+    .classList.add("no-scroll");
+
+}
+
+
+function closeExplorer(){
+
+    document
+    .getElementById("explorer")
+    .classList.remove("active");
+
+    document
+    .body
+    .classList.remove("no-scroll");
+
+}
+
+
+/* =====================================================
+   CREATOR DIRECTORY
+===================================================== */
+
+function openCreators(){
+
+    openExplorer();
+
+    renderCreatorDirectory(
+        "All Creators In Our Network",
+        "Explore creators across multiple niches and audience sizes.",
+        "All"
+    );
+
+}
+
+
+function renderCreatorDirectory(
+    title,
+    description,
+    filter = "All"
+){
+
+    const content =
+        document.getElementById(
+            "explorerContent"
+        );
+
+
+    const filtered =
+        filter === "All"
+
+        ? creators
+
+        : creators.filter(
+            creator =>
+            creator.niches.includes(filter)
+        );
+
+
+    let cards = "";
+
+
+    filtered.forEach(
+        creator => {
+
+            cards += `
+
+            <div class="profile-card">
+
+
+                <div class="profile-photo">
+
+                    <img
+                        src="${creator.image}"
+                        alt="${creator.name}"
+                    >
+
+                </div>
+
+
+                <div class="profile-name">
+                    ${creator.name}
+                </div>
+
+
+                <div class="profile-role">
+                    Creator
+                </div>
+
+
+                <div class="profile-meta">
+                    ${creator.followers} · ${creator.niche}
+                </div>
+
+
+                <div class="profile-tags">
+
+                    ${creator.niches
+                        .map(
+                            niche =>
+                            `<span class="profile-tag">${niche}</span>`
+                        )
+                        .join("")
+                    }
+
+                </div>
+
+
+                <div class="profile-actions">
+
+
+                    <a
+                        href="${creator.instagram}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="profile-btn profile-instagram"
+                    >
+                        View Profile
+                    </a>
+
+
+                    <a
+                        href="mailto:contact@thev15company.in?subject=Creator enquiry - ${creator.name}"
+                        class="profile-btn profile-connect"
+                    >
+                        Connect
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+            `;
+
+        }
+    );
+
+
+    if(!filtered.length){
+
+        cards = `
+
+        <div class="empty-state">
+
+            <h3>
+                More creators coming soon.
+            </h3>
+
+            <p>
+
+                We are continuously expanding
+                this category with relevant creators
+                from our network.
+
+            </p>
+
+            <button
+                class="explore-btn"
+                onclick="closeExplorer()"
+            >
+                Back To Network
+            </button>
+
+        </div>
+
+        `;
+
+    }
+
+
+    content.innerHTML = `
+
+        <h1 class="explorer-title">
+            ${title}
+        </h1>
+
+
+        <p class="explorer-description">
+            ${description}
+        </p>
+
+
+        <div class="filter-row">
+
+
+            <button
+                class="filter-btn
+                ${filter === "All" ? "active" : ""}"
+                onclick="renderCreatorDirectory(
+                    'All Creators In Our Network',
+                    'Explore creators across multiple niches and audience sizes.',
+                    'All'
+                )"
+            >
+                All
+            </button>
+
+
+            ${
+                [
+                    "Tech",
+                    "AI",
+                    "Beauty",
+                    "Fashion",
+                    "Lifestyle",
+                    "Travel",
+                    "Finance",
+                    "Gaming",
+                    "Food",
+                    "Education"
+                ]
+
+                .map(
+                    niche => `
+
+                    <button
+                        class="filter-btn
+                        ${filter === niche ? "active" : ""}"
+                        onclick="openNiche('${niche}')"
+                    >
+                        ${niche}
+                    </button>
+
+                    `
+                )
+                .join("")
+            }
+
+
+        </div>
+
+
+        <div class="profile-grid">
+
+            ${cards}
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   NICHE
+===================================================== */
+
+function openNiche(niche){
+
+    openExplorer();
+
+    renderCreatorDirectory(
+
+        `${niche} Creators`,
+
+        `Explore creators from our network specialising in ${niche}.`,
+
+        niche
+
+    );
+
+}
+
+
+/* =====================================================
+   SOCIAL MEDIA MANAGERS
+===================================================== */
+
+function openSocialManagers(){
+
+    openExplorer();
+
+
+    const content =
+        document.getElementById(
+            "explorerContent"
+        );
+
+
+    content.innerHTML = `
+
+        <h1 class="explorer-title">
+            Explore Social Media Managers
+        </h1>
+
+
+        <p class="explorer-description">
+
+            Meet professionals from our network
+            who focus on strategy, content systems
+            and meaningful digital growth.
+
+        </p>
+
+
+        <div class="professional-profile">
+
+
+            <div class="professional-photo">
+
+                <img
+                    src="images/divya.jpg"
+                    alt="Divya Rajput"
+                >
+
+            </div>
+
+
+            <div>
+
+
+                <div class="professional-name">
+                    Divya Rajput
+                </div>
+
+
+                <div class="professional-role">
+                    Social Media Manager
+                </div>
+
+
+                <div class="professional-experience">
+                    4+ Years Experience
+                </div>
+
+
+                <div class="professional-tags">
+
+                    <span class="professional-tag">
+                        Instagram
+                    </span>
+
+                    <span class="professional-tag">
+                        LinkedIn
+                    </span>
+
+                    <span class="professional-tag">
+                        Content Strategy
+                    </span>
+
+                </div>
+
+
+                <div class="professional-quote">
+
+                    "I don't just chase impressions.
+                    I build content systems and strategies
+                    that make the right people remember
+                    your brand."
+
+                </div>
+
+
+                <div class="professional-description">
+
+                    Divya Rajput is a Digital Marketer
+                    specialised in Content Strategy.
+                    Her work focuses on building content
+                    systems, creating distinctive brand
+                    voices and planning content across
+                    social, video and written formats.
+
+                </div>
+
+
+                <div class="professional-actions">
+
+
+                    <a
+                        href="https://www.linkedin.com/in/divya-rajput-9906a32b5/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="linkedin-btn"
+                    >
+                        View LinkedIn →
+                    </a>
+
+
+                    <a
+                        href="mailto:contact@thev15company.in?subject=Connect with Divya Rajput through The V15 Company"
+                        class="v15-connect-btn"
+                    >
+                        Connect Through V15 →
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   COMING SOON
+===================================================== */
+
+function openComingSoon(category){
+
+    openExplorer();
+
+
+    const content =
+        document.getElementById(
+            "explorerContent"
+        );
+
+
+    content.innerHTML = `
+
+        <h1 class="explorer-title">
+            Explore ${category}
+        </h1>
+
+
+        <div class="empty-state">
+
+            <h3>
+                Our network is growing.
+            </h3>
+
+
+            <p>
+
+                We are continuously expanding
+                our network of trusted digital
+                professionals.
+
+                New ${category.toLowerCase()}
+                profiles will be added as our
+                talent network grows.
+
+            </p>
+
+
+            <a
+                href="mailto:contact@thev15company.in?subject=Join The V15 Company Network - ${category}"
+                class="explore-btn"
+            >
+                Join The Network →
+            </a>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   ESCAPE KEY
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if(event.key === "Escape"){
+
+            closeExplorer();
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
