@@ -3168,177 +3168,423 @@ document
    CREATOR CAROUSEL
 ===================================================== */
 
-const creatorTrack =
-    document.getElementById("creatorTrack");
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
-const creatorCarousel =
-    document.getElementById("creatorCarousel");
+    const carousel = document.getElementById("creatorCarousel");
+    const track = document.getElementById("creatorTrack");
+    const nextBtn = document.getElementById("nextBtn");
+    const prevBtn = document.getElementById("prevBtn");
 
-const creatorPages =
-    Array.from(
-        document.querySelectorAll(".creator-page")
+    if (!carousel || !track) {
+        console.log("Creator carousel elements not found");
+        return;
+    }
+
+    let pages = [];
+    let position = 1;
+    const perPage = 3;
+
+
+    /* ================================
+       CREATE CREATOR CARD
+    ================================= */
+
+    function makeCreatorCard(creator) {
+
+        const card = document.createElement("div");
+        card.className = "creator-card";
+
+        const avatar = document.createElement("div");
+        avatar.className = "creator-avatar";
+
+        const img = document.createElement("img");
+
+        img.src = creator.image || "";
+        img.alt = creator.name || "Creator";
+
+        avatar.appendChild(img);
+
+
+        const info = document.createElement("div");
+        info.className = "creator-info";
+
+
+        const name = document.createElement("div");
+        name.className = "creator-name";
+        name.textContent =
+            creator.name || creator.handle || "Creator";
+
+
+        const meta = document.createElement("div");
+        meta.className = "creator-meta";
+
+
+        let niche = "";
+
+        if (creator.niches && creator.niches.length) {
+            niche = creator.niches.join(" / ");
+        }
+        else if (creator.categories && creator.categories.length) {
+            niche = creator.categories.join(" / ");
+        }
+        else if (creator.niche) {
+            niche = creator.niche;
+        }
+
+
+        let details = creator.followers || "";
+
+        if (creator.subscribers) {
+            details +=
+                " Followers · " +
+                creator.subscribers +
+                " Subscribers";
+        }
+
+        if (niche) {
+            details += " · " + niche;
+        }
+
+        meta.textContent = details;
+
+
+        const tag = document.createElement("span");
+        tag.className = "creator-tag";
+        tag.textContent = "Creator";
+
+
+        info.appendChild(name);
+        info.appendChild(meta);
+        info.appendChild(tag);
+
+        card.appendChild(avatar);
+        card.appendChild(info);
+
+
+        if (creator.instagram) {
+
+            card.style.cursor = "pointer";
+
+            card.addEventListener("click", function () {
+
+                window.open(
+                    creator.instagram,
+                    "_blank"
+                );
+
+            });
+
+        }
+
+
+        return card;
+    }
+
+
+
+    /* ================================
+       BUILD CREATOR PAGES
+    ================================= */
+
+    function buildPages() {
+
+        track.innerHTML = "";
+
+        for (
+            let i = 0;
+            i < creators.length;
+            i += perPage
+        ) {
+
+            const page =
+                document.createElement("div");
+
+            page.className = "creator-page";
+
+
+            const group =
+                creators.slice(i, i + perPage);
+
+
+            group.forEach(function (creator) {
+
+                page.appendChild(
+                    makeCreatorCard(creator)
+                );
+
+            });
+
+
+            track.appendChild(page);
+        }
+
+
+        pages =
+            Array.from(
+                track.querySelectorAll(".creator-page")
+            );
+    }
+
+
+
+    /* ================================
+       INFINITE LOOP
+    ================================= */
+
+    function setupLoop() {
+
+        if (pages.length === 0) {
+            return;
+        }
+
+
+        const first =
+            pages[0].cloneNode(true);
+
+        const last =
+            pages[pages.length - 1]
+            .cloneNode(true);
+
+
+        track.insertBefore(
+            last,
+            track.firstElementChild
+        );
+
+
+        track.appendChild(first);
+
+
+        position = 1;
+
+
+        track.style.transition = "none";
+
+        track.style.transform =
+            "translateX(-100%)";
+    }
+
+
+
+    /* ================================
+       MOVE
+    ================================= */
+
+    function moveCarousel(direction) {
+
+        if (!pages.length) {
+            return;
+        }
+
+
+        position += direction;
+
+
+        track.style.transition =
+            "transform .55s cubic-bezier(.22,.61,.36,1)";
+
+
+        track.style.transform =
+            "translateX(-" +
+            (position * 100) +
+            "%)";
+    }
+
+
+
+    /* ================================
+       NEXT
+    ================================= */
+
+    function nextCreators() {
+
+        moveCarousel(1);
+    }
+
+
+
+    /* ================================
+       PREVIOUS
+    ================================= */
+
+    function previousCreators() {
+
+        moveCarousel(-1);
+    }
+
+
+
+    /* ================================
+       LOOP RESET
+    ================================= */
+
+    track.addEventListener(
+        "transitionend",
+        function () {
+
+            const total =
+                pages.length;
+
+
+            if (
+                position === total + 1
+            ) {
+
+                track.style.transition = "none";
+
+                position = 1;
+
+                track.style.transform =
+                    "translateX(-100%)";
+            }
+
+
+            if (
+                position === 0
+            ) {
+
+                track.style.transition = "none";
+
+                position = total;
+
+                track.style.transform =
+                    "translateX(-" +
+                    (total * 100) +
+                    "%)";
+            }
+
+        }
     );
 
-const prevBtn =
-    document.getElementById("prevBtn");
-
-const nextBtn =
-    document.getElementById("nextBtn");
-
-let creatorPosition = 1;
 
 
-/* Clone last */
+    /* ================================
+       BUTTONS
+    ================================= */
 
-const creatorLastClone =
-    creatorPages[
-        creatorPages.length - 1
-    ].cloneNode(true);
+    if (nextBtn) {
 
-
-/* Clone first */
-
-const creatorFirstClone =
-    creatorPages[0].cloneNode(true);
-
-
-creatorTrack.insertBefore(
-    creatorLastClone,
-    creatorTrack.firstElementChild
-);
-
-creatorTrack.appendChild(
-    creatorFirstClone
-);
-
-
-creatorTrack.style.transform =
-`translateX(-${creatorPosition * 100}%)`;
-
-
-/* Next */
-
-function nextCreators(){
-
-    creatorPosition++;
-
-    creatorTrack.style.transition =
-    "transform .55s cubic-bezier(.22,.61,.36,1)";
-
-    creatorTrack.style.transform =
-    `translateX(-${creatorPosition * 100}%)`;
-
-}
-
-
-/* Previous */
-
-function previousCreators(){
-
-    creatorPosition--;
-
-    creatorTrack.style.transition =
-    "transform .55s cubic-bezier(.22,.61,.36,1)";
-
-    creatorTrack.style.transform =
-    `translateX(-${creatorPosition * 100}%)`;
-
-}
-
-
-nextBtn.addEventListener(
-    "click",
-    nextCreators
-);
-
-
-prevBtn.addEventListener(
-    "click",
-    previousCreators
-);
-
-
-/* Infinite loop */
-
-creatorTrack.addEventListener(
-    "transitionend",
-    () => {
-
-        if(
-            creatorPosition === 0
-        ){
-
-            creatorTrack.style.transition =
-            "none";
-
-            creatorPosition =
-            creatorPages.length;
-
-            creatorTrack.style.transform =
-            `translateX(-${creatorPosition * 100}%)`;
-
-        }
-
-
-        if(
-            creatorPosition ===
-            creatorPages.length + 1
-        ){
-
-            creatorTrack.style.transition =
-            "none";
-
-            creatorPosition = 1;
-
-            creatorTrack.style.transform =
-            `translateX(-${creatorPosition * 100}%)`;
-
-        }
+        nextBtn.onclick =
+            nextCreators;
 
     }
-);
 
 
-/* =====================================================
-   TOUCH SWIPE
-===================================================== */
+    if (prevBtn) {
 
-let creatorStartX = 0;
-let creatorStartY = 0;
+        prevBtn.onclick =
+            previousCreators;
 
-
-creatorCarousel.addEventListener(
-    "touchstart",
-    event => {
-
-        const touch =
-            event.touches[0];
-
-        creatorStartX =
-            touch.clientX;
-
-        creatorStartY =
-            touch.clientY;
-
-    },
-    {passive:true}
-);
+    }
 
 
-creatorCarousel.addEventListener(
-    "touchend",
-    event => {
 
-        const touch =
-            event.changedTouches[0];
+    /* ================================
+       MOBILE SWIPE
+    ================================= */
 
-        const diffX =
-            touch.clientX -
-            creatorStartX;
+    let startX = 0;
+    let startY = 0;
 
-        const diffY =
-<script>
 
+    carousel.addEventListener(
+        "touchstart",
+        function (e) {
+
+            const touch =
+                e.touches[0];
+
+            startX =
+                touch.clientX;
+
+            startY =
+                touch.clientY;
+
+        },
+        { passive: true }
+    );
+
+
+    carousel.addEventListener(
+        "touchend",
+        function (e) {
+
+            const touch =
+                e.changedTouches[0];
+
+
+            const diffX =
+                touch.clientX - startX;
+
+
+            const diffY =
+                touch.clientY - startY;
+
+
+            if (
+                Math.abs(diffX) < 40
+            ) {
+                return;
+            }
+
+
+            if (
+                Math.abs(diffX) <
+                Math.abs(diffY)
+            ) {
+                return;
+            }
+
+
+            if (diffX < 0) {
+
+                nextCreators();
+
+            }
+            else {
+
+                previousCreators();
+
+            }
+
+        },
+        { passive: true }
+    );
+
+
+
+    /* ================================
+       KEYBOARD
+    ================================= */
+
+    document.addEventListener(
+        "keydown",
+        function (e) {
+
+            if (e.key === "ArrowRight") {
+                nextCreators();
+            }
+
+            if (e.key === "ArrowLeft") {
+                previousCreators();
+            }
+
+        }
+    );
+
+
+
+    /* ================================
+       START
+    ================================= */
+
+    buildPages();
+
+    setupLoop();
+
+});
+</script>
 /* =========================================================
    DYNAMIC CREATOR CAROUSEL
    Automatically uses the creators[] database
