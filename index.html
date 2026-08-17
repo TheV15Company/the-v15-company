@@ -3337,14 +3337,416 @@ creatorCarousel.addEventListener(
             creatorStartX;
 
         const diffY =
-            touch.clientY -
-            creatorStartY;
+<script>
 
+/* =========================================================
+   DYNAMIC CREATOR CAROUSEL
+   Automatically uses the creators[] database
+   3 creators per page
+   Infinite left/right navigation
+   Swipe support
+   ========================================================= */
+
+const creatorCarousel = document.getElementById("creatorCarousel");
+const creatorTrack = document.getElementById("creatorTrack");
+
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
+
+let creatorPosition = 1;
+
+
+/* =========================================================
+   CREATE CREATOR CARD
+   ========================================================= */
+
+function createCreatorCard(creator){
+
+    const card = document.createElement("div");
+    card.className = "creator-card";
+
+    const avatar = document.createElement("div");
+    avatar.className = "creator-avatar";
+
+    const img = document.createElement("img");
+
+    img.src = creator.image || "";
+    img.alt = creator.name || "Creator";
+
+    avatar.appendChild(img);
+
+
+    const info = document.createElement("div");
+    info.className = "creator-info";
+
+
+    const name = document.createElement("div");
+    name.className = "creator-name";
+    name.textContent = creator.name || creator.handle || "Creator";
+
+
+    const meta = document.createElement("div");
+    meta.className = "creator-meta";
+
+    let nicheText = "";
+
+    if(creator.niches && creator.niches.length){
+
+        nicheText = creator.niches.join(" / ");
+
+    }else if(creator.categories && creator.categories.length){
+
+        nicheText = creator.categories.join(" / ");
+
+    }else if(creator.niche){
+
+        nicheText = creator.niche;
+
+    }
+
+
+    meta.textContent =
+        (creator.followers || "") +
+        (nicheText ? " · " + nicheText : "");
+
+
+    const tag = document.createElement("span");
+    tag.className = "creator-tag";
+    tag.textContent = "Creator";
+
+
+    /*
+       Instagram link
+    */
+
+    if(creator.instagram){
+
+        card.style.cursor = "pointer";
+
+        card.addEventListener("click", function(){
+
+            window.open(
+                creator.instagram,
+                "_blank"
+            );
+
+        });
+
+    }
+
+
+    info.appendChild(name);
+    info.appendChild(meta);
+    info.appendChild(tag);
+
+    card.appendChild(avatar);
+    card.appendChild(info);
+
+    return card;
+}
+
+
+
+/* =========================================================
+   CREATE PAGES
+   3 CREATORS PER PAGE
+   ========================================================= */
+
+function buildCreatorPages(){
+
+    creatorTrack.innerHTML = "";
+
+    const pageSize = 3;
+
+    const pages = [];
+
+    for(let i = 0; i < creators.length; i += pageSize){
+
+        const pageCreators =
+            creators.slice(i, i + pageSize);
+
+        const page =
+            document.createElement("div");
+
+        page.className = "creator-page";
+
+
+        pageCreators.forEach(function(creator){
+
+            page.appendChild(
+                createCreatorCard(creator)
+            );
+
+        });
+
+
+        pages.push(page);
+
+        creatorTrack.appendChild(page);
+
+    }
+
+
+    return pages;
+}
+
+
+
+/* =========================================================
+   BUILD
+   ========================================================= */
+
+let creatorPages = buildCreatorPages();
+
+
+/* =========================================================
+   INFINITE CAROUSEL SETUP
+   ========================================================= */
+
+function setupInfiniteCarousel(){
+
+    creatorPages =
+        Array.from(
+            creatorTrack.querySelectorAll(".creator-page")
+        );
+
+
+    if(!creatorPages.length){
+
+        creatorPosition = 0;
+        return;
+
+    }
+
+
+    /*
+       Clone last page
+    */
+
+    const lastClone =
+        creatorPages[
+            creatorPages.length - 1
+        ].cloneNode(true);
+
+
+    /*
+       Clone first page
+    */
+
+    const firstClone =
+        creatorPages[0].cloneNode(true);
+
+
+    creatorTrack.insertBefore(
+        lastClone,
+        creatorTrack.firstElementChild
+    );
+
+
+    creatorTrack.appendChild(
+        firstClone
+    );
+
+
+    creatorPosition = 1;
+
+
+    creatorTrack.style.transition = "none";
+
+    creatorTrack.style.transform =
+        `translateX(-${creatorPosition * 100}%)`;
+
+}
+
+
+/* =========================================================
+   INITIALIZE
+   ========================================================= */
+
+setupInfiniteCarousel();
+
+
+
+/* =========================================================
+   NEXT
+   ========================================================= */
+
+function nextCreators(){
+
+    if(!creatorPages.length) return;
+
+
+    creatorPosition++;
+
+
+    creatorTrack.style.transition =
+        "transform .55s cubic-bezier(.22,.61,.36,1)";
+
+
+    creatorTrack.style.transform =
+        `translateX(-${creatorPosition * 100}%)`;
+
+}
+
+
+
+/* =========================================================
+   PREVIOUS
+   ========================================================= */
+
+function previousCreators(){
+
+    if(!creatorPages.length) return;
+
+
+    creatorPosition--;
+
+
+    creatorTrack.style.transition =
+        "transform .55s cubic-bezier(.22,.61,.36,1)";
+
+
+    creatorTrack.style.transform =
+        `translateX(-${creatorPosition * 100}%)`;
+
+}
+
+
+
+/* =========================================================
+   NEXT BUTTON
+   ========================================================= */
+
+if(nextBtn){
+
+    nextBtn.addEventListener(
+        "click",
+        nextCreators
+    );
+
+}
+
+
+
+/* =========================================================
+   PREVIOUS BUTTON
+   ========================================================= */
+
+if(prevBtn){
+
+    prevBtn.addEventListener(
+        "click",
+        previousCreators
+    );
+
+}
+
+
+
+/* =========================================================
+   INFINITE LOOP
+   ========================================================= */
+
+creatorTrack.addEventListener(
+    "transitionend",
+    function(){
+
+        const totalPages =
+            creatorPages.length;
+
+
+        /*
+           Reached cloned first page
+        */
+
+        if(
+            creatorPosition === totalPages + 1
+        ){
+
+            creatorTrack.style.transition = "none";
+
+            creatorPosition = 1;
+
+            creatorTrack.style.transform =
+                `translateX(-${creatorPosition * 100}%)`;
+
+        }
+
+
+        /*
+           Reached cloned last page
+        */
+
+        if(
+            creatorPosition === 0
+        ){
+
+            creatorTrack.style.transition = "none";
+
+            creatorPosition = totalPages;
+
+            creatorTrack.style.transform =
+                `translateX(-${creatorPosition * 100}%)`;
+
+        }
+
+    }
+);
+
+
+
+/* =========================================================
+   TOUCH SWIPE
+   ========================================================= */
+
+let creatorStartX = 0;
+let creatorStartY = 0;
+
+
+creatorCarousel.addEventListener(
+    "touchstart",
+    function(event){
+
+        const touch =
+            event.touches[0];
+
+        creatorStartX =
+            touch.clientX;
+
+        creatorStartY =
+            touch.clientY;
+
+    },
+    {
+        passive:true
+    }
+);
+
+
+
+creatorCarousel.addEventListener(
+    "touchend",
+    function(event){
+
+        const touch =
+            event.changedTouches[0];
+
+
+        const diffX =
+            touch.clientX - creatorStartX;
+
+
+        const diffY =
+            touch.clientY - creatorStartY;
+
+
+        /*
+           Ignore vertical scrolling
+        */
 
         if(
             Math.abs(diffX) < 45 ||
-            Math.abs(diffX) <
-            Math.abs(diffY)
+            Math.abs(diffX) < Math.abs(diffY)
         ){
 
             return;
@@ -3352,11 +3754,23 @@ creatorCarousel.addEventListener(
         }
 
 
+        /*
+           Finger moves LEFT
+           -> next creators
+        */
+
         if(diffX < 0){
 
             nextCreators();
 
         }
+
+
+        /*
+           Finger moves RIGHT
+           -> previous creators
+        */
+
         else{
 
             previousCreators();
@@ -3364,10 +3778,37 @@ creatorCarousel.addEventListener(
         }
 
     },
-    {passive:true}
+    {
+        passive:true
+    }
 );
 
 
+
+/* =========================================================
+   OPTIONAL KEYBOARD SUPPORT
+   ========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "ArrowRight"){
+
+            nextCreators();
+
+        }
+
+        if(event.key === "ArrowLeft"){
+
+            previousCreators();
+
+        }
+
+    }
+);
+
+</script>
 /* =====================================================
    CREATOR DATABASE
 ===================================================== */
