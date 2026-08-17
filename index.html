@@ -414,9 +414,6 @@ button{
     rgba(26,88,125,.07);
 }
 
-
-/* Moving glow */
-
 .creator-card::before{
 
     content:"";
@@ -969,15 +966,14 @@ button{
 
 
 /* =====================================================
-   SOCIAL IMAGE SECTION
+   SOCIAL LINKS
 ===================================================== */
 
 .social-section{
 
     background:#ffffff;
 
-    padding:
-    65px 20px 75px;
+    padding:45px 20px 55px;
 
     border-top:1px solid #edf3f8;
 }
@@ -991,7 +987,7 @@ button{
     text-align:center;
 }
 
-.social-images{
+.social-links{
 
     display:flex;
 
@@ -999,58 +995,47 @@ button{
 
     justify-content:center;
 
-    gap:22px;
+    gap:12px;
 
     flex-wrap:wrap;
 
-    margin-top:28px;
+    margin-top:10px;
 }
 
-.social-image-link{
+.social-link{
 
-    display:block;
+    display:inline-flex;
 
-    width:210px;
+    align-items:center;
 
-    height:120px;
+    justify-content:center;
 
-    border-radius:18px;
+    min-width:120px;
 
-    overflow:hidden;
+    padding:12px 18px;
 
-    border:1px solid #dce8f2;
+    border-radius:12px;
 
-    background:#fff;
+    border:1px solid #cfe2ef;
 
-    box-shadow:
-    0 10px 28px
-    rgba(26,88,125,.07);
+    background:#f7fbff;
 
-    transition:
-    transform .25s ease,
-    box-shadow .25s ease,
-    border-color .25s ease;
+    color:#1769aa;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    transition:.25s ease;
 }
 
-.social-image-link:hover{
+.social-link:hover{
 
-    transform:translateY(-5px);
+    background:#eaf6ff;
 
-    border-color:#9dceeb;
+    border-color:#8ec8ee;
 
-    box-shadow:
-    0 18px 38px
-    rgba(26,88,125,.12);
-}
-
-.social-image-link img{
-
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    display:block;
+    transform:translateY(-2px);
 }
 
 
@@ -1217,8 +1202,44 @@ footer strong{
 
 
 /* =====================================================
-   FILTERS
+   SORT + FILTER
 ===================================================== */
+
+.explorer-tools{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:25px;
+}
+
+.sort-select{
+
+    padding:10px 14px;
+
+    border-radius:12px;
+
+    border:1px solid #cfe2ef;
+
+    background:#fff;
+
+    color:#475467;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    outline:none;
+}
 
 .filter-row{
 
@@ -1335,6 +1356,15 @@ footer strong{
     margin-bottom:5px;
 }
 
+.profile-handle{
+
+    color:#667085;
+
+    font-size:12px;
+
+    margin-bottom:7px;
+}
+
 .profile-role{
 
     color:#2478b8;
@@ -1351,6 +1381,8 @@ footer strong{
     color:#667085;
 
     font-size:12px;
+
+    line-height:1.6;
 
     margin-bottom:13px;
 }
@@ -1849,29 +1881,18 @@ footer strong{
         padding:25px 20px;
     }
 
-    .social-image-link{
-
-        width:180px;
-        height:105px;
-    }
-
 }
 
 
-/* =====================================================
-   SMALL MOBILE
-===================================================== */
-
 @media(max-width:430px){
 
-    .social-images{
-        gap:14px;
+    .social-links{
+        gap:8px;
     }
 
-    .social-image-link{
-
-        width:155px;
-        height:95px;
+    .social-link{
+        min-width:105px;
+        padding:11px 13px;
     }
 
 }
@@ -1892,11 +1913,7 @@ footer strong{
 
     <div class="nav-inner">
 
-
-        <a
-            href="#home"
-            class="logo"
-        >
+        <a href="#home" class="logo">
 
             <div class="logo-box">
 
@@ -1928,29 +1945,17 @@ footer strong{
             id="navLinks"
         >
 
-            <a href="#home">
-                Home
-            </a>
+            <a href="#home">Home</a>
 
-            <a href="#creators">
-                Creators
-            </a>
+            <a href="#creators">Creators</a>
 
-            <a href="#network">
-                Our Network
-            </a>
+            <a href="#network">Our Network</a>
 
-            <a href="#niches">
-                Niches
-            </a>
+            <a href="#niches">Niches</a>
 
-            <a href="#services">
-                Services
-            </a>
+            <a href="#services">Services</a>
 
-            <a href="#contact">
-                Contact
-            </a>
+            <a href="#contact">Contact</a>
 
         </nav>
 
@@ -1963,18 +1968,13 @@ footer strong{
      HERO
 ===================================================== -->
 
-<section
-    class="hero"
-    id="home"
->
+<section class="hero" id="home">
 
     <div class="hero-inner">
-
 
         <div class="hero-badge">
             The V15 Company
         </div>
-
 
         <h1>
 
@@ -1986,7 +1986,6 @@ footer strong{
 
         </h1>
 
-
         <p class="hero-description">
 
             We help brands build meaningful digital presence
@@ -1994,7 +1993,6 @@ footer strong{
             copywriting, graphic design and video content.
 
         </p>
-
 
         <div class="hero-buttons">
 
@@ -2006,8 +2004,12 @@ footer strong{
             </a>
 
 
+            <!-- CREATOR GOOGLE FORM -->
+
             <a
-                href="#creators"
+                href="https://openinapp.link/zic87"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="btn btn-blue"
             >
                 I'm a Creator →
@@ -2031,7 +2033,6 @@ footer strong{
 
     <div class="section-inner">
 
-
         <div class="section-header">
 
             <div class="eyebrow">
@@ -2043,10 +2044,8 @@ footer strong{
             </h2>
 
             <p class="section-subtitle">
-
                 Explore creators across multiple niches,
                 audience sizes and content styles.
-
             </p>
 
         </div>
@@ -2060,377 +2059,7 @@ footer strong{
             <div
                 class="creator-track"
                 id="creatorTrack"
-            >
-
-
-                <!-- PAGE 1 -->
-
-                <div class="creator-page">
-
-
-                    <div class="creator-card">
-
-                        <div class="creator-avatar">
-
-                            <img
-                                src="images/nandini.jpg"
-                                alt="Nandini Jaiswani"
-                            >
-
-                        </div>
-
-                        <div class="creator-info">
-
-                            <div class="creator-name">
-                                Nandini Jaiswani
-                            </div>
-
-                            <div class="creator-meta">
-                                149K · Lifestyle / Fashion / Travel
-                            </div>
-
-                            <span class="creator-tag">
-                                Creator
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="creator-card">
-
-                        <div class="creator-avatar">
-
-                            <img
-                                src="images/Sonia.jpg"
-                                alt="Sonia Mishra"
-                            >
-
-                        </div>
-
-                        <div class="creator-info">
-
-                            <div class="creator-name">
-                                Sonia Mishra
-                            </div>
-
-                            <div class="creator-meta">
-                                48.5K · Fashion / Beauty / Lifestyle / Travel
-                            </div>
-
-                            <span class="creator-tag">
-                                Creator
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="creator-card">
-
-                        <div class="creator-avatar">
-
-                            <img
-                                src="images/ritika.jpg"
-                                alt="Ritika.Create"
-                            >
-
-                        </div>
-
-                        <div class="creator-info">
-
-                            <div class="creator-name">
-                                Ritika.Create
-                            </div>
-
-                            <div class="creator-meta">
-                                13.2K · Digital Brand Designer
-                            </div>
-
-                            <span class="creator-tag">
-                                Creator
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-
-                <!-- PAGE 2 -->
-
-                <div class="creator-page">
-
-
-                    <div class="creator-card">
-
-                        <div class="creator-avatar">
-
-                            <img
-                                src="images/siblingsfinance.jpg"
-                                alt="Siblings Finance"
-                            >
-
-                        </div>
-
-                        <div class="creator-info">
-
-                            <div class="creator-name">
-                                Siblings Finance
-                            </div>
-
-                            <div class="creator-meta">
-                                116K · Finance
-                            </div>
-
-                            <span class="creator-tag">
-                                Creator
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="creator-card">
-
-                        <div class="creator-avatar">
-
-                            <img
-                                src="images/vishal.jpg"
-                                alt="Vishal Hajare"
-                            >
-
-                        </div>
-
-                        <div class="creator-info">
-
-                            <div class="creator-name">
-                                Vishal Hajare
-                            </div>
-
-                            <div class="creator-meta">
-                                78.1K · Tech
-                            </div>
-
-                            <span class="creator-tag">
-                                Creator
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="creator-card">
-
-                        <div class="creator-avatar">
-
-                            <img
-                                src="images/gullu.era.jpg"
-                                alt="Anant Mishra"
-                            >
-
-                        </div>
-
-                        <div class="creator-info">
-
-                            <div class="creator-name">
-                                Anant Mishra
-                            </div>
-
-                            <div class="creator-meta">
-                                193K · Skincare & Lifestyle
-                            </div>
-
-                            <span class="creator-tag">
-                                Creator
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-
-                <!-- PAGE 3 -->
-
-                <div class="creator-page">
-
-
-                    <div class="creator-card">
-
-                        <div class="creator-avatar">
-
-                            <img
-                                src="images/created.by.radhika.jpg"
-                                alt="created.by.radhika"
-                            >
-
-                        </div>
-
-                        <div class="creator-info">
-
-                            <div class="creator-name">
-                                created.by.radhika
-                            </div>
-
-                            <div class="creator-meta">
-                                2,221 · Tech & AI UGC
-                            </div>
-
-                            <span class="creator-tag">
-                                Creator
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="creator-card">
-
-                        <div class="creator-avatar">
-                            TV
-                        </div>
-
-                        <div class="creator-info">
-
-                            <div class="creator-name">
-                                @techvinch.in
-                            </div>
-
-                            <div class="creator-meta">
-                                Tech
-                            </div>
-
-                            <span class="creator-tag">
-                                Creator
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="creator-card">
-
-                        <div class="creator-avatar">
-                            FC
-                        </div>
-
-                        <div class="creator-info">
-
-                            <div class="creator-name">
-                                @foodwithachatori
-                            </div>
-
-                            <div class="creator-meta">
-                                Food
-                            </div>
-
-                            <span class="creator-tag">
-                                Creator
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-
-                <!-- PAGE 4 -->
-
-                <div class="creator-page">
-
-
-                    <div class="creator-card">
-
-                        <div class="creator-avatar">
-                            VG
-                        </div>
-
-                        <div class="creator-info">
-
-                            <div class="creator-name">
-                                @gamewith.veer
-                            </div>
-
-                            <div class="creator-meta">
-                                Gaming
-                            </div>
-
-                            <span class="creator-tag">
-                                Creator
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="creator-card">
-
-                        <div class="creator-avatar">
-                            TV
-                        </div>
-
-                        <div class="creator-info">
-
-                            <div class="creator-name">
-                                @techvinch.in
-                            </div>
-
-                            <div class="creator-meta">
-                                Tech
-                            </div>
-
-                            <span class="creator-tag">
-                                Creator
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="creator-card">
-
-                        <div class="creator-avatar">
-                            FC
-                        </div>
-
-                        <div class="creator-info">
-
-                            <div class="creator-name">
-                                @foodwithachatori
-                            </div>
-
-                            <div class="creator-meta">
-                                Food
-                            </div>
-
-                            <span class="creator-tag">
-                                Creator
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
+            ></div>
 
         </div>
 
@@ -2440,6 +2069,7 @@ footer strong{
             <button
                 class="carousel-btn"
                 id="prevBtn"
+                aria-label="Previous creators"
             >
                 ←
             </button>
@@ -2451,12 +2081,12 @@ footer strong{
             <button
                 class="carousel-btn"
                 id="nextBtn"
+                aria-label="Next creators"
             >
                 →
             </button>
 
         </div>
-
 
     </div>
 
@@ -2473,7 +2103,6 @@ footer strong{
 >
 
     <div class="section-inner">
-
 
         <div class="section-header">
 
@@ -2608,7 +2237,6 @@ footer strong{
 
     <div class="section-inner">
 
-
         <div class="section-header">
 
             <div class="eyebrow">
@@ -2629,150 +2257,10 @@ footer strong{
         </div>
 
 
-        <div class="niche-grid">
-
-
-            <button
-                class="niche-card"
-                onclick="openNiche('Tech')"
-            >
-                <div class="niche-name">
-                    Tech
-                </div>
-
-                <div class="niche-sub">
-                    Explore creators
-                </div>
-            </button>
-
-
-            <button
-                class="niche-card"
-                onclick="openNiche('AI')"
-            >
-                <div class="niche-name">
-                    AI
-                </div>
-
-                <div class="niche-sub">
-                    Explore creators
-                </div>
-            </button>
-
-
-            <button
-                class="niche-card"
-                onclick="openNiche('Beauty')"
-            >
-                <div class="niche-name">
-                    Beauty
-                </div>
-
-                <div class="niche-sub">
-                    Explore creators
-                </div>
-            </button>
-
-
-            <button
-                class="niche-card"
-                onclick="openNiche('Fashion')"
-            >
-                <div class="niche-name">
-                    Fashion
-                </div>
-
-                <div class="niche-sub">
-                    Explore creators
-                </div>
-            </button>
-
-
-            <button
-                class="niche-card"
-                onclick="openNiche('Lifestyle')"
-            >
-                <div class="niche-name">
-                    Lifestyle
-                </div>
-
-                <div class="niche-sub">
-                    Explore creators
-                </div>
-            </button>
-
-
-            <button
-                class="niche-card"
-                onclick="openNiche('Travel')"
-            >
-                <div class="niche-name">
-                    Travel
-                </div>
-
-                <div class="niche-sub">
-                    Explore creators
-                </div>
-            </button>
-
-
-            <button
-                class="niche-card"
-                onclick="openNiche('Finance')"
-            >
-                <div class="niche-name">
-                    Finance
-                </div>
-
-                <div class="niche-sub">
-                    Explore creators
-                </div>
-            </button>
-
-
-            <button
-                class="niche-card"
-                onclick="openNiche('Gaming')"
-            >
-                <div class="niche-name">
-                    Gaming
-                </div>
-
-                <div class="niche-sub">
-                    Explore creators
-                </div>
-            </button>
-
-
-            <button
-                class="niche-card"
-                onclick="openNiche('Food')"
-            >
-                <div class="niche-name">
-                    Food
-                </div>
-
-                <div class="niche-sub">
-                    Explore creators
-                </div>
-            </button>
-
-
-            <button
-                class="niche-card"
-                onclick="openNiche('Education')"
-            >
-                <div class="niche-name">
-                    Education
-                </div>
-
-                <div class="niche-sub">
-                    Explore creators
-                </div>
-            </button>
-
-
-        </div>
+        <div
+            class="niche-grid"
+            id="nicheGrid"
+        ></div>
 
     </div>
 
@@ -2789,7 +2277,6 @@ footer strong{
 >
 
     <div class="section-inner">
-
 
         <div class="section-header">
 
@@ -2897,7 +2384,6 @@ footer strong{
 
     <div class="section-inner">
 
-
         <div class="section-header">
 
             <div class="eyebrow">
@@ -2939,7 +2425,6 @@ footer strong{
                 Nikita Suri
             </div>
 
-
             <div class="feedback-role">
                 Creator
             </div>
@@ -2962,16 +2447,13 @@ footer strong{
 
     <div class="section-inner">
 
-
         <div class="eyebrow">
             Let's Work Together
         </div>
 
-
         <h2 class="section-title">
             Have A Brand Requirement?
         </h2>
-
 
         <p>
 
@@ -2981,7 +2463,6 @@ footer strong{
 
         </p>
 
-
         <a
             href="mailto:contact@thev15company.in"
             class="contact-btn"
@@ -2989,60 +2470,39 @@ footer strong{
             Get In Touch →
         </a>
 
-
     </div>
 
 </section>
 
 
 <!-- =====================================================
-     OFFICIAL SOCIAL PROFILES
-     ONLY IMAGES - NO TEXT
+     SOCIAL LINKS
 ===================================================== -->
 
 <section class="social-section">
 
     <div class="social-section-inner">
 
-
-        <div class="social-images">
-
-
-            <!-- Official Instagram Image -->
+        <div class="social-links">
 
             <a
-                class="social-image-link"
+                class="social-link"
                 href="https://www.instagram.com/the_v15_company?igsh=Y253OXJjeXJ5ejU0"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="The V15 Company Instagram"
             >
-
-                <img
-                    src="images/Official Instagram.jpg"
-                    alt="The V15 Company"
-                >
-
+                Instagram ↗
             </a>
 
 
-            <!-- Official LinkedIn Image -->
-
             <a
-                class="social-image-link"
+                class="social-link"
                 href="https://www.linkedin.com/company/the-v15-company/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="The V15 Company LinkedIn"
             >
-
-                <img
-                    src="images/Official Linkedin.jpg"
-                    alt="The V15 Company"
-                >
-
+                LinkedIn ↗
             </a>
-
 
         </div>
 
@@ -3057,7 +2517,6 @@ footer strong{
 
 <footer>
 
-
     <div class="footer-logo">
 
         <img
@@ -3066,7 +2525,6 @@ footer strong{
         >
 
     </div>
-
 
     <div>
 
@@ -3080,7 +2538,6 @@ footer strong{
 
     </div>
 
-
 </footer>
 
 
@@ -3093,12 +2550,9 @@ footer strong{
     id="explorer"
 >
 
-
     <div class="explorer-inner">
 
-
         <div class="explorer-top">
-
 
             <button
                 class="back-btn"
@@ -3107,21 +2561,18 @@ footer strong{
                 ← Back
             </button>
 
-
             <button
                 class="close-btn"
                 onclick="closeExplorer()"
+                aria-label="Close"
             >
                 ×
             </button>
 
-
         </div>
 
 
-        <div id="explorerContent">
-        </div>
-
+        <div id="explorerContent"></div>
 
     </div>
 
@@ -3163,133 +2614,723 @@ document
 
 
 /* =====================================================
-   CREATOR CAROUSEL
+   CREATOR DATABASE
 ===================================================== */
 
-const creatorTrack =
-    document.getElementById("creatorTrack");
+const CREATORS = [
 
-const creatorCarousel =
-    document.getElementById("creatorCarousel");
+    {
+        id: "nandini-jaiswani",
 
-const creatorPages =
-    Array.from(
-        document.querySelectorAll(".creator-page")
-    );
+        name: "Nandini Jaiswani",
 
-const prevBtn =
-    document.getElementById("prevBtn");
+        handle: "",
 
-const nextBtn =
-    document.getElementById("nextBtn");
+        followers: "149K",
+
+        subscribers: "",
+
+        categories: [
+            "Lifestyle",
+            "Fashion",
+            "Travel"
+        ],
+
+        image: "images/nandini.jpg",
+
+        instagram:
+        "https://www.instagram.com/",
+
+        dateAdded: "2026-08-10"
+    },
+
+
+    {
+        id: "sonia-mishra",
+
+        name: "Sonia Mishra",
+
+        handle: "",
+
+        followers: "48.5K",
+
+        subscribers: "",
+
+        categories: [
+            "Fashion",
+            "Beauty",
+            "Lifestyle",
+            "Travel"
+        ],
+
+        image: "images/Sonia.jpg",
+
+        instagram:
+        "https://www.instagram.com/sonia__mishra__/",
+
+        dateAdded: "2026-08-10"
+    },
+
+
+    {
+        id: "ritika-create",
+
+        name: "Ritika.Create",
+
+        handle: "",
+
+        followers: "13.2K",
+
+        subscribers: "",
+
+        categories: [
+            "Design"
+        ],
+
+        image: "images/ritika.jpg",
+
+        instagram:
+        "https://www.instagram.com/ritika.create/",
+
+        dateAdded: "2026-08-11"
+    },
+
+
+    {
+        id: "siblings-finance",
+
+        name: "Siblings Finance",
+
+        handle: "",
+
+        followers: "116K",
+
+        subscribers: "",
+
+        categories: [
+            "Finance"
+        ],
+
+        image: "images/siblingsfinance.jpg",
+
+        instagram:
+        "https://www.instagram.com/siblingsfinance/",
+
+        dateAdded: "2026-08-11"
+    },
+
+
+    {
+        id: "vishal-hajare",
+
+        name: "Vishal Hajare",
+
+        handle: "",
+
+        followers: "78.1K",
+
+        subscribers: "",
+
+        categories: [
+            "Tech"
+        ],
+
+        image: "images/vishal.jpg",
+
+        instagram:
+        "https://www.instagram.com/tech_tricks.marathi/",
+
+        dateAdded: "2026-08-12"
+    },
+
+
+    {
+        id: "anant-mishra",
+
+        name: "Anant Mishra",
+
+        handle: "",
+
+        followers: "193K",
+
+        subscribers: "",
+
+        categories: [
+            "Beauty",
+            "Lifestyle"
+        ],
+
+        image: "images/gullu.era.jpg",
+
+        instagram:
+        "https://www.instagram.com/gullu.era/",
+
+        dateAdded: "2026-08-12"
+    },
+
+
+    {
+        id: "created-by-radhika",
+
+        name: "created.by.radhika",
+
+        handle: "",
+
+        followers: "2,221",
+
+        subscribers: "",
+
+        categories: [
+            "Tech",
+            "AI",
+            "Tech UGC",
+            "UGC"
+        ],
+
+        image: "images/created.by.radhika.jpg",
+
+        instagram:
+        "https://www.instagram.com/created.by.radhika/",
+
+        dateAdded: "2026-08-13"
+    },
+
+
+    /* =================================================
+       VINAYAK CHOUBEY
+    ================================================= */
+
+    {
+        id: "vinayak-choubey",
+
+        name: "Vinayak Choubey",
+
+        handle: "@techvinch.in",
+
+        followers: "799",
+
+        subscribers: "99K",
+
+        categories: [
+            "Tech"
+        ],
+
+        image: "images/Vinayak.jpg",
+
+        instagram:
+        "https://insta.openinapp.co/zfljz",
+
+        dateAdded: "2026-08-18"
+    },
+
+
+    /* =================================================
+       NAMITA MAWAI
+       UGC
+    ================================================= */
+
+    {
+        id: "namita-mawai-ugcwithnamita",
+
+        name: "Namita Mawai",
+
+        handle: "@ugcwithnamita",
+
+        followers: "627",
+
+        subscribers: "",
+
+        categories: [
+            "UGC"
+        ],
+
+        image: "images/namita.jpg",
+
+        instagram:
+        "https://www.instagram.com/ugcwithnamita?igsh=MTB1bjV2ODR3Z20xaQ==",
+
+        dateAdded: "2026-08-18"
+    },
+
+
+    /* =================================================
+       NAMITA MAWAI
+       NXMITA
+       Niche: Fashion + Lifestyle
+    ================================================= */
+
+    {
+        id: "namita-mawai-nxmita",
+
+        name: "Namita Mawai",
+
+        handle: "@nxmita",
+
+        followers: "9,073",
+
+        subscribers: "",
+
+        categories: [
+            "Fashion",
+            "Lifestyle"
+        ],
+
+        image: "images/namitaa.jpg",
+
+        instagram:
+        "https://www.instagram.com/nxmita?igsh=MXhleHg2eTl3MHFpdg==",
+
+        dateAdded: "2026-08-18"
+    }
+
+];
+
+
+/* =====================================================
+   CATEGORY SYSTEM
+===================================================== */
+
+const BASE_CATEGORIES = [
+
+    "Tech",
+    "AI",
+    "Beauty",
+    "Fashion",
+    "Lifestyle",
+    "Travel",
+    "Finance",
+    "Gaming",
+    "Food",
+    "Education",
+    "UGC",
+    "Tech UGC",
+    "Design"
+
+];
+
+
+function getCategories(){
+
+    const categorySet =
+        new Set(BASE_CATEGORIES);
+
+    CREATORS.forEach(creator => {
+
+        (creator.categories || [])
+        .forEach(category => {
+
+            categorySet.add(category);
+
+        });
+
+    });
+
+    return Array.from(categorySet);
+
+}
+
+
+/* =====================================================
+   NUMBER PARSER
+===================================================== */
+
+function parseNumber(value){
+
+    if(
+        value === undefined ||
+        value === null ||
+        value === ""
+    ){
+
+        return 0;
+
+    }
+
+    let clean =
+        String(value)
+        .replace(/,/g,"")
+        .trim()
+        .toUpperCase();
+
+
+    let multiplier = 1;
+
+
+    if(clean.endsWith("K")){
+
+        multiplier = 1000;
+
+        clean =
+        clean.slice(0,-1);
+
+    }
+
+
+    else if(clean.endsWith("M")){
+
+        multiplier = 1000000;
+
+        clean =
+        clean.slice(0,-1);
+
+    }
+
+
+    else if(clean.endsWith("B")){
+
+        multiplier = 1000000000;
+
+        clean =
+        clean.slice(0,-1);
+
+    }
+
+
+    const number =
+        parseFloat(clean);
+
+
+    return isNaN(number)
+        ? 0
+        : number * multiplier;
+
+}
+
+
+/* =====================================================
+   CREATOR META
+===================================================== */
+
+function getCreatorMeta(creator){
+
+    const parts = [];
+
+
+    if(creator.followers){
+
+        parts.push(
+            `${creator.followers} followers`
+        );
+
+    }
+
+
+    if(creator.subscribers){
+
+        parts.push(
+            `${creator.subscribers} subscribers`
+        );
+
+    }
+
+
+    if(creator.categories?.length){
+
+        parts.push(
+            creator.categories.join(" / ")
+        );
+
+    }
+
+
+    return parts.join(" · ");
+
+}
+
+
+/* =====================================================
+   INITIALS
+===================================================== */
+
+function getInitials(name){
+
+    return String(name)
+    .split(" ")
+    .filter(Boolean)
+    .slice(0,2)
+    .map(word => word[0])
+    .join("")
+    .toUpperCase();
+
+}
+
+
+/* =====================================================
+   FEATURED CREATOR CARD
+===================================================== */
+
+function createCreatorCard(creator){
+
+    const avatar =
+        creator.image
+
+        ?
+
+        `
+        <img
+            src="${creator.image}"
+            alt="${creator.name}"
+            loading="lazy"
+        >
+        `
+
+        :
+
+        `
+        ${getInitials(creator.name)}
+        `;
+
+
+    return `
+
+        <div class="creator-card">
+
+            <div class="creator-avatar">
+
+                ${avatar}
+
+            </div>
+
+
+            <div class="creator-info">
+
+                <div class="creator-name">
+
+                    ${creator.name}
+
+                </div>
+
+
+                <div class="creator-meta">
+
+                    ${getCreatorMeta(creator)}
+
+                </div>
+
+
+                <span class="creator-tag">
+
+                    Creator
+
+                </span>
+
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   FEATURED SLIDER
+===================================================== */
 
 let creatorPosition = 1;
 
+let creatorPages = [];
 
-/* Clone last */
-
-const creatorLastClone =
-    creatorPages[
-        creatorPages.length - 1
-    ].cloneNode(true);
+let creatorPageCount = 0;
 
 
-/* Clone first */
+function getCreatorsPerPage(){
 
-const creatorFirstClone =
-    creatorPages[0].cloneNode(true);
+    return 3;
 
-
-creatorTrack.insertBefore(
-    creatorLastClone,
-    creatorTrack.firstElementChild
-);
-
-creatorTrack.appendChild(
-    creatorFirstClone
-);
+}
 
 
-creatorTrack.style.transform =
-`translateX(-${creatorPosition * 100}%)`;
+function buildCreatorSlider(){
+
+    const track =
+        document.getElementById(
+            "creatorTrack"
+        );
 
 
-/* Next */
+    track.innerHTML = "";
+
+    creatorPages = [];
+
+
+    const perPage =
+        getCreatorsPerPage();
+
+
+    for(
+        let i = 0;
+        i < CREATORS.length;
+        i += perPage
+    ){
+
+        const page =
+            document.createElement("div");
+
+        page.className =
+            "creator-page";
+
+
+        CREATORS
+        .slice(i, i + perPage)
+        .forEach(creator => {
+
+            page.innerHTML +=
+                createCreatorCard(creator);
+
+        });
+
+
+        track.appendChild(page);
+
+        creatorPages.push(page);
+
+    }
+
+
+    creatorPageCount =
+        creatorPages.length;
+
+
+    if(!creatorPageCount){
+
+        return;
+
+    }
+
+
+    const lastClone =
+        creatorPages[
+            creatorPages.length - 1
+        ].cloneNode(true);
+
+
+    const firstClone =
+        creatorPages[0]
+        .cloneNode(true);
+
+
+    track.insertBefore(
+        lastClone,
+        track.firstElementChild
+    );
+
+
+    track.appendChild(
+        firstClone
+    );
+
+
+    creatorPosition = 1;
+
+
+    track.style.transition =
+        "none";
+
+    track.style.transform =
+        `translateX(-${creatorPosition * 100}%)`;
+
+}
+
+
+function moveCreatorSlider(direction){
+
+    if(!creatorPageCount){
+
+        return;
+
+    }
+
+
+    const track =
+        document.getElementById(
+            "creatorTrack"
+        );
+
+
+    creatorPosition += direction;
+
+
+    track.style.transition =
+        "transform .55s cubic-bezier(.22,.61,.36,1)";
+
+
+    track.style.transform =
+        `translateX(-${creatorPosition * 100}%)`;
+
+}
+
 
 function nextCreators(){
 
-    creatorPosition++;
-
-    creatorTrack.style.transition =
-    "transform .55s cubic-bezier(.22,.61,.36,1)";
-
-    creatorTrack.style.transform =
-    `translateX(-${creatorPosition * 100}%)`;
+    moveCreatorSlider(1);
 
 }
 
-
-/* Previous */
 
 function previousCreators(){
 
-    creatorPosition--;
-
-    creatorTrack.style.transition =
-    "transform .55s cubic-bezier(.22,.61,.36,1)";
-
-    creatorTrack.style.transform =
-    `translateX(-${creatorPosition * 100}%)`;
+    moveCreatorSlider(-1);
 
 }
 
 
-nextBtn.addEventListener(
+document
+.getElementById("nextBtn")
+.addEventListener(
     "click",
     nextCreators
 );
 
 
-prevBtn.addEventListener(
+document
+.getElementById("prevBtn")
+.addEventListener(
     "click",
     previousCreators
 );
 
 
-/* Infinite loop */
-
-creatorTrack.addEventListener(
+document
+.getElementById("creatorTrack")
+.addEventListener(
     "transitionend",
     () => {
+
+        const track =
+            document.getElementById(
+                "creatorTrack"
+            );
+
 
         if(
             creatorPosition === 0
         ){
 
-            creatorTrack.style.transition =
-            "none";
+            track.style.transition =
+                "none";
 
             creatorPosition =
-            creatorPages.length;
+                creatorPageCount;
 
-            creatorTrack.style.transform =
-            `translateX(-${creatorPosition * 100}%)`;
+            track.style.transform =
+                `translateX(-${creatorPosition * 100}%)`;
 
         }
 
 
         if(
             creatorPosition ===
-            creatorPages.length + 1
+            creatorPageCount + 1
         ){
 
-            creatorTrack.style.transition =
-            "none";
+            track.style.transition =
+                "none";
 
             creatorPosition = 1;
 
-            creatorTrack.style.transform =
-            `translateX(-${creatorPosition * 100}%)`;
+            track.style.transform =
+                `translateX(-${creatorPosition * 100}%)`;
 
         }
 
@@ -3302,7 +3343,14 @@ creatorTrack.addEventListener(
 ===================================================== */
 
 let creatorStartX = 0;
+
 let creatorStartY = 0;
+
+
+const creatorCarousel =
+    document.getElementById(
+        "creatorCarousel"
+    );
 
 
 creatorCarousel.addEventListener(
@@ -3367,113 +3415,78 @@ creatorCarousel.addEventListener(
 
 
 /* =====================================================
-   CREATOR DATABASE
+   NICHE GRID
 ===================================================== */
 
-const creators = [
+function renderNicheGrid(){
 
-    {
-        name:"Nandini Jaiswani",
-        followers:"149K",
-        niche:"Lifestyle / Fashion / Travel",
-        niches:[
-            "Lifestyle",
-            "Fashion",
-            "Travel"
-        ],
-        image:"images/nandini.jpg",
-        instagram:"#"
-    },
+    const grid =
+        document.getElementById(
+            "nicheGrid"
+        );
 
 
-    {
-        name:"Sonia Mishra",
-        followers:"48.5K",
-        niche:"Fashion / Beauty / Lifestyle / Travel",
-        niches:[
-            "Fashion",
-            "Beauty",
-            "Lifestyle",
-            "Travel"
-        ],
-        image:"images/Sonia.jpg",
-        instagram:
-        "https://www.instagram.com/sonia__mishra__/"
-    },
+    const categories =
+        getCategories();
 
 
-    {
-        name:"Ritika.Create",
-        followers:"13.2K",
-        niche:"Digital Brand Designer",
-        niches:[
-            "Design",
-            "Digital"
-        ],
-        image:"images/ritika.jpg",
-        instagram:
-        "https://www.instagram.com/ritika.create/"
-    },
+    grid.innerHTML = `
+
+        <button
+            class="niche-card"
+            onclick="openCreators()"
+        >
+
+            <div class="niche-name">
+                All Creators
+            </div>
+
+            <div class="niche-sub">
+                View Network
+            </div>
+
+        </button>
+
+    `;
 
 
-    {
-        name:"Siblings Finance",
-        followers:"116K",
-        niche:"Finance",
-        niches:[
-            "Finance"
-        ],
-        image:"images/siblingsfinance.jpg",
-        instagram:
-        "https://www.instagram.com/siblingsfinance/"
-    },
+    categories.forEach(category => {
+
+        grid.innerHTML += `
+
+            <button
+                class="niche-card"
+                onclick="openNiche('${escapeAttribute(category)}')"
+            >
+
+                <div class="niche-name">
+                    ${category}
+                </div>
+
+                <div class="niche-sub">
+                    Creators
+                </div>
+
+            </button>
+
+        `;
+
+    });
+
+}
 
 
-    {
-        name:"Vishal Hajare",
-        followers:"78.1K",
-        niche:"Tech",
-        niches:[
-            "Tech"
-        ],
-        image:"images/vishal.jpg",
-        instagram:
-        "https://www.instagram.com/tech_tricks.marathi/"
-    },
+function escapeAttribute(value){
 
+    return String(value)
+        .replace(/'/g,"\\'")
+        .replace(/"/g,"&quot;");
 
-    {
-        name:"Anant Mishra",
-        followers:"193K",
-        niche:"Skincare & Lifestyle",
-        niches:[
-            "Beauty",
-            "Lifestyle"
-        ],
-        image:"images/gullu.era.jpg",
-        instagram:
-        "https://www.instagram.com/gullu.era/"
-    },
-
-
-    {
-        name:"created.by.radhika",
-        followers:"2,221",
-        niche:"Tech & AI UGC",
-        niches:[
-            "Tech",
-            "AI"
-        ],
-        image:"images/created.by.radhika.jpg",
-        instagram:
-        "https://www.instagram.com/created.by.radhika/"
-    }
-
-];
+}
 
 
 /* =====================================================
-   OPEN / CLOSE EXPLORER
+   EXPLORER
 ===================================================== */
 
 function openExplorer(){
@@ -3481,6 +3494,7 @@ function openExplorer(){
     document
     .getElementById("explorer")
     .classList.add("active");
+
 
     document
     .body
@@ -3495,6 +3509,7 @@ function closeExplorer(){
     .getElementById("explorer")
     .classList.remove("active");
 
+
     document
     .body
     .classList.remove("no-scroll");
@@ -3503,26 +3518,138 @@ function closeExplorer(){
 
 
 /* =====================================================
-   CREATOR DIRECTORY
+   ALL CREATORS
 ===================================================== */
 
 function openCreators(){
 
-    openExplorer();
-
-    renderCreatorDirectory(
-        "All Creators In Our Network",
-        "Explore creators across multiple niches and audience sizes.",
-        "All"
+    openCreatorsSorted(
+        "followers-high"
     );
 
 }
 
 
+function openCreatorsSorted(sortType){
+
+    currentExplorerFilter =
+        "All";
+
+    currentExplorerSort =
+        sortType;
+
+
+    openExplorer();
+
+
+    renderCreatorDirectory(
+
+        "All Creators In Our Network",
+
+        "Explore creators across multiple niches and audience sizes.",
+
+        "All",
+
+        sortType
+
+    );
+
+}
+
+
+/* =====================================================
+   SORT
+===================================================== */
+
+function sortCreators(list, sortType){
+
+    const sorted =
+        [...list];
+
+
+    if(sortType === "followers-high"){
+
+        sorted.sort(
+            (a,b) =>
+            parseNumber(b.followers) -
+            parseNumber(a.followers)
+        );
+
+    }
+
+
+    else if(sortType === "followers-low"){
+
+        sorted.sort(
+            (a,b) =>
+            parseNumber(a.followers) -
+            parseNumber(b.followers)
+        );
+
+    }
+
+
+    else if(sortType === "newest"){
+
+        sorted.sort(
+            (a,b) =>
+            new Date(b.dateAdded || "1970-01-01") -
+            new Date(a.dateAdded || "1970-01-01")
+        );
+
+    }
+
+
+    return sorted;
+
+}
+
+
+let currentExplorerFilter =
+    "All";
+
+
+let currentExplorerSort =
+    "followers-high";
+
+
+function changeCreatorSort(sortType){
+
+    currentExplorerSort =
+        sortType;
+
+
+    if(
+        currentExplorerFilter === "All"
+    ){
+
+        openCreatorsSorted(
+            sortType
+        );
+
+    }
+
+    else{
+
+        openNicheSorted(
+            currentExplorerFilter,
+            sortType
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   CREATOR DIRECTORY
+===================================================== */
+
 function renderCreatorDirectory(
     title,
     description,
-    filter = "All"
+    filter = "All",
+    sortType = "followers-high"
 ){
 
     const content =
@@ -3531,14 +3658,32 @@ function renderCreatorDirectory(
         );
 
 
-    const filtered =
-        filter === "All"
+    let filtered;
 
-        ? creators
 
-        : creators.filter(
-            creator =>
-            creator.niches.includes(filter)
+    if(filter === "All"){
+
+        filtered =
+            [...CREATORS];
+
+    }
+
+    else{
+
+        filtered =
+            CREATORS.filter(
+                creator =>
+                (creator.categories || [])
+                .includes(filter)
+            );
+
+    }
+
+
+    filtered =
+        sortCreators(
+            filtered,
+            sortType
         );
 
 
@@ -3548,74 +3693,144 @@ function renderCreatorDirectory(
     filtered.forEach(
         creator => {
 
+            const metaParts = [];
+
+
+            if(creator.followers){
+
+                metaParts.push(
+                    `${creator.followers} followers`
+                );
+
+            }
+
+
+            if(creator.subscribers){
+
+                metaParts.push(
+                    `${creator.subscribers} subscribers`
+                );
+
+            }
+
+
             cards += `
 
-            <div class="profile-card">
+                <div class="profile-card">
+
+                    <div class="profile-photo">
+
+                        ${
+                            creator.image
+
+                            ?
+
+                            `
+                            <img
+                                src="${creator.image}"
+                                alt="${creator.name}"
+                                loading="lazy"
+                            >
+                            `
+
+                            :
+
+                            getInitials(
+                                creator.name
+                            )
+                        }
+
+                    </div>
 
 
-                <div class="profile-photo">
+                    <div class="profile-name">
 
-                    <img
-                        src="${creator.image}"
-                        alt="${creator.name}"
-                    >
+                        ${creator.name}
 
-                </div>
+                    </div>
 
 
-                <div class="profile-name">
-                    ${creator.name}
-                </div>
+                    ${
+                        creator.handle
 
+                        ?
 
-                <div class="profile-role">
-                    Creator
-                </div>
+                        `
+                        <div class="profile-handle">
+                            ${creator.handle}
+                        </div>
+                        `
 
+                        :
 
-                <div class="profile-meta">
-                    ${creator.followers} · ${creator.niche}
-                </div>
-
-
-                <div class="profile-tags">
-
-                    ${creator.niches
-                        .map(
-                            niche =>
-                            `<span class="profile-tag">${niche}</span>`
-                        )
-                        .join("")
+                        ""
                     }
 
+
+                    <div class="profile-role">
+                        Creator
+                    </div>
+
+
+                    <div class="profile-meta">
+
+                        ${metaParts.join(" · ")}
+
+                    </div>
+
+
+                    <div class="profile-tags">
+
+                        ${
+                            (creator.categories || [])
+                            .map(
+                                category =>
+                                `
+                                <span class="profile-tag">
+                                    ${category}
+                                </span>
+                                `
+                            )
+                            .join("")
+                        }
+
+                    </div>
+
+
+                    <div class="profile-actions">
+
+                        ${
+                            creator.instagram
+
+                            ?
+
+                            `
+                            <a
+                                href="${creator.instagram}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="profile-btn profile-instagram"
+                            >
+                                Instagram ↗
+                            </a>
+                            `
+
+                            :
+
+                            ""
+                        }
+
+
+                        <a
+                            href="mailto:contact@thev15company.in?subject=Creator enquiry - ${encodeURIComponent(creator.name)}"
+                            class="profile-btn profile-connect"
+                        >
+                            Connect
+                        </a>
+
+                    </div>
+
                 </div>
-
-
-                <div class="profile-actions">
-
-
-                    <a
-                        href="${creator.instagram}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="profile-btn profile-instagram"
-                    >
-                        View Profile
-                    </a>
-
-
-                    <a
-                        href="mailto:contact@thev15company.in?subject=Creator enquiry - ${creator.name}"
-                        class="profile-btn profile-connect"
-                    >
-                        Connect
-                    </a>
-
-
-                </div>
-
-
-            </div>
 
             `;
 
@@ -3627,32 +3842,36 @@ function renderCreatorDirectory(
 
         cards = `
 
-        <div class="empty-state">
+            <div class="empty-state">
 
-            <h3>
-                More creators coming soon.
-            </h3>
+                <h3>
+                    More creators coming soon.
+                </h3>
 
-            <p>
+                <p>
 
-                We are continuously expanding
-                this category with relevant creators
-                from our network.
+                    We are continuously expanding
+                    this category with relevant creators
+                    from our network.
 
-            </p>
+                </p>
 
-            <button
-                class="explore-btn"
-                onclick="closeExplorer()"
-            >
-                Back To Network
-            </button>
+                <button
+                    class="explore-btn"
+                    onclick="closeExplorer()"
+                >
+                    Back To Network
+                </button>
 
-        </div>
+            </div>
 
         `;
 
     }
+
+
+    const categories =
+        getCategories();
 
 
     content.innerHTML = `
@@ -3667,52 +3886,74 @@ function renderCreatorDirectory(
         </p>
 
 
-        <div class="filter-row">
+        <div class="explorer-tools">
 
+            <select
+                class="sort-select"
+                onchange="changeCreatorSort(this.value)"
+            >
+
+                <option
+                    value="followers-high"
+                    ${sortType === "followers-high" ? "selected" : ""}
+                >
+                    Followers: High to Low
+                </option>
+
+
+                <option
+                    value="followers-low"
+                    ${sortType === "followers-low" ? "selected" : ""}
+                >
+                    Followers: Low to High
+                </option>
+
+
+                <option
+                    value="newest"
+                    ${sortType === "newest" ? "selected" : ""}
+                >
+                    Newly Added
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="filter-row">
 
             <button
                 class="filter-btn
                 ${filter === "All" ? "active" : ""}"
-                onclick="renderCreatorDirectory(
-                    'All Creators In Our Network',
-                    'Explore creators across multiple niches and audience sizes.',
-                    'All'
-                )"
+                onclick="openCreatorsSorted('${sortType}')"
             >
                 All
             </button>
 
 
             ${
-                [
-                    "Tech",
-                    "AI",
-                    "Beauty",
-                    "Fashion",
-                    "Lifestyle",
-                    "Travel",
-                    "Finance",
-                    "Gaming",
-                    "Food",
-                    "Education"
-                ]
-
+                categories
                 .map(
-                    niche => `
+                    category => `
 
                     <button
                         class="filter-btn
-                        ${filter === niche ? "active" : ""}"
-                        onclick="openNiche('${niche}')"
+                        ${filter === category ? "active" : ""}"
+                        onclick="openNicheSorted(
+                            '${escapeAttribute(category)}',
+                            '${sortType}'
+                        )"
                     >
-                        ${niche}
+
+                        ${category}
+
                     </button>
 
                     `
                 )
                 .join("")
             }
-
 
         </div>
 
@@ -3734,7 +3975,28 @@ function renderCreatorDirectory(
 
 function openNiche(niche){
 
+    openNicheSorted(
+        niche,
+        "followers-high"
+    );
+
+}
+
+
+function openNicheSorted(
+    niche,
+    sortType = "followers-high"
+){
+
+    currentExplorerFilter =
+        niche;
+
+    currentExplorerSort =
+        sortType;
+
+
     openExplorer();
+
 
     renderCreatorDirectory(
 
@@ -3742,7 +4004,9 @@ function openNiche(niche){
 
         `Explore creators from our network specialising in ${niche}.`,
 
-        niche
+        niche,
+
+        sortType
 
     );
 
@@ -3953,6 +4217,22 @@ document.addEventListener(
             closeExplorer();
 
         }
+
+    }
+);
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        buildCreatorSlider();
+
+        renderNicheGrid();
 
     }
 );
