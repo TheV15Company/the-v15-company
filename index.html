@@ -10,7 +10,8 @@
 <title>The V15 Company | Digital Talent Network</title>
 
 <meta name="description"
-content="The V15 Company connects brands with creators and digital professionals across influencer marketing, social media management, copywriting, graphic design and digital content.">
+content="The V15 Company connects brands with creators and digital professionals across influencer marketing, social media management, copywriting, graphic design and video editing.">
+
 
 <style>
 
@@ -50,8 +51,7 @@ a{
     color:inherit;
 }
 
-button,
-select{
+button{
     font-family:inherit;
 }
 
@@ -65,7 +65,7 @@ select{
     top:0;
     z-index:1000;
 
-    background:rgba(255,255,255,.96);
+    background:rgba(255,255,255,.95);
 
     backdrop-filter:blur(18px);
     -webkit-backdrop-filter:blur(18px);
@@ -76,6 +76,7 @@ select{
 .nav-inner{
     max-width:1180px;
     margin:auto;
+
     padding:13px 24px;
 
     display:flex;
@@ -109,6 +110,7 @@ select{
     width:100%;
     height:100%;
     object-fit:contain;
+    display:block;
 }
 
 .logo-name{
@@ -126,6 +128,7 @@ select{
     padding:9px 12px;
 
     font-size:13px;
+
     color:#475467;
 
     border-radius:9px;
@@ -145,6 +148,7 @@ select{
     background:none;
 
     font-size:29px;
+
     cursor:pointer;
 }
 
@@ -154,12 +158,14 @@ select{
 ===================================================== */
 
 .hero{
+
     background:
     radial-gradient(
         circle at 50% 0%,
         rgba(86,171,230,.18),
         transparent 38%
     ),
+
     linear-gradient(
         180deg,
         #ffffff,
@@ -168,7 +174,9 @@ select{
 }
 
 .hero-inner{
+
     max-width:1050px;
+
     margin:auto;
 
     padding:82px 24px 92px;
@@ -177,29 +185,39 @@ select{
 }
 
 .hero-badge{
+
     display:inline-block;
 
     padding:9px 18px;
 
     border:1px solid #a9d5f5;
+
     border-radius:30px;
 
     background:#f1f9ff;
+
     color:#1769aa;
 
     font-size:12px;
+
     font-weight:850;
+
+    letter-spacing:.3px;
 
     margin-bottom:24px;
 }
 
 .hero h1{
+
     max-width:850px;
+
     margin:auto;
 
-    font-size:clamp(40px,6vw,68px);
+    font-size:
+    clamp(40px,6vw,68px);
 
     line-height:1.08;
+
     letter-spacing:-2.7px;
 
     font-weight:800;
@@ -210,36 +228,46 @@ select{
 }
 
 .hero-description{
+
     max-width:720px;
+
     margin:25px auto 32px;
 
     color:#667085;
 
     font-size:18px;
+
     line-height:1.7;
 }
 
 .hero-buttons{
+
     display:flex;
+
     justify-content:center;
+
     align-items:center;
 
     gap:13px;
+
     flex-wrap:wrap;
 }
 
 .btn{
+
     display:inline-flex;
 
     align-items:center;
     justify-content:center;
 
     min-height:52px;
+
     padding:14px 27px;
 
     border-radius:13px;
 
     font-size:14px;
+
     font-weight:800;
 
     transition:.25s ease;
@@ -261,7 +289,7 @@ select{
 
 
 /* =====================================================
-   COMMON
+   COMMON SECTIONS
 ===================================================== */
 
 .section{
@@ -279,37 +307,46 @@ select{
 }
 
 .eyebrow{
+
     color:#2478b8;
 
     font-size:12px;
+
     font-weight:900;
 
     letter-spacing:2px;
+
     text-transform:uppercase;
 
     margin-bottom:12px;
 }
 
 .section-title{
-    font-size:clamp(30px,5vw,46px);
+
+    font-size:
+    clamp(30px,5vw,46px);
 
     letter-spacing:-1.5px;
+
     line-height:1.12;
 
     font-weight:800;
 }
 
 .section-subtitle{
+
     max-width:680px;
+
     margin:14px auto 0;
 
     color:#667085;
+
     line-height:1.7;
 }
 
 
 /* =====================================================
-   FEATURED CREATOR CAROUSEL
+   FEATURED CREATORS
 ===================================================== */
 
 .creators-section{
@@ -317,16 +354,20 @@ select{
 }
 
 .creator-carousel{
+
     position:relative;
+
     width:100%;
 
     overflow:hidden;
 
     touch-action:pan-y;
+
     user-select:none;
 }
 
 .creator-track{
+
     display:flex;
 
     transition:
@@ -335,28 +376,34 @@ select{
 }
 
 .creator-page{
+
     min-width:100%;
 
     padding:8px 5px 20px;
 
     display:flex;
+
     flex-direction:column;
 
     gap:18px;
 }
 
 .creator-card{
+
     position:relative;
 
     min-height:125px;
+
     padding:20px;
 
     background:#fff;
 
     border:1px solid #dce8f2;
+
     border-radius:24px;
 
     display:flex;
+
     align-items:center;
 
     gap:17px;
@@ -366,26 +413,17 @@ select{
     box-shadow:
     0 12px 35px
     rgba(26,88,125,.07);
-
-    cursor:pointer;
-
-    transition:
-    transform .25s ease,
-    box-shadow .25s ease;
 }
 
-.creator-card:hover{
-    transform:translateY(-3px);
 
-    box-shadow:
-    0 18px 40px
-    rgba(26,88,125,.12);
-}
+/* Moving glow */
 
 .creator-card::before{
+
     content:"";
 
     position:absolute;
+
     inset:0;
 
     padding:1.5px;
@@ -408,6 +446,7 @@ select{
     linear-gradient(#fff 0 0);
 
     -webkit-mask-composite:xor;
+
     mask-composite:exclude;
 
     animation:
@@ -417,15 +456,19 @@ select{
 }
 
 @keyframes creatorGlow{
+
     to{
         transform:rotate(360deg);
     }
+
 }
 
 .creator-card::after{
+
     content:"";
 
     position:absolute;
+
     inset:1px;
 
     border-radius:23px;
@@ -442,12 +485,14 @@ select{
 }
 
 .creator-avatar{
+
     width:78px;
     height:78px;
 
     flex:0 0 78px;
 
     border-radius:50%;
+
     overflow:hidden;
 
     background:#eaf5fd;
@@ -455,53 +500,66 @@ select{
     border:2px solid #b9dcf5;
 
     display:flex;
+
     align-items:center;
     justify-content:center;
 
     color:#2478b8;
 
     font-size:20px;
+
     font-weight:900;
 }
 
 .creator-avatar img{
+
     width:100%;
     height:100%;
 
     object-fit:cover;
+
     display:block;
 }
 
 .creator-info{
     min-width:0;
+    flex:1;
 }
 
 .creator-name{
+
     font-size:18px;
+
     font-weight:800;
 
     margin-bottom:5px;
 
     white-space:nowrap;
+
     overflow:hidden;
+
     text-overflow:ellipsis;
 }
 
 .creator-meta{
+
     color:#667085;
 
     font-size:14px;
+
     line-height:1.5;
 
     margin-bottom:9px;
 }
 
 .creator-tag{
+
     display:inline-block;
 
     border:1px solid #b9dcf5;
 
     background:#f2f9ff;
+
     color:#1769aa;
 
     border-radius:20px;
@@ -509,12 +567,79 @@ select{
     padding:5px 11px;
 
     font-size:10px;
+
     font-weight:800;
+
+    margin-bottom:11px;
 }
 
-.carousel-controls{
+
+/* =====================================================
+   CREATOR CARD ACTIONS
+===================================================== */
+
+.creator-actions{
+
     display:flex;
+
     align-items:center;
+
+    gap:7px;
+
+    flex-wrap:wrap;
+
+    position:relative;
+
+    z-index:3;
+}
+
+.creator-action{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:7px 11px;
+
+    border-radius:9px;
+
+    font-size:10px;
+
+    font-weight:800;
+
+    transition:.2s ease;
+}
+
+.creator-instagram{
+
+    background:#f1f8ff;
+
+    color:#1769aa;
+
+    border:1px solid #cfe5f4;
+}
+
+.creator-connect{
+
+    background:#101828;
+
+    color:#fff;
+}
+
+.creator-action:hover{
+
+    transform:translateY(-1px);
+}
+
+
+.carousel-controls{
+
+    display:flex;
+
+    align-items:center;
+
     justify-content:center;
 
     gap:14px;
@@ -523,6 +648,7 @@ select{
 }
 
 .carousel-btn{
+
     width:44px;
     height:44px;
 
@@ -531,6 +657,7 @@ select{
     border:1px solid #b9dcf5;
 
     background:#fff;
+
     color:#1769aa;
 
     font-size:20px;
@@ -541,18 +668,22 @@ select{
 }
 
 .carousel-btn:hover{
+
     background:#eaf6ff;
+
     transform:translateY(-2px);
 }
 
 .carousel-hint{
+
     color:#98a2b3;
+
     font-size:12px;
 }
 
 
 /* =====================================================
-   NETWORK
+   OUR NETWORK
 ===================================================== */
 
 .network-section{
@@ -560,6 +691,7 @@ select{
 }
 
 .network-grid{
+
     display:grid;
 
     grid-template-columns:
@@ -569,9 +701,11 @@ select{
 }
 
 .network-card{
+
     background:#f9fcff;
 
     border:1px solid #dce8f2;
+
     border-radius:22px;
 
     padding:28px 20px;
@@ -582,6 +716,7 @@ select{
 }
 
 .network-card:hover{
+
     transform:translateY(-5px);
 
     border-color:#8ec8ee;
@@ -592,6 +727,7 @@ select{
 }
 
 .network-line{
+
     width:36px;
     height:3px;
 
@@ -603,25 +739,31 @@ select{
 }
 
 .network-card h3{
+
     font-size:16px;
+
     line-height:1.35;
 
     margin-bottom:9px;
 }
 
 .network-card p{
+
     color:#667085;
 
     font-size:13px;
+
     line-height:1.6;
 
     margin-bottom:18px;
 }
 
 .explore-btn{
+
     display:inline-flex;
 
     align-items:center;
+
     justify-content:center;
 
     padding:10px 14px;
@@ -629,9 +771,11 @@ select{
     border-radius:10px;
 
     background:#eaf6ff;
+
     color:#1769aa;
 
     font-size:12px;
+
     font-weight:800;
 
     border:1px solid transparent;
@@ -642,7 +786,9 @@ select{
 }
 
 .explore-btn:hover{
+
     border-color:#a9d5f5;
+
     background:#f2f9ff;
 }
 
@@ -652,6 +798,7 @@ select{
 ===================================================== */
 
 .niches-section{
+
     background:
     linear-gradient(
         180deg,
@@ -661,6 +808,7 @@ select{
 }
 
 .niche-grid{
+
     display:grid;
 
     grid-template-columns:
@@ -674,6 +822,7 @@ select{
 }
 
 .niche-card{
+
     padding:21px 12px;
 
     background:#fff;
@@ -690,6 +839,7 @@ select{
 }
 
 .niche-card:hover{
+
     transform:translateY(-4px);
 
     border-color:#8ec8ee;
@@ -700,11 +850,14 @@ select{
 }
 
 .niche-name{
+
     font-size:14px;
+
     font-weight:800;
 }
 
 .niche-sub{
+
     color:#98a2b3;
 
     font-size:10px;
@@ -722,6 +875,7 @@ select{
 }
 
 .services-grid{
+
     display:grid;
 
     grid-template-columns:
@@ -731,6 +885,7 @@ select{
 }
 
 .service-card{
+
     background:#f9fcff;
 
     border:1px solid #dce8f2;
@@ -743,6 +898,7 @@ select{
 }
 
 .service-icon{
+
     width:50px;
     height:50px;
 
@@ -751,6 +907,7 @@ select{
     border-radius:15px;
 
     background:#eaf6ff;
+
     color:#1769aa;
 
     display:flex;
@@ -762,14 +919,18 @@ select{
 }
 
 .service-card h3{
+
     font-size:17px;
+
     margin-bottom:8px;
 }
 
 .service-card p{
+
     color:#667085;
 
     font-size:13px;
+
     line-height:1.6;
 }
 
@@ -783,7 +944,9 @@ select{
 }
 
 .feedback-box{
+
     max-width:850px;
+
     margin:auto;
 
     padding:35px;
@@ -800,21 +963,27 @@ select{
 }
 
 .feedback-text{
+
     color:#475467;
 
     line-height:1.8;
+
     font-size:15px;
 }
 
 .feedback-name{
+
     margin-top:20px;
+
     font-weight:800;
 }
 
 .feedback-role{
+
     color:#2478b8;
 
     font-size:12px;
+
     margin-top:4px;
 }
 
@@ -824,18 +993,21 @@ select{
 ===================================================== */
 
 .contact-section{
+
     background:
     radial-gradient(
         circle at 50% 0%,
         rgba(84,164,224,.16),
         transparent 35%
     ),
+
     #fff;
 
     text-align:center;
 }
 
 .contact-section p{
+
     max-width:620px;
 
     margin:15px auto 25px;
@@ -846,6 +1018,7 @@ select{
 }
 
 .contact-btn{
+
     display:inline-flex;
 
     padding:14px 22px;
@@ -853,6 +1026,7 @@ select{
     border-radius:13px;
 
     background:#101828;
+
     color:#fff;
 
     font-weight:800;
@@ -860,56 +1034,77 @@ select{
 
 
 /* =====================================================
-   SOCIAL LINKS
+   SOCIAL TEXT SECTION
 ===================================================== */
 
 .social-section{
-    background:#fff;
 
-    padding:55px 20px 65px;
+    background:#ffffff;
+
+    padding:
+    45px 20px 55px;
 
     border-top:1px solid #edf3f8;
 }
 
+.social-section-inner{
+
+    max-width:850px;
+
+    margin:auto;
+
+    text-align:center;
+}
+
 .social-links{
+
     display:flex;
 
-    justify-content:center;
     align-items:center;
+
+    justify-content:center;
 
     gap:12px;
 
     flex-wrap:wrap;
+
+    margin-top:20px;
 }
 
 .social-link{
+
     display:inline-flex;
 
     align-items:center;
+
     justify-content:center;
 
-    padding:11px 18px;
+    gap:7px;
 
-    border-radius:12px;
+    padding:11px 17px;
+
+    border-radius:11px;
+
+    background:#f5faff;
 
     border:1px solid #dce8f2;
 
-    background:#f9fcff;
-
     color:#1769aa;
 
-    font-size:13px;
+    font-size:12px;
+
     font-weight:800;
 
     transition:.2s ease;
 }
 
 .social-link:hover{
+
+    transform:translateY(-2px);
+
     background:#eaf6ff;
 
     border-color:#a9d5f5;
-
-    transform:translateY(-2px);
 }
 
 
@@ -918,6 +1113,7 @@ select{
 ===================================================== */
 
 footer{
+
     padding:35px 20px;
 
     text-align:center;
@@ -930,6 +1126,7 @@ footer{
 }
 
 .footer-logo{
+
     width:68px;
     height:68px;
 
@@ -948,10 +1145,13 @@ footer{
 }
 
 .footer-logo img{
+
     width:100%;
     height:100%;
 
     object-fit:contain;
+
+    display:block;
 }
 
 footer strong{
@@ -964,6 +1164,7 @@ footer strong{
 ===================================================== */
 
 .explorer{
+
     position:fixed;
 
     inset:0;
@@ -974,6 +1175,7 @@ footer strong{
     rgba(247,251,255,.98);
 
     backdrop-filter:blur(20px);
+
     -webkit-backdrop-filter:blur(20px);
 
     overflow-y:auto;
@@ -986,6 +1188,7 @@ footer strong{
 }
 
 .explorer-inner{
+
     max-width:1120px;
 
     margin:auto;
@@ -994,18 +1197,22 @@ footer strong{
 }
 
 .explorer-top{
+
     display:flex;
 
     align-items:center;
+
     justify-content:space-between;
 
     margin-bottom:42px;
 }
 
 .back-btn{
+
     border:1px solid #c9dfef;
 
     background:#fff;
+
     color:#1769aa;
 
     padding:11px 16px;
@@ -1013,12 +1220,14 @@ footer strong{
     border-radius:11px;
 
     font-size:13px;
+
     font-weight:800;
 
     cursor:pointer;
 }
 
 .close-btn{
+
     width:42px;
     height:42px;
 
@@ -1031,23 +1240,27 @@ footer strong{
     cursor:pointer;
 
     font-size:20px;
+
     color:#475467;
 }
 
 .explorer-title{
+
     text-align:center;
 
     margin-bottom:10px;
 
-    font-size:clamp(30px,5vw,48px);
+    font-size:
+    clamp(30px,5vw,48px);
 
     letter-spacing:-1.5px;
 }
 
 .explorer-description{
+
     max-width:650px;
 
-    margin:0 auto 30px;
+    margin:0 auto 35px;
 
     text-align:center;
 
@@ -1062,6 +1275,7 @@ footer strong{
 ===================================================== */
 
 .filter-row{
+
     display:flex;
 
     gap:8px;
@@ -1070,10 +1284,11 @@ footer strong{
 
     justify-content:center;
 
-    margin-bottom:15px;
+    margin-bottom:30px;
 }
 
 .filter-btn{
+
     padding:9px 13px;
 
     border-radius:20px;
@@ -1081,17 +1296,18 @@ footer strong{
     border:1px solid #cfe2ef;
 
     background:#fff;
+
     color:#667085;
 
     font-size:11px;
+
     font-weight:800;
 
     cursor:pointer;
-
-    transition:.2s ease;
 }
 
 .filter-btn.active{
+
     background:#1769aa;
 
     color:#fff;
@@ -1101,53 +1317,11 @@ footer strong{
 
 
 /* =====================================================
-   SORT
-===================================================== */
-
-.sort-row{
-    display:flex;
-
-    justify-content:flex-end;
-
-    align-items:center;
-
-    gap:8px;
-
-    margin-bottom:25px;
-}
-
-.sort-label{
-    color:#667085;
-
-    font-size:12px;
-    font-weight:700;
-}
-
-.sort-select{
-    padding:9px 12px;
-
-    border-radius:10px;
-
-    border:1px solid #cfe2ef;
-
-    background:#fff;
-
-    color:#475467;
-
-    font-size:12px;
-    font-weight:700;
-
-    outline:none;
-
-    cursor:pointer;
-}
-
-
-/* =====================================================
    PROFILE GRID
 ===================================================== */
 
 .profile-grid{
+
     display:grid;
 
     grid-template-columns:
@@ -1157,6 +1331,7 @@ footer strong{
 }
 
 .profile-card{
+
     background:#fff;
 
     border:1px solid #dce8f2;
@@ -1173,6 +1348,7 @@ footer strong{
 }
 
 .profile-card:hover{
+
     transform:translateY(-4px);
 
     box-shadow:
@@ -1181,6 +1357,7 @@ footer strong{
 }
 
 .profile-photo{
+
     width:86px;
     height:86px;
 
@@ -1196,6 +1373,7 @@ footer strong{
 }
 
 .profile-photo img{
+
     width:100%;
     height:100%;
 
@@ -1203,6 +1381,7 @@ footer strong{
 }
 
 .profile-name{
+
     font-size:18px;
 
     font-weight:850;
@@ -1210,15 +1389,8 @@ footer strong{
     margin-bottom:5px;
 }
 
-.profile-handle{
-    color:#98a2b3;
-
-    font-size:11px;
-
-    margin-bottom:7px;
-}
-
 .profile-role{
+
     color:#2478b8;
 
     font-size:12px;
@@ -1229,16 +1401,16 @@ footer strong{
 }
 
 .profile-meta{
+
     color:#667085;
 
     font-size:12px;
-
-    line-height:1.5;
 
     margin-bottom:13px;
 }
 
 .profile-tags{
+
     display:flex;
 
     flex-wrap:wrap;
@@ -1249,6 +1421,7 @@ footer strong{
 }
 
 .profile-tag{
+
     padding:5px 8px;
 
     border-radius:15px;
@@ -1265,6 +1438,7 @@ footer strong{
 }
 
 .profile-actions{
+
     display:flex;
 
     gap:8px;
@@ -1273,9 +1447,11 @@ footer strong{
 }
 
 .profile-btn{
+
     display:inline-flex;
 
     align-items:center;
+
     justify-content:center;
 
     padding:9px 12px;
@@ -1288,6 +1464,7 @@ footer strong{
 }
 
 .profile-instagram{
+
     background:#f1f8ff;
 
     color:#1769aa;
@@ -1296,6 +1473,7 @@ footer strong{
 }
 
 .profile-connect{
+
     background:#101828;
 
     color:#fff;
@@ -1307,6 +1485,7 @@ footer strong{
 ===================================================== */
 
 .professional-profile{
+
     max-width:900px;
 
     margin:0 auto;
@@ -1335,7 +1514,42 @@ footer strong{
     overflow:hidden;
 }
 
+.professional-profile::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:100%;
+    height:3px;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        #5ebcf0,
+        #ffffff,
+        #5ebcf0,
+        transparent
+    );
+
+    animation:
+    professionalGlow 3s linear infinite;
+}
+
+@keyframes professionalGlow{
+
+    to{
+        left:100%;
+    }
+
+}
+
 .professional-photo{
+
     width:150px;
     height:150px;
 
@@ -1349,6 +1563,7 @@ footer strong{
 }
 
 .professional-photo img{
+
     width:100%;
     height:100%;
 
@@ -1356,6 +1571,7 @@ footer strong{
 }
 
 .professional-name{
+
     font-size:28px;
 
     font-weight:850;
@@ -1364,6 +1580,7 @@ footer strong{
 }
 
 .professional-role{
+
     color:#2478b8;
 
     font-size:14px;
@@ -1374,6 +1591,7 @@ footer strong{
 }
 
 .professional-experience{
+
     color:#667085;
 
     font-size:13px;
@@ -1382,6 +1600,7 @@ footer strong{
 }
 
 .professional-tags{
+
     display:flex;
 
     gap:7px;
@@ -1392,6 +1611,7 @@ footer strong{
 }
 
 .professional-tag{
+
     padding:7px 10px;
 
     border-radius:20px;
@@ -1408,6 +1628,7 @@ footer strong{
 }
 
 .professional-quote{
+
     color:#344054;
 
     font-size:16px;
@@ -1418,6 +1639,7 @@ footer strong{
 }
 
 .professional-description{
+
     color:#667085;
 
     font-size:13px;
@@ -1428,6 +1650,7 @@ footer strong{
 }
 
 .professional-actions{
+
     display:flex;
 
     flex-wrap:wrap;
@@ -1436,6 +1659,7 @@ footer strong{
 }
 
 .linkedin-btn{
+
     display:inline-flex;
 
     padding:12px 16px;
@@ -1452,6 +1676,7 @@ footer strong{
 }
 
 .v15-connect-btn{
+
     display:inline-flex;
 
     padding:12px 16px;
@@ -1469,10 +1694,11 @@ footer strong{
 
 
 /* =====================================================
-   EMPTY
+   EMPTY STATE
 ===================================================== */
 
 .empty-state{
+
     max-width:720px;
 
     margin:30px auto;
@@ -1489,12 +1715,14 @@ footer strong{
 }
 
 .empty-state h3{
+
     font-size:22px;
 
     margin-bottom:10px;
 }
 
 .empty-state p{
+
     color:#667085;
 
     font-size:14px;
@@ -1530,6 +1758,7 @@ footer strong{
         grid-template-columns:
         repeat(2,1fr);
     }
+
 }
 
 
@@ -1553,6 +1782,7 @@ footer strong{
     }
 
     .nav-links{
+
         display:none;
 
         position:absolute;
@@ -1582,6 +1812,7 @@ footer strong{
     }
 
     .hero h1{
+
         font-size:42px;
 
         letter-spacing:-1.8px;
@@ -1600,6 +1831,7 @@ footer strong{
     }
 
     .creator-card{
+
         min-height:112px;
 
         padding:16px;
@@ -1608,6 +1840,7 @@ footer strong{
     }
 
     .creator-avatar{
+
         width:68px;
         height:68px;
 
@@ -1620,6 +1853,11 @@ footer strong{
 
     .creator-meta{
         font-size:12px;
+    }
+
+    .creator-action{
+        font-size:9px;
+        padding:6px 9px;
     }
 
     .network-grid{
@@ -1639,12 +1877,8 @@ footer strong{
         grid-template-columns:1fr;
     }
 
-    .sort-row{
-        justify-content:center;
-        flex-wrap:wrap;
-    }
-
     .professional-profile{
+
         grid-template-columns:1fr;
 
         padding:25px;
@@ -1653,6 +1887,7 @@ footer strong{
     }
 
     .professional-photo{
+
         width:130px;
         height:130px;
 
@@ -1661,6 +1896,7 @@ footer strong{
 
     .professional-tags,
     .professional-actions{
+
         justify-content:center;
     }
 
@@ -1672,38 +1908,22 @@ footer strong{
         padding:25px 20px;
     }
 
+}
+
+
+@media(max-width:430px){
+
     .social-links{
         flex-direction:column;
     }
 
     .social-link{
         width:100%;
-        max-width:300px;
+        max-width:260px;
     }
+
 }
 
-
-@media(max-width:430px){
-
-    .creator-card{
-        padding:14px;
-    }
-
-    .creator-avatar{
-        width:62px;
-        height:62px;
-
-        flex-basis:62px;
-    }
-
-    .creator-name{
-        font-size:15px;
-    }
-
-    .creator-meta{
-        font-size:11px;
-    }
-}
 
 </style>
 
@@ -1721,7 +1941,10 @@ footer strong{
 
     <div class="nav-inner">
 
-        <a href="#home" class="logo">
+        <a
+            href="#home"
+            class="logo"
+        >
 
             <div class="logo-box">
 
@@ -1815,7 +2038,7 @@ footer strong{
 
             We help brands build meaningful digital presence
             through creator collaborations, social media management,
-            copywriting, graphic design and digital content.
+            copywriting, graphic design and video content.
 
         </p>
 
@@ -1823,14 +2046,12 @@ footer strong{
         <div class="hero-buttons">
 
             <a
-                href="#contact"
+                href="mailto:contact@thev15company.in"
                 class="btn btn-dark"
             >
                 I'm a Brand →
             </a>
 
-
-            <!-- CREATOR GOOGLE FORM -->
 
             <a
                 href="https://openinapp.link/zic87"
@@ -1850,6 +2071,7 @@ footer strong{
 
 <!-- =====================================================
      FEATURED CREATORS
+     AUTO GENERATED FROM DATABASE
 ===================================================== -->
 
 <section
@@ -1879,12 +2101,6 @@ footer strong{
         </div>
 
 
-        <!--
-            IMPORTANT:
-            Cards are generated automatically
-            from creators[] database.
-        -->
-
         <div
             class="creator-carousel"
             id="creatorCarousel"
@@ -1893,7 +2109,9 @@ footer strong{
             <div
                 class="creator-track"
                 id="creatorTrack"
-            ></div>
+            >
+
+            </div>
 
         </div>
 
@@ -1903,7 +2121,6 @@ footer strong{
             <button
                 class="carousel-btn"
                 id="prevBtn"
-                aria-label="Previous creators"
             >
                 ←
             </button>
@@ -1915,7 +2132,6 @@ footer strong{
             <button
                 class="carousel-btn"
                 id="nextBtn"
-                aria-label="Next creators"
             >
                 →
             </button>
@@ -2052,6 +2268,7 @@ footer strong{
 
             </div>
 
+
         </div>
 
     </div>
@@ -2090,116 +2307,10 @@ footer strong{
         </div>
 
 
-        <div class="niche-grid">
-
-
-            <button
-                class="niche-card"
-                onclick="openNiche('Tech')"
-            >
-                <div class="niche-name">Tech</div>
-                <div class="niche-sub">Explore creators</div>
-            </button>
-
-
-            <button
-                class="niche-card"
-                onclick="openNiche('Tech UGC')"
-            >
-                <div class="niche-name">Tech UGC</div>
-                <div class="niche-sub">Explore creators</div>
-            </button>
-
-
-            <button
-                class="niche-card"
-                onclick="openNiche('UGC')"
-            >
-                <div class="niche-name">UGC</div>
-                <div class="niche-sub">Explore creators</div>
-            </button>
-
-
-            <button
-                class="niche-card"
-                onclick="openNiche('AI')"
-            >
-                <div class="niche-name">AI</div>
-                <div class="niche-sub">Explore creators</div>
-            </button>
-
-
-            <button
-                class="niche-card"
-                onclick="openNiche('Beauty')"
-            >
-                <div class="niche-name">Beauty</div>
-                <div class="niche-sub">Explore creators</div>
-            </button>
-
-
-            <button
-                class="niche-card"
-                onclick="openNiche('Fashion')"
-            >
-                <div class="niche-name">Fashion</div>
-                <div class="niche-sub">Explore creators</div>
-            </button>
-
-
-            <button
-                class="niche-card"
-                onclick="openNiche('Lifestyle')"
-            >
-                <div class="niche-name">Lifestyle</div>
-                <div class="niche-sub">Explore creators</div>
-            </button>
-
-
-            <button
-                class="niche-card"
-                onclick="openNiche('Travel')"
-            >
-                <div class="niche-name">Travel</div>
-                <div class="niche-sub">Explore creators</div>
-            </button>
-
-
-            <button
-                class="niche-card"
-                onclick="openNiche('Finance')"
-            >
-                <div class="niche-name">Finance</div>
-                <div class="niche-sub">Explore creators</div>
-            </button>
-
-
-            <button
-                class="niche-card"
-                onclick="openNiche('Gaming')"
-            >
-                <div class="niche-name">Gaming</div>
-                <div class="niche-sub">Explore creators</div>
-            </button>
-
-
-            <button
-                class="niche-card"
-                onclick="openNiche('Food')"
-            >
-                <div class="niche-name">Food</div>
-                <div class="niche-sub">Explore creators</div>
-            </button>
-
-
-            <button
-                class="niche-card"
-                onclick="openNiche('Education')"
-            >
-                <div class="niche-name">Education</div>
-                <div class="niche-sub">Explore creators</div>
-            </button>
-
+        <div
+            class="niche-grid"
+            id="nicheGrid"
+        >
 
         </div>
 
@@ -2415,39 +2526,47 @@ footer strong{
             Get In Touch →
         </a>
 
+
     </div>
 
 </section>
 
 
 <!-- =====================================================
-     SOCIAL LINKS
+     OFFICIAL SOCIAL LINKS
 ===================================================== -->
 
 <section class="social-section">
 
-    <div class="social-links">
+    <div class="social-section-inner">
+
+        <div class="eyebrow">
+            Connect With Us
+        </div>
 
 
-        <a
-            href="https://www.instagram.com/the_v15_company?igsh=Y253OXJjeXJ5ejU0"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-link"
-        >
-            Instagram @the_v15_company →
-        </a>
+        <div class="social-links">
+
+            <a
+                class="social-link"
+                href="https://www.instagram.com/the_v15_company?igsh=Y253OXJjeXJ5ejU0"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                ◎ Instagram
+            </a>
 
 
-        <a
-            href="https://www.linkedin.com/company/the-v15-company/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-link"
-        >
-            LinkedIn The V15 Company →
-        </a>
+            <a
+                class="social-link"
+                href="https://www.linkedin.com/company/the-v15-company/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                in LinkedIn
+            </a>
 
+        </div>
 
     </div>
 
@@ -2496,7 +2615,6 @@ footer strong{
 
     <div class="explorer-inner">
 
-
         <div class="explorer-top">
 
             <button
@@ -2517,7 +2635,8 @@ footer strong{
         </div>
 
 
-        <div id="explorerContent"></div>
+        <div id="explorerContent">
+        </div>
 
     </div>
 
@@ -2525,6 +2644,254 @@ footer strong{
 
 
 <script>
+
+/* =====================================================
+   CREATOR DATABASE
+   ONLY PLACE WHERE NEW CREATORS ARE ADDED
+===================================================== */
+
+const creators = [
+
+    {
+        name:"Nandini Jaiswani",
+        handle:"@nandini",
+        followers:"149K",
+        categories:[
+            "Lifestyle",
+            "Fashion",
+            "Travel"
+        ],
+        image:"images/nandini.jpg",
+        instagram:"#",
+        dateAdded:"2026-01-01"
+    },
+
+
+    {
+        name:"Sonia Mishra",
+        handle:"@sonia__mishra__",
+        followers:"48.5K",
+        categories:[
+            "Fashion",
+            "Beauty",
+            "Lifestyle",
+            "Travel"
+        ],
+        image:"images/Sonia.jpg",
+        instagram:
+        "https://www.instagram.com/sonia__mishra__/",
+        dateAdded:"2026-01-01"
+    },
+
+
+    {
+        name:"Ritika.Create",
+        handle:"@ritika.create",
+        followers:"13.2K",
+        categories:[
+            "Design",
+            "Digital"
+        ],
+        image:"images/ritika.jpg",
+        instagram:
+        "https://www.instagram.com/ritika.create/",
+        dateAdded:"2026-01-01"
+    },
+
+
+    {
+        name:"Siblings Finance",
+        handle:"@siblingsfinance",
+        followers:"116K",
+        categories:[
+            "Finance"
+        ],
+        image:"images/siblingsfinance.jpg",
+        instagram:
+        "https://www.instagram.com/siblingsfinance/",
+        dateAdded:"2026-01-01"
+    },
+
+
+    {
+        name:"Vishal Hajare",
+        handle:"@tech_tricks.marathi",
+        followers:"78.1K",
+        categories:[
+            "Tech"
+        ],
+        image:"images/vishal.jpg",
+        instagram:
+        "https://www.instagram.com/tech_tricks.marathi/",
+        dateAdded:"2026-01-01"
+    },
+
+
+    {
+        name:"Anant Mishra",
+        handle:"@gullu.era",
+        followers:"193K",
+        categories:[
+            "Beauty",
+            "Lifestyle"
+        ],
+        image:"images/gullu.era.jpg",
+        instagram:
+        "https://www.instagram.com/gullu.era/",
+        dateAdded:"2026-01-01"
+    },
+
+
+    {
+        name:"created.by.radhika",
+        handle:"@created.by.radhika",
+        followers:"2,221",
+        categories:[
+            "Tech",
+            "AI",
+            "Tech UGC"
+        ],
+        image:"images/created.by.radhika.jpg",
+        instagram:
+        "https://www.instagram.com/created.by.radhika/",
+        dateAdded:"2026-01-01"
+    },
+
+
+    {
+        name:"Vinayak Choubey",
+        handle:"@techvinch.in",
+        followers:"799",
+        subscribers:"99K",
+        categories:[
+            "Tech"
+        ],
+        image:"images/Vinayak.jpg",
+        instagram:
+        "https://insta.openinapp.co/zfljz",
+        dateAdded:"2026-08-18"
+    },
+
+
+    {
+        name:"Namita Mawai",
+        handle:"@ugcwithnamita",
+        followers:"627",
+        categories:[
+            "UGC"
+        ],
+        image:"images/namita.jpg",
+        instagram:
+        "https://www.instagram.com/ugcwithnamita?igsh=MTB1bjV2ODR3Z20xaQ==",
+        dateAdded:"2026-08-18"
+    },
+
+
+    {
+        name:"Namita Mawai",
+        handle:"@nxmita",
+        followers:"9,073",
+        categories:[
+            "Fashion",
+            "Lifestyle"
+        ],
+        image:"images/namitaa.jpg",
+        instagram:
+        "https://www.instagram.com/nxmita?igsh=MXhleHg2eTl3MHFpdg==",
+        dateAdded:"2026-08-18"
+    },
+
+
+    {
+        name:"Geet Mahi Rana",
+        handle:"@Geetmahirana",
+        followers:"5,878",
+        categories:[
+            "Fashion",
+            "Beauty",
+            "Skincare",
+            "Lifestyle"
+        ],
+        image:"images/Geet.jpg",
+        instagram:
+        "https://www.instagram.com/geetmahirana?igsh=OWF6ZmZweWdlZGo2",
+        dateAdded:"2026-08-18"
+    },
+
+
+    {
+        name:"Muskan",
+        handle:"@muskannsahh",
+        followers:"9,433",
+        categories:[
+            "UGC",
+            "Lifestyle"
+        ],
+        image:"images/Muskan.jpg",
+        instagram:
+        "https://www.instagram.com/muskannsahh?igsh=MXc4cnJpaHQ3eXc0aQ==",
+        dateAdded:"2026-08-18"
+    },
+
+
+    {
+        name:"Nisha Kumawat",
+        handle:"@bewith_nishaa_",
+        followers:"2,854",
+        categories:[
+            "Beauty",
+            "Makeup",
+            "Fashion"
+        ],
+        image:"images/Nisha.jpg",
+        instagram:
+        "https://www.instagram.com/bewith_nishaa_?igsh=emYybmp5cWFodWp2",
+        dateAdded:"2026-08-18"
+    },
+
+
+    {
+        name:"Tejas Tapkir",
+        handle:"@hindi_tech_guru__",
+        followers:"206K",
+        categories:[
+            "Tech",
+            "AI"
+        ],
+        image:"images/Tejas.jpg",
+        instagram:
+        "https://www.instagram.com/hindi_tech_guru__?igsh=ajl3ODAyOXlrZTU5",
+        dateAdded:"2026-08-18"
+    }
+
+];
+
+
+/* =====================================================
+   CATEGORIES
+===================================================== */
+
+const categories = [
+
+    "Tech",
+    "Tech UGC",
+    "UGC",
+    "AI",
+    "Beauty",
+    "Fashion",
+    "Skincare",
+    "Makeup",
+    "Lifestyle",
+    "Travel",
+    "Finance",
+    "Gaming",
+    "Food",
+    "Education",
+    "Design",
+    "Digital"
+
+];
+
 
 /* =====================================================
    MOBILE MENU
@@ -2559,274 +2926,17 @@ document
 
 
 /* =====================================================
-   CREATOR DATABASE
-   =====================================================
-   
-   IMPORTANT:
-   ADD NEW CREATOR ONLY HERE.
-
-   Automatically used by:
-   1. Floating carousel
-   2. All Creators
-   3. Niche categories
-   4. Sorting
-   5. Instagram links
-   6. V15 DM links
-
+   SHUFFLE
+   CREATOR ORDER CHANGES ON EVERY PAGE LOAD
 ===================================================== */
 
-const creators = [
+function shuffleCreators(array){
 
-    {
-        name:"Nandini Jaiswani",
-        handle:"@nandini_jaiswani",
-        followers:"149K",
-        categories:[
-            "Lifestyle",
-            "Fashion",
-            "Travel"
-        ],
-        image:"images/nandini.jpg",
-        instagram:
-        "https://www.instagram.com/nandini_jaiswani/",
-        dateAdded:"2026-08-01"
-    },
-
-
-    {
-        name:"Sonia Mishra",
-        handle:"@sonia__mishra__",
-        followers:"48.5K",
-        categories:[
-            "Fashion",
-            "Beauty",
-            "Lifestyle",
-            "Travel"
-        ],
-        image:"images/Sonia.jpg",
-        instagram:
-        "https://www.instagram.com/sonia__mishra__/",
-        dateAdded:"2026-08-02"
-    },
-
-
-    {
-        name:"Ritika.Create",
-        handle:"@ritika.create",
-        followers:"13.2K",
-        categories:[
-            "Design",
-            "Digital"
-        ],
-        image:"images/ritika.jpg",
-        instagram:
-        "https://www.instagram.com/ritika.create/",
-        dateAdded:"2026-08-03"
-    },
-
-
-    {
-        name:"Siblings Finance",
-        handle:"@siblingsfinance",
-        followers:"116K",
-        categories:[
-            "Finance"
-        ],
-        image:"images/siblingsfinance.jpg",
-        instagram:
-        "https://www.instagram.com/siblingsfinance/",
-        dateAdded:"2026-08-04"
-    },
-
-
-    {
-        name:"Vishal Hajare",
-        handle:"@tech_tricks.marathi",
-        followers:"78.1K",
-        categories:[
-            "Tech"
-        ],
-        image:"images/vishal.jpg",
-        instagram:
-        "https://www.instagram.com/tech_tricks.marathi/",
-        dateAdded:"2026-08-05"
-    },
-
-
-    {
-        name:"Anant Mishra",
-        handle:"@gullu.era",
-        followers:"193K",
-        categories:[
-            "Beauty",
-            "Lifestyle"
-        ],
-        image:"images/gullu.era.jpg",
-        instagram:
-        "https://www.instagram.com/gullu.era/",
-        dateAdded:"2026-08-06"
-    },
-
-
-    {
-        name:"created.by.radhika",
-        handle:"@created.by.radhika",
-        followers:"2,221",
-        categories:[
-            "Tech",
-            "Tech UGC",
-            "AI"
-        ],
-        image:"images/created.by.radhika.jpg",
-        instagram:
-        "https://www.instagram.com/created.by.radhika/",
-        dateAdded:"2026-08-07"
-    },
-
-
-    /* =================================================
-       VINAYAK
-    ================================================= */
-
-    {
-        name:"Vinayak Choubey",
-        handle:"@techvinch.in",
-        followers:"799",
-        subscribers:"99K",
-        categories:[
-            "Tech"
-        ],
-        image:"images/Vinayak.jpg",
-        instagram:
-        "https://insta.openinapp.co/zfljz",
-        dateAdded:"2026-08-18"
-    },
-
-
-    /* =================================================
-       NAMITA 1
-    ================================================= */
-
-    {
-        name:"Namita Mawai",
-        handle:"@ugcwithnamita",
-        followers:"627",
-        categories:[
-            "UGC"
-        ],
-        image:"images/namita.jpg",
-        instagram:
-        "https://www.instagram.com/ugcwithnamita?igsh=MTB1bjV2ODR3Z20xaQ==",
-        dateAdded:"2026-08-18"
-    },
-
-
-    /* =================================================
-       NAMITA 2
-    ================================================= */
-
-    {
-        name:"Namita Mawai",
-        handle:"@nxmita",
-        followers:"9,073",
-        categories:[
-            "UGC",
-            "Fashion",
-            "Lifestyle"
-        ],
-        image:"images/namitaa.jpg",
-        instagram:
-        "https://www.instagram.com/nxmita?igsh=MXhleHg2eTl3MHFpdg==",
-        dateAdded:"2026-08-18"
-    }
-
-];
-
-
-/* =====================================================
-   CATEGORY DATABASE
-===================================================== */
-
-const categories = [
-
-    "Tech",
-    "Tech UGC",
-    "UGC",
-    "AI",
-    "Beauty",
-    "Fashion",
-    "Lifestyle",
-    "Travel",
-    "Finance",
-    "Gaming",
-    "Food",
-    "Education",
-    "Design",
-    "Digital"
-
-];
-
-
-/* =====================================================
-   HELPER
-   CONVERT FOLLOWERS TO NUMBER
-===================================================== */
-
-function parseFollowers(value){
-
-    if(!value){
-        return 0;
-    }
-
-    let text =
-        String(value)
-        .toUpperCase()
-        .replace(/,/g,"")
-        .trim();
-
-
-    if(text.endsWith("K")){
-
-        return parseFloat(
-            text.replace("K","")
-        ) * 1000;
-
-    }
-
-
-    if(text.endsWith("M")){
-
-        return parseFloat(
-            text.replace("M","")
-        ) * 1000000;
-
-    }
-
-
-    if(text.endsWith("L")){
-
-        return parseFloat(
-            text.replace("L","")
-        ) * 100000;
-
-    }
-
-
-    return parseFloat(text) || 0;
-}
-
-
-/* =====================================================
-   RANDOM SHUFFLE
-===================================================== */
-
-function shuffleArray(array){
-
-    const result =
+    const shuffled =
         [...array];
 
     for(
-        let i = result.length - 1;
+        let i = shuffled.length - 1;
         i > 0;
         i--
     ){
@@ -2837,41 +2947,48 @@ function shuffleArray(array){
             );
 
         [
-            result[i],
-            result[j]
+            shuffled[i],
+            shuffled[j]
         ] =
         [
-            result[j],
-            result[i]
+            shuffled[j],
+            shuffled[i]
         ];
 
     }
 
-    return result;
+    return shuffled;
 }
 
 
 /* =====================================================
-   V15 INSTAGRAM DM LINK
+   FORMAT CREATOR DETAILS
 ===================================================== */
 
-function getV15DMLink(creator){
+function creatorDetails(creator){
 
-    const username =
-        creator.handle
-        ? creator.handle.replace("@","")
-        : creator.name;
+    let details =
+        creator.followers || "";
 
+    if(creator.subscribers){
 
-    const message =
-        `Hi The V15 Company Team, I'm interested in collaborating with @${username}. Kindly share the collaboration details and next steps. Thank you!`;
+        details +=
+        " Followers · " +
+        creator.subscribers +
+        " Subscribers";
 
+    }
 
-    return (
-        "https://ig.me/m/the_v15_company?text=" +
-        encodeURIComponent(message)
-    );
+    if(creator.categories &&
+       creator.categories.length){
 
+        details +=
+        " · " +
+        creator.categories.join(" / ");
+
+    }
+
+    return details;
 }
 
 
@@ -2887,6 +3004,8 @@ function createCreatorCard(creator){
     card.className =
         "creator-card";
 
+
+    /* Avatar */
 
     const avatar =
         document.createElement("div");
@@ -2913,11 +3032,16 @@ function createCreatorCard(creator){
 
         avatar.textContent =
             creator.name
-            .substring(0,2)
+            .split(" ")
+            .map(word => word[0])
+            .join("")
+            .slice(0,2)
             .toUpperCase();
 
     }
 
+
+    /* Info */
 
     const info =
         document.createElement("div");
@@ -2942,35 +3066,8 @@ function createCreatorCard(creator){
     meta.className =
         "creator-meta";
 
-
-    let metaText =
-        creator.followers || "";
-
-
-    if(creator.subscribers){
-
-        metaText +=
-            " · " +
-            creator.subscribers +
-            " Subscribers";
-
-    }
-
-
-    if(
-        creator.categories &&
-        creator.categories.length
-    ){
-
-        metaText +=
-            " · " +
-            creator.categories.join(" / ");
-
-    }
-
-
     meta.textContent =
-        metaText;
+        creatorDetails(creator);
 
 
     const tag =
@@ -2983,31 +3080,76 @@ function createCreatorCard(creator){
         "Creator";
 
 
+    /* Actions */
+
+    const actions =
+        document.createElement("div");
+
+    actions.className =
+        "creator-actions";
+
+
+    /* Instagram */
+
+    if(creator.instagram){
+
+        const instagram =
+            document.createElement("a");
+
+        instagram.className =
+            "creator-action creator-instagram";
+
+        instagram.href =
+            creator.instagram;
+
+        instagram.target =
+            "_blank";
+
+        instagram.rel =
+            "noopener noreferrer";
+
+        instagram.textContent =
+            "Instagram →";
+
+        actions.appendChild(
+            instagram
+        );
+
+    }
+
+
+    /* Connect */
+
+    const connect =
+        document.createElement("a");
+
+    connect.className =
+        "creator-action creator-connect";
+
+    connect.href =
+        "mailto:contact@thev15company.in?subject=" +
+        encodeURIComponent(
+            "Collaboration Enquiry - " +
+            creator.name
+        );
+
+    connect.textContent =
+        "Connect →";
+
+
+    actions.appendChild(
+        connect
+    );
+
+
     info.appendChild(name);
     info.appendChild(meta);
     info.appendChild(tag);
+    info.appendChild(actions);
 
 
     card.appendChild(avatar);
     card.appendChild(info);
-
-
-    /* =============================================
-       FLOATING CREATOR CLICK
-       → THE V15 COMPANY INSTAGRAM DM
-    ============================================= */
-
-    card.addEventListener(
-        "click",
-        function(){
-
-            window.open(
-                getV15DMLink(creator),
-                "_blank"
-            );
-
-        }
-    );
 
 
     return card;
@@ -3015,7 +3157,8 @@ function createCreatorCard(creator){
 
 
 /* =====================================================
-   BUILD RANDOM CAROUSEL
+   BUILD CREATOR CAROUSEL
+   3 CREATORS PER PAGE
 ===================================================== */
 
 const creatorTrack =
@@ -3028,34 +3171,33 @@ const creatorCarousel =
         "creatorCarousel"
     );
 
-const nextBtn =
-    document.getElementById(
-        "nextBtn"
-    );
-
 const prevBtn =
     document.getElementById(
         "prevBtn"
     );
 
+const nextBtn =
+    document.getElementById(
+        "nextBtn"
+    );
 
-let shuffledCreators =
-    shuffleArray(creators);
 
+let creatorPosition = 1;
 
 let creatorPages = [];
 
-
-/* =====================================================
-   BUILD PAGES
-   3 CREATORS PER PAGE
-===================================================== */
 
 function buildCreatorCarousel(){
 
     creatorTrack.innerHTML = "";
 
-    creatorPages = [];
+    creatorPosition = 1;
+
+
+    const shuffled =
+        shuffleCreators(
+            creators
+        );
 
 
     const perPage = 3;
@@ -3063,7 +3205,7 @@ function buildCreatorCarousel(){
 
     for(
         let i = 0;
-        i < shuffledCreators.length;
+        i < shuffled.length;
         i += perPage
     ){
 
@@ -3075,7 +3217,7 @@ function buildCreatorCarousel(){
 
 
         const group =
-            shuffledCreators.slice(
+            shuffled.slice(
                 i,
                 i + perPage
             );
@@ -3085,52 +3227,44 @@ function buildCreatorCarousel(){
             creator => {
 
                 page.appendChild(
-                    createCreatorCard(creator)
+                    createCreatorCard(
+                        creator
+                    )
                 );
 
             }
         );
 
 
-        creatorTrack.appendChild(page);
-
-        creatorPages.push(page);
+        creatorTrack.appendChild(
+            page
+        );
 
     }
 
-}
 
+    creatorPages =
+        Array.from(
+            creatorTrack
+            .querySelectorAll(
+                ".creator-page"
+            )
+        );
 
-/* =====================================================
-   INITIAL CAROUSEL
-===================================================== */
-
-buildCreatorCarousel();
-
-
-let creatorPosition = 1;
-
-
-/* =====================================================
-   INFINITE LOOP SETUP
-===================================================== */
-
-function setupCarouselLoop(){
 
     if(!creatorPages.length){
         return;
     }
 
 
-    const firstClone =
-        creatorPages[0]
-        .cloneNode(true);
-
-
     const lastClone =
         creatorPages[
             creatorPages.length - 1
-        ]
+        ].cloneNode(true);
+
+
+    const firstClone =
+        creatorPages[0]
         .cloneNode(true);
 
 
@@ -3145,20 +3279,14 @@ function setupCarouselLoop(){
     );
 
 
-    creatorPosition = 1;
-
-
     creatorTrack.style.transition =
         "none";
 
 
     creatorTrack.style.transform =
-        `translateX(-${creatorPosition * 100}%)`;
+        "translateX(-100%)";
 
 }
-
-
-setupCarouselLoop();
 
 
 /* =====================================================
@@ -3180,7 +3308,9 @@ function nextCreators(){
 
 
     creatorTrack.style.transform =
-        `translateX(-${creatorPosition * 100}%)`;
+        "translateX(-" +
+        (creatorPosition * 100) +
+        "%)";
 
 }
 
@@ -3204,10 +3334,16 @@ function previousCreators(){
 
 
     creatorTrack.style.transform =
-        `translateX(-${creatorPosition * 100}%)`;
+        "translateX(-" +
+        (creatorPosition * 100) +
+        "%)";
 
 }
 
+
+/* =====================================================
+   BUTTONS
+===================================================== */
 
 nextBtn.addEventListener(
     "click",
@@ -3222,7 +3358,7 @@ prevBtn.addEventListener(
 
 
 /* =====================================================
-   INFINITE LOOP RESET
+   INFINITE LOOP
 ===================================================== */
 
 creatorTrack.addEventListener(
@@ -3244,7 +3380,7 @@ creatorTrack.addEventListener(
             creatorPosition = 1;
 
             creatorTrack.style.transform =
-                `translateX(-${creatorPosition * 100}%)`;
+                "translateX(-100%)";
 
         }
 
@@ -3256,10 +3392,13 @@ creatorTrack.addEventListener(
             creatorTrack.style.transition =
                 "none";
 
-            creatorPosition = total;
+            creatorPosition =
+                total;
 
             creatorTrack.style.transform =
-                `translateX(-${creatorPosition * 100}%)`;
+                "translateX(-" +
+                (total * 100) +
+                "%)";
 
         }
 
@@ -3343,7 +3482,7 @@ creatorCarousel.addEventListener(
 
 
 /* =====================================================
-   EXPLORER
+   OPEN / CLOSE EXPLORER
 ===================================================== */
 
 function openExplorer(){
@@ -3351,7 +3490,6 @@ function openExplorer(){
     document
     .getElementById("explorer")
     .classList.add("active");
-
 
     document
     .body
@@ -3366,7 +3504,6 @@ function closeExplorer(){
     .getElementById("explorer")
     .classList.remove("active");
 
-
     document
     .body
     .classList.remove("no-scroll");
@@ -3375,81 +3512,26 @@ function closeExplorer(){
 
 
 /* =====================================================
-   OPEN ALL CREATORS
+   CREATOR DIRECTORY
 ===================================================== */
 
 function openCreators(){
 
     openExplorer();
 
-
     renderCreatorDirectory(
         "All Creators In Our Network",
         "Explore creators across multiple niches and audience sizes.",
-        "All",
-        "high"
+        "All"
     );
 
 }
 
 
-/* =====================================================
-   SORT
-===================================================== */
-
-function sortCreators(list, sortType){
-
-    const sorted =
-        [...list];
-
-
-    if(sortType === "high"){
-
-        sorted.sort(
-            (a,b) =>
-            parseFollowers(b.followers) -
-            parseFollowers(a.followers)
-        );
-
-    }
-
-
-    else if(sortType === "low"){
-
-        sorted.sort(
-            (a,b) =>
-            parseFollowers(a.followers) -
-            parseFollowers(b.followers)
-        );
-
-    }
-
-
-    else if(sortType === "new"){
-
-        sorted.sort(
-            (a,b) =>
-            new Date(b.dateAdded) -
-            new Date(a.dateAdded)
-        );
-
-    }
-
-
-    return sorted;
-
-}
-
-
-/* =====================================================
-   RENDER CREATOR DIRECTORY
-===================================================== */
-
 function renderCreatorDirectory(
     title,
     description,
-    filter = "All",
-    sortType = "high"
+    filter = "All"
 ){
 
     const content =
@@ -3458,22 +3540,17 @@ function renderCreatorDirectory(
         );
 
 
-    let filtered =
+    const filtered =
         filter === "All"
 
-        ? [...creators]
+        ? creators
 
         : creators.filter(
             creator =>
             creator.categories &&
-            creator.categories.includes(filter)
-        );
-
-
-    filtered =
-        sortCreators(
-            filtered,
-            sortType
+            creator.categories.includes(
+                filter
+            )
         );
 
 
@@ -3483,116 +3560,107 @@ function renderCreatorDirectory(
     filtered.forEach(
         creator => {
 
-
-            let metaParts = [];
-
-
-            if(creator.followers){
-                metaParts.push(
-                    `${creator.followers} Followers`
-                );
-            }
+            let subscriberText = "";
 
 
             if(creator.subscribers){
 
-                metaParts.push(
-                    `${creator.subscribers} Subscribers`
-                );
+                subscriberText =
+                    " · " +
+                    creator.subscribers +
+                    " Subscribers";
 
             }
 
 
-            const meta =
-                metaParts.join(" · ");
-
-
             cards += `
 
-                <div class="profile-card">
+            <div class="profile-card">
 
-                    <div class="profile-photo">
+                <div class="profile-photo">
 
-                        <img
-                            src="${creator.image || ""}"
-                            alt="${creator.name}"
-                        >
+                    <img
+                        src="${creator.image}"
+                        alt="${creator.name}"
+                    >
 
-                    </div>
+                </div>
 
 
-                    <div class="profile-name">
-                        ${creator.name}
-                    </div>
+                <div class="profile-name">
+                    ${creator.name}
+                </div>
+
+
+                <div class="profile-role">
+                    ${creator.handle || "Creator"}
+                </div>
+
+
+                <div class="profile-meta">
+
+                    ${creator.followers}
+                    Followers
+
+                    ${subscriberText}
+
+                </div>
+
+
+                <div class="profile-tags">
+
+                    ${
+                        (creator.categories || [])
+                        .map(
+                            category =>
+                            `
+                            <span class="profile-tag">
+                                ${category}
+                            </span>
+                            `
+                        )
+                        .join("")
+                    }
+
+                </div>
+
+
+                <div class="profile-actions">
 
 
                     ${
-                        creator.handle
+                        creator.instagram
                         ?
                         `
-                        <div class="profile-handle">
-                            ${creator.handle}
-                        </div>
+                        <a
+                            href="${creator.instagram}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="profile-btn profile-instagram"
+                        >
+                            View Profile
+                        </a>
                         `
                         :
                         ""
                     }
 
 
-                    <div class="profile-role">
-                        Creator
-                    </div>
+                    <a
+                        href="mailto:contact@thev15company.in?subject=${encodeURIComponent(
+                            "Creator enquiry - " +
+                            creator.name
+                        )}"
+                        class="profile-btn profile-connect"
+                    >
+                        Connect
+                    </a>
 
-
-                    <div class="profile-meta">
-
-                        ${meta}
-
-                    </div>
-
-
-                    <div class="profile-tags">
-
-                        ${
-                            (creator.categories || [])
-                            .map(
-                                category =>
-                                `
-                                <span class="profile-tag">
-                                    ${category}
-                                </span>
-                                `
-                            )
-                            .join("")
-                        }
-
-                    </div>
-
-
-                    <div class="profile-actions">
-
-
-                        <a
-                            href="${creator.instagram || "#"}"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="profile-btn profile-instagram"
-                        >
-                            View Instagram →
-                        </a>
-
-
-                        <a
-                            href="mailto:contact@thev15company.in?subject=Creator enquiry - ${encodeURIComponent(creator.name)}"
-                            class="profile-btn profile-connect"
-                        >
-                            Connect
-                        </a>
-
-
-                    </div>
 
                 </div>
+
+
+            </div>
 
             `;
 
@@ -3604,28 +3672,28 @@ function renderCreatorDirectory(
 
         cards = `
 
-            <div class="empty-state">
+        <div class="empty-state">
 
-                <h3>
-                    More creators coming soon.
-                </h3>
+            <h3>
+                More creators coming soon.
+            </h3>
 
-                <p>
+            <p>
 
-                    We are continuously expanding
-                    this category with relevant creators
-                    from our network.
+                We are continuously expanding
+                this category with relevant creators
+                from our network.
 
-                </p>
+            </p>
 
-                <button
-                    class="explore-btn"
-                    onclick="openCreators()"
-                >
-                    View All Creators →
-                </button>
+            <button
+                class="explore-btn"
+                onclick="closeExplorer()"
+            >
+                Back To Network
+            </button>
 
-            </div>
+        </div>
 
         `;
 
@@ -3653,8 +3721,7 @@ function renderCreatorDirectory(
                 onclick="renderCreatorDirectory(
                     'All Creators In Our Network',
                     'Explore creators across multiple niches and audience sizes.',
-                    'All',
-                    document.getElementById('sortSelect').value
+                    'All'
                 )"
             >
                 All
@@ -3668,8 +3735,14 @@ function renderCreatorDirectory(
 
                     <button
                         class="filter-btn
-                        ${filter === category ? "active" : ""}"
-                        onclick="openNiche('${category}')"
+                        ${
+                            filter === category
+                            ? "active"
+                            : ""
+                        }"
+                        onclick="openNiche(
+                            '${category}'
+                        )"
                     >
                         ${category}
                     </button>
@@ -3679,50 +3752,6 @@ function renderCreatorDirectory(
                 .join("")
             }
 
-
-        </div>
-
-
-        <div class="sort-row">
-
-            <span class="sort-label">
-                Sort By
-            </span>
-
-
-            <select
-                id="sortSelect"
-                class="sort-select"
-                onchange="changeCreatorSort(
-                    '${filter}',
-                    this.value
-                )"
-            >
-
-                <option
-                    value="high"
-                    ${sortType === "high" ? "selected" : ""}
-                >
-                    Followers: High to Low
-                </option>
-
-
-                <option
-                    value="low"
-                    ${sortType === "low" ? "selected" : ""}
-                >
-                    Followers: Low to High
-                </option>
-
-
-                <option
-                    value="new"
-                    ${sortType === "new" ? "selected" : ""}
-                >
-                    Newly Added
-                </option>
-
-            </select>
 
         </div>
 
@@ -3739,46 +3768,12 @@ function renderCreatorDirectory(
 
 
 /* =====================================================
-   SORT CHANGE
-===================================================== */
-
-function changeCreatorSort(
-    filter,
-    sortType
-){
-
-    if(filter === "All"){
-
-        renderCreatorDirectory(
-            "All Creators In Our Network",
-            "Explore creators across multiple niches and audience sizes.",
-            "All",
-            sortType
-        );
-
-        return;
-
-    }
-
-
-    renderCreatorDirectory(
-        `${filter} Creators`,
-        `Explore creators from our network specialising in ${filter}.`,
-        filter,
-        sortType
-    );
-
-}
-
-
-/* =====================================================
-   OPEN NICHE
+   NICHE
 ===================================================== */
 
 function openNiche(niche){
 
     openExplorer();
-
 
     renderCreatorDirectory(
 
@@ -3786,9 +3781,7 @@ function openNiche(niche){
 
         `Explore creators from our network specialising in ${niche}.`,
 
-        niche,
-
-        "high"
+        niche
 
     );
 
@@ -3840,6 +3833,7 @@ function openSocialManagers(){
 
 
             <div>
+
 
                 <div class="professional-name">
                     Divya Rajput
@@ -3918,7 +3912,9 @@ function openSocialManagers(){
 
                 </div>
 
+
             </div>
+
 
         </div>
 
@@ -3989,7 +3985,7 @@ function openComingSoon(category){
 
 document.addEventListener(
     "keydown",
-    function(event){
+    event => {
 
         if(event.key === "Escape"){
 
@@ -3999,6 +3995,13 @@ document.addEventListener(
 
     }
 );
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+buildCreatorCarousel();
 
 </script>
 
