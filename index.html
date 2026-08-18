@@ -1509,4 +1509,2500 @@ footer strong{
    RESPONSIVE
 ===================================================== */
 
-@media(
+@media(max-width:950px){
+
+    .network-grid{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .niche-grid{
+        grid-template-columns:
+        repeat(3,1fr);
+    }
+
+    .services-grid{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .profile-grid{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+}
+
+
+@media(max-width:700px){
+
+    .nav-inner{
+        padding:12px 18px;
+    }
+
+    .logo-box{
+        width:42px;
+        height:42px;
+    }
+
+    .logo-name{
+        font-size:16px;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .nav-links{
+        display:none;
+
+        position:absolute;
+
+        top:67px;
+
+        left:0;
+        right:0;
+
+        padding:12px 18px 18px;
+
+        background:#fff;
+
+        border-bottom:1px solid #e5edf5;
+
+        flex-direction:column;
+
+        align-items:stretch;
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .hero-inner{
+        padding:65px 20px 70px;
+    }
+
+    .hero h1{
+        font-size:42px;
+
+        letter-spacing:-1.8px;
+    }
+
+    .hero-description{
+        font-size:16px;
+    }
+
+    .section{
+        padding:65px 15px;
+    }
+
+    .section-title{
+        font-size:32px;
+    }
+
+    .creator-card{
+        min-height:112px;
+
+        padding:16px;
+
+        border-radius:21px;
+    }
+
+    .creator-avatar{
+        width:68px;
+        height:68px;
+
+        flex-basis:68px;
+    }
+
+    .creator-name{
+        font-size:16px;
+    }
+
+    .creator-meta{
+        font-size:12px;
+    }
+
+    .network-grid{
+        grid-template-columns:1fr;
+    }
+
+    .niche-grid{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .services-grid{
+        grid-template-columns:1fr;
+    }
+
+    .profile-grid{
+        grid-template-columns:1fr;
+    }
+
+    .sort-row{
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    .professional-profile{
+        grid-template-columns:1fr;
+
+        padding:25px;
+
+        text-align:center;
+    }
+
+    .professional-photo{
+        width:130px;
+        height:130px;
+
+        margin:auto;
+    }
+
+    .professional-tags,
+    .professional-actions{
+        justify-content:center;
+    }
+
+    .professional-name{
+        font-size:24px;
+    }
+
+    .feedback-box{
+        padding:25px 20px;
+    }
+
+    .social-links{
+        flex-direction:column;
+    }
+
+    .social-link{
+        width:100%;
+        max-width:300px;
+    }
+}
+
+
+@media(max-width:430px){
+
+    .creator-card{
+        padding:14px;
+    }
+
+    .creator-avatar{
+        width:62px;
+        height:62px;
+
+        flex-basis:62px;
+    }
+
+    .creator-name{
+        font-size:15px;
+    }
+
+    .creator-meta{
+        font-size:11px;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+    <div class="nav-inner">
+
+        <a href="#home" class="logo">
+
+            <div class="logo-box">
+
+                <img
+                    src="images/logo-v15.png"
+                    alt="The V15 Company"
+                >
+
+            </div>
+
+            <span class="logo-name">
+                The V15 Company
+            </span>
+
+        </a>
+
+
+        <button
+            class="menu-btn"
+            onclick="toggleMenu()"
+            aria-label="Menu"
+        >
+            ☰
+        </button>
+
+
+        <nav
+            class="nav-links"
+            id="navLinks"
+        >
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#creators">
+                Creators
+            </a>
+
+            <a href="#network">
+                Our Network
+            </a>
+
+            <a href="#niches">
+                Niches
+            </a>
+
+            <a href="#services">
+                Services
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+    <div class="hero-inner">
+
+        <div class="hero-badge">
+            The V15 Company
+        </div>
+
+
+        <h1>
+
+            Connecting Brands With
+
+            <span class="hero-highlight">
+                Creators & Digital Talent.
+            </span>
+
+        </h1>
+
+
+        <p class="hero-description">
+
+            We help brands build meaningful digital presence
+            through creator collaborations, social media management,
+            copywriting, graphic design and digital content.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#contact"
+                class="btn btn-dark"
+            >
+                I'm a Brand →
+            </a>
+
+
+            <!-- CREATOR GOOGLE FORM -->
+
+            <a
+                href="https://openinapp.link/zic87"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-blue"
+            >
+                I'm a Creator →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FEATURED CREATORS
+===================================================== -->
+
+<section
+    class="section creators-section"
+    id="creators"
+>
+
+    <div class="section-inner">
+
+        <div class="section-header">
+
+            <div class="eyebrow">
+                Our Featured Creators
+            </div>
+
+            <h2 class="section-title">
+                Top Creators In Our Network
+            </h2>
+
+            <p class="section-subtitle">
+
+                Explore creators across multiple niches,
+                audience sizes and content styles.
+
+            </p>
+
+        </div>
+
+
+        <!--
+            IMPORTANT:
+            Cards are generated automatically
+            from creators[] database.
+        -->
+
+        <div
+            class="creator-carousel"
+            id="creatorCarousel"
+        >
+
+            <div
+                class="creator-track"
+                id="creatorTrack"
+            ></div>
+
+        </div>
+
+
+        <div class="carousel-controls">
+
+            <button
+                class="carousel-btn"
+                id="prevBtn"
+                aria-label="Previous creators"
+            >
+                ←
+            </button>
+
+            <span class="carousel-hint">
+                Swipe left or right to explore
+            </span>
+
+            <button
+                class="carousel-btn"
+                id="nextBtn"
+                aria-label="Next creators"
+            >
+                →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     OUR NETWORK
+===================================================== -->
+
+<section
+    class="section network-section"
+    id="network"
+>
+
+    <div class="section-inner">
+
+        <div class="section-header">
+
+            <div class="eyebrow">
+                Our Network
+            </div>
+
+            <h2 class="section-title">
+                Explore Our Digital Talent Network
+            </h2>
+
+            <p class="section-subtitle">
+
+                Find creators and professionals
+                for different digital requirements.
+
+            </p>
+
+        </div>
+
+
+        <div class="network-grid">
+
+
+            <div class="network-card">
+
+                <div class="network-line"></div>
+
+                <h3>
+                    Influencer Marketing
+                </h3>
+
+                <p>
+                    Discover creators across multiple
+                    niches and audience sizes.
+                </p>
+
+                <button
+                    class="explore-btn"
+                    onclick="openCreators()"
+                >
+                    Explore Creators →
+                </button>
+
+            </div>
+
+
+            <div class="network-card">
+
+                <div class="network-line"></div>
+
+                <h3>
+                    Social Media Management
+                </h3>
+
+                <p>
+                    Explore professionals focused on
+                    strategy, content and social growth.
+                </p>
+
+                <button
+                    class="explore-btn"
+                    onclick="openSocialManagers()"
+                >
+                    Explore Social Media Managers →
+                </button>
+
+            </div>
+
+
+            <div class="network-card">
+
+                <div class="network-line"></div>
+
+                <h3>
+                    Copywriting
+                </h3>
+
+                <p>
+                    Professional writers for LinkedIn,
+                    social media and brand communication.
+                </p>
+
+                <button
+                    class="explore-btn"
+                    onclick="openComingSoon('Copywriters')"
+                >
+                    Explore Copywriters →
+                </button>
+
+            </div>
+
+
+            <div class="network-card">
+
+                <div class="network-line"></div>
+
+                <h3>
+                    Graphic Design
+                </h3>
+
+                <p>
+                    Creative professionals for digital
+                    content and brand communication.
+                </p>
+
+                <button
+                    class="explore-btn"
+                    onclick="openComingSoon('Graphic Designers')"
+                >
+                    Explore Graphic Designers →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     NICHES
+===================================================== -->
+
+<section
+    class="section niches-section"
+    id="niches"
+>
+
+    <div class="section-inner">
+
+        <div class="section-header">
+
+            <div class="eyebrow">
+                Creator Categories
+            </div>
+
+            <h2 class="section-title">
+                Explore Creators By Niche
+            </h2>
+
+            <p class="section-subtitle">
+
+                Select a category to discover
+                relevant creators in our network.
+
+            </p>
+
+        </div>
+
+
+        <div class="niche-grid">
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('Tech')"
+            >
+                <div class="niche-name">Tech</div>
+                <div class="niche-sub">Explore creators</div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('Tech UGC')"
+            >
+                <div class="niche-name">Tech UGC</div>
+                <div class="niche-sub">Explore creators</div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('UGC')"
+            >
+                <div class="niche-name">UGC</div>
+                <div class="niche-sub">Explore creators</div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('AI')"
+            >
+                <div class="niche-name">AI</div>
+                <div class="niche-sub">Explore creators</div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('Beauty')"
+            >
+                <div class="niche-name">Beauty</div>
+                <div class="niche-sub">Explore creators</div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('Fashion')"
+            >
+                <div class="niche-name">Fashion</div>
+                <div class="niche-sub">Explore creators</div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('Lifestyle')"
+            >
+                <div class="niche-name">Lifestyle</div>
+                <div class="niche-sub">Explore creators</div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('Travel')"
+            >
+                <div class="niche-name">Travel</div>
+                <div class="niche-sub">Explore creators</div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('Finance')"
+            >
+                <div class="niche-name">Finance</div>
+                <div class="niche-sub">Explore creators</div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('Gaming')"
+            >
+                <div class="niche-name">Gaming</div>
+                <div class="niche-sub">Explore creators</div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('Food')"
+            >
+                <div class="niche-name">Food</div>
+                <div class="niche-sub">Explore creators</div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('Education')"
+            >
+                <div class="niche-name">Education</div>
+                <div class="niche-sub">Explore creators</div>
+            </button>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section
+    class="section services-section"
+    id="services"
+>
+
+    <div class="section-inner">
+
+        <div class="section-header">
+
+            <div class="eyebrow">
+                What We Do
+            </div>
+
+            <h2 class="section-title">
+                Digital Solutions For Growing Brands
+            </h2>
+
+        </div>
+
+
+        <div class="services-grid">
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    C
+                </div>
+
+                <h3>
+                    Creator Collaborations
+                </h3>
+
+                <p>
+                    Relevant creators and campaign
+                    coordination for brands.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    S
+                </div>
+
+                <h3>
+                    Social Media Management
+                </h3>
+
+                <p>
+                    Strategy, content planning and
+                    social media management.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    W
+                </div>
+
+                <h3>
+                    Copywriting
+                </h3>
+
+                <p>
+                    Social media, LinkedIn and
+                    brand communication copy.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    V
+                </div>
+
+                <h3>
+                    Video Editing
+                </h3>
+
+                <p>
+                    Reels, short-form videos and
+                    digital video content.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FEEDBACK
+===================================================== -->
+
+<section
+    class="section feedback-section"
+    id="feedback"
+>
+
+    <div class="section-inner">
+
+        <div class="section-header">
+
+            <div class="eyebrow">
+                Creator Feedback
+            </div>
+
+            <h2 class="section-title">
+                What Creators Say
+            </h2>
+
+        </div>
+
+
+        <div class="feedback-box">
+
+            <p class="feedback-text">
+
+                "I just wanted to say thank you for connecting
+                me with this opportunity. Being introduced to
+                the software company and getting the chance to
+                work on their sales and marketing has been an
+                incredible experience so far.
+
+                I really appreciate the trust you've placed in me.
+                The way V15 works, with transparency,
+                professionalism, and genuine industry connections,
+                has honestly been impressive.
+
+                Everything has been exactly as communicated,
+                and that says a lot about the way you do business.
+                Hope this is the beginning of a long-term association.
+                Looking forward to working with you on many more
+                projects in the future. Thank you once again!"
+
+            </p>
+
+
+            <div class="feedback-name">
+                Nikita Suri
+            </div>
+
+
+            <div class="feedback-role">
+                Creator
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section
+    class="section contact-section"
+    id="contact"
+>
+
+    <div class="section-inner">
+
+        <div class="eyebrow">
+            Let's Work Together
+        </div>
+
+
+        <h2 class="section-title">
+            Have A Brand Requirement?
+        </h2>
+
+
+        <p>
+
+            Tell us what you're looking to build
+            and let's discuss how The V15 Company
+            can help.
+
+        </p>
+
+
+        <a
+            href="mailto:contact@thev15company.in"
+            class="contact-btn"
+        >
+            Get In Touch →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SOCIAL LINKS
+===================================================== -->
+
+<section class="social-section">
+
+    <div class="social-links">
+
+
+        <a
+            href="https://www.instagram.com/the_v15_company?igsh=Y253OXJjeXJ5ejU0"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link"
+        >
+            Instagram @the_v15_company →
+        </a>
+
+
+        <a
+            href="https://www.linkedin.com/company/the-v15-company/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link"
+        >
+            LinkedIn The V15 Company →
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        <img
+            src="images/logo-v15.png"
+            alt="The V15 Company"
+        >
+
+    </div>
+
+
+    <div>
+
+        © 2026
+
+        <strong>
+            The V15 Company
+        </strong>
+
+        · All rights reserved.
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     EXPLORER OVERLAY
+===================================================== -->
+
+<div
+    class="explorer"
+    id="explorer"
+>
+
+    <div class="explorer-inner">
+
+
+        <div class="explorer-top">
+
+            <button
+                class="back-btn"
+                onclick="closeExplorer()"
+            >
+                ← Back
+            </button>
+
+
+            <button
+                class="close-btn"
+                onclick="closeExplorer()"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div id="explorerContent"></div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+function toggleMenu(){
+
+    const menu =
+        document.getElementById("navLinks");
+
+    menu.classList.toggle("show");
+
+}
+
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(link => {
+
+    link.addEventListener(
+        "click",
+        () => {
+
+            document
+            .getElementById("navLinks")
+            .classList.remove("show");
+
+        }
+    );
+
+});
+
+
+/* =====================================================
+   CREATOR DATABASE
+   =====================================================
+   
+   IMPORTANT:
+   ADD NEW CREATOR ONLY HERE.
+
+   Automatically used by:
+   1. Floating carousel
+   2. All Creators
+   3. Niche categories
+   4. Sorting
+   5. Instagram links
+   6. V15 DM links
+
+===================================================== */
+
+const creators = [
+
+    {
+        name:"Nandini Jaiswani",
+        handle:"@nandini_jaiswani",
+        followers:"149K",
+        categories:[
+            "Lifestyle",
+            "Fashion",
+            "Travel"
+        ],
+        image:"images/nandini.jpg",
+        instagram:
+        "https://www.instagram.com/nandini_jaiswani/",
+        dateAdded:"2026-08-01"
+    },
+
+
+    {
+        name:"Sonia Mishra",
+        handle:"@sonia__mishra__",
+        followers:"48.5K",
+        categories:[
+            "Fashion",
+            "Beauty",
+            "Lifestyle",
+            "Travel"
+        ],
+        image:"images/Sonia.jpg",
+        instagram:
+        "https://www.instagram.com/sonia__mishra__/",
+        dateAdded:"2026-08-02"
+    },
+
+
+    {
+        name:"Ritika.Create",
+        handle:"@ritika.create",
+        followers:"13.2K",
+        categories:[
+            "Design",
+            "Digital"
+        ],
+        image:"images/ritika.jpg",
+        instagram:
+        "https://www.instagram.com/ritika.create/",
+        dateAdded:"2026-08-03"
+    },
+
+
+    {
+        name:"Siblings Finance",
+        handle:"@siblingsfinance",
+        followers:"116K",
+        categories:[
+            "Finance"
+        ],
+        image:"images/siblingsfinance.jpg",
+        instagram:
+        "https://www.instagram.com/siblingsfinance/",
+        dateAdded:"2026-08-04"
+    },
+
+
+    {
+        name:"Vishal Hajare",
+        handle:"@tech_tricks.marathi",
+        followers:"78.1K",
+        categories:[
+            "Tech"
+        ],
+        image:"images/vishal.jpg",
+        instagram:
+        "https://www.instagram.com/tech_tricks.marathi/",
+        dateAdded:"2026-08-05"
+    },
+
+
+    {
+        name:"Anant Mishra",
+        handle:"@gullu.era",
+        followers:"193K",
+        categories:[
+            "Beauty",
+            "Lifestyle"
+        ],
+        image:"images/gullu.era.jpg",
+        instagram:
+        "https://www.instagram.com/gullu.era/",
+        dateAdded:"2026-08-06"
+    },
+
+
+    {
+        name:"created.by.radhika",
+        handle:"@created.by.radhika",
+        followers:"2,221",
+        categories:[
+            "Tech",
+            "Tech UGC",
+            "AI"
+        ],
+        image:"images/created.by.radhika.jpg",
+        instagram:
+        "https://www.instagram.com/created.by.radhika/",
+        dateAdded:"2026-08-07"
+    },
+
+
+    /* =================================================
+       VINAYAK
+    ================================================= */
+
+    {
+        name:"Vinayak Choubey",
+        handle:"@techvinch.in",
+        followers:"799",
+        subscribers:"99K",
+        categories:[
+            "Tech"
+        ],
+        image:"images/Vinayak.jpg",
+        instagram:
+        "https://insta.openinapp.co/zfljz",
+        dateAdded:"2026-08-18"
+    },
+
+
+    /* =================================================
+       NAMITA 1
+    ================================================= */
+
+    {
+        name:"Namita Mawai",
+        handle:"@ugcwithnamita",
+        followers:"627",
+        categories:[
+            "UGC"
+        ],
+        image:"images/namita.jpg",
+        instagram:
+        "https://www.instagram.com/ugcwithnamita?igsh=MTB1bjV2ODR3Z20xaQ==",
+        dateAdded:"2026-08-18"
+    },
+
+
+    /* =================================================
+       NAMITA 2
+    ================================================= */
+
+    {
+        name:"Namita Mawai",
+        handle:"@nxmita",
+        followers:"9,073",
+        categories:[
+            "UGC",
+            "Fashion",
+            "Lifestyle"
+        ],
+        image:"images/namitaa.jpg",
+        instagram:
+        "https://www.instagram.com/nxmita?igsh=MXhleHg2eTl3MHFpdg==",
+        dateAdded:"2026-08-18"
+    }
+
+];
+
+
+/* =====================================================
+   CATEGORY DATABASE
+===================================================== */
+
+const categories = [
+
+    "Tech",
+    "Tech UGC",
+    "UGC",
+    "AI",
+    "Beauty",
+    "Fashion",
+    "Lifestyle",
+    "Travel",
+    "Finance",
+    "Gaming",
+    "Food",
+    "Education",
+    "Design",
+    "Digital"
+
+];
+
+
+/* =====================================================
+   HELPER
+   CONVERT FOLLOWERS TO NUMBER
+===================================================== */
+
+function parseFollowers(value){
+
+    if(!value){
+        return 0;
+    }
+
+    let text =
+        String(value)
+        .toUpperCase()
+        .replace(/,/g,"")
+        .trim();
+
+
+    if(text.endsWith("K")){
+
+        return parseFloat(
+            text.replace("K","")
+        ) * 1000;
+
+    }
+
+
+    if(text.endsWith("M")){
+
+        return parseFloat(
+            text.replace("M","")
+        ) * 1000000;
+
+    }
+
+
+    if(text.endsWith("L")){
+
+        return parseFloat(
+            text.replace("L","")
+        ) * 100000;
+
+    }
+
+
+    return parseFloat(text) || 0;
+}
+
+
+/* =====================================================
+   RANDOM SHUFFLE
+===================================================== */
+
+function shuffleArray(array){
+
+    const result =
+        [...array];
+
+    for(
+        let i = result.length - 1;
+        i > 0;
+        i--
+    ){
+
+        const j =
+            Math.floor(
+                Math.random() * (i + 1)
+            );
+
+        [
+            result[i],
+            result[j]
+        ] =
+        [
+            result[j],
+            result[i]
+        ];
+
+    }
+
+    return result;
+}
+
+
+/* =====================================================
+   V15 INSTAGRAM DM LINK
+===================================================== */
+
+function getV15DMLink(creator){
+
+    const username =
+        creator.handle
+        ? creator.handle.replace("@","")
+        : creator.name;
+
+
+    const message =
+        `Hi The V15 Company Team, I'm interested in collaborating with @${username}. Kindly share the collaboration details and next steps. Thank you!`;
+
+
+    return (
+        "https://ig.me/m/the_v15_company?text=" +
+        encodeURIComponent(message)
+    );
+
+}
+
+
+/* =====================================================
+   CREATE FLOATING CREATOR CARD
+===================================================== */
+
+function createCreatorCard(creator){
+
+    const card =
+        document.createElement("div");
+
+    card.className =
+        "creator-card";
+
+
+    const avatar =
+        document.createElement("div");
+
+    avatar.className =
+        "creator-avatar";
+
+
+    if(creator.image){
+
+        const img =
+            document.createElement("img");
+
+        img.src =
+            creator.image;
+
+        img.alt =
+            creator.name;
+
+        avatar.appendChild(img);
+
+    }
+    else{
+
+        avatar.textContent =
+            creator.name
+            .substring(0,2)
+            .toUpperCase();
+
+    }
+
+
+    const info =
+        document.createElement("div");
+
+    info.className =
+        "creator-info";
+
+
+    const name =
+        document.createElement("div");
+
+    name.className =
+        "creator-name";
+
+    name.textContent =
+        creator.name;
+
+
+    const meta =
+        document.createElement("div");
+
+    meta.className =
+        "creator-meta";
+
+
+    let metaText =
+        creator.followers || "";
+
+
+    if(creator.subscribers){
+
+        metaText +=
+            " · " +
+            creator.subscribers +
+            " Subscribers";
+
+    }
+
+
+    if(
+        creator.categories &&
+        creator.categories.length
+    ){
+
+        metaText +=
+            " · " +
+            creator.categories.join(" / ");
+
+    }
+
+
+    meta.textContent =
+        metaText;
+
+
+    const tag =
+        document.createElement("span");
+
+    tag.className =
+        "creator-tag";
+
+    tag.textContent =
+        "Creator";
+
+
+    info.appendChild(name);
+    info.appendChild(meta);
+    info.appendChild(tag);
+
+
+    card.appendChild(avatar);
+    card.appendChild(info);
+
+
+    /* =============================================
+       FLOATING CREATOR CLICK
+       → THE V15 COMPANY INSTAGRAM DM
+    ============================================= */
+
+    card.addEventListener(
+        "click",
+        function(){
+
+            window.open(
+                getV15DMLink(creator),
+                "_blank"
+            );
+
+        }
+    );
+
+
+    return card;
+}
+
+
+/* =====================================================
+   BUILD RANDOM CAROUSEL
+===================================================== */
+
+const creatorTrack =
+    document.getElementById(
+        "creatorTrack"
+    );
+
+const creatorCarousel =
+    document.getElementById(
+        "creatorCarousel"
+    );
+
+const nextBtn =
+    document.getElementById(
+        "nextBtn"
+    );
+
+const prevBtn =
+    document.getElementById(
+        "prevBtn"
+    );
+
+
+let shuffledCreators =
+    shuffleArray(creators);
+
+
+let creatorPages = [];
+
+
+/* =====================================================
+   BUILD PAGES
+   3 CREATORS PER PAGE
+===================================================== */
+
+function buildCreatorCarousel(){
+
+    creatorTrack.innerHTML = "";
+
+    creatorPages = [];
+
+
+    const perPage = 3;
+
+
+    for(
+        let i = 0;
+        i < shuffledCreators.length;
+        i += perPage
+    ){
+
+        const page =
+            document.createElement("div");
+
+        page.className =
+            "creator-page";
+
+
+        const group =
+            shuffledCreators.slice(
+                i,
+                i + perPage
+            );
+
+
+        group.forEach(
+            creator => {
+
+                page.appendChild(
+                    createCreatorCard(creator)
+                );
+
+            }
+        );
+
+
+        creatorTrack.appendChild(page);
+
+        creatorPages.push(page);
+
+    }
+
+}
+
+
+/* =====================================================
+   INITIAL CAROUSEL
+===================================================== */
+
+buildCreatorCarousel();
+
+
+let creatorPosition = 1;
+
+
+/* =====================================================
+   INFINITE LOOP SETUP
+===================================================== */
+
+function setupCarouselLoop(){
+
+    if(!creatorPages.length){
+        return;
+    }
+
+
+    const firstClone =
+        creatorPages[0]
+        .cloneNode(true);
+
+
+    const lastClone =
+        creatorPages[
+            creatorPages.length - 1
+        ]
+        .cloneNode(true);
+
+
+    creatorTrack.insertBefore(
+        lastClone,
+        creatorTrack.firstElementChild
+    );
+
+
+    creatorTrack.appendChild(
+        firstClone
+    );
+
+
+    creatorPosition = 1;
+
+
+    creatorTrack.style.transition =
+        "none";
+
+
+    creatorTrack.style.transform =
+        `translateX(-${creatorPosition * 100}%)`;
+
+}
+
+
+setupCarouselLoop();
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+function nextCreators(){
+
+    if(!creatorPages.length){
+        return;
+    }
+
+
+    creatorPosition++;
+
+
+    creatorTrack.style.transition =
+        "transform .55s cubic-bezier(.22,.61,.36,1)";
+
+
+    creatorTrack.style.transform =
+        `translateX(-${creatorPosition * 100}%)`;
+
+}
+
+
+/* =====================================================
+   PREVIOUS
+===================================================== */
+
+function previousCreators(){
+
+    if(!creatorPages.length){
+        return;
+    }
+
+
+    creatorPosition--;
+
+
+    creatorTrack.style.transition =
+        "transform .55s cubic-bezier(.22,.61,.36,1)";
+
+
+    creatorTrack.style.transform =
+        `translateX(-${creatorPosition * 100}%)`;
+
+}
+
+
+nextBtn.addEventListener(
+    "click",
+    nextCreators
+);
+
+
+prevBtn.addEventListener(
+    "click",
+    previousCreators
+);
+
+
+/* =====================================================
+   INFINITE LOOP RESET
+===================================================== */
+
+creatorTrack.addEventListener(
+    "transitionend",
+    function(){
+
+        const total =
+            creatorPages.length;
+
+
+        if(
+            creatorPosition ===
+            total + 1
+        ){
+
+            creatorTrack.style.transition =
+                "none";
+
+            creatorPosition = 1;
+
+            creatorTrack.style.transform =
+                `translateX(-${creatorPosition * 100}%)`;
+
+        }
+
+
+        if(
+            creatorPosition === 0
+        ){
+
+            creatorTrack.style.transition =
+                "none";
+
+            creatorPosition = total;
+
+            creatorTrack.style.transform =
+                `translateX(-${creatorPosition * 100}%)`;
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   TOUCH SWIPE
+===================================================== */
+
+let creatorStartX = 0;
+let creatorStartY = 0;
+
+
+creatorCarousel.addEventListener(
+    "touchstart",
+    function(event){
+
+        const touch =
+            event.touches[0];
+
+        creatorStartX =
+            touch.clientX;
+
+        creatorStartY =
+            touch.clientY;
+
+    },
+    {
+        passive:true
+    }
+);
+
+
+creatorCarousel.addEventListener(
+    "touchend",
+    function(event){
+
+        const touch =
+            event.changedTouches[0];
+
+
+        const diffX =
+            touch.clientX -
+            creatorStartX;
+
+
+        const diffY =
+            touch.clientY -
+            creatorStartY;
+
+
+        if(
+            Math.abs(diffX) < 45 ||
+            Math.abs(diffX) <
+            Math.abs(diffY)
+        ){
+
+            return;
+
+        }
+
+
+        if(diffX < 0){
+
+            nextCreators();
+
+        }
+        else{
+
+            previousCreators();
+
+        }
+
+    },
+    {
+        passive:true
+    }
+);
+
+
+/* =====================================================
+   EXPLORER
+===================================================== */
+
+function openExplorer(){
+
+    document
+    .getElementById("explorer")
+    .classList.add("active");
+
+
+    document
+    .body
+    .classList.add("no-scroll");
+
+}
+
+
+function closeExplorer(){
+
+    document
+    .getElementById("explorer")
+    .classList.remove("active");
+
+
+    document
+    .body
+    .classList.remove("no-scroll");
+
+}
+
+
+/* =====================================================
+   OPEN ALL CREATORS
+===================================================== */
+
+function openCreators(){
+
+    openExplorer();
+
+
+    renderCreatorDirectory(
+        "All Creators In Our Network",
+        "Explore creators across multiple niches and audience sizes.",
+        "All",
+        "high"
+    );
+
+}
+
+
+/* =====================================================
+   SORT
+===================================================== */
+
+function sortCreators(list, sortType){
+
+    const sorted =
+        [...list];
+
+
+    if(sortType === "high"){
+
+        sorted.sort(
+            (a,b) =>
+            parseFollowers(b.followers) -
+            parseFollowers(a.followers)
+        );
+
+    }
+
+
+    else if(sortType === "low"){
+
+        sorted.sort(
+            (a,b) =>
+            parseFollowers(a.followers) -
+            parseFollowers(b.followers)
+        );
+
+    }
+
+
+    else if(sortType === "new"){
+
+        sorted.sort(
+            (a,b) =>
+            new Date(b.dateAdded) -
+            new Date(a.dateAdded)
+        );
+
+    }
+
+
+    return sorted;
+
+}
+
+
+/* =====================================================
+   RENDER CREATOR DIRECTORY
+===================================================== */
+
+function renderCreatorDirectory(
+    title,
+    description,
+    filter = "All",
+    sortType = "high"
+){
+
+    const content =
+        document.getElementById(
+            "explorerContent"
+        );
+
+
+    let filtered =
+        filter === "All"
+
+        ? [...creators]
+
+        : creators.filter(
+            creator =>
+            creator.categories &&
+            creator.categories.includes(filter)
+        );
+
+
+    filtered =
+        sortCreators(
+            filtered,
+            sortType
+        );
+
+
+    let cards = "";
+
+
+    filtered.forEach(
+        creator => {
+
+
+            let metaParts = [];
+
+
+            if(creator.followers){
+                metaParts.push(
+                    `${creator.followers} Followers`
+                );
+            }
+
+
+            if(creator.subscribers){
+
+                metaParts.push(
+                    `${creator.subscribers} Subscribers`
+                );
+
+            }
+
+
+            const meta =
+                metaParts.join(" · ");
+
+
+            cards += `
+
+                <div class="profile-card">
+
+                    <div class="profile-photo">
+
+                        <img
+                            src="${creator.image || ""}"
+                            alt="${creator.name}"
+                        >
+
+                    </div>
+
+
+                    <div class="profile-name">
+                        ${creator.name}
+                    </div>
+
+
+                    ${
+                        creator.handle
+                        ?
+                        `
+                        <div class="profile-handle">
+                            ${creator.handle}
+                        </div>
+                        `
+                        :
+                        ""
+                    }
+
+
+                    <div class="profile-role">
+                        Creator
+                    </div>
+
+
+                    <div class="profile-meta">
+
+                        ${meta}
+
+                    </div>
+
+
+                    <div class="profile-tags">
+
+                        ${
+                            (creator.categories || [])
+                            .map(
+                                category =>
+                                `
+                                <span class="profile-tag">
+                                    ${category}
+                                </span>
+                                `
+                            )
+                            .join("")
+                        }
+
+                    </div>
+
+
+                    <div class="profile-actions">
+
+
+                        <a
+                            href="${creator.instagram || "#"}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="profile-btn profile-instagram"
+                        >
+                            View Instagram →
+                        </a>
+
+
+                        <a
+                            href="mailto:contact@thev15company.in?subject=Creator enquiry - ${encodeURIComponent(creator.name)}"
+                            class="profile-btn profile-connect"
+                        >
+                            Connect
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+    );
+
+
+    if(!filtered.length){
+
+        cards = `
+
+            <div class="empty-state">
+
+                <h3>
+                    More creators coming soon.
+                </h3>
+
+                <p>
+
+                    We are continuously expanding
+                    this category with relevant creators
+                    from our network.
+
+                </p>
+
+                <button
+                    class="explore-btn"
+                    onclick="openCreators()"
+                >
+                    View All Creators →
+                </button>
+
+            </div>
+
+        `;
+
+    }
+
+
+    content.innerHTML = `
+
+        <h1 class="explorer-title">
+            ${title}
+        </h1>
+
+
+        <p class="explorer-description">
+            ${description}
+        </p>
+
+
+        <div class="filter-row">
+
+
+            <button
+                class="filter-btn
+                ${filter === "All" ? "active" : ""}"
+                onclick="renderCreatorDirectory(
+                    'All Creators In Our Network',
+                    'Explore creators across multiple niches and audience sizes.',
+                    'All',
+                    document.getElementById('sortSelect').value
+                )"
+            >
+                All
+            </button>
+
+
+            ${
+                categories
+                .map(
+                    category => `
+
+                    <button
+                        class="filter-btn
+                        ${filter === category ? "active" : ""}"
+                        onclick="openNiche('${category}')"
+                    >
+                        ${category}
+                    </button>
+
+                    `
+                )
+                .join("")
+            }
+
+
+        </div>
+
+
+        <div class="sort-row">
+
+            <span class="sort-label">
+                Sort By
+            </span>
+
+
+            <select
+                id="sortSelect"
+                class="sort-select"
+                onchange="changeCreatorSort(
+                    '${filter}',
+                    this.value
+                )"
+            >
+
+                <option
+                    value="high"
+                    ${sortType === "high" ? "selected" : ""}
+                >
+                    Followers: High to Low
+                </option>
+
+
+                <option
+                    value="low"
+                    ${sortType === "low" ? "selected" : ""}
+                >
+                    Followers: Low to High
+                </option>
+
+
+                <option
+                    value="new"
+                    ${sortType === "new" ? "selected" : ""}
+                >
+                    Newly Added
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="profile-grid">
+
+            ${cards}
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   SORT CHANGE
+===================================================== */
+
+function changeCreatorSort(
+    filter,
+    sortType
+){
+
+    if(filter === "All"){
+
+        renderCreatorDirectory(
+            "All Creators In Our Network",
+            "Explore creators across multiple niches and audience sizes.",
+            "All",
+            sortType
+        );
+
+        return;
+
+    }
+
+
+    renderCreatorDirectory(
+        `${filter} Creators`,
+        `Explore creators from our network specialising in ${filter}.`,
+        filter,
+        sortType
+    );
+
+}
+
+
+/* =====================================================
+   OPEN NICHE
+===================================================== */
+
+function openNiche(niche){
+
+    openExplorer();
+
+
+    renderCreatorDirectory(
+
+        `${niche} Creators`,
+
+        `Explore creators from our network specialising in ${niche}.`,
+
+        niche,
+
+        "high"
+
+    );
+
+}
+
+
+/* =====================================================
+   SOCIAL MEDIA MANAGERS
+===================================================== */
+
+function openSocialManagers(){
+
+    openExplorer();
+
+
+    const content =
+        document.getElementById(
+            "explorerContent"
+        );
+
+
+    content.innerHTML = `
+
+        <h1 class="explorer-title">
+            Explore Social Media Managers
+        </h1>
+
+
+        <p class="explorer-description">
+
+            Meet professionals from our network
+            who focus on strategy, content systems
+            and meaningful digital growth.
+
+        </p>
+
+
+        <div class="professional-profile">
+
+
+            <div class="professional-photo">
+
+                <img
+                    src="images/divya.jpg"
+                    alt="Divya Rajput"
+                >
+
+            </div>
+
+
+            <div>
+
+                <div class="professional-name">
+                    Divya Rajput
+                </div>
+
+
+                <div class="professional-role">
+                    Social Media Manager
+                </div>
+
+
+                <div class="professional-experience">
+                    4+ Years Experience
+                </div>
+
+
+                <div class="professional-tags">
+
+                    <span class="professional-tag">
+                        Instagram
+                    </span>
+
+                    <span class="professional-tag">
+                        LinkedIn
+                    </span>
+
+                    <span class="professional-tag">
+                        Content Strategy
+                    </span>
+
+                </div>
+
+
+                <div class="professional-quote">
+
+                    "I don't just chase impressions.
+                    I build content systems and strategies
+                    that make the right people remember
+                    your brand."
+
+                </div>
+
+
+                <div class="professional-description">
+
+                    Divya Rajput is a Digital Marketer
+                    specialised in Content Strategy.
+                    Her work focuses on building content
+                    systems, creating distinctive brand
+                    voices and planning content across
+                    social, video and written formats.
+
+                </div>
+
+
+                <div class="professional-actions">
+
+
+                    <a
+                        href="https://www.linkedin.com/in/divya-rajput-9906a32b5/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="linkedin-btn"
+                    >
+                        View LinkedIn →
+                    </a>
+
+
+                    <a
+                        href="mailto:contact@thev15company.in?subject=Connect with Divya Rajput through The V15 Company"
+                        class="v15-connect-btn"
+                    >
+                        Connect Through V15 →
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   COMING SOON
+===================================================== */
+
+function openComingSoon(category){
+
+    openExplorer();
+
+
+    const content =
+        document.getElementById(
+            "explorerContent"
+        );
+
+
+    content.innerHTML = `
+
+        <h1 class="explorer-title">
+            Explore ${category}
+        </h1>
+
+
+        <div class="empty-state">
+
+            <h3>
+                Our network is growing.
+            </h3>
+
+
+            <p>
+
+                We are continuously expanding
+                our network of trusted digital
+                professionals.
+
+                New ${category.toLowerCase()}
+                profiles will be added as our
+                talent network grows.
+
+            </p>
+
+
+            <a
+                href="mailto:contact@thev15company.in?subject=Join The V15 Company Network - ${category}"
+                class="explore-btn"
+            >
+                Join The Network →
+            </a>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   ESCAPE KEY
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            closeExplorer();
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
