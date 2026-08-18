@@ -12,6 +12,7 @@
 <meta name="description"
 content="The V15 Company connects brands with creators and digital professionals across influencer marketing, social media management, copywriting, graphic design and video editing.">
 
+
 <style>
 
 /* =====================================================
@@ -29,6 +30,7 @@ html{
 }
 
 body{
+
     font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -37,7 +39,9 @@ body{
     sans-serif;
 
     color:#101828;
+
     background:#f7fbff;
+
     overflow-x:hidden;
 }
 
@@ -60,70 +64,96 @@ button{
 ===================================================== */
 
 .navbar{
+
     position:sticky;
+
     top:0;
+
     z-index:1000;
 
     background:rgba(255,255,255,.95);
 
     backdrop-filter:blur(18px);
+
     -webkit-backdrop-filter:blur(18px);
 
     border-bottom:1px solid #e5edf5;
 }
 
 .nav-inner{
+
     max-width:1180px;
+
     margin:auto;
 
     padding:13px 24px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
 }
 
 .logo{
+
     display:flex;
+
     align-items:center;
+
     gap:12px;
 }
 
 .logo-box{
+
     width:46px;
+
     height:46px;
 
     border-radius:14px;
+
     overflow:hidden;
 
     background:#eef8ff;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     flex-shrink:0;
 }
 
 .logo-box img{
+
     width:100%;
+
     height:100%;
+
     object-fit:contain;
+
     display:block;
 }
 
 .logo-name{
+
     font-size:18px;
+
     font-weight:800;
 }
 
 .nav-links{
+
     display:flex;
+
     align-items:center;
+
     gap:4px;
 }
 
 .nav-links a{
+
     padding:9px 12px;
 
     font-size:13px;
@@ -136,14 +166,18 @@ button{
 }
 
 .nav-links a:hover{
+
     background:#eef7ff;
+
     color:#1769aa;
 }
 
 .menu-btn{
+
     display:none;
 
     border:0;
+
     background:none;
 
     font-size:29px;
@@ -159,6 +193,7 @@ button{
 .hero{
 
     background:
+
     radial-gradient(
         circle at 50% 0%,
         rgba(86,171,230,.18),
@@ -223,6 +258,7 @@ button{
 }
 
 .hero-highlight{
+
     color:#2478b8;
 }
 
@@ -257,6 +293,7 @@ button{
     display:inline-flex;
 
     align-items:center;
+
     justify-content:center;
 
     min-height:52px;
@@ -273,16 +310,21 @@ button{
 }
 
 .btn-dark{
+
     background:#101828;
+
     color:#fff;
 }
 
 .btn-blue{
+
     background:#d9efff;
+
     color:#145a8e;
 }
 
 .btn:hover{
+
     transform:translateY(-2px);
 }
 
@@ -292,16 +334,21 @@ button{
 ===================================================== */
 
 .section{
+
     padding:85px 20px;
 }
 
 .section-inner{
+
     max-width:1120px;
+
     margin:auto;
 }
 
 .section-header{
+
     text-align:center;
+
     margin-bottom:38px;
 }
 
@@ -349,6 +396,7 @@ button{
 ===================================================== */
 
 .creators-section{
+
     background:#f5faff;
 }
 
@@ -387,6 +435,12 @@ button{
     gap:18px;
 }
 
+
+/* IMPORTANT:
+   Creator card is now an <a>
+   so entire card opens Instagram
+*/
+
 .creator-card{
 
     position:relative;
@@ -412,7 +466,29 @@ button{
     box-shadow:
     0 12px 35px
     rgba(26,88,125,.07);
+
+    cursor:pointer;
+
+    text-decoration:none;
+
+    color:inherit;
+
+    transition:
+    transform .25s ease,
+    box-shadow .25s ease;
 }
+
+.creator-card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 18px 40px
+    rgba(26,88,125,.11);
+}
+
+
+/* Moving glow */
 
 .creator-card::before{
 
@@ -476,13 +552,16 @@ button{
 
 .creator-avatar,
 .creator-info{
+
     position:relative;
+
     z-index:1;
 }
 
 .creator-avatar{
 
     width:78px;
+
     height:78px;
 
     flex:0 0 78px;
@@ -498,6 +577,7 @@ button{
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     color:#2478b8;
@@ -510,6 +590,7 @@ button{
 .creator-avatar img{
 
     width:100%;
+
     height:100%;
 
     object-fit:cover;
@@ -518,6 +599,7 @@ button{
 }
 
 .creator-info{
+
     min-width:0;
 }
 
@@ -582,6 +664,7 @@ button{
 .carousel-btn{
 
     width:44px;
+
     height:44px;
 
     border-radius:50%;
@@ -619,6 +702,7 @@ button{
 ===================================================== */
 
 .network-section{
+
     background:#fff;
 }
 
@@ -661,6 +745,7 @@ button{
 .network-line{
 
     width:36px;
+
     height:3px;
 
     margin:0 auto 16px;
@@ -803,6 +888,7 @@ button{
 ===================================================== */
 
 .services-section{
+
     background:#fff;
 }
 
@@ -832,6 +918,7 @@ button{
 .service-icon{
 
     width:50px;
+
     height:50px;
 
     margin:0 auto 17px;
@@ -845,6 +932,7 @@ button{
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     font-weight:900;
@@ -872,6 +960,7 @@ button{
 ===================================================== */
 
 .feedback-section{
+
     background:#f5faff;
 }
 
@@ -927,6 +1016,7 @@ button{
 .contact-section{
 
     background:
+
     radial-gradient(
         circle at 50% 0%,
         rgba(84,164,224,.16),
@@ -973,7 +1063,8 @@ button{
 
     background:#ffffff;
 
-    padding:45px 20px 55px;
+    padding:
+    55px 20px 65px;
 
     border-top:1px solid #edf3f8;
 }
@@ -995,11 +1086,11 @@ button{
 
     justify-content:center;
 
-    gap:12px;
+    gap:25px;
 
     flex-wrap:wrap;
 
-    margin-top:10px;
+    margin-top:25px;
 }
 
 .social-link{
@@ -1010,15 +1101,13 @@ button{
 
     justify-content:center;
 
-    min-width:120px;
-
-    padding:12px 18px;
+    padding:13px 20px;
 
     border-radius:12px;
 
-    border:1px solid #cfe2ef;
+    border:1px solid #dce8f2;
 
-    background:#f7fbff;
+    background:#f9fcff;
 
     color:#1769aa;
 
@@ -1026,16 +1115,16 @@ button{
 
     font-weight:800;
 
-    transition:.25s ease;
+    transition:.2s ease;
 }
 
 .social-link:hover{
 
+    transform:translateY(-3px);
+
     background:#eaf6ff;
 
-    border-color:#8ec8ee;
-
-    transform:translateY(-2px);
+    border-color:#a9d5f5;
 }
 
 
@@ -1059,6 +1148,7 @@ footer{
 .footer-logo{
 
     width:68px;
+
     height:68px;
 
     margin:0 auto 13px;
@@ -1072,12 +1162,14 @@ footer{
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 }
 
 .footer-logo img{
 
     width:100%;
+
     height:100%;
 
     object-fit:contain;
@@ -1086,6 +1178,7 @@ footer{
 }
 
 footer strong{
+
     color:#fff;
 }
 
@@ -1115,6 +1208,7 @@ footer strong{
 }
 
 .explorer.active{
+
     display:block;
 }
 
@@ -1160,6 +1254,7 @@ footer strong{
 .close-btn{
 
     width:42px;
+
     height:42px;
 
     border-radius:50%;
@@ -1202,44 +1297,8 @@ footer strong{
 
 
 /* =====================================================
-   SORT + FILTER
+   FILTERS
 ===================================================== */
-
-.explorer-tools{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:10px;
-
-    flex-wrap:wrap;
-
-    margin-bottom:25px;
-}
-
-.sort-select{
-
-    padding:10px 14px;
-
-    border-radius:12px;
-
-    border:1px solid #cfe2ef;
-
-    background:#fff;
-
-    color:#475467;
-
-    font-size:12px;
-
-    font-weight:800;
-
-    cursor:pointer;
-
-    outline:none;
-}
 
 .filter-row{
 
@@ -1251,7 +1310,7 @@ footer strong{
 
     justify-content:center;
 
-    margin-bottom:30px;
+    margin-bottom:20px;
 }
 
 .filter-btn{
@@ -1280,6 +1339,56 @@ footer strong{
     color:#fff;
 
     border-color:#1769aa;
+}
+
+
+/* =====================================================
+   SORT
+===================================================== */
+
+.sort-row{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:30px;
+}
+
+.sort-label{
+
+    color:#667085;
+
+    font-size:11px;
+
+    font-weight:800;
+}
+
+.sort-select{
+
+    padding:9px 13px;
+
+    border-radius:10px;
+
+    border:1px solid #cfe2ef;
+
+    background:#fff;
+
+    color:#475467;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    outline:none;
+
+    cursor:pointer;
 }
 
 
@@ -1326,6 +1435,7 @@ footer strong{
 .profile-photo{
 
     width:86px;
+
     height:86px;
 
     border-radius:50%;
@@ -1342,6 +1452,7 @@ footer strong{
 .profile-photo img{
 
     width:100%;
+
     height:100%;
 
     object-fit:cover;
@@ -1358,11 +1469,13 @@ footer strong{
 
 .profile-handle{
 
-    color:#667085;
+    color:#2478b8;
 
     font-size:12px;
 
-    margin-bottom:7px;
+    margin-bottom:5px;
+
+    font-weight:700;
 }
 
 .profile-role{
@@ -1382,9 +1495,9 @@ footer strong{
 
     font-size:12px;
 
-    line-height:1.6;
-
     margin-bottom:13px;
+
+    line-height:1.6;
 }
 
 .profile-tags{
@@ -1499,9 +1612,11 @@ footer strong{
     position:absolute;
 
     top:0;
+
     left:-100%;
 
     width:100%;
+
     height:3px;
 
     background:
@@ -1529,6 +1644,7 @@ footer strong{
 .professional-photo{
 
     width:150px;
+
     height:150px;
 
     border-radius:25px;
@@ -1543,6 +1659,7 @@ footer strong{
 .professional-photo img{
 
     width:100%;
+
     height:100%;
 
     object-fit:cover;
@@ -1718,21 +1835,25 @@ footer strong{
 @media(max-width:950px){
 
     .network-grid{
+
         grid-template-columns:
         repeat(2,1fr);
     }
 
     .niche-grid{
+
         grid-template-columns:
         repeat(3,1fr);
     }
 
     .services-grid{
+
         grid-template-columns:
         repeat(2,1fr);
     }
 
     .profile-grid{
+
         grid-template-columns:
         repeat(2,1fr);
     }
@@ -1743,19 +1864,24 @@ footer strong{
 @media(max-width:700px){
 
     .nav-inner{
+
         padding:12px 18px;
     }
 
     .logo-box{
+
         width:42px;
+
         height:42px;
     }
 
     .logo-name{
+
         font-size:16px;
     }
 
     .menu-btn{
+
         display:block;
     }
 
@@ -1768,6 +1894,7 @@ footer strong{
         top:67px;
 
         left:0;
+
         right:0;
 
         padding:12px 18px 18px;
@@ -1782,10 +1909,12 @@ footer strong{
     }
 
     .nav-links.show{
+
         display:flex;
     }
 
     .hero-inner{
+
         padding:65px 20px 70px;
     }
 
@@ -1797,14 +1926,17 @@ footer strong{
     }
 
     .hero-description{
+
         font-size:16px;
     }
 
     .section{
+
         padding:65px 15px;
     }
 
     .section-title{
+
         font-size:32px;
     }
 
@@ -1820,33 +1952,40 @@ footer strong{
     .creator-avatar{
 
         width:68px;
+
         height:68px;
 
         flex-basis:68px;
     }
 
     .creator-name{
+
         font-size:16px;
     }
 
     .creator-meta{
+
         font-size:12px;
     }
 
     .network-grid{
+
         grid-template-columns:1fr;
     }
 
     .niche-grid{
+
         grid-template-columns:
         repeat(2,1fr);
     }
 
     .services-grid{
+
         grid-template-columns:1fr;
     }
 
     .profile-grid{
+
         grid-template-columns:1fr;
     }
 
@@ -1862,6 +2001,7 @@ footer strong{
     .professional-photo{
 
         width:130px;
+
         height:130px;
 
         margin:auto;
@@ -1874,11 +2014,27 @@ footer strong{
     }
 
     .professional-name{
+
         font-size:24px;
     }
 
     .feedback-box{
+
         padding:25px 20px;
+    }
+
+    .social-links{
+
+        flex-direction:column;
+
+        gap:12px;
+    }
+
+    .social-link{
+
+        width:100%;
+
+        max-width:300px;
     }
 
 }
@@ -1887,14 +2043,36 @@ footer strong{
 @media(max-width:430px){
 
     .social-links{
-        gap:8px;
+
+        gap:10px;
     }
 
-    .social-link{
-        min-width:105px;
-        padding:11px 13px;
-    }
+}
 
+
+/* =====================================================
+   NEW CREATOR BADGE
+===================================================== */
+
+.new-badge{
+
+    display:inline-flex;
+
+    margin-left:6px;
+
+    padding:3px 7px;
+
+    border-radius:8px;
+
+    background:#e8f7ff;
+
+    color:#1769aa;
+
+    font-size:8px;
+
+    font-weight:900;
+
+    vertical-align:middle;
 }
 
 </style>
@@ -1913,7 +2091,10 @@ footer strong{
 
     <div class="nav-inner">
 
-        <a href="#home" class="logo">
+        <a
+            href="#home"
+            class="logo"
+        >
 
             <div class="logo-box">
 
@@ -1945,17 +2126,29 @@ footer strong{
             id="navLinks"
         >
 
-            <a href="#home">Home</a>
+            <a href="#home">
+                Home
+            </a>
 
-            <a href="#creators">Creators</a>
+            <a href="#creators">
+                Creators
+            </a>
 
-            <a href="#network">Our Network</a>
+            <a href="#network">
+                Our Network
+            </a>
 
-            <a href="#niches">Niches</a>
+            <a href="#niches">
+                Niches
+            </a>
 
-            <a href="#services">Services</a>
+            <a href="#services">
+                Services
+            </a>
 
-            <a href="#contact">Contact</a>
+            <a href="#contact">
+                Contact
+            </a>
 
         </nav>
 
@@ -1968,13 +2161,17 @@ footer strong{
      HERO
 ===================================================== -->
 
-<section class="hero" id="home">
+<section
+    class="hero"
+    id="home"
+>
 
     <div class="hero-inner">
 
         <div class="hero-badge">
             The V15 Company
         </div>
+
 
         <h1>
 
@@ -1986,6 +2183,7 @@ footer strong{
 
         </h1>
 
+
         <p class="hero-description">
 
             We help brands build meaningful digital presence
@@ -1993,6 +2191,7 @@ footer strong{
             copywriting, graphic design and video content.
 
         </p>
+
 
         <div class="hero-buttons">
 
@@ -2004,7 +2203,7 @@ footer strong{
             </a>
 
 
-            <!-- CREATOR GOOGLE FORM -->
+            <!-- GOOGLE FORM -->
 
             <a
                 href="https://openinapp.link/zic87"
@@ -2033,6 +2232,7 @@ footer strong{
 
     <div class="section-inner">
 
+
         <div class="section-header">
 
             <div class="eyebrow">
@@ -2044,8 +2244,10 @@ footer strong{
             </h2>
 
             <p class="section-subtitle">
+
                 Explore creators across multiple niches,
                 audience sizes and content styles.
+
             </p>
 
         </div>
@@ -2059,7 +2261,9 @@ footer strong{
             <div
                 class="creator-track"
                 id="creatorTrack"
-            ></div>
+            >
+
+            </div>
 
         </div>
 
@@ -2069,7 +2273,7 @@ footer strong{
             <button
                 class="carousel-btn"
                 id="prevBtn"
-                aria-label="Previous creators"
+                type="button"
             >
                 ←
             </button>
@@ -2081,12 +2285,13 @@ footer strong{
             <button
                 class="carousel-btn"
                 id="nextBtn"
-                aria-label="Next creators"
+                type="button"
             >
                 →
             </button>
 
         </div>
+
 
     </div>
 
@@ -2103,6 +2308,7 @@ footer strong{
 >
 
     <div class="section-inner">
+
 
         <div class="section-header">
 
@@ -2237,6 +2443,7 @@ footer strong{
 
     <div class="section-inner">
 
+
         <div class="section-header">
 
             <div class="eyebrow">
@@ -2257,10 +2464,178 @@ footer strong{
         </div>
 
 
-        <div
-            class="niche-grid"
-            id="nicheGrid"
-        ></div>
+        <div class="niche-grid">
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('Tech')"
+            >
+                <div class="niche-name">
+                    Tech
+                </div>
+
+                <div class="niche-sub">
+                    Explore creators
+                </div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('AI')"
+            >
+                <div class="niche-name">
+                    AI
+                </div>
+
+                <div class="niche-sub">
+                    Explore creators
+                </div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('Tech UGC')"
+            >
+                <div class="niche-name">
+                    Tech UGC
+                </div>
+
+                <div class="niche-sub">
+                    Explore creators
+                </div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('UGC')"
+            >
+                <div class="niche-name">
+                    UGC
+                </div>
+
+                <div class="niche-sub">
+                    Explore creators
+                </div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('Beauty')"
+            >
+                <div class="niche-name">
+                    Beauty
+                </div>
+
+                <div class="niche-sub">
+                    Explore creators
+                </div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('Fashion')"
+            >
+                <div class="niche-name">
+                    Fashion
+                </div>
+
+                <div class="niche-sub">
+                    Explore creators
+                </div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('Lifestyle')"
+            >
+                <div class="niche-name">
+                    Lifestyle
+                </div>
+
+                <div class="niche-sub">
+                    Explore creators
+                </div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('Travel')"
+            >
+                <div class="niche-name">
+                    Travel
+                </div>
+
+                <div class="niche-sub">
+                    Explore creators
+                </div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('Finance')"
+            >
+                <div class="niche-name">
+                    Finance
+                </div>
+
+                <div class="niche-sub">
+                    Explore creators
+                </div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('Gaming')"
+            >
+                <div class="niche-name">
+                    Gaming
+                </div>
+
+                <div class="niche-sub">
+                    Explore creators
+                </div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('Food')"
+            >
+                <div class="niche-name">
+                    Food
+                </div>
+
+                <div class="niche-sub">
+                    Explore creators
+                </div>
+            </button>
+
+
+            <button
+                class="niche-card"
+                onclick="openNiche('Education')"
+            >
+                <div class="niche-name">
+                    Education
+                </div>
+
+                <div class="niche-sub">
+                    Explore creators
+                </div>
+            </button>
+
+
+        </div>
 
     </div>
 
@@ -2277,6 +2652,7 @@ footer strong{
 >
 
     <div class="section-inner">
+
 
         <div class="section-header">
 
@@ -2384,6 +2760,7 @@ footer strong{
 
     <div class="section-inner">
 
+
         <div class="section-header">
 
             <div class="eyebrow">
@@ -2425,6 +2802,7 @@ footer strong{
                 Nikita Suri
             </div>
 
+
             <div class="feedback-role">
                 Creator
             </div>
@@ -2447,13 +2825,16 @@ footer strong{
 
     <div class="section-inner">
 
+
         <div class="eyebrow">
             Let's Work Together
         </div>
 
+
         <h2 class="section-title">
             Have A Brand Requirement?
         </h2>
+
 
         <p>
 
@@ -2463,6 +2844,7 @@ footer strong{
 
         </p>
 
+
         <a
             href="mailto:contact@thev15company.in"
             class="contact-btn"
@@ -2470,20 +2852,28 @@ footer strong{
             Get In Touch →
         </a>
 
+
     </div>
 
 </section>
 
 
 <!-- =====================================================
-     SOCIAL LINKS
+     OFFICIAL SOCIAL LINKS
 ===================================================== -->
 
 <section class="social-section">
 
     <div class="social-section-inner">
 
+
+        <div class="eyebrow">
+            Follow The V15 Company
+        </div>
+
+
         <div class="social-links">
+
 
             <a
                 class="social-link"
@@ -2491,7 +2881,7 @@ footer strong{
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                Instagram ↗
+                Instagram →
             </a>
 
 
@@ -2501,8 +2891,9 @@ footer strong{
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                LinkedIn ↗
+                LinkedIn →
             </a>
+
 
         </div>
 
@@ -2525,6 +2916,7 @@ footer strong{
         >
 
     </div>
+
 
     <div>
 
@@ -2550,9 +2942,12 @@ footer strong{
     id="explorer"
 >
 
+
     <div class="explorer-inner">
 
+
         <div class="explorer-top">
+
 
             <button
                 class="back-btn"
@@ -2561,18 +2956,21 @@ footer strong{
                 ← Back
             </button>
 
+
             <button
                 class="close-btn"
                 onclick="closeExplorer()"
-                aria-label="Close"
             >
                 ×
             </button>
 
+
         </div>
 
 
-        <div id="explorerContent"></div>
+        <div id="explorerContent">
+        </div>
+
 
     </div>
 
@@ -2615,184 +3013,115 @@ document
 
 /* =====================================================
    CREATOR DATABASE
+   ONLY ADD CREATOR HERE
 ===================================================== */
 
-const CREATORS = [
+const creators = [
 
     {
-        id: "nandini-jaiswani",
-
         name: "Nandini Jaiswani",
-
-        handle: "",
-
+        handle: "@nandini",
         followers: "149K",
-
-        subscribers: "",
-
         categories: [
             "Lifestyle",
             "Fashion",
             "Travel"
         ],
-
         image: "images/nandini.jpg",
-
-        instagram:
-        "https://www.instagram.com/",
-
-        dateAdded: "2026-08-10"
+        instagram: "#",
+        dateAdded: "2026-01-01"
     },
 
 
     {
-        id: "sonia-mishra",
-
         name: "Sonia Mishra",
-
-        handle: "",
-
+        handle: "@sonia__mishra__",
         followers: "48.5K",
-
-        subscribers: "",
-
         categories: [
             "Fashion",
             "Beauty",
             "Lifestyle",
             "Travel"
         ],
-
         image: "images/Sonia.jpg",
-
         instagram:
         "https://www.instagram.com/sonia__mishra__/",
-
-        dateAdded: "2026-08-10"
+        dateAdded: "2026-01-02"
     },
 
 
     {
-        id: "ritika-create",
-
         name: "Ritika.Create",
-
-        handle: "",
-
+        handle: "@ritika.create",
         followers: "13.2K",
-
-        subscribers: "",
-
         categories: [
-            "Design"
+            "Design",
+            "Digital"
         ],
-
         image: "images/ritika.jpg",
-
         instagram:
         "https://www.instagram.com/ritika.create/",
-
-        dateAdded: "2026-08-11"
+        dateAdded: "2026-01-03"
     },
 
 
     {
-        id: "siblings-finance",
-
         name: "Siblings Finance",
-
-        handle: "",
-
+        handle: "@siblingsfinance",
         followers: "116K",
-
-        subscribers: "",
-
         categories: [
             "Finance"
         ],
-
         image: "images/siblingsfinance.jpg",
-
         instagram:
         "https://www.instagram.com/siblingsfinance/",
-
-        dateAdded: "2026-08-11"
+        dateAdded: "2026-01-04"
     },
 
 
     {
-        id: "vishal-hajare",
-
         name: "Vishal Hajare",
-
-        handle: "",
-
+        handle: "@tech_tricks.marathi",
         followers: "78.1K",
-
-        subscribers: "",
-
         categories: [
             "Tech"
         ],
-
         image: "images/vishal.jpg",
-
         instagram:
         "https://www.instagram.com/tech_tricks.marathi/",
-
-        dateAdded: "2026-08-12"
+        dateAdded: "2026-01-05"
     },
 
 
     {
-        id: "anant-mishra",
-
         name: "Anant Mishra",
-
-        handle: "",
-
+        handle: "@gullu.era",
         followers: "193K",
-
-        subscribers: "",
-
         categories: [
             "Beauty",
             "Lifestyle"
         ],
-
         image: "images/gullu.era.jpg",
-
         instagram:
         "https://www.instagram.com/gullu.era/",
-
-        dateAdded: "2026-08-12"
+        dateAdded: "2026-01-06"
     },
 
 
     {
-        id: "created-by-radhika",
-
         name: "created.by.radhika",
-
-        handle: "",
-
+        handle: "@created.by.radhika",
         followers: "2,221",
-
-        subscribers: "",
-
         categories: [
             "Tech",
             "AI",
             "Tech UGC",
             "UGC"
         ],
-
         image: "images/created.by.radhika.jpg",
-
         instagram:
         "https://www.instagram.com/created.by.radhika/",
-
-        dateAdded: "2026-08-13"
+        dateAdded: "2026-01-07"
     },
 
 
@@ -2801,85 +3130,53 @@ const CREATORS = [
     ================================================= */
 
     {
-        id: "vinayak-choubey",
-
         name: "Vinayak Choubey",
-
         handle: "@techvinch.in",
-
         followers: "799",
-
         subscribers: "99K",
-
         categories: [
             "Tech"
         ],
-
         image: "images/Vinayak.jpg",
-
         instagram:
         "https://insta.openinapp.co/zfljz",
-
         dateAdded: "2026-08-18"
     },
 
 
     /* =================================================
-       NAMITA MAWAI
-       UGC
+       NAMITA MAWAI - UGC
     ================================================= */
 
     {
-        id: "namita-mawai-ugcwithnamita",
-
         name: "Namita Mawai",
-
         handle: "@ugcwithnamita",
-
         followers: "627",
-
-        subscribers: "",
-
         categories: [
             "UGC"
         ],
-
         image: "images/namita.jpg",
-
         instagram:
         "https://www.instagram.com/ugcwithnamita?igsh=MTB1bjV2ODR3Z20xaQ==",
-
         dateAdded: "2026-08-18"
     },
 
 
     /* =================================================
-       NAMITA MAWAI
-       NXMITA
-       Niche: Fashion + Lifestyle
+       NAMITA MAWAI - FASHION + LIFESTYLE
     ================================================= */
 
     {
-        id: "namita-mawai-nxmita",
-
         name: "Namita Mawai",
-
         handle: "@nxmita",
-
         followers: "9,073",
-
-        subscribers: "",
-
         categories: [
             "Fashion",
             "Lifestyle"
         ],
-
         image: "images/namitaa.jpg",
-
         instagram:
         "https://www.instagram.com/nxmita?igsh=MXhleHg2eTl3MHFpdg==",
-
         dateAdded: "2026-08-18"
     }
 
@@ -2887,182 +3184,184 @@ const CREATORS = [
 
 
 /* =====================================================
-   CATEGORY SYSTEM
+   HELPERS
 ===================================================== */
 
-const BASE_CATEGORIES = [
+function getInitials(name){
 
-    "Tech",
-    "AI",
-    "Beauty",
-    "Fashion",
-    "Lifestyle",
-    "Travel",
-    "Finance",
-    "Gaming",
-    "Food",
-    "Education",
-    "UGC",
-    "Tech UGC",
-    "Design"
+    if(!name){
+        return "CR";
+    }
 
-];
-
-
-function getCategories(){
-
-    const categorySet =
-        new Set(BASE_CATEGORIES);
-
-    CREATORS.forEach(creator => {
-
-        (creator.categories || [])
-        .forEach(category => {
-
-            categorySet.add(category);
-
-        });
-
-    });
-
-    return Array.from(categorySet);
-
+    return name
+        .split(" ")
+        .slice(0,2)
+        .map(word => word.charAt(0))
+        .join("")
+        .toUpperCase();
 }
 
 
-/* =====================================================
-   NUMBER PARSER
-===================================================== */
+function parseFollowers(value){
 
-function parseNumber(value){
-
-    if(
-        value === undefined ||
-        value === null ||
-        value === ""
-    ){
-
+    if(value === undefined || value === null){
         return 0;
-
     }
 
-    let clean =
+    let text =
         String(value)
+        .toUpperCase()
         .replace(/,/g,"")
-        .trim()
-        .toUpperCase();
-
+        .trim();
 
     let multiplier = 1;
 
-
-    if(clean.endsWith("K")){
+    if(text.endsWith("K")){
 
         multiplier = 1000;
 
-        clean =
-        clean.slice(0,-1);
+        text = text.slice(0,-1);
 
     }
 
-
-    else if(clean.endsWith("M")){
+    else if(text.endsWith("M")){
 
         multiplier = 1000000;
 
-        clean =
-        clean.slice(0,-1);
-
-    }
-
-
-    else if(clean.endsWith("B")){
-
-        multiplier = 1000000000;
-
-        clean =
-        clean.slice(0,-1);
+        text = text.slice(0,-1);
 
     }
 
 
     const number =
-        parseFloat(clean);
-
+        parseFloat(text);
 
     return isNaN(number)
         ? 0
         : number * multiplier;
-
 }
 
 
-/* =====================================================
-   CREATOR META
-===================================================== */
-
 function getCreatorMeta(creator){
 
-    const parts = [];
+    let details = "";
 
 
     if(creator.followers){
 
-        parts.push(
-            `${creator.followers} followers`
-        );
+        details +=
+        creator.followers +
+        " Followers";
 
     }
 
 
     if(creator.subscribers){
 
-        parts.push(
-            `${creator.subscribers} subscribers`
-        );
+        if(details){
+
+            details += " · ";
+
+        }
+
+        details +=
+        creator.subscribers +
+        " Subscribers";
 
     }
 
 
-    if(creator.categories?.length){
+    if(creator.categories &&
+       creator.categories.length){
 
-        parts.push(
-            creator.categories.join(" / ")
-        );
+        if(details){
+
+            details += " · ";
+
+        }
+
+        details +=
+        creator.categories.join(" / ");
 
     }
 
 
-    return parts.join(" · ");
+    return details;
+}
+
+
+function getCreatorNiches(creator){
+
+    if(
+        creator.categories &&
+        creator.categories.length
+    ){
+
+        return creator.categories;
+
+    }
+
+    if(
+        creator.niches &&
+        creator.niches.length
+    ){
+
+        return creator.niches;
+
+    }
+
+    if(creator.niche){
+
+        return [creator.niche];
+
+    }
+
+    return [];
 
 }
 
 
 /* =====================================================
-   INITIALS
+   FEATURED CAROUSEL
+   AUTOMATICALLY BUILDS FROM creators[]
 ===================================================== */
 
-function getInitials(name){
+const creatorTrack =
+    document.getElementById(
+        "creatorTrack"
+    );
 
-    return String(name)
-    .split(" ")
-    .filter(Boolean)
-    .slice(0,2)
-    .map(word => word[0])
-    .join("")
-    .toUpperCase();
+const creatorCarousel =
+    document.getElementById(
+        "creatorCarousel"
+    );
 
-}
+const prevBtn =
+    document.getElementById(
+        "prevBtn"
+    );
+
+const nextBtn =
+    document.getElementById(
+        "nextBtn"
+    );
+
+
+let creatorPages = [];
+
+let creatorPosition = 1;
+
+const creatorsPerPage = 3;
 
 
 /* =====================================================
-   FEATURED CREATOR CARD
+   CREATE CREATOR CARD
+   ENTIRE CARD OPENS INSTAGRAM
 ===================================================== */
 
 function createCreatorCard(creator){
 
-    const avatar =
-        creator.image
+    const imageHTML = creator.image
 
         ?
 
@@ -3076,18 +3375,22 @@ function createCreatorCard(creator){
 
         :
 
-        `
-        ${getInitials(creator.name)}
-        `;
+        getInitials(creator.name);
 
 
     return `
 
-        <div class="creator-card">
+        <a
+            href="${creator.instagram || '#'}"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="creator-card"
+            aria-label="Open ${creator.name} Instagram"
+        >
 
             <div class="creator-avatar">
 
-                ${avatar}
+                ${imageHTML}
 
             </div>
 
@@ -3097,6 +3400,20 @@ function createCreatorCard(creator){
                 <div class="creator-name">
 
                     ${creator.name}
+
+                    ${
+                        creator.dateAdded === "2026-08-18"
+
+                        ?
+
+                        `<span class="new-badge">
+                            NEW
+                        </span>`
+
+                        :
+
+                        ""
+                    }
 
                 </div>
 
@@ -3116,7 +3433,7 @@ function createCreatorCard(creator){
 
             </div>
 
-        </div>
+        </a>
 
     `;
 
@@ -3124,44 +3441,20 @@ function createCreatorCard(creator){
 
 
 /* =====================================================
-   FEATURED SLIDER
+   BUILD FEATURED PAGES
 ===================================================== */
 
-let creatorPosition = 1;
+function buildCreatorPages(){
 
-let creatorPages = [];
-
-let creatorPageCount = 0;
-
-
-function getCreatorsPerPage(){
-
-    return 3;
-
-}
-
-
-function buildCreatorSlider(){
-
-    const track =
-        document.getElementById(
-            "creatorTrack"
-        );
-
-
-    track.innerHTML = "";
+    creatorTrack.innerHTML = "";
 
     creatorPages = [];
 
 
-    const perPage =
-        getCreatorsPerPage();
-
-
     for(
         let i = 0;
-        i < CREATORS.length;
-        i += perPage
+        i < creators.length;
+        i += creatorsPerPage
     ){
 
         const page =
@@ -3171,28 +3464,41 @@ function buildCreatorSlider(){
             "creator-page";
 
 
-        CREATORS
-        .slice(i, i + perPage)
-        .forEach(creator => {
-
-            page.innerHTML +=
-                createCreatorCard(creator);
-
-        });
+        const group =
+            creators.slice(
+                i,
+                i + creatorsPerPage
+            );
 
 
-        track.appendChild(page);
+        group.forEach(
+            creator => {
+
+                page.insertAdjacentHTML(
+                    "beforeend",
+                    createCreatorCard(creator)
+                );
+
+            }
+        );
+
+
+        creatorTrack.appendChild(page);
 
         creatorPages.push(page);
 
     }
 
-
-    creatorPageCount =
-        creatorPages.length;
+}
 
 
-    if(!creatorPageCount){
+/* =====================================================
+   SETUP INFINITE FEATURED CAROUSEL
+===================================================== */
+
+function setupCreatorCarousel(){
+
+    if(!creatorPages.length){
 
         return;
 
@@ -3206,17 +3512,18 @@ function buildCreatorSlider(){
 
 
     const firstClone =
-        creatorPages[0]
-        .cloneNode(true);
+        creatorPages[
+            0
+        ].cloneNode(true);
 
 
-    track.insertBefore(
+    creatorTrack.insertBefore(
         lastClone,
-        track.firstElementChild
+        creatorTrack.firstElementChild
     );
 
 
-    track.appendChild(
+    creatorTrack.appendChild(
         firstClone
     );
 
@@ -3224,113 +3531,115 @@ function buildCreatorSlider(){
     creatorPosition = 1;
 
 
-    track.style.transition =
+    creatorTrack.style.transition =
         "none";
 
-    track.style.transform =
-        `translateX(-${creatorPosition * 100}%)`;
+
+    creatorTrack.style.transform =
+        "translateX(-100%)";
 
 }
 
 
-function moveCreatorSlider(direction){
+/* =====================================================
+   MOVE CAROUSEL
+===================================================== */
 
-    if(!creatorPageCount){
+function nextCreators(){
+
+    if(!creatorPages.length){
 
         return;
 
     }
 
 
-    const track =
-        document.getElementById(
-            "creatorTrack"
-        );
+    creatorPosition++;
 
 
-    creatorPosition += direction;
-
-
-    track.style.transition =
+    creatorTrack.style.transition =
         "transform .55s cubic-bezier(.22,.61,.36,1)";
 
 
-    track.style.transform =
+    creatorTrack.style.transform =
         `translateX(-${creatorPosition * 100}%)`;
-
-}
-
-
-function nextCreators(){
-
-    moveCreatorSlider(1);
 
 }
 
 
 function previousCreators(){
 
-    moveCreatorSlider(-1);
+    if(!creatorPages.length){
+
+        return;
+
+    }
+
+
+    creatorPosition--;
+
+
+    creatorTrack.style.transition =
+        "transform .55s cubic-bezier(.22,.61,.36,1)";
+
+
+    creatorTrack.style.transform =
+        `translateX(-${creatorPosition * 100}%)`;
 
 }
 
 
-document
-.getElementById("nextBtn")
-.addEventListener(
+nextBtn.addEventListener(
     "click",
     nextCreators
 );
 
 
-document
-.getElementById("prevBtn")
-.addEventListener(
+prevBtn.addEventListener(
     "click",
     previousCreators
 );
 
 
-document
-.getElementById("creatorTrack")
-.addEventListener(
-    "transitionend",
-    () => {
+/* =====================================================
+   INFINITE LOOP
+===================================================== */
 
-        const track =
-            document.getElementById(
-                "creatorTrack"
-            );
+creatorTrack.addEventListener(
+    "transitionend",
+    function(){
+
+        const total =
+            creatorPages.length;
+
+
+        if(
+            creatorPosition ===
+            total + 1
+        ){
+
+            creatorTrack.style.transition =
+                "none";
+
+            creatorPosition = 1;
+
+            creatorTrack.style.transform =
+                "translateX(-100%)";
+
+        }
 
 
         if(
             creatorPosition === 0
         ){
 
-            track.style.transition =
+            creatorTrack.style.transition =
                 "none";
 
-            creatorPosition =
-                creatorPageCount;
+            creatorPosition = total;
 
-            track.style.transform =
-                `translateX(-${creatorPosition * 100}%)`;
-
-        }
-
-
-        if(
-            creatorPosition ===
-            creatorPageCount + 1
-        ){
-
-            track.style.transition =
-                "none";
-
-            creatorPosition = 1;
-
-            track.style.transform =
-                `translateX(-${creatorPosition * 100}%)`;
+            creatorTrack.style.transform =
+                `translateX(-${total * 100}%)`;
 
         }
 
@@ -3347,15 +3656,9 @@ let creatorStartX = 0;
 let creatorStartY = 0;
 
 
-const creatorCarousel =
-    document.getElementById(
-        "creatorCarousel"
-    );
-
-
 creatorCarousel.addEventListener(
     "touchstart",
-    event => {
+    function(event){
 
         const touch =
             event.touches[0];
@@ -3367,20 +3670,24 @@ creatorCarousel.addEventListener(
             touch.clientY;
 
     },
-    {passive:true}
+    {
+        passive:true
+    }
 );
 
 
 creatorCarousel.addEventListener(
     "touchend",
-    event => {
+    function(event){
 
         const touch =
             event.changedTouches[0];
 
+
         const diffX =
             touch.clientX -
             creatorStartX;
+
 
         const diffY =
             touch.clientY -
@@ -3403,6 +3710,7 @@ creatorCarousel.addEventListener(
             nextCreators();
 
         }
+
         else{
 
             previousCreators();
@@ -3410,83 +3718,23 @@ creatorCarousel.addEventListener(
         }
 
     },
-    {passive:true}
+    {
+        passive:true
+    }
 );
 
 
 /* =====================================================
-   NICHE GRID
+   INITIALIZE FEATURED CAROUSEL
 ===================================================== */
 
-function renderNicheGrid(){
+buildCreatorPages();
 
-    const grid =
-        document.getElementById(
-            "nicheGrid"
-        );
-
-
-    const categories =
-        getCategories();
-
-
-    grid.innerHTML = `
-
-        <button
-            class="niche-card"
-            onclick="openCreators()"
-        >
-
-            <div class="niche-name">
-                All Creators
-            </div>
-
-            <div class="niche-sub">
-                View Network
-            </div>
-
-        </button>
-
-    `;
-
-
-    categories.forEach(category => {
-
-        grid.innerHTML += `
-
-            <button
-                class="niche-card"
-                onclick="openNiche('${escapeAttribute(category)}')"
-            >
-
-                <div class="niche-name">
-                    ${category}
-                </div>
-
-                <div class="niche-sub">
-                    Creators
-                </div>
-
-            </button>
-
-        `;
-
-    });
-
-}
-
-
-function escapeAttribute(value){
-
-    return String(value)
-        .replace(/'/g,"\\'")
-        .replace(/"/g,"&quot;");
-
-}
+setupCreatorCarousel();
 
 
 /* =====================================================
-   EXPLORER
+   OPEN / CLOSE EXPLORER
 ===================================================== */
 
 function openExplorer(){
@@ -3518,26 +3766,10 @@ function closeExplorer(){
 
 
 /* =====================================================
-   ALL CREATORS
+   CREATOR DIRECTORY
 ===================================================== */
 
 function openCreators(){
-
-    openCreatorsSorted(
-        "followers-high"
-    );
-
-}
-
-
-function openCreatorsSorted(sortType){
-
-    currentExplorerFilter =
-        "All";
-
-    currentExplorerSort =
-        sortType;
-
 
     openExplorer();
 
@@ -3550,7 +3782,7 @@ function openCreatorsSorted(sortType){
 
         "All",
 
-        sortType
+        "high"
 
     );
 
@@ -3558,98 +3790,14 @@ function openCreatorsSorted(sortType){
 
 
 /* =====================================================
-   SORT
-===================================================== */
-
-function sortCreators(list, sortType){
-
-    const sorted =
-        [...list];
-
-
-    if(sortType === "followers-high"){
-
-        sorted.sort(
-            (a,b) =>
-            parseNumber(b.followers) -
-            parseNumber(a.followers)
-        );
-
-    }
-
-
-    else if(sortType === "followers-low"){
-
-        sorted.sort(
-            (a,b) =>
-            parseNumber(a.followers) -
-            parseNumber(b.followers)
-        );
-
-    }
-
-
-    else if(sortType === "newest"){
-
-        sorted.sort(
-            (a,b) =>
-            new Date(b.dateAdded || "1970-01-01") -
-            new Date(a.dateAdded || "1970-01-01")
-        );
-
-    }
-
-
-    return sorted;
-
-}
-
-
-let currentExplorerFilter =
-    "All";
-
-
-let currentExplorerSort =
-    "followers-high";
-
-
-function changeCreatorSort(sortType){
-
-    currentExplorerSort =
-        sortType;
-
-
-    if(
-        currentExplorerFilter === "All"
-    ){
-
-        openCreatorsSorted(
-            sortType
-        );
-
-    }
-
-    else{
-
-        openNicheSorted(
-            currentExplorerFilter,
-            sortType
-        );
-
-    }
-
-}
-
-
-/* =====================================================
-   CREATOR DIRECTORY
+   RENDER DIRECTORY
 ===================================================== */
 
 function renderCreatorDirectory(
     title,
     description,
     filter = "All",
-    sortType = "followers-high"
+    sort = "high"
 ){
 
     const content =
@@ -3658,33 +3806,82 @@ function renderCreatorDirectory(
         );
 
 
-    let filtered;
+    let filtered =
 
 
-    if(filter === "All"){
+        filter === "All"
 
-        filtered =
-            [...CREATORS];
+        ?
 
-    }
+        [...creators]
 
-    else{
+        :
 
-        filtered =
-            CREATORS.filter(
-                creator =>
-                (creator.categories || [])
-                .includes(filter)
-            );
+        creators.filter(
+            creator => {
 
-    }
+                const categories =
+                    getCreatorNiches(
+                        creator
+                    );
 
+                return categories
+                    .includes(filter);
 
-    filtered =
-        sortCreators(
-            filtered,
-            sortType
+            }
         );
+
+
+    /* =================================================
+       SORT
+    ================================================= */
+
+    if(sort === "high"){
+
+        filtered.sort(
+            (a,b) =>
+                parseFollowers(
+                    b.followers
+                )
+                -
+                parseFollowers(
+                    a.followers
+                )
+        );
+
+    }
+
+
+    else if(sort === "low"){
+
+        filtered.sort(
+            (a,b) =>
+                parseFollowers(
+                    a.followers
+                )
+                -
+                parseFollowers(
+                    b.followers
+                )
+        );
+
+    }
+
+
+    else if(sort === "new"){
+
+        filtered.sort(
+            (a,b) =>
+                new Date(
+                    b.dateAdded || "1970-01-01"
+                )
+                -
+                new Date(
+                    a.dateAdded || "1970-01-01"
+                )
+        );
+
+    }
 
 
     let cards = "";
@@ -3693,23 +3890,34 @@ function renderCreatorDirectory(
     filtered.forEach(
         creator => {
 
-            const metaParts = [];
+
+            const categories =
+                getCreatorNiches(
+                    creator
+                );
+
+
+            let meta = "";
 
 
             if(creator.followers){
 
-                metaParts.push(
-                    `${creator.followers} followers`
-                );
+                meta +=
+                `${creator.followers} Followers`;
 
             }
 
 
             if(creator.subscribers){
 
-                metaParts.push(
-                    `${creator.subscribers} subscribers`
-                );
+                if(meta){
+
+                    meta += " · ";
+
+                }
+
+                meta +=
+                `${creator.subscribers} Subscribers`;
 
             }
 
@@ -3718,27 +3926,14 @@ function renderCreatorDirectory(
 
                 <div class="profile-card">
 
+
                     <div class="profile-photo">
 
-                        ${
-                            creator.image
-
-                            ?
-
-                            `
-                            <img
-                                src="${creator.image}"
-                                alt="${creator.name}"
-                                loading="lazy"
-                            >
-                            `
-
-                            :
-
-                            getInitials(
-                                creator.name
-                            )
-                        }
+                        <img
+                            src="${creator.image || ""}"
+                            alt="${creator.name}"
+                            loading="lazy"
+                        >
 
                     </div>
 
@@ -3746,6 +3941,20 @@ function renderCreatorDirectory(
                     <div class="profile-name">
 
                         ${creator.name}
+
+                        ${
+                            creator.dateAdded === "2026-08-18"
+
+                            ?
+
+                            `<span class="new-badge">
+                                NEW
+                            </span>`
+
+                            :
+
+                            ""
+                        }
 
                     </div>
 
@@ -3774,7 +3983,7 @@ function renderCreatorDirectory(
 
                     <div class="profile-meta">
 
-                        ${metaParts.join(" · ")}
+                        ${meta}
 
                     </div>
 
@@ -3782,12 +3991,12 @@ function renderCreatorDirectory(
                     <div class="profile-tags">
 
                         ${
-                            (creator.categories || [])
+                            categories
                             .map(
-                                category =>
+                                niche =>
                                 `
                                 <span class="profile-tag">
-                                    ${category}
+                                    ${niche}
                                 </span>
                                 `
                             )
@@ -3798,6 +4007,7 @@ function renderCreatorDirectory(
 
 
                     <div class="profile-actions">
+
 
                         ${
                             creator.instagram
@@ -3811,7 +4021,7 @@ function renderCreatorDirectory(
                                 rel="noopener noreferrer"
                                 class="profile-btn profile-instagram"
                             >
-                                Instagram ↗
+                                View Instagram
                             </a>
                             `
 
@@ -3828,7 +4038,9 @@ function renderCreatorDirectory(
                             Connect
                         </a>
 
+
                     </div>
+
 
                 </div>
 
@@ -3870,8 +4082,22 @@ function renderCreatorDirectory(
     }
 
 
-    const categories =
-        getCategories();
+    const nicheFilters = [
+
+        "Tech",
+        "AI",
+        "Tech UGC",
+        "UGC",
+        "Beauty",
+        "Fashion",
+        "Lifestyle",
+        "Travel",
+        "Finance",
+        "Gaming",
+        "Food",
+        "Education"
+
+    ];
 
 
     content.innerHTML = `
@@ -3886,74 +4112,95 @@ function renderCreatorDirectory(
         </p>
 
 
-        <div class="explorer-tools">
-
-            <select
-                class="sort-select"
-                onchange="changeCreatorSort(this.value)"
-            >
-
-                <option
-                    value="followers-high"
-                    ${sortType === "followers-high" ? "selected" : ""}
-                >
-                    Followers: High to Low
-                </option>
-
-
-                <option
-                    value="followers-low"
-                    ${sortType === "followers-low" ? "selected" : ""}
-                >
-                    Followers: Low to High
-                </option>
-
-
-                <option
-                    value="newest"
-                    ${sortType === "newest" ? "selected" : ""}
-                >
-                    Newly Added
-                </option>
-
-            </select>
-
-        </div>
-
-
         <div class="filter-row">
+
 
             <button
                 class="filter-btn
                 ${filter === "All" ? "active" : ""}"
-                onclick="openCreatorsSorted('${sortType}')"
+                onclick="
+                    renderCreatorDirectory(
+                        'All Creators In Our Network',
+                        'Explore creators across multiple niches and audience sizes.',
+                        'All',
+                        document.getElementById('sortSelect')
+                        ? document.getElementById('sortSelect').value
+                        : 'high'
+                    )
+                "
             >
                 All
             </button>
 
 
             ${
-                categories
+                nicheFilters
                 .map(
-                    category => `
+                    niche => `
 
                     <button
                         class="filter-btn
-                        ${filter === category ? "active" : ""}"
-                        onclick="openNicheSorted(
-                            '${escapeAttribute(category)}',
-                            '${sortType}'
-                        )"
+                        ${filter === niche ? "active" : ""}"
+                        onclick="
+                            openNiche('${niche}')
+                        "
                     >
-
-                        ${category}
-
+                        ${niche}
                     </button>
 
                     `
                 )
                 .join("")
             }
+
+
+        </div>
+
+
+        <div class="sort-row">
+
+            <span class="sort-label">
+                Sort by:
+            </span>
+
+
+            <select
+                class="sort-select"
+                id="sortSelect"
+                onchange="
+                    renderCreatorDirectory(
+                        '${title.replace(/'/g,"\\'")}',
+                        '${description.replace(/'/g,"\\'")}',
+                        '${filter}',
+                        this.value
+                    )
+                "
+            >
+
+                <option
+                    value="high"
+                    ${sort === "high" ? "selected" : ""}
+                >
+                    Followers: High to Low
+                </option>
+
+
+                <option
+                    value="low"
+                    ${sort === "low" ? "selected" : ""}
+                >
+                    Followers: Low to High
+                </option>
+
+
+                <option
+                    value="new"
+                    ${sort === "new" ? "selected" : ""}
+                >
+                    Newly Added
+                </option>
+
+            </select>
 
         </div>
 
@@ -3975,26 +4222,6 @@ function renderCreatorDirectory(
 
 function openNiche(niche){
 
-    openNicheSorted(
-        niche,
-        "followers-high"
-    );
-
-}
-
-
-function openNicheSorted(
-    niche,
-    sortType = "followers-high"
-){
-
-    currentExplorerFilter =
-        niche;
-
-    currentExplorerSort =
-        sortType;
-
-
     openExplorer();
 
 
@@ -4006,7 +4233,7 @@ function openNicheSorted(
 
         niche,
 
-        sortType
+        "high"
 
     );
 
@@ -4217,22 +4444,6 @@ document.addEventListener(
             closeExplorer();
 
         }
-
-    }
-);
-
-
-/* =====================================================
-   INITIALIZE
-===================================================== */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
-
-        buildCreatorSlider();
-
-        renderNicheGrid();
 
     }
 );
