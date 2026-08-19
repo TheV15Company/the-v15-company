@@ -1284,7 +1284,7 @@ footer strong{
 
     justify-content:center;
 
-    margin-bottom:30px;
+    margin-bottom:18px;
 }
 
 .filter-btn{
@@ -1313,6 +1313,66 @@ footer strong{
     color:#fff;
 
     border-color:#1769aa;
+}
+
+
+/* =====================================================
+   SORT
+===================================================== */
+
+.sort-row{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-bottom:22px;
+}
+
+.sort-label{
+
+    color:#667085;
+
+    font-size:12px;
+
+    font-weight:700;
+}
+
+.sort-select{
+
+    padding:9px 12px;
+
+    border-radius:10px;
+
+    border:1px solid #cfe2ef;
+
+    background:#fff;
+
+    color:#475467;
+
+    font-size:11px;
+
+    font-weight:800;
+
+    outline:none;
+
+    cursor:pointer;
+
+    transition:.2s ease;
+}
+
+.sort-select:hover,
+.sort-select:focus{
+
+    border-color:#8ec8ee;
+
+    box-shadow:
+    0 0 0 3px
+    rgba(86,171,230,.08);
 }
 
 
@@ -1908,6 +1968,11 @@ footer strong{
         padding:25px 20px;
     }
 
+    .sort-row{
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
 }
 
 
@@ -2071,7 +2136,6 @@ footer strong{
 
 <!-- =====================================================
      FEATURED CREATORS
-     AUTO GENERATED FROM DATABASE
 ===================================================== -->
 
 <section
@@ -2862,6 +2926,62 @@ const creators = [
         instagram:
         "https://www.instagram.com/hindi_tech_guru__?igsh=ajl3ODAyOXlrZTU5",
         dateAdded:"2026-08-18"
+    },
+
+
+    /* =================================================
+       NEW CREATOR 1
+    ================================================= */
+
+    {
+        name:"Ritika Mehra",
+        handle:"@ritikamehraverse",
+        followers:"4,374",
+        categories:[
+            "Skincare",
+            "Lifestyle"
+        ],
+        image:"images/Ritikaa.jpg",
+        instagram:
+        "https://www.instagram.com/ritikamehraverse?igsh=MWVydTRhemVmeTR0dA==",
+        dateAdded:"2026-08-19"
+    },
+
+
+    /* =================================================
+       NEW CREATOR 2
+    ================================================= */
+
+    {
+        name:"Sneha",
+        handle:"@bloomwithher__",
+        followers:"3,833",
+        categories:[
+            "Fashion"
+        ],
+        image:"images/Snehaa.jpg",
+        instagram:
+        "https://www.instagram.com/bloomwithher__?igsh=N3BieXAxNG9hc280",
+        dateAdded:"2026-08-19"
+    },
+
+
+    /* =================================================
+       NEW CREATOR 3
+    ================================================= */
+
+    {
+        name:"Yashashvi Bhadauria",
+        handle:"@geekydev.in",
+        followers:"477K",
+        categories:[
+            "Tech",
+            "AI"
+        ],
+        image:"images/Yashh.jpg",
+        instagram:
+        "https://www.instagram.com/geekydev.in?igsh=MWhsZHE3ZGVrOXRzeg==",
+        dateAdded:"2026-08-19"
     }
 
 ];
@@ -3091,7 +3211,10 @@ function createCreatorCard(creator){
 
     /* Instagram */
 
-    if(creator.instagram){
+    if(
+        creator.instagram &&
+        creator.instagram !== "#"
+    ){
 
         const instagram =
             document.createElement("a");
@@ -3522,16 +3645,127 @@ function openCreators(){
     renderCreatorDirectory(
         "All Creators In Our Network",
         "Explore creators across multiple niches and audience sizes.",
-        "All"
+        "All",
+        "default"
     );
 
 }
 
 
+/* =====================================================
+   SORT HELPERS
+===================================================== */
+
+function getFollowerNumber(value){
+
+    if(!value){
+        return 0;
+    }
+
+
+    let text =
+        String(value)
+        .toUpperCase()
+        .replace(/,/g,"")
+        .trim();
+
+
+    if(text.endsWith("K")){
+
+        return (
+            parseFloat(
+                text.replace("K","")
+            ) * 1000
+        );
+
+    }
+
+
+    if(text.endsWith("M")){
+
+        return (
+            parseFloat(
+                text.replace("M","")
+            ) * 1000000
+        );
+
+    }
+
+
+    return parseFloat(text) || 0;
+
+}
+
+
+/* =====================================================
+   SORT CREATORS
+===================================================== */
+
+function sortCreators(list, sortValue){
+
+    const sorted =
+        [...list];
+
+
+    if(sortValue === "followers-high"){
+
+        sorted.sort(
+            (a,b) =>
+            getFollowerNumber(b.followers) -
+            getFollowerNumber(a.followers)
+        );
+
+    }
+
+
+    else if(sortValue === "followers-low"){
+
+        sorted.sort(
+            (a,b) =>
+            getFollowerNumber(a.followers) -
+            getFollowerNumber(b.followers)
+        );
+
+    }
+
+
+    else if(sortValue === "name"){
+
+        sorted.sort(
+            (a,b) =>
+            a.name.localeCompare(
+                b.name
+            )
+        );
+
+    }
+
+
+    else if(sortValue === "newest"){
+
+        sorted.sort(
+            (a,b) =>
+            new Date(b.dateAdded || "1970-01-01") -
+            new Date(a.dateAdded || "1970-01-01")
+        );
+
+    }
+
+
+    return sorted;
+
+}
+
+
+/* =====================================================
+   RENDER CREATOR DIRECTORY
+===================================================== */
+
 function renderCreatorDirectory(
     title,
     description,
-    filter = "All"
+    filter = "All",
+    sortValue = "default"
 ){
 
     const content =
@@ -3554,10 +3788,17 @@ function renderCreatorDirectory(
         );
 
 
+    const sorted =
+        sortCreators(
+            filtered,
+            sortValue
+        );
+
+
     let cards = "";
 
 
-    filtered.forEach(
+    sorted.forEach(
         creator => {
 
             let subscriberText = "";
@@ -3629,7 +3870,8 @@ function renderCreatorDirectory(
 
 
                     ${
-                        creator.instagram
+                        creator.instagram &&
+                        creator.instagram !== "#"
                         ?
                         `
                         <a
@@ -3668,7 +3910,7 @@ function renderCreatorDirectory(
     );
 
 
-    if(!filtered.length){
+    if(!sorted.length){
 
         cards = `
 
@@ -3721,7 +3963,8 @@ function renderCreatorDirectory(
                 onclick="renderCreatorDirectory(
                     'All Creators In Our Network',
                     'Explore creators across multiple niches and audience sizes.',
-                    'All'
+                    'All',
+                    'default'
                 )"
             >
                 All
@@ -3756,6 +3999,72 @@ function renderCreatorDirectory(
         </div>
 
 
+        ${
+            sorted.length
+            ?
+            `
+
+            <div class="sort-row">
+
+                <span class="sort-label">
+                    Sort By
+                </span>
+
+
+                <select
+                    class="sort-select"
+                    onchange="changeCreatorSort(this.value)"
+                >
+
+                    <option
+                        value="default"
+                        ${sortValue === "default" ? "selected" : ""}
+                    >
+                        Default
+                    </option>
+
+
+                    <option
+                        value="followers-high"
+                        ${sortValue === "followers-high" ? "selected" : ""}
+                    >
+                        Followers: High to Low
+                    </option>
+
+
+                    <option
+                        value="followers-low"
+                        ${sortValue === "followers-low" ? "selected" : ""}
+                    >
+                        Followers: Low to High
+                    </option>
+
+
+                    <option
+                        value="name"
+                        ${sortValue === "name" ? "selected" : ""}
+                    >
+                        Name: A to Z
+                    </option>
+
+
+                    <option
+                        value="newest"
+                        ${sortValue === "newest" ? "selected" : ""}
+                    >
+                        Newest Added
+                    </option>
+
+                </select>
+
+            </div>
+
+            `
+            :
+            ""
+        }
+
+
         <div class="profile-grid">
 
             ${cards}
@@ -3763,6 +4072,45 @@ function renderCreatorDirectory(
         </div>
 
     `;
+
+
+    /* Save current directory state */
+
+    window.currentCreatorFilter =
+        filter;
+
+    window.currentCreatorTitle =
+        title;
+
+    window.currentCreatorDescription =
+        description;
+
+    window.currentCreatorSort =
+        sortValue;
+
+}
+
+
+/* =====================================================
+   CHANGE SORT
+===================================================== */
+
+function changeCreatorSort(sortValue){
+
+    renderCreatorDirectory(
+
+        window.currentCreatorTitle ||
+        "All Creators In Our Network",
+
+        window.currentCreatorDescription ||
+        "Explore creators across multiple niches and audience sizes.",
+
+        window.currentCreatorFilter ||
+        "All",
+
+        sortValue
+
+    );
 
 }
 
@@ -3781,8 +4129,80 @@ function openNiche(niche){
 
         `Explore creators from our network specialising in ${niche}.`,
 
-        niche
+        niche,
 
+        "default"
+
+    );
+
+}
+
+
+/* =====================================================
+   NICHE GRID
+===================================================== */
+
+function buildNicheGrid(){
+
+    const grid =
+        document.getElementById(
+            "nicheGrid"
+        );
+
+
+    if(!grid){
+        return;
+    }
+
+
+    grid.innerHTML = "";
+
+
+    categories.forEach(
+        category => {
+
+            const matchingCreators =
+                creators.filter(
+                    creator =>
+                    creator.categories &&
+                    creator.categories.includes(
+                        category
+                    )
+                );
+
+
+            const card =
+                document.createElement("div");
+
+            card.className =
+                "niche-card";
+
+
+            card.onclick =
+                () => openNiche(category);
+
+
+            card.innerHTML = `
+
+                <div class="niche-name">
+                    ${category}
+                </div>
+
+                <div class="niche-sub">
+                    ${matchingCreators.length}
+                    ${
+                        matchingCreators.length === 1
+                        ? "Creator"
+                        : "Creators"
+                    }
+                </div>
+
+            `;
+
+
+            grid.appendChild(card);
+
+        }
     );
 
 }
@@ -4000,6 +4420,8 @@ document.addEventListener(
 /* =====================================================
    INITIALIZE
 ===================================================== */
+
+buildNicheGrid();
 
 buildCreatorCarousel();
 
