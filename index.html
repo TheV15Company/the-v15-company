@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
@@ -42,7 +43,8 @@ a{
 }
 
 button,
-select{
+select,
+input{
     font-family:inherit;
 }
 
@@ -296,6 +298,7 @@ select{
     align-items:center;
     gap:17px;
     overflow:hidden;
+    box-shadow:0 12px 35px rgba(26,88,125,.07);
 }
 
 .creator-card::before{
@@ -313,17 +316,22 @@ select{
         #72c5f6 340deg,
         transparent 360deg
     );
+
     -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
+
     -webkit-mask-composite:xor;
     mask-composite:exclude;
+
     animation:creatorGlow 3.2s linear infinite;
     pointer-events:none;
 }
 
 @keyframes creatorGlow{
-    to{transform:rotate(360deg);}
+    to{
+        transform:rotate(360deg);
+    }
 }
 
 .creator-card::after{
@@ -385,17 +393,157 @@ select{
     margin-bottom:9px;
 }
 
-.creator-tag{
-    display:inline-block;
-    border:1px solid #b9dcf5;
-    background:#f2f9ff;
-    color:#1769aa;
-    border-radius:20px;
-    padding:5px 11px;
-    font-size:10px;
-    font-weight:800;
+
+/* =====================================================
+   CREATOR BADGES
+===================================================== */
+
+.creator-badges{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:6px;
     margin-bottom:11px;
 }
+
+.creator-badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:20px;
+    padding:5px 10px;
+    font-size:9px;
+    font-weight:850;
+    white-space:nowrap;
+}
+
+
+/* Verified */
+
+.badge-verified{
+    background:#eef6ff;
+    color:#1769aa;
+    border:1px solid #b9dcf5;
+}
+
+
+/* Trusted */
+
+.badge-trusted{
+    background:linear-gradient(
+        135deg,
+        #fff8d6,
+        #fff0a8
+    );
+
+    color:#9a6b00;
+
+    border:1px solid #e9c94c;
+
+    box-shadow:
+    0 2px 8px
+    rgba(218,160,20,.16);
+}
+
+
+/* Newly Added */
+
+.badge-new{
+    background:#ecfdf3;
+    color:#16834b;
+    border:1px solid #a6e5c2;
+}
+
+
+/* Nano */
+
+.badge-nano{
+    background:#f4f7fa;
+    color:#667085;
+    border:1px solid #d8e0e8;
+}
+
+
+/* Micro */
+
+.badge-micro{
+    background:#eef8ff;
+    color:#1769aa;
+    border:1px solid #b9dcf5;
+}
+
+
+/* Macro */
+
+.badge-macro{
+    background:#f5efff;
+    color:#7048b8;
+    border:1px solid #d6c2f5;
+}
+
+
+/* Mega */
+
+.badge-mega{
+    background:linear-gradient(
+        135deg,
+        #f6e8ff,
+        #ead1ff
+    );
+
+    color:#742aa6;
+
+    border:1px solid #c99be9;
+}
+
+
+/* Engagement */
+
+.badge-engagement{
+    background:#fff6ed;
+    color:#b85b16;
+    border:1px solid #f3c69c;
+}
+
+
+/* =====================================================
+   VERIFIED GOLDEN TICK
+===================================================== */
+
+.verified-tick{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:17px;
+    height:17px;
+    margin-left:5px;
+    border-radius:50%;
+    background:linear-gradient(
+        135deg,
+        #fff3a6,
+        #f5c542,
+        #d99a00
+    );
+    color:#fff;
+    font-size:10px;
+    font-weight:900;
+    vertical-align:middle;
+    position:relative;
+    top:-1px;
+    box-shadow:
+    0 2px 6px
+    rgba(218,160,20,.30);
+}
+
+.verified-tick::after{
+    content:"✓";
+    line-height:1;
+}
+
+
+/* =====================================================
+   ACTIONS
+===================================================== */
 
 .creator-actions{
     display:flex;
@@ -460,214 +608,6 @@ select{
 .carousel-hint{
     color:#98a2b3;
     font-size:12px;
-}
-
-
-/* =====================================================
-   CREATOR BADGES
-===================================================== */
-
-.creator-badges{
-    display:flex;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:6px;
-    margin:2px 0 10px;
-}
-
-.creator-badge{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    min-height:22px;
-    padding:4px 9px;
-    border-radius:8px;
-    font-size:8px;
-    line-height:1;
-    font-weight:900;
-    letter-spacing:.35px;
-    white-space:nowrap;
-    border:1px solid #dce8f2;
-    background:#f8fbfd;
-    color:#475467;
-}
-
-.creator-badge.verified{
-    background:#fff8df;
-    color:#946b00;
-    border-color:#efd47a;
-}
-
-.creator-badge.trusted{
-    background:#eefaf3;
-    color:#087443;
-    border-color:#b8e3ca;
-}
-
-.creator-badge.new{
-    background:#eef8ff;
-    color:#1769aa;
-    border-color:#b9dcf5;
-}
-
-.creator-badge.nano{
-    background:#f5f5f5;
-    color:#667085;
-    border-color:#d9d9d9;
-}
-
-.creator-badge.micro{
-    background:#eef8ff;
-    color:#1769aa;
-    border-color:#b9dcf5;
-}
-
-.creator-badge.macro{
-    background:#f2efff;
-    color:#6842c2;
-    border-color:#d8ccff;
-}
-
-.creator-badge.mega{
-    background:#fff0f0;
-    color:#b42318;
-    border-color:#f3b8b8;
-}
-
-.creator-badge.ugc{
-    background:#fff4fa;
-    color:#b4236b;
-    border-color:#f2c2da;
-}
-
-.creator-badge.ai{
-    background:#f3f0ff;
-    color:#6941c6;
-    border-color:#d7c8ff;
-}
-
-.creator-badge.rising{
-    background:#fff8ed;
-    color:#b54708;
-    border-color:#f4d3a4;
-}
-
-
-/* =====================================================
-   VERIFIED GOLDEN TICK
-===================================================== */
-
-.verified-tick{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    width:17px;
-    height:17px;
-    margin-left:5px;
-    border-radius:50%;
-    background:linear-gradient(135deg,#fff3a6,#f5c542,#d99a00);
-    color:#fff;
-    font-size:10px;
-    font-weight:900;
-    vertical-align:middle;
-    position:relative;
-    top:-1px;
-    box-shadow:0 2px 6px rgba(218,160,20,.30);
-}
-
-.verified-tick::after{
-    content:"✓";
-    line-height:1;
-}
-
-
-/* =====================================================
-   PROFILE BADGES
-===================================================== */
-
-.profile-badges{
-    display:flex;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:6px;
-    margin:2px 0 12px;
-}
-
-.profile-badge{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    min-height:23px;
-    padding:5px 9px;
-    border-radius:8px;
-    font-size:8px;
-    line-height:1;
-    font-weight:900;
-    letter-spacing:.3px;
-    white-space:nowrap;
-    border:1px solid #dce8f2;
-    background:#f8fbfd;
-    color:#475467;
-}
-
-.profile-badge.verified{
-    background:#fff8df;
-    color:#946b00;
-    border-color:#efd47a;
-}
-
-.profile-badge.trusted{
-    background:#eefaf3;
-    color:#087443;
-    border-color:#b8e3ca;
-}
-
-.profile-badge.new{
-    background:#eef8ff;
-    color:#1769aa;
-    border-color:#b9dcf5;
-}
-
-.profile-badge.nano{
-    background:#f5f5f5;
-    color:#667085;
-    border-color:#d9d9d9;
-}
-
-.profile-badge.micro{
-    background:#eef8ff;
-    color:#1769aa;
-    border-color:#b9dcf5;
-}
-
-.profile-badge.macro{
-    background:#f2efff;
-    color:#6842c2;
-    border-color:#d8ccff;
-}
-
-.profile-badge.mega{
-    background:#fff0f0;
-    color:#b42318;
-    border-color:#f3b8b8;
-}
-
-.profile-badge.ugc{
-    background:#fff4fa;
-    color:#b4236b;
-    border-color:#f2c2da;
-}
-
-.profile-badge.ai{
-    background:#f3f0ff;
-    color:#6941c6;
-    border-color:#d7c8ff;
-}
-
-.profile-badge.rising{
-    background:#fff8ed;
-    color:#b54708;
-    border-color:#f4d3a4;
 }
 
 
@@ -747,7 +687,11 @@ select{
 ===================================================== */
 
 .niches-section{
-    background:linear-gradient(180deg,#f5faff,#fff);
+    background:linear-gradient(
+        180deg,
+        #f5faff,
+        #fff
+    );
 }
 
 .niche-grid{
@@ -875,8 +819,13 @@ select{
 
 .contact-section{
     background:
-    radial-gradient(circle at 50% 0%,rgba(84,164,224,.16),transparent 35%),
+    radial-gradient(
+        circle at 50% 0%,
+        rgba(84,164,224,.16),
+        transparent 35%
+    ),
     #fff;
+
     text-align:center;
 }
 
@@ -1071,12 +1020,69 @@ footer strong{
     font-size:11px;
     font-weight:800;
     cursor:pointer;
+    transition:.2s ease;
+}
+
+.filter-btn:hover{
+    border-color:#8ec8ee;
 }
 
 .filter-btn.active{
     background:#1769aa;
     color:#fff;
     border-color:#1769aa;
+}
+
+
+/* Creator Type Filter */
+
+.creator-type-filter{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-bottom:22px;
+}
+
+.type-filter-btn{
+    padding:8px 13px;
+    border-radius:20px;
+    border:1px solid #d8e3eb;
+    background:#fff;
+    color:#667085;
+    font-size:10px;
+    font-weight:850;
+    cursor:pointer;
+    transition:.2s ease;
+}
+
+.type-filter-btn:hover{
+    transform:translateY(-1px);
+}
+
+.type-filter-btn.active{
+    color:#fff;
+    border-color:transparent;
+}
+
+.type-all.active{
+    background:#101828;
+}
+
+.type-nano.active{
+    background:#667085;
+}
+
+.type-micro.active{
+    background:#2478b8;
+}
+
+.type-macro.active{
+    background:#7048b8;
+}
+
+.type-mega.active{
+    background:#9a59bd;
 }
 
 
@@ -1115,6 +1121,101 @@ footer strong{
 .sort-select:focus{
     border-color:#8ec8ee;
     box-shadow:0 0 0 3px rgba(86,171,230,.08);
+}
+
+
+/* =====================================================
+   ENGAGEMENT CALCULATOR
+===================================================== */
+
+.calculator-card{
+    max-width:850px;
+    margin:0 auto 30px;
+    padding:25px;
+    background:#fff;
+    border:1px solid #dce8f2;
+    border-radius:24px;
+    box-shadow:0 14px 40px rgba(26,88,125,.07);
+}
+
+.calculator-title{
+    font-size:22px;
+    font-weight:850;
+    margin-bottom:7px;
+}
+
+.calculator-subtitle{
+    color:#667085;
+    font-size:13px;
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+.calculator-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.calculator-field{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+}
+
+.calculator-field label{
+    color:#475467;
+    font-size:11px;
+    font-weight:800;
+}
+
+.calculator-field input{
+    width:100%;
+    padding:11px 12px;
+    border:1px solid #cfe2ef;
+    border-radius:10px;
+    outline:none;
+    font-size:13px;
+    background:#fbfdff;
+}
+
+.calculator-field input:focus{
+    border-color:#8ec8ee;
+    box-shadow:0 0 0 3px rgba(86,171,230,.08);
+}
+
+.calculator-actions{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:17px;
+}
+
+.calculate-btn{
+    border:0;
+    padding:11px 17px;
+    border-radius:10px;
+    background:#101828;
+    color:#fff;
+    font-size:12px;
+    font-weight:850;
+    cursor:pointer;
+}
+
+.calculator-result{
+    min-height:40px;
+    display:flex;
+    align-items:center;
+    color:#667085;
+    font-size:12px;
+    font-weight:700;
+}
+
+.calculator-result strong{
+    color:#b85b16;
+    font-size:18px;
+    margin-left:5px;
 }
 
 
@@ -1194,6 +1295,27 @@ footer strong{
     font-weight:800;
 }
 
+
+/* New profile badges */
+
+.profile-badges{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    margin-bottom:17px;
+}
+
+.profile-badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:20px;
+    padding:6px 10px;
+    font-size:9px;
+    font-weight:850;
+    white-space:nowrap;
+}
+
 .profile-actions{
     display:flex;
     gap:8px;
@@ -1219,6 +1341,12 @@ footer strong{
 .profile-connect{
     background:#101828;
     color:#fff;
+}
+
+.profile-calc{
+    background:#fff6ed;
+    color:#b85b16;
+    border:1px solid #f3c69c;
 }
 
 
@@ -1260,7 +1388,9 @@ footer strong{
 }
 
 @keyframes professionalGlow{
-    to{left:100%;}
+    to{
+        left:100%;
+    }
 }
 
 .professional-photo{
@@ -1485,16 +1615,6 @@ footer strong{
         padding:6px 9px;
     }
 
-    .creator-badge{
-        font-size:7px;
-        padding:4px 7px;
-    }
-
-    .profile-badge{
-        font-size:7px;
-        padding:4px 7px;
-    }
-
     .network-grid,
     .services-grid,
     .profile-grid{
@@ -1533,6 +1653,14 @@ footer strong{
     .sort-row{
         justify-content:center;
         flex-wrap:wrap;
+    }
+
+    .calculator-grid{
+        grid-template-columns:1fr;
+    }
+
+    .calculator-card{
+        padding:20px;
     }
 
 }
@@ -2152,7 +2280,7 @@ name:"Nandini Jaiswani",
 handle:"@nandini",
 followers:"149K",
 categories:[
-" Lifestyle",
+"Lifestyle",
 "Fashion",
 "Travel"
 ],
@@ -2465,8 +2593,7 @@ categories:[
 "Fashion"
 ],
 image:"images/Guneet.jpg",
-instagram:
-"https://www.instagram.com/guneet.kaur.73?igsh=MWc4Z204bjgxYXlpaQ==",
+instagram:"https://www.instagram.com/guneet.kaur.73?igsh=MWc4Z204bjgxYXlpaQ==",
 dateAdded:"2026-08-20"
 },
 
@@ -2480,8 +2607,7 @@ categories:[
 "Fashion"
 ],
 image:"images/Shruti.jpg",
-instagram:
-"https://www.instagram.com/_shrutii__1?igsh=MTVrYmZxcnJld2M4cg==",
+instagram:"https://www.instagram.com/_shrutii__1?igsh=MTVrYmZxcnJld2M4cg==",
 dateAdded:"2026-08-20"
 },
 
@@ -2495,8 +2621,7 @@ categories:[
 "Fashion"
 ],
 image:"images/Monisha.jpg",
-instagram:
-"https://www.instagram.com/itsmonishamehta?igsi=MXYwYzFvdTF3aWxueg==",
+instagram:"https://www.instagram.com/itsmonishamehta?igsi=MXYwYzFvdTF3aWxueg==",
 trusted:true,
 dateAdded:"2026-08-21"
 },
@@ -2509,8 +2634,7 @@ categories:[
 "Tech"
 ],
 image:"images/Gyanendra.jpg",
-instagram:
-"https://www.instagram.com/inyour.pocket?igsi=aTBmcDNvYXYwaDM1",
+instagram:"https://www.instagram.com/inyour.pocket?igsi=aTBmcDNvYXYwaDM1",
 dateAdded:"2026-08-21"
 }
 
@@ -2547,23 +2671,355 @@ const categories = [
 
 function toggleMenu(){
 
-const menu=document.getElementById("navLinks");
+const menu=
+document.getElementById("navLinks");
 
 menu.classList.toggle("show");
 
 }
 
-document.querySelectorAll(".nav-links a").forEach(link=>{
+document
+.querySelectorAll(".nav-links a")
+.forEach(link=>{
 
-link.addEventListener("click",()=>{
-
+link.addEventListener(
+"click",
+()=>{
 document
 .getElementById("navLinks")
 .classList.remove("show");
+}
+);
 
 });
 
-});
+
+/* =====================================================
+   CREATOR TIER
+===================================================== */
+
+function getCreatorTier(creator){
+
+const followers=
+getFollowerNumber(
+creator.followers
+);
+
+if(followers>=1000000){
+return "Mega";
+}
+
+if(followers>=100000){
+return "Macro";
+}
+
+if(followers>=10000){
+return "Micro";
+}
+
+return "Nano";
+
+}
+
+
+/* =====================================================
+   NEWLY ADDED
+   SHOWS FOR 7 DAYS
+===================================================== */
+
+function isNewlyAdded(creator){
+
+if(!creator.dateAdded){
+return false;
+}
+
+const added=
+new Date(
+creator.dateAdded+"T00:00:00"
+);
+
+const now=
+new Date();
+
+const difference=
+now.getTime()-added.getTime();
+
+const sevenDays=
+7*24*60*60*1000;
+
+return (
+difference>=0 &&
+difference<=sevenDays
+);
+
+}
+
+
+/* =====================================================
+   ENGAGEMENT STORAGE
+===================================================== */
+
+function getStoredEngagement(creator){
+
+const key=
+"v15_engagement_"+creator.handle;
+
+const value=
+localStorage.getItem(key);
+
+return value ?
+parseFloat(value) :
+null;
+
+}
+
+
+function saveEngagement(
+creator,
+rate
+){
+
+const key=
+"v15_engagement_"+creator.handle;
+
+localStorage.setItem(
+key,
+rate.toFixed(2)
+);
+
+creator.engagement=
+parseFloat(
+rate.toFixed(2)
+);
+
+}
+
+
+/* =====================================================
+   BADGE HTML
+===================================================== */
+
+function getBadgeHTML(creator){
+
+let html="";
+
+
+if(creator.verified){
+
+html+=`
+<span
+class="creator-badge badge-verified"
+title="Verified by The V15 Company">
+✓ VERIFIED
+</span>
+`;
+
+}
+
+
+if(creator.trusted){
+
+html+=`
+<span
+class="creator-badge badge-trusted"
+title="Trusted creator in The V15 Company network">
+★ TRUSTED
+</span>
+`;
+
+}
+
+
+if(isNewlyAdded(creator)){
+
+html+=`
+<span
+class="creator-badge badge-new">
+NEWLY ADDED
+</span>
+`;
+
+}
+
+
+const tier=
+getCreatorTier(creator);
+
+
+if(tier==="Nano"){
+
+html+=`
+<span class="creator-badge badge-nano">
+NANO CREATOR
+</span>
+`;
+
+}
+
+else if(tier==="Micro"){
+
+html+=`
+<span class="creator-badge badge-micro">
+MICRO CREATOR
+</span>
+`;
+
+}
+
+else if(tier==="Macro"){
+
+html+=`
+<span class="creator-badge badge-macro">
+MACRO CREATOR
+</span>
+`;
+
+}
+
+else if(tier==="Mega"){
+
+html+=`
+<span class="creator-badge badge-mega">
+MEGA CREATOR
+</span>
+`;
+
+}
+
+
+const engagement=
+creator.engagement ??
+getStoredEngagement(creator);
+
+
+if(
+engagement !== null &&
+!isNaN(engagement)
+){
+
+html+=`
+<span class="creator-badge badge-engagement">
+${engagement.toFixed(2)}% ENGAGEMENT
+</span>
+`;
+
+}
+
+
+return html;
+
+}
+
+
+/* =====================================================
+   PROFILE BADGES
+===================================================== */
+
+function getProfileBadgeHTML(creator){
+
+let html="";
+
+
+if(creator.verified){
+
+html+=`
+<span class="profile-badge badge-verified">
+✓ VERIFIED
+</span>
+`;
+
+}
+
+
+if(creator.trusted){
+
+html+=`
+<span class="profile-badge badge-trusted">
+★ TRUSTED
+</span>
+`;
+
+}
+
+
+if(isNewlyAdded(creator)){
+
+html+=`
+<span class="profile-badge badge-new">
+NEWLY ADDED
+</span>
+`;
+
+}
+
+
+const tier=
+getCreatorTier(creator);
+
+
+if(tier==="Nano"){
+
+html+=`
+<span class="profile-badge badge-nano">
+NANO CREATOR
+</span>
+`;
+
+}
+
+else if(tier==="Micro"){
+
+html+=`
+<span class="profile-badge badge-micro">
+MICRO CREATOR
+</span>
+`;
+
+}
+
+else if(tier==="Macro"){
+
+html+=`
+<span class="profile-badge badge-macro">
+MACRO CREATOR
+</span>
+`;
+
+}
+
+else if(tier==="Mega"){
+
+html+=`
+<span class="profile-badge badge-mega">
+MEGA CREATOR
+</span>
+`;
+
+}
+
+
+const engagement=
+creator.engagement ??
+getStoredEngagement(creator);
+
+
+if(
+engagement !== null &&
+!isNaN(engagement)
+){
+
+html+=`
+<span class="profile-badge badge-engagement">
+${engagement.toFixed(2)}% ENGAGEMENT
+</span>
+`;
+
+}
+
+
+return html;
+
+}
 
 
 /* =====================================================
@@ -2580,12 +3036,18 @@ i>0;
 i--
 ){
 
-const j=Math.floor(
+const j=
+Math.floor(
 Math.random()*(i+1)
 );
 
-[shuffled[i],shuffled[j]]=
-[shuffled[j],shuffled[i]];
+[
+shuffled[i],
+shuffled[j]
+]=[
+shuffled[j],
+shuffled[i]
+];
 
 }
 
@@ -2600,11 +3062,13 @@ return shuffled;
 
 function creatorDetails(creator){
 
-let details=creator.followers||"";
+let details=
+creator.followers||"";
 
 if(creator.subscribers){
 
-details+=" Followers · "+
+details+=
+" Followers · "+
 creator.subscribers+
 " Subscribers";
 
@@ -2615,7 +3079,8 @@ creator.categories &&
 creator.categories.length
 ){
 
-details+=" · "+
+details+=
+" · "+
 creator.categories.join(" / ");
 
 }
@@ -2626,392 +3091,42 @@ return details;
 
 
 /* =====================================================
-   FOLLOWER NUMBER
-===================================================== */
-
-function getFollowerNumber(value){
-
-if(!value)return 0;
-
-let text=
-String(value)
-.toUpperCase()
-.replace(/,/g,"")
-.trim();
-
-if(text.endsWith("K")){
-
-return parseFloat(
-text.replace("K","")
-)*1000;
-
-}
-
-if(text.endsWith("M")){
-
-return parseFloat(
-text.replace("M","")
-)*1000000;
-
-}
-
-return parseFloat(text)||0;
-
-}
-
-
-/* =====================================================
-   CREATOR SIZE
-===================================================== */
-
-function getCreatorSize(creator){
-
-const followers=
-getFollowerNumber(creator.followers);
-
-if(followers>=1000000){
-
-return{
-name:"MEGA CREATOR",
-className:"mega"
-};
-
-}
-
-if(followers>=100000){
-
-return{
-name:"MACRO CREATOR",
-className:"macro"
-};
-
-}
-
-if(followers>=10000){
-
-return{
-name:"MICRO CREATOR",
-className:"micro"
-};
-
-}
-
-return{
-name:"NANO CREATOR",
-className:"nano"
-};
-
-}
-
-
-/* =====================================================
-   NEWLY ADDED CHECK
-   SHOWS FOR 7 DAYS FROM dateAdded
-===================================================== */
-
-function isNewlyAdded(creator){
-
-if(!creator.dateAdded)return false;
-
-const addedDate=
-new Date(
-creator.dateAdded+"T00:00:00"
-);
-
-const now=
-new Date();
-
-const difference=
-now.getTime()-
-addedDate.getTime();
-
-const sevenDays=
-7*24*60*60*1000;
-
-return(
-difference>=0 &&
-difference<sevenDays
-);
-
-}
-
-
-/* =====================================================
-   BADGE DATA
-===================================================== */
-
-function getCreatorBadges(creator){
-
-const badges=[];
-
-
-/* VERIFIED */
-
-if(creator.verified===true){
-
-badges.push(`
-<span
-class="creator-badge verified"
-title="Verified by The V15 Company">
-✓ VERIFIED
-</span>
-`);
-
-}
-
-
-/* TRUSTED */
-
-if(creator.trusted===true){
-
-badges.push(`
-<span
-class="creator-badge trusted"
-title="Trusted Creator">
-✓ TRUSTED
-</span>
-`);
-
-}
-
-
-/* NEWLY ADDED */
-
-if(isNewlyAdded(creator)){
-
-badges.push(`
-<span
-class="creator-badge new"
-title="Added to The V15 Company network within the last 7 days">
-NEWLY ADDED
-</span>
-`);
-
-}
-
-
-/* CREATOR SIZE */
-
-const size=
-getCreatorSize(creator);
-
-badges.push(`
-<span
-class="creator-badge ${size.className}">
-${size.name}
-</span>
-`);
-
-
-/* UGC */
-
-if(
-creator.categories &&
-(
-creator.categories.includes("UGC") ||
-creator.categories.includes("Tech UGC")
-)
-){
-
-badges.push(`
-<span
-class="creator-badge ugc">
-UGC CREATOR
-</span>
-`);
-
-}
-
-
-/* AI */
-
-if(
-creator.categories &&
-creator.categories.includes("AI")
-){
-
-badges.push(`
-<span
-class="creator-badge ai">
-AI CREATOR
-</span>
-`);
-
-}
-
-
-/* RISING */
-
-if(
-getFollowerNumber(creator.followers)<10000
-){
-
-badges.push(`
-<span
-class="creator-badge rising">
-RISING CREATOR
-</span>
-`);
-
-}
-
-
-return badges.join("");
-
-}
-
-
-/* =====================================================
-   PROFILE BADGE DATA
-===================================================== */
-
-function getProfileBadges(creator){
-
-const badges=[];
-
-
-/* VERIFIED */
-
-if(creator.verified===true){
-
-badges.push(`
-<span
-class="profile-badge verified"
-title="Verified by The V15 Company">
-✓ VERIFIED
-</span>
-`);
-
-}
-
-
-/* TRUSTED */
-
-if(creator.trusted===true){
-
-badges.push(`
-<span
-class="profile-badge trusted"
-title="Trusted Creator">
-✓ TRUSTED
-</span>
-`);
-
-}
-
-
-/* NEWLY ADDED */
-
-if(isNewlyAdded(creator)){
-
-badges.push(`
-<span
-class="profile-badge new"
-title="Added to The V15 Company network within the last 7 days">
-NEWLY ADDED
-</span>
-`);
-
-}
-
-
-/* CREATOR SIZE */
-
-const size=
-getCreatorSize(creator);
-
-badges.push(`
-<span
-class="profile-badge ${size.className}">
-${size.name}
-</span>
-`);
-
-
-/* UGC */
-
-if(
-creator.categories &&
-(
-creator.categories.includes("UGC") ||
-creator.categories.includes("Tech UGC")
-)
-){
-
-badges.push(`
-<span
-class="profile-badge ugc">
-UGC CREATOR
-</span>
-`);
-
-}
-
-
-/* AI */
-
-if(
-creator.categories &&
-creator.categories.includes("AI")
-){
-
-badges.push(`
-<span
-class="profile-badge ai">
-AI CREATOR
-</span>
-`);
-
-}
-
-
-/* RISING */
-
-if(
-getFollowerNumber(creator.followers)<10000
-){
-
-badges.push(`
-<span
-class="profile-badge rising">
-RISING CREATOR
-</span>
-`);
-
-}
-
-
-return badges.join("");
-
-}
-
-
-/* =====================================================
-   CREATE FEATURED CREATOR CARD
+   FEATURED CREATOR CARD
+   CREATOR TAG REMOVED
 ===================================================== */
 
 function createCreatorCard(creator){
 
-const card=document.createElement("div");
+const card=
+document.createElement("div");
 
-card.className="creator-card";
+card.className=
+"creator-card";
 
 
-const avatar=document.createElement("div");
+const avatar=
+document.createElement("div");
 
-avatar.className="creator-avatar";
+avatar.className=
+"creator-avatar";
 
 
 if(creator.image){
 
-const img=document.createElement("img");
+const img=
+document.createElement("img");
 
-img.src=creator.image;
-img.alt=creator.name;
+img.src=
+creator.image;
+
+img.alt=
+creator.name;
 
 avatar.appendChild(img);
 
-}else{
+}
+
+else{
 
 avatar.textContent=
 creator.name
@@ -3024,54 +3139,62 @@ creator.name
 }
 
 
-const info=document.createElement("div");
+const info=
+document.createElement("div");
 
-info.className="creator-info";
+info.className=
+"creator-info";
 
 
-const name=document.createElement("div");
+const name=
+document.createElement("div");
 
-name.className="creator-name";
+name.className=
+"creator-name";
 
 name.innerHTML=
 creator.name+
 (
 creator.verified
 ?
-` <span class="verified-tick"
-title="Verified by The V15 Company"></span>`
+` <span
+class="verified-tick"
+title="Verified by The V15 Company">
+</span>`
 :
 ""
 );
 
 
-const meta=document.createElement("div");
+const meta=
+document.createElement("div");
 
-meta.className="creator-meta";
+meta.className=
+"creator-meta";
 
-meta.textContent=creatorDetails(creator);
+meta.textContent=
+creatorDetails(creator);
 
 
 /* BADGES */
 
-const badges=document.createElement("div");
+const badges=
+document.createElement("div");
 
-badges.className="creator-badges";
+badges.className=
+"creator-badges";
 
 badges.innerHTML=
-getCreatorBadges(creator);
+getBadgeHTML(creator);
 
 
-const tag=document.createElement("span");
+/* ACTIONS */
 
-tag.className="creator-tag";
+const actions=
+document.createElement("div");
 
-tag.textContent="Creator";
-
-
-const actions=document.createElement("div");
-
-actions.className="creator-actions";
+actions.className=
+"creator-actions";
 
 
 if(
@@ -3079,23 +3202,32 @@ creator.instagram &&
 creator.instagram!=="#"
 ){
 
-const instagram=document.createElement("a");
+const instagram=
+document.createElement("a");
 
 instagram.className=
 "creator-action creator-instagram";
 
-instagram.href=creator.instagram;
+instagram.href=
+creator.instagram;
+
 instagram.target="_blank";
-instagram.rel="noopener noreferrer";
 
-instagram.textContent="Instagram →";
+instagram.rel=
+"noopener noreferrer";
 
-actions.appendChild(instagram);
+instagram.textContent=
+"Instagram →";
+
+actions.appendChild(
+instagram
+);
 
 }
 
 
-const connect=document.createElement("a");
+const connect=
+document.createElement("a");
 
 connect.className=
 "creator-action creator-connect";
@@ -3107,15 +3239,17 @@ encodeURIComponent(
 creator.name
 );
 
-connect.textContent="Connect →";
+connect.textContent=
+"Connect →";
 
-actions.appendChild(connect);
+actions.appendChild(
+connect
+);
 
 
 info.appendChild(name);
 info.appendChild(meta);
 info.appendChild(badges);
-info.appendChild(tag);
 info.appendChild(actions);
 
 card.appendChild(avatar);
@@ -3131,18 +3265,27 @@ return card;
 ===================================================== */
 
 const creatorTrack=
-document.getElementById("creatorTrack");
+document.getElementById(
+"creatorTrack"
+);
 
 const creatorCarousel=
-document.getElementById("creatorCarousel");
+document.getElementById(
+"creatorCarousel"
+);
 
 const prevBtn=
-document.getElementById("prevBtn");
+document.getElementById(
+"prevBtn"
+);
 
 const nextBtn=
-document.getElementById("nextBtn");
+document.getElementById(
+"nextBtn"
+);
 
 let creatorPosition=1;
+
 let creatorPages=[];
 
 
@@ -3153,9 +3296,12 @@ creatorTrack.innerHTML="";
 creatorPosition=1;
 
 const shuffled=
-shuffleCreators(creators);
+shuffleCreators(
+creators
+);
 
 const perPage=3;
+
 
 for(
 let i=0;
@@ -3163,38 +3309,56 @@ i<shuffled.length;
 i+=perPage
 ){
 
-const page=document.createElement("div");
+const page=
+document.createElement("div");
 
-page.className="creator-page";
+page.className=
+"creator-page";
+
 
 const group=
-shuffled.slice(i,i+perPage);
-
-group.forEach(creator=>{
-
-page.appendChild(
-createCreatorCard(creator)
+shuffled.slice(
+i,
+i+perPage
 );
 
-});
 
-creatorTrack.appendChild(page);
+group.forEach(
+creator=>{
+page.appendChild(
+createCreatorCard(
+creator
+)
+);
+}
+);
+
+
+creatorTrack.appendChild(
+page
+);
 
 }
 
 
 creatorPages=
 Array.from(
-creatorTrack.querySelectorAll(".creator-page")
+creatorTrack.querySelectorAll(
+".creator-page"
+)
 );
 
-if(!creatorPages.length)return;
+
+if(!creatorPages.length){
+return;
+}
 
 
 const lastClone=
 creatorPages[
 creatorPages.length-1
 ].cloneNode(true);
+
 
 const firstClone=
 creatorPages[0].cloneNode(true);
@@ -3205,9 +3369,13 @@ lastClone,
 creatorTrack.firstElementChild
 );
 
-creatorTrack.appendChild(firstClone);
+creatorTrack.appendChild(
+firstClone
+);
 
-creatorTrack.style.transition="none";
+
+creatorTrack.style.transition=
+"none";
 
 creatorTrack.style.transform=
 "translateX(-100%)";
@@ -3217,7 +3385,9 @@ creatorTrack.style.transform=
 
 function nextCreators(){
 
-if(!creatorPages.length)return;
+if(!creatorPages.length){
+return;
+}
 
 creatorPosition++;
 
@@ -3234,7 +3404,9 @@ creatorPosition*100+
 
 function previousCreators(){
 
-if(!creatorPages.length)return;
+if(!creatorPages.length){
+return;
+}
 
 creatorPosition--;
 
@@ -3264,14 +3436,17 @@ creatorTrack.addEventListener(
 "transitionend",
 function(){
 
-const total=creatorPages.length;
+const total=
+creatorPages.length;
+
 
 if(
 creatorPosition===
 total+1
 ){
 
-creatorTrack.style.transition="none";
+creatorTrack.style.transition=
+"none";
 
 creatorPosition=1;
 
@@ -3280,13 +3455,16 @@ creatorTrack.style.transform=
 
 }
 
+
 if(
 creatorPosition===0
 ){
 
-creatorTrack.style.transition="none";
+creatorTrack.style.transition=
+"none";
 
-creatorPosition=total;
+creatorPosition=
+total;
 
 creatorTrack.style.transform=
 "translateX(-"+
@@ -3303,20 +3481,29 @@ total*100+
 ===================================================== */
 
 let creatorStartX=0;
+
 let creatorStartY=0;
+
 
 creatorCarousel.addEventListener(
 "touchstart",
 function(event){
 
-const touch=event.touches[0];
+const touch=
+event.touches[0];
 
-creatorStartX=touch.clientX;
-creatorStartY=touch.clientY;
+creatorStartX=
+touch.clientX;
+
+creatorStartY=
+touch.clientY;
 
 },
-{passive:true}
+{
+passive:true
+}
 );
+
 
 creatorCarousel.addEventListener(
 "touchend",
@@ -3326,24 +3513,38 @@ const touch=
 event.changedTouches[0];
 
 const diffX=
-touch.clientX-creatorStartX;
+touch.clientX-
+creatorStartX;
 
 const diffY=
-touch.clientY-creatorStartY;
+touch.clientY-
+creatorStartY;
+
 
 if(
 Math.abs(diffX)<45 ||
-Math.abs(diffX)<Math.abs(diffY)
-)return;
+Math.abs(diffX)<
+Math.abs(diffY)
+){
+return;
+}
+
 
 if(diffX<0){
+
 nextCreators();
-}else{
+
+}
+else{
+
 previousCreators();
+
 }
 
 },
-{passive:true}
+{
+passive:true
+}
 );
 
 
@@ -3363,6 +3564,7 @@ document
 
 }
 
+
 function closeExplorer(){
 
 document
@@ -3377,51 +3579,126 @@ document
 
 
 /* =====================================================
+   FOLLOWER NUMBER
+===================================================== */
+
+function getFollowerNumber(value){
+
+if(!value){
+return 0;
+}
+
+
+let text=
+String(value)
+.toUpperCase()
+.replace(/,/g,"")
+.trim();
+
+
+if(text.endsWith("K")){
+
+return parseFloat(
+text.replace("K","")
+)*1000;
+
+}
+
+
+if(text.endsWith("M")){
+
+return parseFloat(
+text.replace("M","")
+)*1000000;
+
+}
+
+
+return parseFloat(text)||0;
+
+}
+
+
+/* =====================================================
    SORT
 ===================================================== */
 
-function sortCreators(list,sortValue){
+function sortCreators(
+list,
+sortValue
+){
 
-const sorted=[...list];
+const sorted=
+[...list];
 
-if(sortValue==="followers-high"){
+
+if(sortValue===
+"followers-high"
+){
 
 sorted.sort(
 (a,b)=>
-getFollowerNumber(b.followers)-
-getFollowerNumber(a.followers)
+getFollowerNumber(
+b.followers
+)-
+getFollowerNumber(
+a.followers
+)
 );
 
 }
 
-else if(sortValue==="followers-low"){
+
+else if(
+sortValue===
+"followers-low"
+){
 
 sorted.sort(
 (a,b)=>
-getFollowerNumber(a.followers)-
-getFollowerNumber(b.followers)
+getFollowerNumber(
+a.followers
+)-
+getFollowerNumber(
+b.followers
+)
 );
 
 }
 
-else if(sortValue==="name"){
+
+else if(
+sortValue==="name"
+){
 
 sorted.sort(
 (a,b)=>
-a.name.localeCompare(b.name)
+a.name.localeCompare(
+b.name
+)
 );
 
 }
 
-else if(sortValue==="newest"){
+
+else if(
+sortValue==="newest"
+){
 
 sorted.sort(
 (a,b)=>
-new Date(b.dateAdded||"1970-01-01")-
-new Date(a.dateAdded||"1970-01-01")
+new Date(
+b.dateAdded||
+"1970-01-01"
+)-
+new Date(
+a.dateAdded||
+"1970-01-01"
+)
 );
 
 }
+
 
 return sorted;
 
@@ -3429,17 +3706,28 @@ return sorted;
 
 
 /* =====================================================
-   DIRECTORY
+   CREATOR DIRECTORY STATE
 ===================================================== */
 
-window.currentCreatorFilter="All";
-window.currentCreatorSort="default";
+window.currentCreatorFilter=
+"All";
+
+window.currentCreatorType=
+"All";
+
+window.currentCreatorSort=
+"default";
+
 window.currentCreatorTitle=
 "All Creators In Our Network";
 
 window.currentCreatorDescription=
 "Explore creators across multiple niches and audience sizes.";
 
+
+/* =====================================================
+   OPEN CREATORS
+===================================================== */
 
 function openCreators(){
 
@@ -3449,17 +3737,47 @@ renderCreatorDirectory(
 "All Creators In Our Network",
 "Explore creators across multiple niches and audience sizes.",
 "All",
-"default"
+"default",
+"All"
 );
 
 }
 
 
+/* =====================================================
+   TYPE FILTER
+===================================================== */
+
+function filterByCreatorType(
+list,
+type
+){
+
+if(type==="All"){
+return list;
+}
+
+
+return list.filter(
+creator=>
+getCreatorTier(
+creator
+)===type
+);
+
+}
+
+
+/* =====================================================
+   RENDER DIRECTORY
+===================================================== */
+
 function renderCreatorDirectory(
 title,
 description,
 filter="All",
-sortValue="default"
+sortValue="default",
+type="All"
 ){
 
 const content=
@@ -3468,7 +3786,7 @@ document.getElementById(
 );
 
 
-const filtered=
+let filtered=
 filter==="All"
 
 ? creators
@@ -3476,7 +3794,16 @@ filter==="All"
 : creators.filter(
 creator=>
 creator.categories &&
-creator.categories.includes(filter)
+creator.categories.includes(
+filter
+)
+);
+
+
+filtered=
+filterByCreatorType(
+filtered,
+type
 );
 
 
@@ -3490,9 +3817,11 @@ sortValue
 let cards="";
 
 
-sorted.forEach(creator=>{
+sorted.forEach(
+creator=>{
 
 let subscriberText="";
+
 
 if(creator.subscribers){
 
@@ -3524,12 +3853,16 @@ ${creator.name}
 
 ${
 creator.verified
+
 ?
+
 `<span
 class="verified-tick"
-title="Verified by The V15 Company"
-></span>`
+title="Verified by The V15 Company">
+</span>`
+
 :
+
 ""
 }
 
@@ -3552,11 +3885,9 @@ ${subscriberText}
 </div>
 
 
-<!-- CREATOR BADGES -->
-
 <div class="profile-badges">
 
-${getProfileBadges(creator)}
+${getProfileBadgeHTML(creator)}
 
 </div>
 
@@ -3565,13 +3896,16 @@ ${getProfileBadges(creator)}
 
 ${
 (creator.categories||[])
-.map(category=>`
+.map(
+category=>
+`
 
 <span class="profile-tag">
 ${category}
 </span>
 
-`)
+`
+)
 .join("")
 }
 
@@ -3579,6 +3913,7 @@ ${category}
 
 
 <div class="profile-actions">
+
 
 ${
 creator.instagram &&
@@ -3606,6 +3941,14 @@ View Profile
 }
 
 
+<button
+class="profile-btn profile-calc"
+onclick="openCreatorCalculator('${creator.handle}')"
+>
+Engagement
+</button>
+
+
 <a
 href="mailto:contact@thev15company.in?subject=${encodeURIComponent(
 "Creator enquiry - "+
@@ -3615,6 +3958,7 @@ class="profile-btn profile-connect"
 >
 Connect
 </a>
+
 
 </div>
 
@@ -3632,20 +3976,19 @@ cards=`
 <div class="empty-state">
 
 <h3>
-More creators coming soon.
+No creators found.
 </h3>
 
 <p>
-We are continuously expanding
-this category with relevant creators
-from our network.
+No creators currently match
+the selected filters.
 </p>
 
 <button
 class="explore-btn"
-onclick="closeExplorer()"
+onclick="resetCreatorFilters()"
 >
-Back To Network
+Show All Creators
 </button>
 
 </div>
@@ -3655,11 +3998,35 @@ Back To Network
 }
 
 
+/* =====================================================
+   FILTER BUTTONS
+===================================================== */
+
+const nicheButtons=
+categories
+.map(
+category=>
+`
+
+<button
+class="filter-btn
+${filter===category?"active":""}"
+onclick="openNiche('${category}')"
+>
+${category}
+</button>
+
+`
+)
+.join("");
+
+
 content.innerHTML=`
 
 <h1 class="explorer-title">
 ${title}
 </h1>
+
 
 <p class="explorer-description">
 ${description}
@@ -3675,44 +4042,73 @@ onclick="renderCreatorDirectory(
 'All Creators In Our Network',
 'Explore creators across multiple niches and audience sizes.',
 'All',
-'${sortValue}'
+'${sortValue}',
+'${type}'
 )"
 >
 All
 </button>
 
-
-${
-
-categories
-.map(category=>`
-
-<button
-class="filter-btn
-${filter===category?"active":""}"
-onclick="openNiche('${category}')"
->
-${category}
-</button>
-
-`)
-.join("")
-
-}
+${nicheButtons}
 
 </div>
 
 
-${
-sorted.length
-?
-`
+<div class="creator-type-filter">
+
+<button
+class="type-filter-btn type-all
+${type==="All"?"active":""}"
+onclick="changeCreatorType('All')"
+>
+ALL CREATORS
+</button>
+
+
+<button
+class="type-filter-btn type-nano
+${type==="Nano"?"active":""}"
+onclick="changeCreatorType('Nano')"
+>
+NANO
+</button>
+
+
+<button
+class="type-filter-btn type-micro
+${type==="Micro"?"active":""}"
+onclick="changeCreatorType('Micro')"
+>
+MICRO
+</button>
+
+
+<button
+class="type-filter-btn type-macro
+${type==="Macro"?"active":""}"
+onclick="changeCreatorType('Macro')"
+>
+MACRO
+</button>
+
+
+<button
+class="type-filter-btn type-mega
+${type==="Mega"?"active":""}"
+onclick="changeCreatorType('Mega')"
+>
+MEGA
+</button>
+
+</div>
+
 
 <div class="sort-row">
 
 <span class="sort-label">
 Sort By
 </span>
+
 
 <select
 class="sort-select"
@@ -3726,12 +4122,14 @@ ${sortValue==="default"?"selected":""}
 Default
 </option>
 
+
 <option
 value="followers-high"
 ${sortValue==="followers-high"?"selected":""}
 >
 Followers: High to Low
 </option>
+
 
 <option
 value="followers-low"
@@ -3740,12 +4138,14 @@ ${sortValue==="followers-low"?"selected":""}
 Followers: Low to High
 </option>
 
+
 <option
 value="name"
 ${sortValue==="name"?"selected":""}
 >
 Name: A to Z
 </option>
+
 
 <option
 value="newest"
@@ -3758,11 +4158,6 @@ Newest Added
 
 </div>
 
-`
-:
-""
-}
-
 
 <div class="profile-grid">
 
@@ -3773,15 +4168,29 @@ ${cards}
 `;
 
 
-window.currentCreatorFilter=filter;
-window.currentCreatorSort=sortValue;
-window.currentCreatorTitle=title;
-window.currentCreatorDescription=description;
+window.currentCreatorFilter=
+filter;
+
+window.currentCreatorType=
+type;
+
+window.currentCreatorSort=
+sortValue;
+
+window.currentCreatorTitle=
+title;
+
+window.currentCreatorDescription=
+description;
 
 }
 
 
-function changeCreatorSort(sortValue){
+/* =====================================================
+   CHANGE CREATOR TYPE
+===================================================== */
+
+function changeCreatorType(type){
 
 renderCreatorDirectory(
 
@@ -3791,7 +4200,57 @@ window.currentCreatorDescription,
 
 window.currentCreatorFilter,
 
+window.currentCreatorSort,
+
+type
+
+);
+
+}
+
+
+/* =====================================================
+   RESET FILTERS
+===================================================== */
+
+function resetCreatorFilters(){
+
+renderCreatorDirectory(
+
+"All Creators In Our Network",
+
+"Explore creators across multiple niches and audience sizes.",
+
+"All",
+
+"default",
+
+"All"
+
+);
+
+}
+
+
+/* =====================================================
+   CHANGE SORT
+===================================================== */
+
+function changeCreatorSort(
 sortValue
+){
+
+renderCreatorDirectory(
+
+window.currentCreatorTitle,
+
+window.currentCreatorDescription,
+
+window.currentCreatorFilter,
+
+sortValue,
+
+window.currentCreatorType
 
 );
 
@@ -3814,9 +4273,333 @@ renderCreatorDirectory(
 
 niche,
 
-"default"
+"default",
+
+"All"
 
 );
+
+}
+
+
+/* =====================================================
+   ENGAGEMENT CALCULATOR
+===================================================== */
+
+function calculateEngagement(
+followers,
+likes,
+comments
+){
+
+followers=
+Number(followers);
+
+likes=
+Number(likes);
+
+comments=
+Number(comments);
+
+
+if(
+!followers ||
+followers<=0
+){
+
+return null;
+
+}
+
+
+return (
+(
+likes+
+comments
+)/
+followers
+)*100;
+
+}
+
+
+/* =====================================================
+   OPEN CREATOR CALCULATOR
+===================================================== */
+
+function openCreatorCalculator(
+handle
+){
+
+const creator=
+creators.find(
+item=>
+item.handle===handle
+);
+
+
+if(!creator){
+return;
+}
+
+
+openExplorer();
+
+
+const content=
+document.getElementById(
+"explorerContent"
+);
+
+
+const stored=
+getStoredEngagement(
+creator
+);
+
+
+content.innerHTML=`
+
+<h1 class="explorer-title">
+Engagement Calculator
+</h1>
+
+
+<p class="explorer-description">
+
+Calculate ${creator.name}'s Instagram
+engagement rate and save the result
+to the creator profile.
+
+</p>
+
+
+<div class="calculator-card">
+
+<div class="calculator-title">
+
+${creator.name}
+
+</div>
+
+
+<div class="calculator-subtitle">
+
+${creator.handle}
+· ${creator.followers} Followers
+
+</div>
+
+
+<div class="calculator-grid">
+
+
+<div class="calculator-field">
+
+<label>
+Followers
+</label>
+
+<input
+id="calcFollowers"
+type="number"
+value="${getFollowerNumber(creator.followers)}"
+placeholder="Followers"
+>
+
+</div>
+
+
+<div class="calculator-field">
+
+<label>
+Average Likes
+</label>
+
+<input
+id="calcLikes"
+type="number"
+placeholder="Average likes"
+min="0"
+>
+
+</div>
+
+
+<div class="calculator-field">
+
+<label>
+Average Comments
+</label>
+
+<input
+id="calcComments"
+type="number"
+placeholder="Average comments"
+min="0"
+>
+
+</div>
+
+
+</div>
+
+
+<div class="calculator-actions">
+
+<button
+class="calculate-btn"
+onclick="calculateAndSaveCreator('${creator.handle}')"
+>
+Calculate & Save
+</button>
+
+
+<div
+class="calculator-result"
+id="calculatorResult"
+>
+
+${
+stored !== null
+
+?
+
+`Current saved engagement:
+<strong>${stored.toFixed(2)}%</strong>`
+
+:
+
+"Enter likes and comments to calculate."
+
+}
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="empty-state">
+
+<h3>
+How it works
+</h3>
+
+<p>
+
+Engagement Rate =
+(Average Likes + Average Comments)
+÷ Followers × 100
+
+<br><br>
+
+After saving, the engagement rate
+will appear automatically on the
+creator's profile as a badge.
+
+</p>
+
+
+<button
+class="explore-btn"
+onclick="openCreators()"
+>
+← Back To Creators
+</button>
+
+</div>
+
+`;
+
+}
+
+
+/* =====================================================
+   CALCULATE AND SAVE
+===================================================== */
+
+function calculateAndSaveCreator(
+handle
+){
+
+const creator=
+creators.find(
+item=>
+item.handle===handle
+);
+
+
+if(!creator){
+return;
+}
+
+
+const followers=
+document.getElementById(
+"calcFollowers"
+).value;
+
+
+const likes=
+document.getElementById(
+"calcLikes"
+).value;
+
+
+const comments=
+document.getElementById(
+"calcComments"
+).value;
+
+
+const rate=
+calculateEngagement(
+followers,
+likes,
+comments
+);
+
+
+const result=
+document.getElementById(
+"calculatorResult"
+);
+
+
+if(
+rate===null ||
+Number(likes)<0 ||
+Number(comments)<0
+){
+
+result.innerHTML=
+"Please enter valid values.";
+
+return;
+
+}
+
+
+saveEngagement(
+creator,
+rate
+);
+
+
+result.innerHTML=
+`
+Saved Engagement:
+<strong>
+${rate.toFixed(2)}%
+</strong>
+`;
+
+
+/* Refresh featured carousel */
+
+buildCreatorCarousel();
 
 }
 
@@ -3832,28 +4615,36 @@ document.getElementById(
 "nicheGrid"
 );
 
-if(!grid)return;
+if(!grid){
+return;
+}
 
 grid.innerHTML="";
 
 
-categories.forEach(category=>{
+categories.forEach(
+category=>{
 
 const matchingCreators=
 creators.filter(
 creator=>
 creator.categories &&
-creator.categories.includes(category)
+creator.categories.includes(
+category
+)
 );
 
 
 const card=
 document.createElement("div");
 
-card.className="niche-card";
+card.className=
+"niche-card";
+
 
 card.onclick=
 ()=>openNiche(category);
+
 
 card.innerHTML=`
 
@@ -3861,19 +4652,23 @@ card.innerHTML=`
 ${category}
 </div>
 
+
 <div class="niche-sub">
 
 ${matchingCreators.length}
 
 ${
 matchingCreators.length===1
-?"Creator"
-:"Creators"
+?
+"Creator"
+:
+"Creators"
 }
 
 </div>
 
 `;
+
 
 grid.appendChild(card);
 
@@ -3902,6 +4697,7 @@ content.innerHTML=`
 Explore Social Media Managers
 </h1>
 
+
 <p class="explorer-description">
 
 Meet professionals from our network
@@ -3912,6 +4708,7 @@ and meaningful digital growth.
 
 
 <div class="professional-profile">
+
 
 <div class="professional-photo">
 
@@ -3929,9 +4726,11 @@ alt="Divya Rajput"
 Divya Rajput
 </div>
 
+
 <div class="professional-role">
 Social Media Manager
 </div>
+
 
 <div class="professional-experience">
 4+ Years Experience
@@ -4020,17 +4819,20 @@ document.getElementById(
 "explorerContent"
 );
 
+
 content.innerHTML=`
 
 <h1 class="explorer-title">
 Explore ${category}
 </h1>
 
+
 <div class="empty-state">
 
 <h3>
 Our network is growing.
 </h3>
+
 
 <p>
 
@@ -4043,6 +4845,7 @@ profiles will be added as our
 talent network grows.
 
 </p>
+
 
 <a
 href="mailto:contact@thev15company.in?subject=Join The V15 Company Network - ${category}"
