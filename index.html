@@ -1,58 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
 <title>The V15 Company | Digital Talent Network</title>
-
 <meta name="description"
 content="The V15 Company connects brands with creators and digital professionals across influencer marketing, social media management, copywriting, graphic design and video editing.">
-
 <style>
-
 /* =====================================================
    RESET
 ===================================================== */
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
-
 html{
     scroll-behavior:smooth;
 }
-
 body{
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
     color:#101828;
     background:#f7fbff;
     overflow-x:hidden;
 }
-
 body.no-scroll{
     overflow:hidden;
 }
-
 a{
     text-decoration:none;
     color:inherit;
 }
-
 button,
 select,
 input{
     font-family:inherit;
 }
-
-
 /* =====================================================
    NAVBAR
 ===================================================== */
-
 .navbar{
     position:sticky;
     top:0;
@@ -62,7 +48,6 @@ input{
     -webkit-backdrop-filter:blur(18px);
     border-bottom:1px solid #e5edf5;
 }
-
 .nav-inner{
     max-width:1180px;
     margin:auto;
@@ -71,13 +56,11 @@ input{
     align-items:center;
     justify-content:space-between;
 }
-
 .logo{
     display:flex;
     align-items:center;
     gap:12px;
 }
-
 .logo-box{
     width:46px;
     height:46px;
@@ -89,25 +72,21 @@ input{
     justify-content:center;
     flex-shrink:0;
 }
-
 .logo-box img{
     width:100%;
     height:100%;
     object-fit:contain;
     display:block;
 }
-
 .logo-name{
     font-size:18px;
     font-weight:800;
 }
-
 .nav-links{
     display:flex;
     align-items:center;
     gap:4px;
 }
-
 .nav-links a{
     padding:9px 12px;
     font-size:13px;
@@ -115,12 +94,10 @@ input{
     border-radius:9px;
     transition:.2s ease;
 }
-
 .nav-links a:hover{
     background:#eef7ff;
     color:#1769aa;
 }
-
 .menu-btn{
     display:none;
     border:0;
@@ -128,25 +105,20 @@ input{
     font-size:29px;
     cursor:pointer;
 }
-
-
 /* =====================================================
    HERO
 ===================================================== */
-
 .hero{
     background:
     radial-gradient(circle at 50% 0%,rgba(86,171,230,.18),transparent 38%),
     linear-gradient(180deg,#fff,#f5faff);
 }
-
 .hero-inner{
     max-width:1050px;
     margin:auto;
     padding:82px 24px 92px;
     text-align:center;
 }
-
 .hero-badge{
     display:inline-block;
     padding:9px 18px;
@@ -159,7 +131,6 @@ input{
     letter-spacing:.3px;
     margin-bottom:24px;
 }
-
 .hero h1{
     max-width:850px;
     margin:auto;
@@ -168,11 +139,9 @@ input{
     letter-spacing:-2.7px;
     font-weight:800;
 }
-
 .hero-highlight{
     color:#2478b8;
 }
-
 .hero-description{
     max-width:720px;
     margin:25px auto 32px;
@@ -180,7 +149,6 @@ input{
     font-size:18px;
     line-height:1.7;
 }
-
 .hero-buttons{
     display:flex;
     justify-content:center;
@@ -188,7 +156,6 @@ input{
     gap:13px;
     flex-wrap:wrap;
 }
-
 .btn{
     display:inline-flex;
     align-items:center;
@@ -200,40 +167,31 @@ input{
     font-weight:800;
     transition:.25s ease;
 }
-
 .btn-dark{
     background:#101828;
     color:#fff;
 }
-
 .btn-blue{
     background:#d9efff;
     color:#145a8e;
 }
-
 .btn:hover{
     transform:translateY(-2px);
 }
-
-
 /* =====================================================
    COMMON
 ===================================================== */
-
 .section{
     padding:85px 20px;
 }
-
 .section-inner{
     max-width:1120px;
     margin:auto;
 }
-
 .section-header{
     text-align:center;
     margin-bottom:38px;
 }
-
 .eyebrow{
     color:#2478b8;
     font-size:12px;
@@ -242,30 +200,24 @@ input{
     text-transform:uppercase;
     margin-bottom:12px;
 }
-
 .section-title{
     font-size:clamp(30px,5vw,46px);
     letter-spacing:-1.5px;
     line-height:1.12;
     font-weight:800;
 }
-
 .section-subtitle{
     max-width:680px;
     margin:14px auto 0;
     color:#667085;
     line-height:1.7;
 }
-
-
 /* =====================================================
    FEATURED CREATORS
 ===================================================== */
-
 .creators-section{
     background:#f5faff;
 }
-
 .creator-carousel{
     position:relative;
     width:100%;
@@ -273,12 +225,10 @@ input{
     touch-action:pan-y;
     user-select:none;
 }
-
 .creator-track{
     display:flex;
     transition:transform .55s cubic-bezier(.22,.61,.36,1);
 }
-
 .creator-page{
     min-width:100%;
     padding:8px 5px 20px;
@@ -286,7 +236,6 @@ input{
     flex-direction:column;
     gap:18px;
 }
-
 .creator-card{
     position:relative;
     min-height:125px;
@@ -300,7 +249,6 @@ input{
     overflow:hidden;
     box-shadow:0 12px 35px rgba(26,88,125,.07);
 }
-
 .creator-card::before{
     content:"";
     position:absolute;
@@ -316,24 +264,19 @@ input{
         #72c5f6 340deg,
         transparent 360deg
     );
-
     -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
-
     -webkit-mask-composite:xor;
     mask-composite:exclude;
-
     animation:creatorGlow 3.2s linear infinite;
     pointer-events:none;
 }
-
 @keyframes creatorGlow{
     to{
         transform:rotate(360deg);
     }
 }
-
 .creator-card::after{
     content:"";
     position:absolute;
@@ -342,13 +285,11 @@ input{
     background:#fff;
     z-index:0;
 }
-
 .creator-avatar,
 .creator-info{
     position:relative;
     z-index:1;
 }
-
 .creator-avatar{
     width:78px;
     height:78px;
@@ -364,19 +305,16 @@ input{
     font-size:20px;
     font-weight:900;
 }
-
 .creator-avatar img{
     width:100%;
     height:100%;
     object-fit:cover;
     display:block;
 }
-
 .creator-info{
     min-width:0;
     flex:1;
 }
-
 .creator-name{
     font-size:18px;
     font-weight:800;
@@ -385,19 +323,15 @@ input{
     overflow:hidden;
     text-overflow:ellipsis;
 }
-
 .creator-meta{
     color:#667085;
     font-size:14px;
     line-height:1.5;
     margin-bottom:9px;
 }
-
-
 /* =====================================================
    CREATOR BADGES
 ===================================================== */
-
 .creator-badges{
     display:flex;
     align-items:center;
@@ -405,7 +339,6 @@ input{
     gap:6px;
     margin-bottom:11px;
 }
-
 .creator-badge{
     display:inline-flex;
     align-items:center;
@@ -416,100 +349,68 @@ input{
     font-weight:850;
     white-space:nowrap;
 }
-
-
 /* Verified */
-
 .badge-verified{
     background:#eef6ff;
     color:#1769aa;
     border:1px solid #b9dcf5;
 }
-
-
 /* Trusted */
-
 .badge-trusted{
     background:linear-gradient(
         135deg,
         #fff8d6,
         #fff0a8
     );
-
     color:#9a6b00;
-
     border:1px solid #e9c94c;
-
     box-shadow:
     0 2px 8px
     rgba(218,160,20,.16);
 }
-
-
 /* Newly Added */
-
 .badge-new{
     background:#ecfdf3;
     color:#16834b;
     border:1px solid #a6e5c2;
 }
-
-
 /* Nano */
-
 .badge-nano{
     background:#f4f7fa;
     color:#667085;
     border:1px solid #d8e0e8;
 }
-
-
 /* Micro */
-
 .badge-micro{
     background:#eef8ff;
     color:#1769aa;
     border:1px solid #b9dcf5;
 }
-
-
 /* Macro */
-
 .badge-macro{
     background:#f5efff;
     color:#7048b8;
     border:1px solid #d6c2f5;
 }
-
-
 /* Mega */
-
 .badge-mega{
     background:linear-gradient(
         135deg,
         #f6e8ff,
         #ead1ff
     );
-
     color:#742aa6;
-
     border:1px solid #c99be9;
 }
-
-
 /* Engagement */
-
 .badge-engagement{
     background:#fff6ed;
     color:#b85b16;
     border:1px solid #f3c69c;
 }
-
-
 /* =====================================================
    VERIFIED GOLDEN TICK
 ===================================================== */
-
 .verified-tick{
     display:inline-flex;
     align-items:center;
@@ -534,17 +435,13 @@ input{
     0 2px 6px
     rgba(218,160,20,.30);
 }
-
 .verified-tick::after{
     content:"✓";
     line-height:1;
 }
-
-
 /* =====================================================
    ACTIONS
 ===================================================== */
-
 .creator-actions{
     display:flex;
     align-items:center;
@@ -553,7 +450,6 @@ input{
     position:relative;
     z-index:3;
 }
-
 .creator-action{
     display:inline-flex;
     align-items:center;
@@ -564,22 +460,18 @@ input{
     font-weight:800;
     transition:.2s ease;
 }
-
 .creator-instagram{
     background:#f1f8ff;
     color:#1769aa;
     border:1px solid #cfe5f4;
 }
-
 .creator-connect{
     background:#101828;
     color:#fff;
 }
-
 .creator-action:hover{
     transform:translateY(-1px);
 }
-
 .carousel-controls{
     display:flex;
     align-items:center;
@@ -587,7 +479,6 @@ input{
     gap:14px;
     margin-top:12px;
 }
-
 .carousel-btn{
     width:44px;
     height:44px;
@@ -599,32 +490,25 @@ input{
     cursor:pointer;
     transition:.2s ease;
 }
-
 .carousel-btn:hover{
     background:#eaf6ff;
     transform:translateY(-2px);
 }
-
 .carousel-hint{
     color:#98a2b3;
     font-size:12px;
 }
-
-
 /* =====================================================
    NETWORK
 ===================================================== */
-
 .network-section{
     background:#fff;
 }
-
 .network-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:18px;
 }
-
 .network-card{
     background:#f9fcff;
     border:1px solid #dce8f2;
@@ -633,13 +517,11 @@ input{
     text-align:center;
     transition:.25s ease;
 }
-
 .network-card:hover{
     transform:translateY(-5px);
     border-color:#8ec8ee;
     box-shadow:0 18px 40px rgba(26,88,125,.09);
 }
-
 .network-line{
     width:36px;
     height:3px;
@@ -647,20 +529,17 @@ input{
     border-radius:5px;
     background:#5da9dc;
 }
-
 .network-card h3{
     font-size:16px;
     line-height:1.35;
     margin-bottom:9px;
 }
-
 .network-card p{
     color:#667085;
     font-size:13px;
     line-height:1.6;
     margin-bottom:18px;
 }
-
 .explore-btn{
     display:inline-flex;
     align-items:center;
@@ -675,17 +554,13 @@ input{
     transition:.2s ease;
     cursor:pointer;
 }
-
 .explore-btn:hover{
     border-color:#a9d5f5;
     background:#f2f9ff;
 }
-
-
 /* =====================================================
    NICHES
 ===================================================== */
-
 .niches-section{
     background:linear-gradient(
         180deg,
@@ -693,7 +568,6 @@ input{
         #fff
     );
 }
-
 .niche-grid{
     display:grid;
     grid-template-columns:repeat(5,1fr);
@@ -701,7 +575,6 @@ input{
     max-width:1050px;
     margin:auto;
 }
-
 .niche-card{
     padding:21px 12px;
     background:#fff;
@@ -711,39 +584,95 @@ input{
     cursor:pointer;
     transition:.25s ease;
 }
-
 .niche-card:hover{
     transform:translateY(-4px);
     border-color:#8ec8ee;
     box-shadow:0 14px 30px rgba(26,88,125,.08);
 }
-
 .niche-name{
     font-size:14px;
     font-weight:800;
 }
-
 .niche-sub{
     color:#98a2b3;
     font-size:10px;
     margin-top:5px;
 }
-
-
+/* =====================================================
+   CREATOR TOOLS
+===================================================== */
+.creator-tools-section{
+    background:#f5faff;
+}
+.creator-tools-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    max-width:900px;
+    margin:auto;
+}
+.creator-tool-card{
+    background:#fff;
+    border:1px solid #dce8f2;
+    border-radius:24px;
+    padding:30px 24px;
+    text-align:center;
+    box-shadow:0 14px 40px rgba(26,88,125,.06);
+    transition:.25s ease;
+}
+.creator-tool-card:hover{
+    transform:translateY(-5px);
+    border-color:#8ec8ee;
+    box-shadow:0 20px 45px rgba(26,88,125,.10);
+}
+.creator-tool-icon{
+    width:55px;
+    height:55px;
+    margin:0 auto 17px;
+    border-radius:16px;
+    background:#eaf6ff;
+    color:#1769aa;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:23px;
+    font-weight:900;
+}
+.creator-tool-card h3{
+    font-size:18px;
+    margin-bottom:9px;
+}
+.creator-tool-card p{
+    color:#667085;
+    font-size:13px;
+    line-height:1.65;
+    margin-bottom:20px;
+}
+.creator-tool-btn{
+    border:0;
+    padding:11px 16px;
+    border-radius:10px;
+    background:#101828;
+    color:#fff;
+    font-size:11px;
+    font-weight:850;
+    cursor:pointer;
+    transition:.2s ease;
+}
+.creator-tool-btn:hover{
+    transform:translateY(-2px);
+}
 /* =====================================================
    SERVICES
 ===================================================== */
-
 .services-section{
     background:#fff;
 }
-
 .services-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:18px;
 }
-
 .service-card{
     background:#f9fcff;
     border:1px solid #dce8f2;
@@ -751,7 +680,6 @@ input{
     padding:28px 22px;
     text-align:center;
 }
-
 .service-icon{
     width:50px;
     height:50px;
@@ -764,27 +692,21 @@ input{
     justify-content:center;
     font-weight:900;
 }
-
 .service-card h3{
     font-size:17px;
     margin-bottom:8px;
 }
-
 .service-card p{
     color:#667085;
     font-size:13px;
     line-height:1.6;
 }
-
-
 /* =====================================================
    FEEDBACK
 ===================================================== */
-
 .feedback-section{
     background:#f5faff;
 }
-
 .feedback-box{
     max-width:850px;
     margin:auto;
@@ -794,29 +716,23 @@ input{
     border:1px solid #dce8f2;
     box-shadow:0 15px 40px rgba(26,88,125,.06);
 }
-
 .feedback-text{
     color:#475467;
     line-height:1.8;
     font-size:15px;
 }
-
 .feedback-name{
     margin-top:20px;
     font-weight:800;
 }
-
 .feedback-role{
     color:#2478b8;
     font-size:12px;
     margin-top:4px;
 }
-
-
 /* =====================================================
    CONTACT
 ===================================================== */
-
 .contact-section{
     background:
     radial-gradient(
@@ -825,17 +741,14 @@ input{
         transparent 35%
     ),
     #fff;
-
     text-align:center;
 }
-
 .contact-section p{
     max-width:620px;
     margin:15px auto 25px;
     color:#667085;
     line-height:1.7;
 }
-
 .contact-btn{
     display:inline-flex;
     padding:14px 22px;
@@ -844,24 +757,19 @@ input{
     color:#fff;
     font-weight:800;
 }
-
-
 /* =====================================================
    SOCIAL
 ===================================================== */
-
 .social-section{
     background:#fff;
     padding:45px 20px 55px;
     border-top:1px solid #edf3f8;
 }
-
 .social-section-inner{
     max-width:850px;
     margin:auto;
     text-align:center;
 }
-
 .social-links{
     display:flex;
     align-items:center;
@@ -870,7 +778,6 @@ input{
     flex-wrap:wrap;
     margin-top:20px;
 }
-
 .social-link{
     display:inline-flex;
     align-items:center;
@@ -885,18 +792,14 @@ input{
     font-weight:800;
     transition:.2s ease;
 }
-
 .social-link:hover{
     transform:translateY(-2px);
     background:#eaf6ff;
     border-color:#a9d5f5;
 }
-
-
 /* =====================================================
    FOOTER
 ===================================================== */
-
 footer{
     padding:35px 20px;
     text-align:center;
@@ -904,7 +807,6 @@ footer{
     color:#98a2b3;
     font-size:12px;
 }
-
 .footer-logo{
     width:68px;
     height:68px;
@@ -916,23 +818,18 @@ footer{
     align-items:center;
     justify-content:center;
 }
-
 .footer-logo img{
     width:100%;
     height:100%;
     object-fit:contain;
     display:block;
 }
-
 footer strong{
     color:#fff;
 }
-
-
 /* =====================================================
    EXPLORER
 ===================================================== */
-
 .explorer{
     position:fixed;
     inset:0;
@@ -943,24 +840,20 @@ footer strong{
     overflow-y:auto;
     display:none;
 }
-
 .explorer.active{
     display:block;
 }
-
 .explorer-inner{
     max-width:1120px;
     margin:auto;
     padding:30px 20px 70px;
 }
-
 .explorer-top{
     display:flex;
     align-items:center;
     justify-content:space-between;
     margin-bottom:42px;
 }
-
 .back-btn{
     border:1px solid #c9dfef;
     background:#fff;
@@ -971,7 +864,6 @@ footer strong{
     font-weight:800;
     cursor:pointer;
 }
-
 .close-btn{
     width:42px;
     height:42px;
@@ -982,14 +874,12 @@ footer strong{
     font-size:20px;
     color:#475467;
 }
-
 .explorer-title{
     text-align:center;
     margin-bottom:10px;
     font-size:clamp(30px,5vw,48px);
     letter-spacing:-1.5px;
 }
-
 .explorer-description{
     max-width:650px;
     margin:0 auto 35px;
@@ -997,12 +887,9 @@ footer strong{
     color:#667085;
     line-height:1.7;
 }
-
-
 /* =====================================================
    FILTERS
 ===================================================== */
-
 .filter-row{
     display:flex;
     gap:8px;
@@ -1010,7 +897,6 @@ footer strong{
     justify-content:center;
     margin-bottom:18px;
 }
-
 .filter-btn{
     padding:9px 13px;
     border-radius:20px;
@@ -1022,20 +908,15 @@ footer strong{
     cursor:pointer;
     transition:.2s ease;
 }
-
 .filter-btn:hover{
     border-color:#8ec8ee;
 }
-
 .filter-btn.active{
     background:#1769aa;
     color:#fff;
     border-color:#1769aa;
 }
-
-
 /* Creator Type Filter */
-
 .creator-type-filter{
     display:flex;
     gap:8px;
@@ -1043,7 +924,6 @@ footer strong{
     justify-content:center;
     margin-bottom:22px;
 }
-
 .type-filter-btn{
     padding:8px 13px;
     border-radius:20px;
@@ -1055,41 +935,31 @@ footer strong{
     cursor:pointer;
     transition:.2s ease;
 }
-
 .type-filter-btn:hover{
     transform:translateY(-1px);
 }
-
 .type-filter-btn.active{
     color:#fff;
     border-color:transparent;
 }
-
 .type-all.active{
     background:#101828;
 }
-
 .type-nano.active{
     background:#667085;
 }
-
 .type-micro.active{
     background:#2478b8;
 }
-
 .type-macro.active{
     background:#7048b8;
 }
-
 .type-mega.active{
     background:#9a59bd;
 }
-
-
 /* =====================================================
    SORT
 ===================================================== */
-
 .sort-row{
     display:flex;
     justify-content:flex-end;
@@ -1097,13 +967,11 @@ footer strong{
     gap:8px;
     margin-bottom:22px;
 }
-
 .sort-label{
     color:#667085;
     font-size:12px;
     font-weight:700;
 }
-
 .sort-select{
     padding:9px 12px;
     border-radius:10px;
@@ -1116,18 +984,14 @@ footer strong{
     cursor:pointer;
     transition:.2s ease;
 }
-
 .sort-select:hover,
 .sort-select:focus{
     border-color:#8ec8ee;
     box-shadow:0 0 0 3px rgba(86,171,230,.08);
 }
-
-
 /* =====================================================
    ENGAGEMENT CALCULATOR
 ===================================================== */
-
 .calculator-card{
     max-width:850px;
     margin:0 auto 30px;
@@ -1137,38 +1001,32 @@ footer strong{
     border-radius:24px;
     box-shadow:0 14px 40px rgba(26,88,125,.07);
 }
-
 .calculator-title{
     font-size:22px;
     font-weight:850;
     margin-bottom:7px;
 }
-
 .calculator-subtitle{
     color:#667085;
     font-size:13px;
     line-height:1.6;
     margin-bottom:20px;
 }
-
 .calculator-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:12px;
 }
-
 .calculator-field{
     display:flex;
     flex-direction:column;
     gap:7px;
 }
-
 .calculator-field label{
     color:#475467;
     font-size:11px;
     font-weight:800;
 }
-
 .calculator-field input{
     width:100%;
     padding:11px 12px;
@@ -1178,12 +1036,10 @@ footer strong{
     font-size:13px;
     background:#fbfdff;
 }
-
 .calculator-field input:focus{
     border-color:#8ec8ee;
     box-shadow:0 0 0 3px rgba(86,171,230,.08);
 }
-
 .calculator-actions{
     display:flex;
     align-items:center;
@@ -1191,7 +1047,6 @@ footer strong{
     flex-wrap:wrap;
     margin-top:17px;
 }
-
 .calculate-btn{
     border:0;
     padding:11px 17px;
@@ -1202,7 +1057,6 @@ footer strong{
     font-weight:850;
     cursor:pointer;
 }
-
 .calculator-result{
     min-height:40px;
     display:flex;
@@ -1211,24 +1065,19 @@ footer strong{
     font-size:12px;
     font-weight:700;
 }
-
 .calculator-result strong{
     color:#b85b16;
     font-size:18px;
     margin-left:5px;
 }
-
-
 /* =====================================================
    PROFILE GRID
 ===================================================== */
-
 .profile-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:18px;
 }
-
 .profile-card{
     background:#fff;
     border:1px solid #dce8f2;
@@ -1237,12 +1086,10 @@ footer strong{
     box-shadow:0 12px 35px rgba(26,88,125,.06);
     transition:.25s ease;
 }
-
 .profile-card:hover{
     transform:translateY(-4px);
     box-shadow:0 20px 42px rgba(26,88,125,.10);
 }
-
 .profile-photo{
     width:86px;
     height:86px;
@@ -1252,39 +1099,33 @@ footer strong{
     border:2px solid #c4e3f7;
     margin-bottom:17px;
 }
-
 .profile-photo img{
     width:100%;
     height:100%;
     object-fit:cover;
 }
-
 .profile-name{
     font-size:18px;
     font-weight:850;
     margin-bottom:5px;
 }
-
 .profile-role{
     color:#2478b8;
     font-size:12px;
     font-weight:800;
     margin-bottom:5px;
 }
-
 .profile-meta{
     color:#667085;
     font-size:12px;
     margin-bottom:13px;
 }
-
 .profile-tags{
     display:flex;
     flex-wrap:wrap;
     gap:6px;
     margin-bottom:17px;
 }
-
 .profile-tag{
     padding:5px 8px;
     border-radius:15px;
@@ -1294,17 +1135,13 @@ footer strong{
     font-size:9px;
     font-weight:800;
 }
-
-
 /* New profile badges */
-
 .profile-badges{
     display:flex;
     flex-wrap:wrap;
     gap:6px;
     margin-bottom:17px;
 }
-
 .profile-badge{
     display:inline-flex;
     align-items:center;
@@ -1315,13 +1152,11 @@ footer strong{
     font-weight:850;
     white-space:nowrap;
 }
-
 .profile-actions{
     display:flex;
     gap:8px;
     flex-wrap:wrap;
 }
-
 .profile-btn{
     display:inline-flex;
     align-items:center;
@@ -1331,29 +1166,23 @@ footer strong{
     font-size:11px;
     font-weight:800;
 }
-
 .profile-instagram{
     background:#f1f8ff;
     color:#1769aa;
     border:1px solid #cfe5f4;
 }
-
 .profile-connect{
     background:#101828;
     color:#fff;
 }
-
 .profile-calc{
     background:#fff6ed;
     color:#b85b16;
     border:1px solid #f3c69c;
 }
-
-
 /* =====================================================
    PROFESSIONAL PROFILE
 ===================================================== */
-
 .professional-profile{
     max-width:900px;
     margin:0 auto;
@@ -1368,7 +1197,6 @@ footer strong{
     position:relative;
     overflow:hidden;
 }
-
 .professional-profile::before{
     content:"";
     position:absolute;
@@ -1386,13 +1214,11 @@ footer strong{
     );
     animation:professionalGlow 3s linear infinite;
 }
-
 @keyframes professionalGlow{
     to{
         left:100%;
     }
 }
-
 .professional-photo{
     width:150px;
     height:150px;
@@ -1401,39 +1227,33 @@ footer strong{
     border:2px solid #c8e5f8;
     background:#eaf5fd;
 }
-
 .professional-photo img{
     width:100%;
     height:100%;
     object-fit:cover;
 }
-
 .professional-name{
     font-size:28px;
     font-weight:850;
     margin-bottom:5px;
 }
-
 .professional-role{
     color:#2478b8;
     font-size:14px;
     font-weight:800;
     margin-bottom:7px;
 }
-
 .professional-experience{
     color:#667085;
     font-size:13px;
     margin-bottom:17px;
 }
-
 .professional-tags{
     display:flex;
     gap:7px;
     flex-wrap:wrap;
     margin-bottom:18px;
 }
-
 .professional-tag{
     padding:7px 10px;
     border-radius:20px;
@@ -1443,27 +1263,23 @@ footer strong{
     font-size:10px;
     font-weight:800;
 }
-
 .professional-quote{
     color:#344054;
     font-size:16px;
     line-height:1.65;
     margin-bottom:15px;
 }
-
 .professional-description{
     color:#667085;
     font-size:13px;
     line-height:1.75;
     margin-bottom:20px;
 }
-
 .professional-actions{
     display:flex;
     flex-wrap:wrap;
     gap:9px;
 }
-
 .linkedin-btn{
     display:inline-flex;
     padding:12px 16px;
@@ -1473,7 +1289,6 @@ footer strong{
     font-size:12px;
     font-weight:800;
 }
-
 .v15-connect-btn{
     display:inline-flex;
     padding:12px 16px;
@@ -1483,12 +1298,9 @@ footer strong{
     font-size:12px;
     font-weight:800;
 }
-
-
 /* =====================================================
    EMPTY
 ===================================================== */
-
 .empty-state{
     max-width:720px;
     margin:30px auto;
@@ -1498,60 +1310,48 @@ footer strong{
     border:1px dashed #b8d7ea;
     border-radius:24px;
 }
-
 .empty-state h3{
     font-size:22px;
     margin-bottom:10px;
 }
-
 .empty-state p{
     color:#667085;
     font-size:14px;
     line-height:1.7;
     margin-bottom:20px;
 }
-
-
 /* =====================================================
    RESPONSIVE
 ===================================================== */
-
 @media(max-width:950px){
-
     .network-grid,
     .services-grid{
         grid-template-columns:repeat(2,1fr);
     }
-
     .niche-grid{
         grid-template-columns:repeat(3,1fr);
     }
-
     .profile-grid{
         grid-template-columns:repeat(2,1fr);
     }
-
+    .creator-tools-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 }
-
 @media(max-width:700px){
-
     .nav-inner{
         padding:12px 18px;
     }
-
     .logo-box{
         width:42px;
         height:42px;
     }
-
     .logo-name{
         font-size:16px;
     }
-
     .menu-btn{
         display:block;
     }
-
     .nav-links{
         display:none;
         position:absolute;
@@ -1564,203 +1364,154 @@ footer strong{
         flex-direction:column;
         align-items:stretch;
     }
-
     .nav-links.show{
         display:flex;
     }
-
     .hero-inner{
         padding:65px 20px 70px;
     }
-
     .hero h1{
         font-size:42px;
         letter-spacing:-1.8px;
     }
-
     .hero-description{
         font-size:16px;
     }
-
     .section{
         padding:65px 15px;
     }
-
     .section-title{
         font-size:32px;
     }
-
     .creator-card{
         min-height:112px;
         padding:16px;
         border-radius:21px;
     }
-
     .creator-avatar{
         width:68px;
         height:68px;
         flex-basis:68px;
     }
-
     .creator-name{
         font-size:16px;
     }
-
     .creator-meta{
         font-size:12px;
     }
-
     .creator-action{
         font-size:9px;
         padding:6px 9px;
     }
-
     .network-grid,
     .services-grid,
     .profile-grid{
         grid-template-columns:1fr;
     }
-
     .niche-grid{
         grid-template-columns:repeat(2,1fr);
     }
-
+    .creator-tools-grid{
+        grid-template-columns:1fr;
+    }
     .professional-profile{
         grid-template-columns:1fr;
         padding:25px;
         text-align:center;
     }
-
     .professional-photo{
         width:130px;
         height:130px;
         margin:auto;
     }
-
     .professional-tags,
     .professional-actions{
         justify-content:center;
     }
-
     .professional-name{
         font-size:24px;
     }
-
     .feedback-box{
         padding:25px 20px;
     }
-
     .sort-row{
         justify-content:center;
         flex-wrap:wrap;
     }
-
     .calculator-grid{
         grid-template-columns:1fr;
     }
-
     .calculator-card{
         padding:20px;
     }
-
 }
-
 @media(max-width:430px){
-
     .social-links{
         flex-direction:column;
     }
-
     .social-link{
         width:100%;
         max-width:260px;
     }
-
 }
-
 </style>
 </head>
-
-
 <body>
-
-
 <!-- =====================================================
      NAVBAR
 ===================================================== -->
-
 <header class="navbar">
-
 <div class="nav-inner">
-
 <a href="#home" class="logo">
-
 <div class="logo-box">
 <img src="images/logo-v15.png" alt="The V15 Company">
 </div>
-
 <span class="logo-name">
 The V15 Company
 </span>
-
 </a>
-
 <button
 class="menu-btn"
 onclick="toggleMenu()"
 aria-label="Menu">
 ☰
 </button>
-
 <nav class="nav-links" id="navLinks">
-
 <a href="#home">Home</a>
 <a href="#creators">Creators</a>
 <a href="#network">Our Network</a>
 <a href="#niches">Niches</a>
+<a href="#creator-tools">Creator Tools</a>
 <a href="#services">Services</a>
 <a href="#contact">Contact</a>
-
 </nav>
-
 </div>
-
 </header>
-
-
 <!-- =====================================================
      HERO
 ===================================================== -->
-
 <section class="hero" id="home">
-
 <div class="hero-inner">
-
 <div class="hero-badge">
 The V15 Company
 </div>
-
 <h1>
 Connecting Brands With
 <span class="hero-highlight">
 Creators & Digital Talent.
 </span>
 </h1>
-
 <p class="hero-description">
 We help brands build meaningful digital presence
 through creator collaborations, social media management,
 copywriting, graphic design and video content.
 </p>
-
 <div class="hero-buttons">
-
 <a
 href="mailto:contact@thev15company.in"
 class="btn btn-dark">
 I'm a Brand →
 </a>
-
 <a
 href="https://openinapp.link/zic87"
 target="_blank"
@@ -1768,177 +1519,182 @@ rel="noopener noreferrer"
 class="btn btn-blue">
 I'm a Creator →
 </a>
-
 </div>
-
 </div>
-
 </section>
-
-
 <!-- =====================================================
      FEATURED CREATORS
 ===================================================== -->
-
 <section class="section creators-section" id="creators">
-
 <div class="section-inner">
-
 <div class="section-header">
-
 <div class="eyebrow">
 Our Featured Creators
 </div>
-
 <h2 class="section-title">
 Top Creators In Our Network
 </h2>
-
 <p class="section-subtitle">
 Explore creators across multiple niches,
 audience sizes and content styles.
 </p>
-
 </div>
-
 <div class="creator-carousel" id="creatorCarousel">
-
 <div class="creator-track" id="creatorTrack"></div>
-
 </div>
-
 <div class="carousel-controls">
-
 <button class="carousel-btn" id="prevBtn">
 ←
 </button>
-
 <span class="carousel-hint">
 Swipe left or right to explore
 </span>
-
 <button class="carousel-btn" id="nextBtn">
 →
 </button>
-
 </div>
-
 </div>
-
 </section>
-
-
 <!-- =====================================================
      OUR NETWORK
 ===================================================== -->
-
 <section class="section network-section" id="network">
-
 <div class="section-inner">
-
 <div class="section-header">
-
 <div class="eyebrow">
 Our Network
 </div>
-
 <h2 class="section-title">
 Explore Our Digital Talent Network
 </h2>
-
 <p class="section-subtitle">
 Find creators and professionals
 for different digital requirements.
 </p>
-
 </div>
-
-
 <div class="network-grid">
-
 <div class="network-card">
-
 <div class="network-line"></div>
-
 <h3>
 Influencer Marketing
 </h3>
-
 <p>
 Discover creators across multiple
 niches and audience sizes.
 </p>
-
 <button
 class="explore-btn"
 onclick="openCreators()">
 Explore Creators →
 </button>
-
 </div>
-
-
 <div class="network-card">
-
 <div class="network-line"></div>
-
 <h3>
 Social Media Management
 </h3>
-
 <p>
 Explore professionals focused on
 strategy, content and social growth.
 </p>
-
 <button
 class="explore-btn"
 onclick="openSocialManagers()">
 Explore Social Media Managers →
 </button>
-
 </div>
-
-
 <div class="network-card">
-
 <div class="network-line"></div>
-
 <h3>
 Copywriting
 </h3>
-
 <p>
 Professional writers for LinkedIn,
 social media and brand communication.
 </p>
-
 <button
 class="explore-btn"
 onclick="openComingSoon('Copywriters')">
 Explore Copywriters →
 </button>
-
 </div>
-
-
 <div class="network-card">
-
 <div class="network-line"></div>
-
 <h3>
 Graphic Design
 </h3>
-
 <p>
 Creative professionals for digital
 content and brand communication.
 </p>
-
 <button
 class="explore-btn"
 onclick="openComingSoon('Graphic Designers')">
 Explore Graphic Designers →
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- =====================================================
+     NICHES
+===================================================== -->
+<section class="section niches-section" id="niches">
+<div class="section-inner">
+<div class="section-header">
+<div class="eyebrow">
+Creator Categories
+</div>
+<h2 class="section-title">
+Explore Creators By Niche
+</h2>
+<p class="section-subtitle">
+Select a category to discover
+relevant creators in our network.
+</p>
+</div>
+<div class="niche-grid" id="nicheGrid"></div>
+</div>
+</section>
+<!-- =====================================================
+     CREATOR TOOLS
+===================================================== -->
+<section class="section creator-tools-section" id="creator-tools">
+<div class="section-inner">
+
+<div class="section-header">
+<div class="eyebrow">
+Creator Tools
+</div>
+<h2 class="section-title">
+Tools For Creators
+</h2>
+<p class="section-subtitle">
+Useful tools to analyse and improve your creator profile.
+</p>
+</div>
+
+<div class="creator-tools-grid">
+
+<div class="creator-tool-card">
+
+<div class="creator-tool-icon">
+%
+</div>
+
+<h3>
+Engagement Calculator
+</h3>
+
+<p>
+Calculate your Instagram engagement rate using
+followers, average likes and average comments.
+</p>
+
+<button
+class="creator-tool-btn"
+onclick="openEngagementCalculator()">
+Calculate Engagement →
 </button>
 
 </div>
@@ -1946,248 +1702,143 @@ Explore Graphic Designers →
 </div>
 
 </div>
-
 </section>
-
-
-<!-- =====================================================
-     NICHES
-===================================================== -->
-
-<section class="section niches-section" id="niches">
-
-<div class="section-inner">
-
-<div class="section-header">
-
-<div class="eyebrow">
-Creator Categories
-</div>
-
-<h2 class="section-title">
-Explore Creators By Niche
-</h2>
-
-<p class="section-subtitle">
-Select a category to discover
-relevant creators in our network.
-</p>
-
-</div>
-
-<div class="niche-grid" id="nicheGrid"></div>
-
-</div>
-
-</section>
-
-
 <!-- =====================================================
      SERVICES
 ===================================================== -->
-
 <section class="section services-section" id="services">
-
 <div class="section-inner">
-
 <div class="section-header">
-
 <div class="eyebrow">
 What We Do
 </div>
-
 <h2 class="section-title">
 Digital Solutions For Growing Brands
 </h2>
-
 </div>
-
-
 <div class="services-grid">
-
 <div class="service-card">
-
 <div class="service-icon">
 C
 </div>
-
 <h3>
 Creator Collaborations
 </h3>
-
 <p>
 Relevant creators and campaign
 coordination for brands.
 </p>
-
 </div>
-
-
 <div class="service-card">
-
 <div class="service-icon">
 S
 </div>
-
 <h3>
 Social Media Management
 </h3>
-
 <p>
 Strategy, content planning and
 social media management.
 </p>
-
 </div>
-
-
 <div class="service-card">
-
 <div class="service-icon">
 W
 </div>
-
 <h3>
 Copywriting
 </h3>
-
 <p>
 Social media, LinkedIn and
 brand communication copy.
 </p>
-
 </div>
-
-
 <div class="service-card">
-
 <div class="service-icon">
 V
 </div>
-
 <h3>
 Video Editing
 </h3>
-
 <p>
 Reels, short-form videos and
 digital video content.
 </p>
-
 </div>
-
 </div>
-
 </div>
-
 </section>
-
-
 <!-- =====================================================
      FEEDBACK
 ===================================================== -->
-
 <section class="section feedback-section" id="feedback">
-
 <div class="section-inner">
-
 <div class="section-header">
-
 <div class="eyebrow">
 Creator Feedback
 </div>
-
 <h2 class="section-title">
 What Creators Say
 </h2>
-
 </div>
-
 <div class="feedback-box">
-
 <p class="feedback-text">
-
 "I just wanted to say thank you for connecting
 me with this opportunity. Being introduced to
 the software company and getting the chance to
 work on their sales and marketing has been an
 incredible experience so far.
-
 I really appreciate the trust you've placed in me.
 The way The V15 Company works, with transparency,
 professionalism, and genuine industry connections,
 has honestly been impressive.
-
 Everything has been exactly as communicated,
 and that says a lot about the way you do business.
 Hope this is the beginning of a long-term association.
 Looking forward to working with you on many more
 projects in the future. Thank you once again!"
-
 </p>
-
 <div class="feedback-name">
 Nikita Suri
 </div>
-
 <div class="feedback-role">
 Creator
 </div>
-
 </div>
-
 </div>
-
 </section>
-
-
 <!-- =====================================================
      CONTACT
 ===================================================== -->
-
 <section class="section contact-section" id="contact">
-
 <div class="section-inner">
-
 <div class="eyebrow">
 Let's Work Together
 </div>
-
 <h2 class="section-title">
 Have A Brand Requirement?
 </h2>
-
 <p>
 Tell us what you're looking to build
 and let's discuss how The V15 Company
 can help.
 </p>
-
 <a
 href="mailto:contact@thev15company.in"
 class="contact-btn">
 Get In Touch →
 </a>
-
 </div>
-
 </section>
-
-
 <!-- =====================================================
      SOCIAL
 ===================================================== -->
-
 <section class="social-section">
-
 <div class="social-section-inner">
-
 <div class="eyebrow">
 Connect With Us
 </div>
-
 <div class="social-links">
-
 <a
 class="social-link"
 href="https://www.instagram.com/the_v15_company?igsh=Y253OXJjeXJ5ejU0"
@@ -2195,7 +1846,6 @@ target="_blank"
 rel="noopener noreferrer">
 ◎ Instagram
 </a>
-
 <a
 class="social-link"
 href="https://www.linkedin.com/company/the-v15-company/"
@@ -2203,28 +1853,18 @@ target="_blank"
 rel="noopener noreferrer">
 in LinkedIn
 </a>
-
 </div>
-
 </div>
-
 </section>
-
-
 <!-- =====================================================
      FOOTER
 ===================================================== -->
-
 <footer>
-
 <div class="footer-logo">
-
 <img
 src="images/logo-v15.png"
 alt="The V15 Company">
-
 </div>
-
 <div>
 © 2026
 <strong>
@@ -2232,49 +1872,32 @@ The V15 Company
 </strong>
 · All rights reserved.
 </div>
-
 </footer>
-
-
 <!-- =====================================================
      EXPLORER
 ===================================================== -->
-
 <div class="explorer" id="explorer">
-
 <div class="explorer-inner">
-
 <div class="explorer-top">
-
 <button
 class="back-btn"
 onclick="closeExplorer()">
 ← Back
 </button>
-
 <button
 class="close-btn"
 onclick="closeExplorer()">
 ×
 </button>
-
 </div>
-
 <div id="explorerContent"></div>
-
 </div>
-
 </div>
-
-
 <script>
-
 /* =====================================================
    CREATOR DATABASE
 ===================================================== */
-
 const creators = [
-
 {
 name:"Nandini Jaiswani",
 handle:"@nandini",
@@ -2289,7 +1912,6 @@ instagram:"#",
 verified:true,
 dateAdded:"2026-01-01"
 },
-
 {
 name:"Sonia Mishra",
 handle:"@sonia__mishra__",
@@ -2304,7 +1926,6 @@ image:"images/Sonia.jpg",
 instagram:"https://www.instagram.com/sonia__mishra__/",
 dateAdded:"2026-01-01"
 },
-
 {
 name:"Ritika.Create",
 handle:"@ritika.create",
@@ -2317,7 +1938,6 @@ image:"images/ritika.jpg",
 instagram:"https://www.instagram.com/ritika.create/",
 dateAdded:"2026-01-01"
 },
-
 {
 name:"Siblings Finance",
 handle:"@siblingsfinance",
@@ -2329,7 +1949,6 @@ image:"images/siblingsfinance.jpg",
 instagram:"https://www.instagram.com/siblingsfinance/",
 dateAdded:"2026-01-01"
 },
-
 {
 name:"Vishal Hajare",
 handle:"@tech_tricks.marathi",
@@ -2341,7 +1960,6 @@ image:"images/vishal.jpg",
 instagram:"https://www.instagram.com/tech_tricks.marathi/",
 dateAdded:"2026-01-01"
 },
-
 {
 name:"Anant Mishra",
 handle:"@gullu.era",
@@ -2355,7 +1973,6 @@ instagram:"https://www.instagram.com/gullu.era/",
 verified:true,
 dateAdded:"2026-01-01"
 },
-
 {
 name:"created.by.radhika",
 handle:"@created.by.radhika",
@@ -2369,7 +1986,6 @@ image:"images/created.by.radhika.jpg",
 instagram:"https://www.instagram.com/created.by.radhika/",
 dateAdded:"2026-01-01"
 },
-
 {
 name:"Vinayak Choubey",
 handle:"@techvinch.in",
@@ -2383,7 +1999,6 @@ instagram:"https://insta.openinapp.co/zfljz",
 verified:true,
 dateAdded:"2026-08-18"
 },
-
 {
 name:"Namita Mawai",
 handle:"@ugcwithnamita",
@@ -2395,7 +2010,6 @@ image:"images/namita.jpg",
 instagram:"https://www.instagram.com/ugcwithnamita?igsh=MTB1bjV2ODR3Z20xaQ==",
 dateAdded:"2026-08-18"
 },
-
 {
 name:"Namita Mawai",
 handle:"@nxmita",
@@ -2408,7 +2022,6 @@ image:"images/namitaa.jpg",
 instagram:"https://www.instagram.com/nxmita?igsh=MXhleHg2eTl3MHFpdg==",
 dateAdded:"2026-08-18"
 },
-
 {
 name:"Geet Mahi Rana",
 handle:"@Geetmahirana",
@@ -2423,7 +2036,6 @@ image:"images/Geet.jpg",
 instagram:"https://www.instagram.com/geetmahirana?igsh=OWF6ZmZweWdlZGo2",
 dateAdded:"2026-08-18"
 },
-
 {
 name:"Muskan",
 handle:"@muskannsahh",
@@ -2436,7 +2048,6 @@ image:"images/Muskan.jpg",
 instagram:"https://www.instagram.com/muskannsahh?igsh=MXc4cnJpaHQ3eXc0aQ==",
 dateAdded:"2026-08-18"
 },
-
 {
 name:"Nisha Kumawat",
 handle:"@bewith_nishaa_",
@@ -2450,7 +2061,6 @@ image:"images/Nisha.jpg",
 instagram:"https://www.instagram.com/bewith_nishaa_?igsh=emYybmp5cWFodWp2",
 dateAdded:"2026-08-18"
 },
-
 {
 name:"Tejas Tapkir",
 handle:"@hindi_tech_guru__",
@@ -2463,7 +2073,6 @@ image:"images/Tejas.jpg",
 instagram:"https://www.instagram.com/hindi_tech_guru__?igsh=ajl3ODAyOXlrZTU5",
 dateAdded:"2026-08-18"
 },
-
 {
 name:"Ritika Mehra",
 handle:"@ritikamehraverse",
@@ -2476,7 +2085,6 @@ image:"images/Ritikaa.jpg",
 instagram:"https://www.instagram.com/ritikamehraverse?igsh=MWVydTRhemVmeTR0dA==",
 dateAdded:"2026-08-19"
 },
-
 {
 name:"Sneha",
 handle:"@bloomwithher__",
@@ -2488,7 +2096,6 @@ image:"images/Snehaa.jpg",
 instagram:"https://www.instagram.com/bloomwithher__?igsh=N3BieXAxNG9hc280",
 dateAdded:"2026-08-19"
 },
-
 {
 name:"Yashashvi Bhadauria",
 handle:"@geekydev.in",
@@ -2501,7 +2108,6 @@ image:"images/Yashh.jpg",
 instagram:"https://www.instagram.com/geekydev.in?igsh=MWhsZHE3ZGVrOXRzeg==",
 dateAdded:"2026-08-19"
 },
-
 {
 name:"Akansha Tripathi",
 handle:"@itsakansha_70",
@@ -2515,7 +2121,6 @@ image:"images/Akansha.jpg",
 instagram:"https://www.instagram.com/itsakansha_70?igsh=NWVucW5wNWM4cHoy",
 dateAdded:"2026-08-19"
 },
-
 {
 name:"Twinkle Soni",
 handle:"@twinklesonnii",
@@ -2527,7 +2132,6 @@ image:"images/Twinkle.jpg",
 instagram:"https://www.instagram.com/twinklesonnii?igsh=MXFsdjY5OTVjeWh1Yg==",
 dateAdded:"2026-08-19"
 },
-
 {
 name:"CA Mohit Sardana",
 handle:"@mohitmoneyshow",
@@ -2539,7 +2143,6 @@ image:"images/Mohit.jpg",
 instagram:"https://www.instagram.com/mohitmoneyshow?igsh=MWI5cG12amZzNG1zNg==",
 dateAdded:"2026-08-19"
 },
-
 {
 name:"Vartika Rastogi",
 handle:"@byvartika7",
@@ -2553,7 +2156,6 @@ image:"images/Vartika.jpg",
 instagram:"https://www.instagram.com/byvartika7?igsh=OGc2Z3RiNmRrMGg1",
 dateAdded:"2026-08-19"
 },
-
 {
 name:"Sneha Jain",
 handle:"@slaywithsneha",
@@ -2567,7 +2169,6 @@ image:"images/Snehaaa.jpg",
 instagram:"https://www.instagram.com/slaywithsneha?igsh=MW1yNXprZHUxd2swdw==",
 dateAdded:"2026-08-19"
 },
-
 {
 name:"Vishi Prajapati",
 handle:"@reviewbyvisshi",
@@ -2582,7 +2183,6 @@ image:"images/Vinita.jpg",
 instagram:"https://www.instagram.com/reviewbyvisshi?igsh=MTl3YnN0bHo3NjhpbQ==",
 dateAdded:"2026-08-19"
 },
-
 {
 name:"Guneet Kaur",
 handle:"@guneet.kaur.73",
@@ -2596,7 +2196,6 @@ image:"images/Guneet.jpg",
 instagram:"https://www.instagram.com/guneet.kaur.73?igsh=MWc4Z204bjgxYXlpaQ==",
 dateAdded:"2026-08-20"
 },
-
 {
 name:"Shruti Singh",
 handle:"@_shrutii__1",
@@ -2610,7 +2209,6 @@ image:"images/Shruti.jpg",
 instagram:"https://www.instagram.com/_shrutii__1?igsh=MTVrYmZxcnJld2M4cg==",
 dateAdded:"2026-08-20"
 },
-
 {
 name:"Monisha Mehta",
 handle:"@itsmonishamehta",
@@ -2625,7 +2223,6 @@ instagram:"https://www.instagram.com/itsmonishamehta?igsi=MXYwYzFvdTF3aWxueg==",
 trusted:true,
 dateAdded:"2026-08-21"
 },
-
 {
 name:"Gyanendra",
 handle:"@inyour.pocket",
@@ -2634,17 +2231,13 @@ categories:[
 "Tech"
 ],
 image:"images/Gyanendra.jpg",
-instagram:"https://www.instagram.com/inyour.pocket?igsi=aTBmcDNvYXYwaDM1",
+instagram:"https://www.instagram.com/inyour.pocket?igsi=aTBmcDNvYXY3aDM1",
 dateAdded:"2026-08-21"
 }
-
 ];
-
-
 /* =====================================================
    CATEGORIES
 ===================================================== */
-
 const categories = [
 "Tech",
 "Tech UGC",
@@ -2661,27 +2254,22 @@ const categories = [
 "Food",
 "Education",
 "Design",
-"Digital"
+"Digital",
+"Fitness",
+"Sports",
+"Music"
 ];
-
-
 /* =====================================================
    MOBILE MENU
 ===================================================== */
-
 function toggleMenu(){
-
 const menu=
 document.getElementById("navLinks");
-
 menu.classList.toggle("show");
-
 }
-
 document
 .querySelectorAll(".nav-links a")
 .forEach(link=>{
-
 link.addEventListener(
 "click",
 ()=>{
@@ -2690,122 +2278,82 @@ document
 .classList.remove("show");
 }
 );
-
 });
-
-
 /* =====================================================
    CREATOR TIER
 ===================================================== */
-
 function getCreatorTier(creator){
-
 const followers=
 getFollowerNumber(
 creator.followers
 );
-
 if(followers>=1000000){
 return "Mega";
 }
-
 if(followers>=100000){
 return "Macro";
 }
-
 if(followers>=10000){
 return "Micro";
 }
-
 return "Nano";
-
 }
-
-
 /* =====================================================
    NEWLY ADDED
    SHOWS FOR 7 DAYS
 ===================================================== */
-
 function isNewlyAdded(creator){
-
 if(!creator.dateAdded){
 return false;
 }
-
 const added=
 new Date(
 creator.dateAdded+"T00:00:00"
 );
-
 const now=
 new Date();
-
 const difference=
 now.getTime()-added.getTime();
-
 const sevenDays=
 7*24*60*60*1000;
-
 return (
 difference>=0 &&
 difference<=sevenDays
 );
-
 }
-
-
 /* =====================================================
    ENGAGEMENT STORAGE
 ===================================================== */
-
 function getStoredEngagement(creator){
-
 const key=
 "v15_engagement_"+creator.handle;
-
 const value=
 localStorage.getItem(key);
-
 return value ?
 parseFloat(value) :
 null;
-
 }
-
-
 function saveEngagement(
 creator,
 rate
 ){
-
 const key=
 "v15_engagement_"+creator.handle;
-
 localStorage.setItem(
 key,
 rate.toFixed(2)
 );
-
 creator.engagement=
 parseFloat(
 rate.toFixed(2)
 );
-
 }
-
-
 /* =====================================================
    BADGE HTML
 ===================================================== */
-
 function getBadgeHTML(creator){
-
 let html="";
-
-
 if(creator.verified){
-
 html+=`
 <span
 class="creator-badge badge-verified"
@@ -2813,12 +2361,8 @@ title="Verified by The V15 Company">
 ✓ VERIFIED
 </span>
 `;
-
 }
-
-
 if(creator.trusted){
-
 html+=`
 <span
 class="creator-badge badge-trusted"
@@ -2826,221 +2370,145 @@ title="Trusted creator in The V15 Company network">
 ★ TRUSTED
 </span>
 `;
-
 }
-
-
 if(isNewlyAdded(creator)){
-
 html+=`
 <span
 class="creator-badge badge-new">
 NEWLY ADDED
 </span>
 `;
-
 }
-
-
 const tier=
 getCreatorTier(creator);
-
-
 if(tier==="Nano"){
-
 html+=`
 <span class="creator-badge badge-nano">
 NANO CREATOR
 </span>
 `;
-
 }
-
 else if(tier==="Micro"){
-
 html+=`
 <span class="creator-badge badge-micro">
 MICRO CREATOR
 </span>
 `;
-
 }
-
 else if(tier==="Macro"){
-
 html+=`
 <span class="creator-badge badge-macro">
 MACRO CREATOR
 </span>
 `;
-
 }
-
 else if(tier==="Mega"){
-
 html+=`
 <span class="creator-badge badge-mega">
 MEGA CREATOR
 </span>
 `;
-
 }
-
-
 const engagement=
 creator.engagement ??
 getStoredEngagement(creator);
-
-
 if(
 engagement !== null &&
 !isNaN(engagement)
 ){
-
 html+=`
 <span class="creator-badge badge-engagement">
 ${engagement.toFixed(2)}% ENGAGEMENT
 </span>
 `;
-
 }
-
-
 return html;
-
 }
-
-
 /* =====================================================
    PROFILE BADGES
 ===================================================== */
-
 function getProfileBadgeHTML(creator){
-
 let html="";
-
-
 if(creator.verified){
-
 html+=`
 <span class="profile-badge badge-verified">
 ✓ VERIFIED
 </span>
 `;
-
 }
-
-
 if(creator.trusted){
-
 html+=`
 <span class="profile-badge badge-trusted">
 ★ TRUSTED
 </span>
 `;
-
 }
-
-
 if(isNewlyAdded(creator)){
-
 html+=`
 <span class="profile-badge badge-new">
 NEWLY ADDED
 </span>
 `;
-
 }
-
-
 const tier=
 getCreatorTier(creator);
-
-
 if(tier==="Nano"){
-
 html+=`
 <span class="profile-badge badge-nano">
 NANO CREATOR
 </span>
 `;
-
 }
-
 else if(tier==="Micro"){
-
 html+=`
 <span class="profile-badge badge-micro">
 MICRO CREATOR
 </span>
 `;
-
 }
-
 else if(tier==="Macro"){
-
 html+=`
 <span class="profile-badge badge-macro">
 MACRO CREATOR
 </span>
 `;
-
 }
-
 else if(tier==="Mega"){
-
 html+=`
 <span class="profile-badge badge-mega">
 MEGA CREATOR
 </span>
 `;
-
 }
-
-
 const engagement=
 creator.engagement ??
 getStoredEngagement(creator);
-
-
 if(
 engagement !== null &&
 !isNaN(engagement)
 ){
-
 html+=`
 <span class="profile-badge badge-engagement">
 ${engagement.toFixed(2)}% ENGAGEMENT
 </span>
 `;
-
 }
-
-
 return html;
-
 }
-
-
 /* =====================================================
    SHUFFLE
 ===================================================== */
-
 function shuffleCreators(array){
-
 const shuffled=[...array];
-
 for(
 let i=shuffled.length-1;
 i>0;
 i--
 ){
-
 const j=
 Math.floor(
 Math.random()*(i+1)
 );
-
 [
 shuffled[i],
 shuffled[j]
@@ -3048,86 +2516,54 @@ shuffled[j]
 shuffled[j],
 shuffled[i]
 ];
-
 }
-
 return shuffled;
-
 }
-
-
 /* =====================================================
    DETAILS
 ===================================================== */
-
 function creatorDetails(creator){
-
 let details=
 creator.followers||"";
-
 if(creator.subscribers){
-
 details+=
 " Followers · "+
 creator.subscribers+
 " Subscribers";
-
 }
-
 if(
 creator.categories &&
 creator.categories.length
 ){
-
 details+=
 " · "+
 creator.categories.join(" / ");
-
 }
-
 return details;
-
 }
-
-
 /* =====================================================
    FEATURED CREATOR CARD
    CREATOR TAG REMOVED
 ===================================================== */
-
 function createCreatorCard(creator){
-
 const card=
 document.createElement("div");
-
 card.className=
 "creator-card";
-
-
 const avatar=
 document.createElement("div");
-
 avatar.className=
 "creator-avatar";
-
-
 if(creator.image){
-
 const img=
 document.createElement("img");
-
 img.src=
 creator.image;
-
 img.alt=
 creator.name;
-
 avatar.appendChild(img);
-
 }
-
 else{
-
 avatar.textContent=
 creator.name
 .split(" ")
@@ -3135,23 +2571,15 @@ creator.name
 .join("")
 .slice(0,2)
 .toUpperCase();
-
 }
-
-
 const info=
 document.createElement("div");
-
 info.className=
 "creator-info";
-
-
 const name=
 document.createElement("div");
-
 name.className=
 "creator-name";
-
 name.innerHTML=
 creator.name+
 (
@@ -3164,165 +2592,109 @@ title="Verified by The V15 Company">
 :
 ""
 );
-
-
 const meta=
 document.createElement("div");
-
 meta.className=
 "creator-meta";
-
 meta.textContent=
 creatorDetails(creator);
-
-
 /* BADGES */
-
 const badges=
 document.createElement("div");
-
 badges.className=
 "creator-badges";
-
 badges.innerHTML=
 getBadgeHTML(creator);
-
-
 /* ACTIONS */
-
 const actions=
 document.createElement("div");
-
 actions.className=
 "creator-actions";
-
-
 if(
 creator.instagram &&
 creator.instagram!=="#"
 ){
-
 const instagram=
 document.createElement("a");
-
 instagram.className=
 "creator-action creator-instagram";
-
 instagram.href=
 creator.instagram;
-
 instagram.target="_blank";
-
 instagram.rel=
 "noopener noreferrer";
-
 instagram.textContent=
 "Instagram →";
-
 actions.appendChild(
 instagram
 );
-
 }
-
-
 const connect=
 document.createElement("a");
-
 connect.className=
 "creator-action creator-connect";
-
 connect.href=
 "mailto:contact@thev15company.in?subject="+
 encodeURIComponent(
 "Collaboration Enquiry - "+
 creator.name
 );
-
 connect.textContent=
 "Connect →";
-
 actions.appendChild(
 connect
 );
-
-
 info.appendChild(name);
 info.appendChild(meta);
 info.appendChild(badges);
 info.appendChild(actions);
-
 card.appendChild(avatar);
 card.appendChild(info);
-
 return card;
-
 }
-
-
 /* =====================================================
    CAROUSEL
 ===================================================== */
-
 const creatorTrack=
 document.getElementById(
 "creatorTrack"
 );
-
 const creatorCarousel=
 document.getElementById(
 "creatorCarousel"
 );
-
 const prevBtn=
 document.getElementById(
 "prevBtn"
 );
-
 const nextBtn=
 document.getElementById(
 "nextBtn"
 );
-
 let creatorPosition=1;
-
 let creatorPages=[];
-
-
 function buildCreatorCarousel(){
-
 creatorTrack.innerHTML="";
-
 creatorPosition=1;
-
 const shuffled=
 shuffleCreators(
 creators
 );
-
 const perPage=3;
-
-
 for(
 let i=0;
 i<shuffled.length;
 i+=perPage
 ){
-
 const page=
 document.createElement("div");
-
 page.className=
 "creator-page";
-
-
 const group=
 shuffled.slice(
 i,
 i+perPage
 );
-
-
 group.forEach(
 creator=>{
 page.appendChild(
@@ -3332,195 +2704,127 @@ creator
 );
 }
 );
-
-
 creatorTrack.appendChild(
 page
 );
-
 }
-
-
 creatorPages=
 Array.from(
 creatorTrack.querySelectorAll(
 ".creator-page"
 )
 );
-
-
 if(!creatorPages.length){
 return;
 }
-
-
 const lastClone=
 creatorPages[
 creatorPages.length-1
 ].cloneNode(true);
-
-
 const firstClone=
 creatorPages[0].cloneNode(true);
-
-
 creatorTrack.insertBefore(
 lastClone,
 creatorTrack.firstElementChild
 );
-
 creatorTrack.appendChild(
 firstClone
 );
-
-
 creatorTrack.style.transition=
 "none";
-
 creatorTrack.style.transform=
 "translateX(-100%)";
-
 }
-
-
 function nextCreators(){
-
 if(!creatorPages.length){
 return;
 }
-
 creatorPosition++;
-
 creatorTrack.style.transition=
 "transform .55s cubic-bezier(.22,.61,.36,1)";
-
 creatorTrack.style.transform=
 "translateX(-"+
 creatorPosition*100+
 "%)";
-
 }
-
-
 function previousCreators(){
-
 if(!creatorPages.length){
 return;
 }
-
 creatorPosition--;
-
 creatorTrack.style.transition=
 "transform .55s cubic-bezier(.22,.61,.36,1)";
-
 creatorTrack.style.transform=
 "translateX(-"+
 creatorPosition*100+
 "%)";
-
 }
-
-
 nextBtn.addEventListener(
 "click",
 nextCreators
 );
-
 prevBtn.addEventListener(
 "click",
 previousCreators
 );
-
-
 creatorTrack.addEventListener(
 "transitionend",
 function(){
-
 const total=
 creatorPages.length;
-
-
 if(
 creatorPosition===
 total+1
 ){
-
 creatorTrack.style.transition=
 "none";
-
 creatorPosition=1;
-
 creatorTrack.style.transform=
 "translateX(-100%)";
-
 }
-
-
 if(
 creatorPosition===0
 ){
-
 creatorTrack.style.transition=
 "none";
-
 creatorPosition=
 total;
-
 creatorTrack.style.transform=
 "translateX(-"+
 total*100+
 "%)";
-
 }
-
 });
-
-
 /* =====================================================
    TOUCH SWIPE
 ===================================================== */
-
 let creatorStartX=0;
-
 let creatorStartY=0;
-
-
 creatorCarousel.addEventListener(
 "touchstart",
 function(event){
-
 const touch=
 event.touches[0];
-
 creatorStartX=
 touch.clientX;
-
 creatorStartY=
 touch.clientY;
-
 },
 {
 passive:true
 }
 );
-
-
 creatorCarousel.addEventListener(
 "touchend",
 function(event){
-
 const touch=
 event.changedTouches[0];
-
 const diffX=
 touch.clientX-
 creatorStartX;
-
 const diffY=
 touch.clientY-
 creatorStartY;
-
-
 if(
 Math.abs(diffX)<45 ||
 Math.abs(diffX)<
@@ -3528,114 +2832,72 @@ Math.abs(diffY)
 ){
 return;
 }
-
-
 if(diffX<0){
-
 nextCreators();
-
 }
 else{
-
 previousCreators();
-
 }
-
 },
 {
 passive:true
 }
 );
-
-
 /* =====================================================
    EXPLORER
 ===================================================== */
-
 function openExplorer(){
-
 document
 .getElementById("explorer")
 .classList.add("active");
-
 document
 .body
 .classList.add("no-scroll");
-
 }
-
-
 function closeExplorer(){
-
 document
 .getElementById("explorer")
 .classList.remove("active");
-
 document
 .body
 .classList.remove("no-scroll");
-
 }
-
-
 /* =====================================================
    FOLLOWER NUMBER
 ===================================================== */
-
 function getFollowerNumber(value){
-
 if(!value){
 return 0;
 }
-
-
 let text=
 String(value)
 .toUpperCase()
 .replace(/,/g,"")
 .trim();
-
-
 if(text.endsWith("K")){
-
 return parseFloat(
 text.replace("K","")
 )*1000;
-
 }
-
-
 if(text.endsWith("M")){
-
 return parseFloat(
 text.replace("M","")
 )*1000000;
-
 }
-
-
 return parseFloat(text)||0;
-
 }
-
-
 /* =====================================================
    SORT
 ===================================================== */
-
 function sortCreators(
 list,
 sortValue
 ){
-
 const sorted=
 [...list];
-
-
 if(sortValue===
 "followers-high"
 ){
-
 sorted.sort(
 (a,b)=>
 getFollowerNumber(
@@ -3645,15 +2907,11 @@ getFollowerNumber(
 a.followers
 )
 );
-
 }
-
-
 else if(
 sortValue===
 "followers-low"
 ){
-
 sorted.sort(
 (a,b)=>
 getFollowerNumber(
@@ -3663,28 +2921,20 @@ getFollowerNumber(
 b.followers
 )
 );
-
 }
-
-
 else if(
 sortValue==="name"
 ){
-
 sorted.sort(
 (a,b)=>
 a.name.localeCompare(
 b.name
 )
 );
-
 }
-
-
 else if(
 sortValue==="newest"
 ){
-
 sorted.sort(
 (a,b)=>
 new Date(
@@ -3696,43 +2946,27 @@ a.dateAdded||
 "1970-01-01"
 )
 );
-
 }
-
-
 return sorted;
-
 }
-
-
 /* =====================================================
    CREATOR DIRECTORY STATE
 ===================================================== */
-
 window.currentCreatorFilter=
 "All";
-
 window.currentCreatorType=
 "All";
-
 window.currentCreatorSort=
 "default";
-
 window.currentCreatorTitle=
 "All Creators In Our Network";
-
 window.currentCreatorDescription=
 "Explore creators across multiple niches and audience sizes.";
-
-
 /* =====================================================
    OPEN CREATORS
 ===================================================== */
-
 function openCreators(){
-
 openExplorer();
-
 renderCreatorDirectory(
 "All Creators In Our Network",
 "Explore creators across multiple niches and audience sizes.",
@@ -3740,38 +2974,27 @@ renderCreatorDirectory(
 "default",
 "All"
 );
-
 }
-
-
 /* =====================================================
    TYPE FILTER
 ===================================================== */
-
 function filterByCreatorType(
 list,
 type
 ){
-
 if(type==="All"){
 return list;
 }
-
-
 return list.filter(
 creator=>
 getCreatorTier(
 creator
 )===type
 );
-
 }
-
-
 /* =====================================================
    RENDER DIRECTORY
 ===================================================== */
-
 function renderCreatorDirectory(
 title,
 description,
@@ -3779,18 +3002,13 @@ filter="All",
 sortValue="default",
 type="All"
 ){
-
 const content=
 document.getElementById(
 "explorerContent"
 );
-
-
 let filtered=
 filter==="All"
-
 ? creators
-
 : creators.filter(
 creator=>
 creator.categories &&
@@ -3798,131 +3016,78 @@ creator.categories.includes(
 filter
 )
 );
-
-
 filtered=
 filterByCreatorType(
 filtered,
 type
 );
-
-
 const sorted=
 sortCreators(
 filtered,
 sortValue
 );
-
-
 let cards="";
-
-
 sorted.forEach(
 creator=>{
-
 let subscriberText="";
-
-
 if(creator.subscribers){
-
 subscriberText=
 " · "+
 creator.subscribers+
 " Subscribers";
-
 }
-
-
 cards+=`
-
 <div class="profile-card">
-
 <div class="profile-photo">
-
 <img
 src="${creator.image}"
 alt="${creator.name}"
 >
-
 </div>
-
-
 <div class="profile-name">
-
 ${creator.name}
-
 ${
 creator.verified
-
 ?
-
 `<span
 class="verified-tick"
 title="Verified by The V15 Company">
 </span>`
-
 :
-
 ""
 }
-
 </div>
-
-
 <div class="profile-role">
-
 ${creator.handle||"Creator"}
-
 </div>
-
-
 <div class="profile-meta">
-
 ${creator.followers}
 Followers
 ${subscriberText}
-
 </div>
-
-
 <div class="profile-badges">
-
 ${getProfileBadgeHTML(creator)}
-
 </div>
-
-
 <div class="profile-tags">
-
 ${
 (creator.categories||[])
 .map(
 category=>
 `
-
 <span class="profile-tag">
 ${category}
 </span>
-
 `
 )
 .join("")
 }
-
 </div>
-
-
 <div class="profile-actions">
-
-
 ${
 creator.instagram &&
 creator.instagram!=="#"
-
 ?
-
 `
-
 <a
 href="${creator.instagram}"
 target="_blank"
@@ -3931,24 +3096,10 @@ class="profile-btn profile-instagram"
 >
 View Profile
 </a>
-
 `
-
 :
-
 ""
-
 }
-
-
-<button
-class="profile-btn profile-calc"
-onclick="openCreatorCalculator('${creator.handle}')"
->
-Engagement
-</button>
-
-
 <a
 href="mailto:contact@thev15company.in?subject=${encodeURIComponent(
 "Creator enquiry - "+
@@ -3958,56 +3109,37 @@ class="profile-btn profile-connect"
 >
 Connect
 </a>
-
-
 </div>
-
 </div>
-
 `;
-
 });
-
-
 if(!sorted.length){
-
 cards=`
-
 <div class="empty-state">
-
 <h3>
 No creators found.
 </h3>
-
 <p>
 No creators currently match
 the selected filters.
 </p>
-
 <button
 class="explore-btn"
 onclick="resetCreatorFilters()"
 >
 Show All Creators
 </button>
-
 </div>
-
 `;
-
 }
-
-
 /* =====================================================
    FILTER BUTTONS
 ===================================================== */
-
 const nicheButtons=
 categories
 .map(
 category=>
 `
-
 <button
 class="filter-btn
 ${filter===category?"active":""}"
@@ -4015,26 +3147,17 @@ onclick="openNiche('${category}')"
 >
 ${category}
 </button>
-
 `
 )
 .join("");
-
-
 content.innerHTML=`
-
 <h1 class="explorer-title">
 ${title}
 </h1>
-
-
 <p class="explorer-description">
 ${description}
 </p>
-
-
 <div class="filter-row">
-
 <button
 class="filter-btn
 ${filter==="All"?"active":""}"
@@ -4048,14 +3171,9 @@ onclick="renderCreatorDirectory(
 >
 All
 </button>
-
 ${nicheButtons}
-
 </div>
-
-
 <div class="creator-type-filter">
-
 <button
 class="type-filter-btn type-all
 ${type==="All"?"active":""}"
@@ -4063,8 +3181,6 @@ onclick="changeCreatorType('All')"
 >
 ALL CREATORS
 </button>
-
-
 <button
 class="type-filter-btn type-nano
 ${type==="Nano"?"active":""}"
@@ -4072,8 +3188,6 @@ onclick="changeCreatorType('Nano')"
 >
 NANO
 </button>
-
-
 <button
 class="type-filter-btn type-micro
 ${type==="Micro"?"active":""}"
@@ -4081,8 +3195,6 @@ onclick="changeCreatorType('Micro')"
 >
 MICRO
 </button>
-
-
 <button
 class="type-filter-btn type-macro
 ${type==="Macro"?"active":""}"
@@ -4090,8 +3202,6 @@ onclick="changeCreatorType('Macro')"
 >
 MACRO
 </button>
-
-
 <button
 class="type-filter-btn type-mega
 ${type==="Mega"?"active":""}"
@@ -4099,219 +3209,133 @@ onclick="changeCreatorType('Mega')"
 >
 MEGA
 </button>
-
 </div>
-
-
 <div class="sort-row">
-
 <span class="sort-label">
 Sort By
 </span>
-
-
 <select
 class="sort-select"
 onchange="changeCreatorSort(this.value)"
 >
-
 <option
 value="default"
 ${sortValue==="default"?"selected":""}
 >
 Default
 </option>
-
-
 <option
 value="followers-high"
 ${sortValue==="followers-high"?"selected":""}
 >
 Followers: High to Low
 </option>
-
-
 <option
 value="followers-low"
 ${sortValue==="followers-low"?"selected":""}
 >
 Followers: Low to High
 </option>
-
-
 <option
 value="name"
 ${sortValue==="name"?"selected":""}
 >
 Name: A to Z
 </option>
-
-
 <option
 value="newest"
 ${sortValue==="newest"?"selected":""}
 >
 Newest Added
 </option>
-
 </select>
-
 </div>
-
-
 <div class="profile-grid">
-
 ${cards}
-
 </div>
-
 `;
-
-
 window.currentCreatorFilter=
 filter;
-
 window.currentCreatorType=
 type;
-
 window.currentCreatorSort=
 sortValue;
-
 window.currentCreatorTitle=
 title;
-
 window.currentCreatorDescription=
 description;
-
 }
-
-
 /* =====================================================
    CHANGE CREATOR TYPE
 ===================================================== */
-
 function changeCreatorType(type){
-
 renderCreatorDirectory(
-
 window.currentCreatorTitle,
-
 window.currentCreatorDescription,
-
 window.currentCreatorFilter,
-
 window.currentCreatorSort,
-
 type
-
 );
-
 }
-
-
 /* =====================================================
    RESET FILTERS
 ===================================================== */
-
 function resetCreatorFilters(){
-
 renderCreatorDirectory(
-
 "All Creators In Our Network",
-
 "Explore creators across multiple niches and audience sizes.",
-
 "All",
-
 "default",
-
 "All"
-
 );
-
 }
-
-
 /* =====================================================
    CHANGE SORT
 ===================================================== */
-
 function changeCreatorSort(
 sortValue
 ){
-
 renderCreatorDirectory(
-
 window.currentCreatorTitle,
-
 window.currentCreatorDescription,
-
 window.currentCreatorFilter,
-
 sortValue,
-
 window.currentCreatorType
-
 );
-
 }
-
-
 /* =====================================================
    NICHE
 ===================================================== */
-
 function openNiche(niche){
-
 openExplorer();
-
 renderCreatorDirectory(
-
 `${niche} Creators`,
-
 `Explore creators from our network specialising in ${niche}.`,
-
 niche,
-
 "default",
-
 "All"
-
 );
-
 }
-
-
 /* =====================================================
    ENGAGEMENT CALCULATOR
 ===================================================== */
-
 function calculateEngagement(
 followers,
 likes,
 comments
 ){
-
 followers=
 Number(followers);
-
 likes=
 Number(likes);
-
 comments=
 Number(comments);
-
-
 if(
 !followers ||
 followers<=0
 ){
-
 return null;
-
 }
-
-
 return (
 (
 likes+
@@ -4319,44 +3343,18 @@ comments
 )/
 followers
 )*100;
-
 }
-
-
 /* =====================================================
-   OPEN CREATOR CALCULATOR
+   CREATOR TOOLS - ENGAGEMENT CALCULATOR
 ===================================================== */
-
-function openCreatorCalculator(
-handle
-){
-
-const creator=
-creators.find(
-item=>
-item.handle===handle
-);
-
-
-if(!creator){
-return;
-}
-
+function openEngagementCalculator(){
 
 openExplorer();
-
 
 const content=
 document.getElementById(
 "explorerContent"
 );
-
-
-const stored=
-getStoredEngagement(
-creator
-);
-
 
 content.innerHTML=`
 
@@ -4364,195 +3362,143 @@ content.innerHTML=`
 Engagement Calculator
 </h1>
 
-
 <p class="explorer-description">
-
-Calculate ${creator.name}'s Instagram
-engagement rate and save the result
-to the creator profile.
-
+Calculate your Instagram engagement rate
+using your followers, average likes and
+average comments.
 </p>
-
 
 <div class="calculator-card">
 
 <div class="calculator-title">
-
-${creator.name}
-
+Instagram Engagement Calculator
 </div>
-
 
 <div class="calculator-subtitle">
-
-${creator.handle}
-· ${creator.followers} Followers
-
+Enter your Instagram profile numbers below
+to calculate your engagement rate.
 </div>
-
 
 <div class="calculator-grid">
 
-
 <div class="calculator-field">
-
 <label>
 Followers
 </label>
 
 <input
-id="calcFollowers"
+id="toolCalcFollowers"
 type="number"
-value="${getFollowerNumber(creator.followers)}"
-placeholder="Followers"
+placeholder="e.g. 10000"
+min="1"
 >
-
 </div>
 
-
 <div class="calculator-field">
-
 <label>
 Average Likes
 </label>
 
 <input
-id="calcLikes"
+id="toolCalcLikes"
 type="number"
-placeholder="Average likes"
+placeholder="e.g. 500"
 min="0"
 >
-
 </div>
 
-
 <div class="calculator-field">
-
 <label>
 Average Comments
 </label>
 
 <input
-id="calcComments"
+id="toolCalcComments"
 type="number"
-placeholder="Average comments"
+placeholder="e.g. 50"
 min="0"
 >
-
 </div>
 
-
 </div>
-
 
 <div class="calculator-actions">
 
 <button
 class="calculate-btn"
-onclick="calculateAndSaveCreator('${creator.handle}')"
+onclick="calculateToolEngagement()"
 >
-Calculate & Save
+Calculate Engagement
 </button>
-
 
 <div
 class="calculator-result"
-id="calculatorResult"
+id="toolCalculatorResult"
 >
-
-${
-stored !== null
-
-?
-
-`Current saved engagement:
-<strong>${stored.toFixed(2)}%</strong>`
-
-:
-
-"Enter likes and comments to calculate."
-
-}
-
+Enter your details to calculate.
 </div>
 
 </div>
 
 </div>
-
 
 <div class="empty-state">
 
 <h3>
-How it works
+How Engagement Rate Is Calculated
 </h3>
 
 <p>
 
 Engagement Rate =
+<br><br>
+
 (Average Likes + Average Comments)
 ÷ Followers × 100
 
 <br><br>
 
-After saving, the engagement rate
-will appear automatically on the
-creator's profile as a badge.
+Example: If you have 10,000 followers,
+500 average likes and 50 average comments,
+your engagement rate would be 5.50%.
 
 </p>
-
 
 <button
 class="explore-btn"
 onclick="openCreators()"
 >
-← Back To Creators
+← Explore Creators
 </button>
 
 </div>
 
 `;
-
 }
-
-
 /* =====================================================
-   CALCULATE AND SAVE
+   CALCULATE CREATOR TOOL ENGAGEMENT
 ===================================================== */
-
-function calculateAndSaveCreator(
-handle
-){
-
-const creator=
-creators.find(
-item=>
-item.handle===handle
-);
-
-
-if(!creator){
-return;
-}
-
+function calculateToolEngagement(){
 
 const followers=
 document.getElementById(
-"calcFollowers"
+"toolCalcFollowers"
 ).value;
-
 
 const likes=
 document.getElementById(
-"calcLikes"
+"toolCalcLikes"
 ).value;
-
 
 const comments=
 document.getElementById(
-"calcComments"
+"toolCalcComments"
 ).value;
 
+const result=
+document.getElementById(
+"toolCalculatorResult"
+);
 
 const rate=
 calculateEngagement(
@@ -4560,13 +3506,6 @@ followers,
 likes,
 comments
 );
-
-
-const result=
-document.getElementById(
-"calculatorResult"
-);
-
 
 if(
 rate===null ||
@@ -4581,50 +3520,28 @@ return;
 
 }
 
-
-saveEngagement(
-creator,
-rate
-);
-
-
-result.innerHTML=
-`
-Saved Engagement:
+result.innerHTML=`
+Engagement Rate:
 <strong>
 ${rate.toFixed(2)}%
 </strong>
 `;
 
-
-/* Refresh featured carousel */
-
-buildCreatorCarousel();
-
 }
-
-
 /* =====================================================
    NICHE GRID
 ===================================================== */
-
 function buildNicheGrid(){
-
 const grid=
 document.getElementById(
 "nicheGrid"
 );
-
 if(!grid){
 return;
 }
-
 grid.innerHTML="";
-
-
 categories.forEach(
 category=>{
-
 const matchingCreators=
 creators.filter(
 creator=>
@@ -4633,30 +3550,18 @@ creator.categories.includes(
 category
 )
 );
-
-
 const card=
 document.createElement("div");
-
 card.className=
 "niche-card";
-
-
 card.onclick=
 ()=>openNiche(category);
-
-
 card.innerHTML=`
-
 <div class="niche-name">
 ${category}
 </div>
-
-
 <div class="niche-sub">
-
 ${matchingCreators.length}
-
 ${
 matchingCreators.length===1
 ?
@@ -4664,120 +3569,72 @@ matchingCreators.length===1
 :
 "Creators"
 }
-
 </div>
-
 `;
-
-
 grid.appendChild(card);
-
 });
-
 }
-
-
 /* =====================================================
    SOCIAL MEDIA MANAGER
 ===================================================== */
-
 function openSocialManagers(){
-
 openExplorer();
-
 const content=
 document.getElementById(
 "explorerContent"
 );
-
-
 content.innerHTML=`
-
 <h1 class="explorer-title">
 Explore Social Media Managers
 </h1>
-
-
 <p class="explorer-description">
-
 Meet professionals from our network
 who focus on strategy, content systems
 and meaningful digital growth.
-
 </p>
-
-
 <div class="professional-profile">
-
-
 <div class="professional-photo">
-
 <img
 src="images/divya.jpg"
 alt="Divya Rajput"
 >
-
 </div>
-
-
 <div>
-
 <div class="professional-name">
 Divya Rajput
 </div>
-
-
 <div class="professional-role">
 Social Media Manager
 </div>
-
-
 <div class="professional-experience">
 4+ Years Experience
 </div>
-
-
 <div class="professional-tags">
-
 <span class="professional-tag">
 Instagram
 </span>
-
 <span class="professional-tag">
 LinkedIn
 </span>
-
 <span class="professional-tag">
 Content Strategy
 </span>
-
 </div>
-
-
 <div class="professional-quote">
-
 "I don't just chase impressions.
 I build content systems and strategies
 that make the right people remember
 your brand."
-
 </div>
-
-
 <div class="professional-description">
-
 Divya Rajput is a Digital Marketer
 specialised in Content Strategy.
 Her work focuses on building content
 systems, creating distinctive brand
 voices and planning content across
 social, video and written formats.
-
 </div>
-
-
 <div class="professional-actions">
-
 <a
 href="https://www.linkedin.com/in/divya-rajput-9906a32b5/"
 target="_blank"
@@ -4786,106 +3643,67 @@ class="linkedin-btn"
 >
 View LinkedIn →
 </a>
-
-
 <a
 href="mailto:contact@thev15company.in?subject=Connect with Divya Rajput through The V15 Company"
 class="v15-connect-btn"
 >
 Connect Through The V15 Company →
 </a>
-
 </div>
-
 </div>
-
 </div>
-
 `;
-
 }
-
-
 /* =====================================================
    COMING SOON
 ===================================================== */
-
 function openComingSoon(category){
-
 openExplorer();
-
 const content=
 document.getElementById(
 "explorerContent"
 );
-
-
 content.innerHTML=`
-
 <h1 class="explorer-title">
 Explore ${category}
 </h1>
-
-
 <div class="empty-state">
-
 <h3>
 Our network is growing.
 </h3>
-
-
 <p>
-
 We are continuously expanding
 our network of trusted digital
 professionals.
-
 New ${category.toLowerCase()}
 profiles will be added as our
 talent network grows.
-
 </p>
-
-
 <a
 href="mailto:contact@thev15company.in?subject=Join The V15 Company Network - ${category}"
 class="explore-btn"
 >
 Join The Network →
 </a>
-
 </div>
-
 `;
-
 }
-
-
 /* =====================================================
    ESCAPE
 ===================================================== */
-
 document.addEventListener(
 "keydown",
 event=>{
-
 if(event.key==="Escape"){
 closeExplorer();
 }
-
 }
 );
-
-
 /* =====================================================
    INITIALIZE
 ===================================================== */
-
 buildNicheGrid();
-
 buildCreatorCarousel();
-
 </script>
-
 </body>
 </html>
