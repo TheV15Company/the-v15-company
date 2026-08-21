@@ -296,7 +296,6 @@ select{
     align-items:center;
     gap:17px;
     overflow:hidden;
-    box-shadow:0 12px 35px rgba(26,88,125,.07);
 }
 
 .creator-card::before{
@@ -465,6 +464,96 @@ select{
 
 
 /* =====================================================
+   CREATOR BADGES
+===================================================== */
+
+.creator-badges{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:6px;
+    margin:2px 0 10px;
+}
+
+.creator-badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:22px;
+    padding:4px 9px;
+    border-radius:8px;
+    font-size:8px;
+    line-height:1;
+    font-weight:900;
+    letter-spacing:.35px;
+    white-space:nowrap;
+    border:1px solid #dce8f2;
+    background:#f8fbfd;
+    color:#475467;
+}
+
+.creator-badge.verified{
+    background:#fff8df;
+    color:#946b00;
+    border-color:#efd47a;
+}
+
+.creator-badge.trusted{
+    background:#eefaf3;
+    color:#087443;
+    border-color:#b8e3ca;
+}
+
+.creator-badge.new{
+    background:#eef8ff;
+    color:#1769aa;
+    border-color:#b9dcf5;
+}
+
+.creator-badge.nano{
+    background:#f5f5f5;
+    color:#667085;
+    border-color:#d9d9d9;
+}
+
+.creator-badge.micro{
+    background:#eef8ff;
+    color:#1769aa;
+    border-color:#b9dcf5;
+}
+
+.creator-badge.macro{
+    background:#f2efff;
+    color:#6842c2;
+    border-color:#d8ccff;
+}
+
+.creator-badge.mega{
+    background:#fff0f0;
+    color:#b42318;
+    border-color:#f3b8b8;
+}
+
+.creator-badge.ugc{
+    background:#fff4fa;
+    color:#b4236b;
+    border-color:#f2c2da;
+}
+
+.creator-badge.ai{
+    background:#f3f0ff;
+    color:#6941c6;
+    border-color:#d7c8ff;
+}
+
+.creator-badge.rising{
+    background:#fff8ed;
+    color:#b54708;
+    border-color:#f4d3a4;
+}
+
+
+/* =====================================================
    VERIFIED GOLDEN TICK
 ===================================================== */
 
@@ -489,6 +578,96 @@ select{
 .verified-tick::after{
     content:"✓";
     line-height:1;
+}
+
+
+/* =====================================================
+   PROFILE BADGES
+===================================================== */
+
+.profile-badges{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:6px;
+    margin:2px 0 12px;
+}
+
+.profile-badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:23px;
+    padding:5px 9px;
+    border-radius:8px;
+    font-size:8px;
+    line-height:1;
+    font-weight:900;
+    letter-spacing:.3px;
+    white-space:nowrap;
+    border:1px solid #dce8f2;
+    background:#f8fbfd;
+    color:#475467;
+}
+
+.profile-badge.verified{
+    background:#fff8df;
+    color:#946b00;
+    border-color:#efd47a;
+}
+
+.profile-badge.trusted{
+    background:#eefaf3;
+    color:#087443;
+    border-color:#b8e3ca;
+}
+
+.profile-badge.new{
+    background:#eef8ff;
+    color:#1769aa;
+    border-color:#b9dcf5;
+}
+
+.profile-badge.nano{
+    background:#f5f5f5;
+    color:#667085;
+    border-color:#d9d9d9;
+}
+
+.profile-badge.micro{
+    background:#eef8ff;
+    color:#1769aa;
+    border-color:#b9dcf5;
+}
+
+.profile-badge.macro{
+    background:#f2efff;
+    color:#6842c2;
+    border-color:#d8ccff;
+}
+
+.profile-badge.mega{
+    background:#fff0f0;
+    color:#b42318;
+    border-color:#f3b8b8;
+}
+
+.profile-badge.ugc{
+    background:#fff4fa;
+    color:#b4236b;
+    border-color:#f2c2da;
+}
+
+.profile-badge.ai{
+    background:#f3f0ff;
+    color:#6941c6;
+    border-color:#d7c8ff;
+}
+
+.profile-badge.rising{
+    background:#fff8ed;
+    color:#b54708;
+    border-color:#f4d3a4;
 }
 
 
@@ -1304,6 +1483,16 @@ footer strong{
     .creator-action{
         font-size:9px;
         padding:6px 9px;
+    }
+
+    .creator-badge{
+        font-size:7px;
+        padding:4px 7px;
+    }
+
+    .profile-badge{
+        font-size:7px;
+        padding:4px 7px;
     }
 
     .network-grid,
@@ -2265,63 +2454,66 @@ image:"images/Vinita.jpg",
 instagram:"https://www.instagram.com/reviewbyvisshi?igsh=MTl3YnN0bHo3NjhpbQ==",
 dateAdded:"2026-08-19"
 },
-   {
-    name:"Guneet Kaur",
-    handle:"@guneet.kaur.73",
-    followers:"192K",
-    categories:[
-        "Beauty",
-        "Lifestyle",
-        "Fashion"
-    ],
-    image:"images/Guneet.jpg",
-    instagram:
-    "https://www.instagram.com/guneet.kaur.73?igsh=MWc4Z204bjgxYXlpaQ==",
-    dateAdded:"2026-08-20"
+
+{
+name:"Guneet Kaur",
+handle:"@guneet.kaur.73",
+followers:"192K",
+categories:[
+"Beauty",
+"Lifestyle",
+"Fashion"
+],
+image:"images/Guneet.jpg",
+instagram:
+"https://www.instagram.com/guneet.kaur.73?igsh=MWc4Z204bjgxYXlpaQ==",
+dateAdded:"2026-08-20"
 },
 
 {
-    name:"Shruti Singh",
-    handle:"@_shrutii__1",
-    followers:"19K",
-    categories:[
-        "Beauty",
-        "Lifestyle",
-        "Fashion"
-    ],
-    image:"images/Shruti.jpg",
-    instagram:
-    "https://www.instagram.com/_shrutii__1?igsh=MTVrYmZxcnJld2M4cg==",
-    dateAdded:"2026-08-20"
-},
-{
-    name:"Monisha Mehta",
-    handle:"@itsmonishamehta",
-    followers:"299K",
-    categories:[
-        "Travel",
-        "Lifestyle",
-        "Fashion"
-    ],
-    image:"images/Monisha.jpg",
-    instagram:
-    "https://www.instagram.com/itsmonishamehta?igsi=MXYwYzFvdTF3aWxueg==",
-    trusted:true,
-    dateAdded:"2026-08-21"
+name:"Shruti Singh",
+handle:"@_shrutii__1",
+followers:"19K",
+categories:[
+"Beauty",
+"Lifestyle",
+"Fashion"
+],
+image:"images/Shruti.jpg",
+instagram:
+"https://www.instagram.com/_shrutii__1?igsh=MTVrYmZxcnJld2M4cg==",
+dateAdded:"2026-08-20"
 },
 
 {
-    name:"Gyanendra",
-    handle:"@inyour.pocket",
-    followers:"120K",
-    categories:[
-        "Tech"
-    ],
-    image:"images/Gyanendra.jpg",
-    instagram:
-    "https://www.instagram.com/inyour.pocket?igsi=aTBmcDNvYXYwaDM1",
-    dateAdded:"2026-08-21"
+name:"Monisha Mehta",
+handle:"@itsmonishamehta",
+followers:"299K",
+categories:[
+"Travel",
+"Lifestyle",
+"Fashion"
+],
+image:"images/Monisha.jpg",
+instagram:
+"https://www.instagram.com/itsmonishamehta?igsi=MXYwYzFvdTF3aWxueg==",
+trusted:true,
+dateAdded:"2026-08-21"
 },
+
+{
+name:"Gyanendra",
+handle:"@inyour.pocket",
+followers:"120K",
+categories:[
+"Tech"
+],
+image:"images/Gyanendra.jpg",
+instagram:
+"https://www.instagram.com/inyour.pocket?igsi=aTBmcDNvYXYwaDM1",
+dateAdded:"2026-08-21"
+}
+
 ];
 
 
@@ -2434,6 +2626,367 @@ return details;
 
 
 /* =====================================================
+   FOLLOWER NUMBER
+===================================================== */
+
+function getFollowerNumber(value){
+
+if(!value)return 0;
+
+let text=
+String(value)
+.toUpperCase()
+.replace(/,/g,"")
+.trim();
+
+if(text.endsWith("K")){
+
+return parseFloat(
+text.replace("K","")
+)*1000;
+
+}
+
+if(text.endsWith("M")){
+
+return parseFloat(
+text.replace("M","")
+)*1000000;
+
+}
+
+return parseFloat(text)||0;
+
+}
+
+
+/* =====================================================
+   CREATOR SIZE
+===================================================== */
+
+function getCreatorSize(creator){
+
+const followers=
+getFollowerNumber(creator.followers);
+
+if(followers>=1000000){
+
+return{
+name:"MEGA CREATOR",
+className:"mega"
+};
+
+}
+
+if(followers>=100000){
+
+return{
+name:"MACRO CREATOR",
+className:"macro"
+};
+
+}
+
+if(followers>=10000){
+
+return{
+name:"MICRO CREATOR",
+className:"micro"
+};
+
+}
+
+return{
+name:"NANO CREATOR",
+className:"nano"
+};
+
+}
+
+
+/* =====================================================
+   NEWLY ADDED CHECK
+   SHOWS FOR 7 DAYS FROM dateAdded
+===================================================== */
+
+function isNewlyAdded(creator){
+
+if(!creator.dateAdded)return false;
+
+const addedDate=
+new Date(
+creator.dateAdded+"T00:00:00"
+);
+
+const now=
+new Date();
+
+const difference=
+now.getTime()-
+addedDate.getTime();
+
+const sevenDays=
+7*24*60*60*1000;
+
+return(
+difference>=0 &&
+difference<sevenDays
+);
+
+}
+
+
+/* =====================================================
+   BADGE DATA
+===================================================== */
+
+function getCreatorBadges(creator){
+
+const badges=[];
+
+
+/* VERIFIED */
+
+if(creator.verified===true){
+
+badges.push(`
+<span
+class="creator-badge verified"
+title="Verified by The V15 Company">
+✓ VERIFIED
+</span>
+`);
+
+}
+
+
+/* TRUSTED */
+
+if(creator.trusted===true){
+
+badges.push(`
+<span
+class="creator-badge trusted"
+title="Trusted Creator">
+✓ TRUSTED
+</span>
+`);
+
+}
+
+
+/* NEWLY ADDED */
+
+if(isNewlyAdded(creator)){
+
+badges.push(`
+<span
+class="creator-badge new"
+title="Added to The V15 Company network within the last 7 days">
+NEWLY ADDED
+</span>
+`);
+
+}
+
+
+/* CREATOR SIZE */
+
+const size=
+getCreatorSize(creator);
+
+badges.push(`
+<span
+class="creator-badge ${size.className}">
+${size.name}
+</span>
+`);
+
+
+/* UGC */
+
+if(
+creator.categories &&
+(
+creator.categories.includes("UGC") ||
+creator.categories.includes("Tech UGC")
+)
+){
+
+badges.push(`
+<span
+class="creator-badge ugc">
+UGC CREATOR
+</span>
+`);
+
+}
+
+
+/* AI */
+
+if(
+creator.categories &&
+creator.categories.includes("AI")
+){
+
+badges.push(`
+<span
+class="creator-badge ai">
+AI CREATOR
+</span>
+`);
+
+}
+
+
+/* RISING */
+
+if(
+getFollowerNumber(creator.followers)<10000
+){
+
+badges.push(`
+<span
+class="creator-badge rising">
+RISING CREATOR
+</span>
+`);
+
+}
+
+
+return badges.join("");
+
+}
+
+
+/* =====================================================
+   PROFILE BADGE DATA
+===================================================== */
+
+function getProfileBadges(creator){
+
+const badges=[];
+
+
+/* VERIFIED */
+
+if(creator.verified===true){
+
+badges.push(`
+<span
+class="profile-badge verified"
+title="Verified by The V15 Company">
+✓ VERIFIED
+</span>
+`);
+
+}
+
+
+/* TRUSTED */
+
+if(creator.trusted===true){
+
+badges.push(`
+<span
+class="profile-badge trusted"
+title="Trusted Creator">
+✓ TRUSTED
+</span>
+`);
+
+}
+
+
+/* NEWLY ADDED */
+
+if(isNewlyAdded(creator)){
+
+badges.push(`
+<span
+class="profile-badge new"
+title="Added to The V15 Company network within the last 7 days">
+NEWLY ADDED
+</span>
+`);
+
+}
+
+
+/* CREATOR SIZE */
+
+const size=
+getCreatorSize(creator);
+
+badges.push(`
+<span
+class="profile-badge ${size.className}">
+${size.name}
+</span>
+`);
+
+
+/* UGC */
+
+if(
+creator.categories &&
+(
+creator.categories.includes("UGC") ||
+creator.categories.includes("Tech UGC")
+)
+){
+
+badges.push(`
+<span
+class="profile-badge ugc">
+UGC CREATOR
+</span>
+`);
+
+}
+
+
+/* AI */
+
+if(
+creator.categories &&
+creator.categories.includes("AI")
+){
+
+badges.push(`
+<span
+class="profile-badge ai">
+AI CREATOR
+</span>
+`);
+
+}
+
+
+/* RISING */
+
+if(
+getFollowerNumber(creator.followers)<10000
+){
+
+badges.push(`
+<span
+class="profile-badge rising">
+RISING CREATOR
+</span>
+`);
+
+}
+
+
+return badges.join("");
+
+}
+
+
+/* =====================================================
    CREATE FEATURED CREATOR CARD
 ===================================================== */
 
@@ -2499,6 +3052,16 @@ meta.className="creator-meta";
 meta.textContent=creatorDetails(creator);
 
 
+/* BADGES */
+
+const badges=document.createElement("div");
+
+badges.className="creator-badges";
+
+badges.innerHTML=
+getCreatorBadges(creator);
+
+
 const tag=document.createElement("span");
 
 tag.className="creator-tag";
@@ -2551,6 +3114,7 @@ actions.appendChild(connect);
 
 info.appendChild(name);
 info.appendChild(meta);
+info.appendChild(badges);
 info.appendChild(tag);
 info.appendChild(actions);
 
@@ -2734,7 +3298,6 @@ total*100+
 });
 
 
-
 /* =====================================================
    TOUCH SWIPE
 ===================================================== */
@@ -2816,37 +3379,6 @@ document
 /* =====================================================
    SORT
 ===================================================== */
-
-function getFollowerNumber(value){
-
-if(!value)return 0;
-
-let text=
-String(value)
-.toUpperCase()
-.replace(/,/g,"")
-.trim();
-
-if(text.endsWith("K")){
-
-return parseFloat(
-text.replace("K","")
-)*1000;
-
-}
-
-if(text.endsWith("M")){
-
-return parseFloat(
-text.replace("M","")
-)*1000000;
-
-}
-
-return parseFloat(text)||0;
-
-}
-
 
 function sortCreators(list,sortValue){
 
@@ -3016,6 +3548,15 @@ ${creator.handle||"Creator"}
 ${creator.followers}
 Followers
 ${subscriberText}
+
+</div>
+
+
+<!-- CREATOR BADGES -->
+
+<div class="profile-badges">
+
+${getProfileBadges(creator)}
 
 </div>
 
