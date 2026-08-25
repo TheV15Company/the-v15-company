@@ -1953,7 +1953,7 @@ social media and brand communication.
 
 <button
 class="explore-btn"
-onclick="openComingSoon('Copywriters')">
+onclick="openCopywriters()">
 Explore Copywriters →
 </button>
 
@@ -4847,7 +4847,105 @@ Connect Through The V15 Company →
 `;
 
 }
+function openCopywriters(){
 
+openExplorer();
+
+const content =
+document.getElementById("explorerContent");
+
+content.innerHTML = `
+<h1 class="explorer-title">
+Explore Copywriters
+</h1>
+
+<p class="explorer-description">
+Meet professional writers from our network
+who specialise in content, LinkedIn branding,
+ghostwriting and brand communication.
+</p>
+
+<div class="professional-profile">
+
+<div class="professional-photo">
+<img
+src="images/priyaa.jpg"
+alt="Priya Rangi"
+>
+</div>
+
+<div>
+
+<div class="professional-name">
+Priya Rangi
+</div>
+
+<div class="professional-role">
+Copywriter & Ghostwriter
+</div>
+
+<div class="professional-experience">
+Content Writing · LinkedIn Branding · Brand Collaborations
+</div>
+
+<div class="professional-tags">
+
+<span class="professional-tag">
+Content Writing
+</span>
+
+<span class="professional-tag">
+LinkedIn
+</span>
+
+<span class="professional-tag">
+Ghostwriting
+</span>
+
+<span class="professional-tag">
+Personal Branding
+</span>
+
+</div>
+
+<div class="professional-quote">
+"I write content that gets results,
+with a fresh perspective that helps
+brands and individuals communicate
+better."
+</div>
+
+<div class="professional-description">
+Priya Rangi is a content writer and ghostwriter
+specialised in LinkedIn branding, personal
+branding and brand communication. Her work
+focuses on creating engaging content that
+communicates clearly and is built to drive
+meaningful results.
+</div>
+
+<div class="professional-actions">
+
+<a
+href="https://www.linkedin.com/in/priya-rangi"
+target="_blank"
+rel="noopener noreferrer"
+class="linkedin-btn">
+View LinkedIn →
+</a>
+
+<a
+href="mailto:contact@thev15company.in?subject=Connect with Priya Rangi through The V15 Company"
+class="v15-connect-btn">
+Connect Through The V15 Company →
+</a>
+
+</div>
+
+</div>
+</div>
+`;
+}
 
 /* =====================================================
    COMING SOON
