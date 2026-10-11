@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07152c">
+<title>The V15 Company | Premium Creator Network</title>
+<meta name="description" content="The V15 Company connects brands with creators and digital professionals through influencer marketing and creative services.">
+<style>
+:root{--navy:#07152c;--navy2:#102b50;--blue:#173e70;--gold:#c6a15b;--gold2:#f0d9a4;--white:#fff;--ink:#17243a;--muted:#6b778a;--line:#e4e8ef;--soft:#f7f8fb;--shadow:0 18px 45px rgba(7,21,44,.09)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}button,input,select{font:inherit}button{cursor:pointer}
+.container{width:min(1140px,calc(100% - 40px));margin:auto}
+.navbar{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(18px);border-bottom:1px solid #c6a15b55}
+.nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:11px;font-size:16px;font-weight:900;color:var(--navy)}
+.logo-mark{width:43px;height:43px;display:grid;place-items:center;border-radius:13px;background:linear-gradient(145deg,#07152c,#204a7e);border:1px solid var(--gold);color:var(--gold2);font-size:15px;font-weight:950;letter-spacing:-1px}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{padding:9px 10px;border-radius:8px;color:#526078;font-size:12px;font-weight:750}
+.nav-links a:hover{background:#f2f4f8;color:var(--navy)}
+.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:11px;font-size:12px;font-weight:850;transition:.22s;border:1px solid transparent}
+.nav-cta,.btn-dark{background:var(--navy);color:#fff;box-shadow:0 7px 20px #07152c1c}
+.nav-cta:hover,.btn-dark:hover{background:var(--blue);transform:translateY(-2px)}
+.btn-outline{background:#fff;border-color:#d8c18e;color:var(--navy)}
+.btn-outline:hover{background:#fbf7ee;transform:translateY(-2px)}
+.menu-btn{display:none;background:none;border:0;font-size:27px;color:var(--navy)}
+.hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 85% 5%,#c6a15b25,transparent 32%),radial-gradient(ellipse at 8% 45%,#234d7b12,transparent 34%),linear-gradient(180deg,#fff,#f7f8fb)}
+.hero-inner{max-width:1080px;margin:auto;padding:82px 20px 58px;text-align:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid #c6a15b85;border-radius:30px;color:var(--navy2);background:#fff;font-size:10px;font-weight:900;letter-spacing:.8px}
+.gold-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.kicker{margin:20px 0 12px;color:#92703a;font-size:10px;font-weight:900;letter-spacing:2px}
+h1{max-width:900px;margin:auto;font-size:clamp(40px,6.4vw,72px);line-height:1.05;letter-spacing:-2.8px;color:var(--navy);font-weight:950}
+.gradient-text{display:block;background:linear-gradient(110deg,#0a1c37,#285585 65%,#a98545);background-clip:text;-webkit-background-clip:text;color:transparent}
+.hero-desc{max-width:690px;margin:23px auto 28px;color:var(--muted);font-size:15px;line-height:1.85}
+.hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.hero-trust{display:flex;justify-content:center;gap:12px 22px;flex-wrap:wrap;margin-top:27px;color:#536078;font-size:11px;font-weight:750}
+.hero-trust span{display:flex;align-items:center;gap:7px}.hero-stats{display:flex;justify-content:center;align-items:center;gap:40px;max-width:730px;margin:42px auto 0;padding:24px;border:1px solid #c6a15b55;border-radius:20px;background:#ffffffd9;box-shadow:0 15px 42px #07152c0b}
+.stat{display:flex;flex-direction:column;align-items:center}.stat strong{font-size:34px;line-height:1.2;letter-spacing:-1px;color:var(--navy)}.stat strong span{color:var(--gold)}.stat small{font-size:10px;color:var(--muted);font-weight:800}.stat-divider{width:1px;height:40px;background:#dfd2b7}
+.section{padding:76px 0}.soft{background:var(--soft)}
+.section-head{text-align:center;max-width:750px;margin:0 auto 36px}.eyebrow{color:#96733b;font-size:10px;font-weight:950;letter-spacing:2px;text-transform:uppercase}
+.section-title{margin-top:9px;font-size:clamp(29px,4.5vw,44px);line-height:1.14;letter-spacing:-1.3px;color:var(--navy)}
+.section-sub{margin:12px auto 0;max-width:680px;color:var(--muted);font-size:13px;line-height:1.8}
+.gold-text{color:#a47d38}
+.campaign-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.campaign-label{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:7px 11px;border:1px solid #e4d2a9;border-radius:30px;background:#fcf8ef;color:#80612b;font-size:9px;font-weight:900;letter-spacing:1px}
+.campaign-copy p{margin:18px 0;color:var(--muted);font-size:14px;line-height:1.85}
+.tags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:22px}.tag{padding:6px 9px;border:1px solid var(--line);border-radius:8px;background:#fff;color:#526078;font-size:10px;font-weight:800}
+.campaign-art{min-height:350px;position:relative;isolation:isolate;overflow:hidden;display:grid;place-items:center;text-align:center;border-radius:25px;border:1px solid #c6a15b8c;background:radial-gradient(circle at 80% 10%,#c6a15b40,transparent 35%),linear-gradient(145deg,#061329,#14365e 65%,#091a31);color:#fff;box-shadow:0 24px 55px #07152c25}
+.campaign-art:before,.campaign-art:after{content:"";position:absolute;z-index:-1;border:1px solid #f0d9a433;border-radius:50%;width:280px;height:280px}.campaign-art:after{width:420px;height:420px}
+.art-content{position:relative;z-index:2}.art-brand{position:absolute;top:18px;left:20px;color:#ffffff40;font-weight:950;letter-spacing:2px}.art-kicker{font-size:9px;color:var(--gold2);letter-spacing:3px;font-weight:900}.art-content h3{font-size:25px;margin-top:20px}.art-title{font-size:clamp(34px,4.5vw,48px);font-weight:950;line-height:1;letter-spacing:-1.5px;margin:12px 0}.art-line{width:58px;height:3px;background:var(--gold);margin:19px auto}.art-content p{color:#d4ddec;font-size:12px}.art-status{display:inline-block;margin-top:22px;padding:7px 11px;border:1px solid #f0d9a477;border-radius:20px;color:var(--gold2);font-size:9px;font-weight:900;letter-spacing:1px}
+.featured-wrap{position:relative}
+.featured-track{display:flex;gap:17px;overflow-x:auto;overflow-y:hidden;padding:12px 3px 25px;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scrollbar-width:none}
+.featured-track::-webkit-scrollbar{display:none}
+.featured-card{flex:0 0 clamp(265px,31%,340px);min-height:205px;position:relative;overflow:hidden;scroll-snap-align:start;border-radius:21px;padding:22px;background:linear-gradient(145deg,#fff,#fbfaf7);border:1px solid #d8c18e;box-shadow:0 12px 32px #07152c0c;transition:transform .25s,box-shadow .25s}
+.featured-card:hover{transform:translateY(-5px);box-shadow:0 20px 40px #07152c15}
+.featured-card:after{content:"";position:absolute;width:120px;height:120px;border-radius:50%;right:-60px;top:-60px;background:#c6a15b14;pointer-events:none}
+.creator-top{display:flex;align-items:center;gap:13px;position:relative;z-index:1}
+.avatar{width:61px;height:61px;flex:0 0 61px;overflow:hidden;display:grid;place-items:center;border:2px solid #d9c28e;border-radius:50%;background:#f3efe6;color:var(--navy);font-size:17px;font-weight:900}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.creator-name{font-size:15px;line-height:1.3;font-weight:900;color:var(--navy)}.creator-handle{font-size:11px;color:var(--muted);margin-top:3px}
+.creator-follower{margin:15px 0 9px;font-size:12px;font-weight:900;color:var(--navy)}.creator-follower span{color:var(--gold);font-weight:800}
+.badges,.creator-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:11px}.badge{padding:4px 7px;border-radius:20px;font-size:9px;font-weight:900;background:#eef2f7;border:1px solid #dbe2eb;color:var(--blue)}.badge.gold{background:#fbf4e4;border-color:#e4d0a1;color:#876322}
+.creator-card-actions{display:flex;gap:8px;margin-top:13px}.mini-btn{display:inline-flex;align-items:center;justify-content:center;padding:8px 10px;border-radius:8px;font-size:10px;font-weight:850}.mini-light{background:#f2f4f8;color:var(--navy);border:1px solid #dce2ea}.mini-dark{background:var(--navy);color:#fff}
+.carousel-controls{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:5px}.carousel-btn{width:42px;height:42px;border-radius:50%;border:1px solid #d8c18e;background:#fff;color:var(--navy);font-size:18px;box-shadow:0 5px 14px #07152c0b}.carousel-btn:hover{background:var(--navy);color:#fff}.carousel-hint{font-size:11px;color:var(--muted)}
+.directory-tools{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin:0 auto 24px}.search,.select{padding:11px 13px;border:1px solid #d9e0e9;border-radius:10px;background:#fff;color:var(--ink);font-size:12px;outline:none}.search{width:min(310px,100%)}.search:focus,.select:focus{border-color:var(--gold);box-shadow:0 0 0 3px #c6a15b18}
+.directory-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.directory-card{padding:19px;border:1px solid var(--line);border-radius:17px;background:#fff;box-shadow:0 8px 24px #07152c06;transition:.2s}.directory-card:hover{transform:translateY(-3px);border-color:#c6a15b}.directory-card .creator-top{margin-bottom:13px}.directory-card .avatar{width:52px;height:52px;flex-basis:52px}.empty{grid-column:1/-1;padding:35px;text-align:center;border:1px dashed #cbd5e1;border-radius:15px;color:var(--muted)}
+.niche-grid,.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.niche-card,.service-card{padding:21px 15px;text-align:center;border:1px solid var(--line);border-radius:16px;background:#fff;transition:.2s}.niche-card{cursor:pointer}.niche-card:hover,.service-card:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:var(--shadow)}.niche-name{font-size:13px;font-weight:900;color:var(--navy)}.niche-count{font-size:10px;color:var(--muted);margin-top:4px}.service-icon{width:46px;height:46px;display:grid;place-items:center;margin:0 auto 13px;border-radius:14px;background:#f1f3f7;border:1px solid #e1e5ec;color:var(--gold);font-size:17px;font-weight:950}.service-card h3{font-size:14px;color:var(--navy);margin-bottom:7px}.service-card p{font-size:11px;line-height:1.75;color:var(--muted)}
+.professional-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.professional-card{display:grid;grid-template-columns:94px 1fr;gap:18px;padding:24px;border:1px solid #d8c18e7a;border-radius:19px;background:linear-gradient(145deg,#fff,#fbfaf7);box-shadow:0 12px 30px #07152c08}.professional-photo{width:88px;height:88px;display:grid;place-items:center;overflow:hidden;border-radius:20px;background:linear-gradient(145deg,#e8edf4,#f6edda);border:1px solid #d8c18e;color:var(--navy);font-weight:950;font-size:20px}.professional-photo img{width:100%;height:100%;object-fit:cover}.professional-card h3{font-size:17px;color:var(--navy);line-height:1.3}.professional-role{font-size:11px;font-weight:900;color:#96733b;margin-top:4px}.professional-experience{font-size:10px;color:var(--muted);margin:7px 0}.professional-card p{font-size:11px;line-height:1.75;color:#596579;margin:10px 0 13px}.professional-tags{display:flex;flex-wrap:wrap;gap:5px;margin:9px 0 14px}.professional-tags span{font-size:9px;font-weight:800;padding:4px 7px;border-radius:20px;background:#f0f2f6;color:#4b5870}.professional-actions{display:flex;gap:7px;flex-wrap:wrap}
+.contact-panel{padding:52px 24px;text-align:center;border:1px solid #c6a15b70;border-radius:22px;background:radial-gradient(circle at 50% 0%,#c6a15b1d,transparent 45%),linear-gradient(#fff,#f8f9fb)}.contact-panel p{max-width:600px;margin:14px auto 22px;color:var(--muted);font-size:13px}
+.social-section{padding:35px 0 25px;background:#fff}.social-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.social-icon-link{display:inline-flex;align-items:center;gap:9px;padding:12px 17px;border:1px solid #d9e0e9;border-radius:12px;color:var(--navy);background:#fff;font-size:12px;font-weight:850;transition:.2s}.social-icon-link:hover{border-color:var(--gold);background:#fbf8f0;transform:translateY(-2px)}.social-icon-link svg{width:18px;height:18px;fill:currentColor}
+footer{padding:28px 18px;text-align:center;background:linear-gradient(135deg,#061329,#102b50);border-top:2px solid var(--gold);color:#c4ccda;font-size:11px}footer strong{color:#fff}
+@media(max-width:950px){.nav-links a{padding:8px 6px;font-size:10px}.nav-cta{display:none}.directory-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.niche-grid,.service-grid{grid-template-columns:repeat(2,1fr)}.professional-grid{grid-template-columns:1fr}.campaign-layout{gap:28px}}
+@media(max-width:700px){.container{width:calc(100% - 30px)}.nav-inner{height:67px}.menu-btn{display:block}.nav-links{display:none;position:absolute;top:67px;left:0;right:0;padding:10px 15px 17px;flex-direction:column;align-items:stretch;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 15px 25px #07152c12}.nav-links.show{display:flex}.nav-links a{padding:11px;font-size:12px}.hero-inner{padding:58px 16px 42px}h1{font-size:clamp(36px,10vw,45px);letter-spacing:-1.7px}.hero-desc{font-size:13px}.hero-stats{gap:10px;padding:18px 8px;margin-top:31px}.stat{flex:1;min-width:0}.stat strong{font-size:26px}.stat small{font-size:9px;text-align:center}.stat-divider{height:31px}.section{padding:59px 0}.campaign-layout{grid-template-columns:1fr;gap:25px}.campaign-art{min-height:315px}.featured-card{flex-basis:82%;min-height:205px}.directory-grid{grid-template-columns:1fr}.niche-grid{grid-template-columns:repeat(2,1fr)}.service-grid{grid-template-columns:1fr 1fr}.professional-card{grid-template-columns:1fr;padding:20px}.professional-photo{width:75px;height:75px}.social-links{gap:8px}.social-icon-link{padding:11px 13px}.campaign-copy .section-title{font-size:34px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="navbar"><div class="container nav-inner">
+<a class="logo" href="#home"><span class="logo-mark">V15</span><span>The V15 Company</span></a>
+<button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+<nav class="nav-links" id="navLinks"><a href="#home">Home</a><a href="#campaigns">Campaigns</a><a href="#featured">Featured Creators</a><a href="#creators">Directory</a><a href="#network">Our Network</a><a href="#professionals">Professionals</a><a href="#services">Services</a><a href="#contact">Contact</a></nav>
+<a class="nav-cta" href="mailto:contact@thev15company.in?subject=Brand%20Campaign%20Enquiry">For Brands ↗</a>
+</div></header>
+
+<main>
+<section class="hero" id="home"><div class="hero-inner">
+<div class="hero-badge"><span class="gold-dot"></span> INFLUENCER MARKETING · CREATOR NETWORK</div>
+<p class="kicker">RADHE RADHE 🙏🏻 | THE V15 COMPANY</p>
+<h1>We Connect Brands With <span class="gradient-text">The Right Creators.</span></h1>
+<p class="hero-desc">From creator collaborations to end-to-end digital campaigns, we help brands build meaningful connections and grow their digital presence.</p>
+<div class="hero-actions"><a class="btn btn-dark" href="mailto:contact@thev15company.in?subject=Brand%20Campaign%20Enquiry">Let's Work Together ↗</a><a class="btn btn-outline" href="https://openinapp.link/zic87" target="_blank" rel="noopener noreferrer">Join Our Creator Network ↗</a></div>
+<div class="hero-trust"><span><i class="gold-dot"></i> Creator-first approach</span><span><i class="gold-dot"></i> Campaign coordination</span><span><i class="gold-dot"></i> Multiple content niches</span></div>
+<div class="hero-stats"><div class="stat"><strong>400<span>+</span></strong><small>Creator Network</small></div><div class="stat-divider"></div><div class="stat"><strong>360<span>°</span></strong><small>Digital Solutions</small></div><div class="stat-divider"></div><div class="stat"><strong>1<span>:</span>1</strong><small>Personalised Approach</small></div></div>
+</div></section>
+
+<section class="section" id="campaigns"><div class="container"><div class="campaign-layout">
+<div class="campaign-copy"><div class="eyebrow">Campaign Spotlight</div><div class="campaign-label"><span class="gold-dot"></span> CAMPAIGN COMPLETED</div><h2 class="section-title">Big Campaigns.<br><span class="gold-text">Meaningful Connections.</span></h2><p>We worked on the Flipkart Big Billion Days campaign, bringing creator marketing into the spotlight through a campaign-focused approach.</p><div class="tags"><span class="tag">Influencer Marketing</span><span class="tag">Creator Collaborations</span><span class="tag">Campaign Coordination</span></div><a class="btn btn-dark" href="mailto:contact@thev15company.in?subject=Brand%20Campaign%20Enquiry">Discuss Your Campaign ↗</a></div>
+<div class="campaign-art"><span class="art-brand">V15</span><div class="art-content"><span class="art-kicker">CAMPAIGN SPOTLIGHT</span><h3>Flipkart</h3><div class="art-title">BIG BILLION<br>DAYS</div><div class="art-line"></div><p>Creator Marketing Campaign</p><span class="art-status">COMPLETED PROJECT</span></div></div>
+</div></div></section>
+
+<section class="section soft" id="featured"><div class="container"><div class="section-head"><div class="eyebrow">Creator Spotlight</div><h2 class="section-title">Meet Creators In Our Network</h2><p class="section-sub">Swipe or use the arrows to explore featured creators. Cards float horizontally instead of appearing in a long vertical list.</p></div>
+<div class="featured-wrap"><div class="featured-track" id="featuredTrack" aria-label="Swipeable featured creator cards"></div></div>
+<div class="carousel-controls"><button class="carousel-btn" id="prevBtn" aria-label="Previous creators">←</button><span class="carousel-hint">Swipe left or right to explore</span><button class="carousel-btn" id="nextBtn" aria-label="Next creators">→</button></div>
+</div></section>
+
+<section class="section" id="creators"><div class="container"><div class="section-head"><div class="eyebrow">Creator Directory</div><h2 class="section-title">Explore Our Creator Network</h2><p class="section-sub">Search the currently listed profiles by name, niche and audience size.</p></div>
+<div class="directory-tools"><input class="search" id="creatorSearch" type="search" placeholder="Search creator or handle..." aria-label="Search creators"><select class="select" id="nicheFilter" aria-label="Filter niche"><option value="All">All niches</option></select><select class="select" id="tierFilter" aria-label="Filter audience size"><option value="All">All audience sizes</option><option>Nano</option><option>Micro</option><option>Macro</option><option>Mega</option></select><select class="select" id="sortFilter" aria-label="Sort creators"><option value="default">Default order</option><option value="high">Followers: high to low</option><option value="low">Followers: low to high</option><option value="name">Name: A to Z</option></select></div>
+<div class="directory-grid" id="directoryGrid"></div></div></section>
+
+<section class="section soft" id="network"><div class="container"><div class="section-head"><div class="eyebrow">Our Network</div><h2 class="section-title">A Network Built For Digital Growth</h2><p class="section-sub">Connect with creators and digital professionals for your next project.</p></div><div class="service-grid">
+<article class="service-card"><div class="service-icon">C</div><h3>Influencer Marketing</h3><p>Creator discovery, campaign coordination and brand collaborations.</p><a class="mini-btn mini-light" href="#creators">Explore Creators ↗</a></article>
+<article class="service-card"><div class="service-icon">S</div><h3>Social Media Management</h3><p>Content strategy, planning and social platform management.</p><a class="mini-btn mini-light" href="#professionals">Meet Divya ↗</a></article>
+<article class="service-card"><div class="service-icon">W</div><h3>Copywriting</h3><p>Brand communication, LinkedIn writing and ghostwriting.</p><a class="mini-btn mini-light" href="#professionals">Meet Priya ↗</a></article>
+<article class="service-card"><div class="service-icon">G</div><h3>Graphic Design</h3><p>Creative assets and digital brand communication.</p><a class="mini-btn mini-light" href="#graphic-designers">Explore Designers ↗</a></article>
+</div></div></section>
+
+<section class="section" id="professionals"><div class="container"><div class="section-head"><div class="eyebrow">Digital Professionals</div><h2 class="section-title">Meet Our Professionals</h2><p class="section-sub">Explore specialist profiles and connect through The V15 Company.</p></div>
+<div class="professional-grid">
+<article class="professional-card"><div class="professional-photo"><img src="images/divya.jpg" alt="Divya Rajput" loading="lazy" onerror="this.style.display='none';this.parentElement.textContent='DR'"></div><div><h3>Divya Rajput</h3><div class="professional-role">Social Media Manager</div><div class="professional-experience">4+ Years Experience</div><div class="professional-tags"><span>Instagram</span><span>LinkedIn</span><span>Content Strategy</span></div><p>“I don't just chase impressions. I build content systems and strategies that make the right people remember your brand.”</p><p>Divya focuses on content strategy, brand voice and planning content across social, video and written formats.</p><div class="professional-actions"><a class="mini-btn mini-light" href="https://www.linkedin.com/in/divya-rajput-9906a32b5/" target="_blank" rel="noopener noreferrer">View LinkedIn ↗</a><a class="mini-btn mini-dark" href="mailto:contact@thev15company.in?subject=Connect%20with%20Divya%20Rajput">Connect Through V15</a></div></div></article>
+<article class="professional-card"><div class="professional-photo"><img src="images/priyaa.jpg" alt="Priya Rangi" loading="lazy" onerror="this.style.display='none';this.parentElement.textContent='PR'"></div><div><h3>Priya Rangi</h3><div class="professional-role">Copywriter &amp; Ghostwriter</div><div class="professional-experience">Content Writing · LinkedIn Branding · Brand Collaborations</div><div class="professional-tags"><span>Content Writing</span><span>LinkedIn</span><span>Ghostwriting</span><span>Personal Branding</span></div><p>“I write content that gets results, with a fresh perspective that helps brands and individuals communicate better.”</p><p>Priya specialises in LinkedIn branding, personal branding and brand communication.</p><div class="professional-actions"><a class="mini-btn mini-light" href="https://www.linkedin.com/in/priya-rangi" target="_blank" rel="noopener noreferrer">View LinkedIn ↗</a><a class="mini-btn mini-dark" href="mailto:contact@thev15company.in?subject=Connect%20with%20Priya%20Rangi">Connect Through V15</a></div></div></article>
+</div></div></section>
+
+<section class="section soft" id="graphic-designers"><div class="container"><div class="section-head"><div class="eyebrow">Creative Network</div><h2 class="section-title">Graphic Designers</h2><p class="section-sub">Looking for a designer for social posts, campaign creatives or brand assets? Tell us what you need and we'll help coordinate the right fit from our network.</p></div><div class="contact-panel"><div class="service-icon">G</div><h3 style="font-size:21px;color:var(--navy)">Need a Graphic Designer?</h3><p style="max-width:600px;margin:10px auto 20px;color:var(--muted);font-size:13px">Share your project brief, style references and timeline with our team.</p><a class="btn btn-dark" href="mailto:contact@thev15company.in?subject=Graphic%20Designer%20Requirement">Request a Designer ↗</a></div></div></section>
+
+<section class="section" id="services"><div class="container"><div class="section-head"><div class="eyebrow">What We Do</div><h2 class="section-title">Digital Solutions For Growing Brands</h2><p class="section-sub">Flexible creator and creative support for brand requirements.</p></div><div class="service-grid">
+<article class="service-card"><div class="service-icon">C</div><h3>Creator Collaborations</h3><p>Relevant creator discovery and campaign coordination.</p></article>
+<article class="service-card"><div class="service-icon">S</div><h3>Social Media Management</h3><p>Content planning, strategy and ongoing social support.</p></article>
+<article class="service-card"><div class="service-icon">W</div><h3>Copywriting</h3><p>Brand storytelling, LinkedIn and social content.</p></article>
+<article class="service-card"><div class="service-icon">V</div><h3>Video Editing</h3><p>Reels, short-form videos and digital content.</p></article>
+</div></div></section>
+
+<section class="section soft" id="contact"><div class="container"><div class="contact-panel"><div class="eyebrow">Let's Work Together</div><h2 class="section-title">Have A Brand Requirement?</h2><p>Tell us about your campaign goals, target audience and deliverables. Let's discuss how The V15 Company can help.</p><a class="btn btn-dark" href="mailto:contact@thev15company.in?subject=Brand%20Campaign%20Enquiry">Contact The V15 Company ↗</a></div></div></section>
+<section class="social-section"><div class="container"><div class="social-links">
+<a class="social-icon-link" href="https://www.instagram.com/the_v15_company?igsh=Y253OXJjeXJ5ejU0" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7zm5 2.3a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2.2a3.3 3.3 0 1 0 0 6.6 3.3 3.3 0 0 0 0-6.6zm5.8-3.5a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6z"/></svg> Instagram</a>
+<a class="social-icon-link" href="https://www.linkedin.com/company/the-v15-company/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 3A2.2 2.2 0 1 1 5.2 7.4 2.2 2.2 0 0 1 5.2 3zM3.3 9h3.8v12H3.3zM9.4 9H13v1.6h.1A4 4 0 0 1 16.7 8.7c3.9 0 4.6 2.5 4.6 5.7V21h-3.8v-5.8c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9.4z"/></svg> LinkedIn</a>
+<a class="social-icon-link" href="mailto:contact@thev15company.in" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm9 8L3.5 7.2v9.5h17V7.2zM5 7l7 4.8L19 7z"/></svg> Email Us</a>
+</div></div></section>
+</main>
+<footer><div class="logo-mark" style="margin:0 auto 11px">V15</div><div>© <span id="year"></span> <strong>The V15 Company</strong> · All rights reserved.</div></footer>
+
+<script>
+const creators=[
+{name:"Nandini Jaiswani",handle:"@nandini",followers:"149K",categories:["Lifestyle","Fashion","Travel"],image:"images/nandini.jpg",instagram:"#",trusted:true},
+{name:"Sonia Mishra",handle:"@sonia__mishra__",followers:"48.5K",categories:["Fashion","Beauty","Lifestyle","Travel"],image:"images/Sonia.jpg",instagram:"https://www.instagram.com/sonia__mishra__/"},
+{name:"Ritika.Create",handle:"@ritika.create",followers:"13.2K",categories:["Design","Digital"],image:"images/ritika.jpg",instagram:"https://www.instagram.com/ritika.create/",verified:true},
+{name:"Siblings Finance",handle:"@siblingsfinance",followers:"116K",categories:["Finance"],image:"images/siblingsfinance.jpg",instagram:"https://www.instagram.com/siblingsfinance/",verified:true},
+{name:"Vishal Hajare",handle:"@tech_tricks.marathi",followers:"78.1K",categories:["Tech"],image:"images/vishal.jpg",instagram:"https://www.instagram.com/tech_tricks.marathi/"},
+{name:"Anant Mishra",handle:"@gullu.era",followers:"193K",categories:["Beauty","Lifestyle"],image:"images/gullu.era.jpg",instagram:"https://www.instagram.com/gullu.era/",verified:true},
+{name:"created.by.radhika",handle:"@created.by.radhika",followers:"2,221",categories:["Tech","AI","Tech UGC"],image:"images/created.by.radhika.jpg",instagram:"https://www.instagram.com/created.by.radhika/"},
+{name:"Vinayak Choubey",handle:"@techvinch.in",followers:"799",subscribers:"99K",categories:["Tech"],image:"images/Vinayak.jpg",instagram:"https://insta.openinapp.co/zfljz",trusted:true},
+{name:"Namita Mawai",handle:"@ugcwithnamita",followers:"627",categories:["UGC"],image:"images/namita.jpg",instagram:"https://www.instagram.com/ugcwithnamita?igsh=MTB1bjV2ODR3Z20xaQ==",verified:true},
+{name:"Namita Mawai",handle:"@nxmita",followers:"9,073",categories:["Fashion","Lifestyle"],image:"images/namitaa.jpg",instagram:"https://www.instagram.com/nxmita?igsh=MXhleHg2eTl3MHFpdg==",verified:true},
+{name:"Geet Mahi Rana",handle:"@Geetmahirana",followers:"5,878",categories:["Fashion","Beauty","Skincare","Lifestyle"],image:"images/Geet.jpg",instagram:"https://www.instagram.com/geetmahirana?igsh=OWF6ZmZweWdlZGo2"},
+{name:"Muskan",handle:"@muskannsahh",followers:"9,433",categories:["UGC","Lifestyle"],image:"images/Muskan.jpg",instagram:"https://www.instagram.com/muskannsahh?igsh=MXc4cnJpaHQ3eXc0aQ=="},
+{name:"Nisha Kumawat",handle:"@bewith_nishaa_",followers:"2,854",categories:["Beauty","Makeup","Fashion"],image:"images/Nisha.jpg",instagram:"https://www.instagram.com/bewith_nishaa_?igsh=emYybmp5cWFodWp2",verified:true},
+{name:"Tejas Tapkir",handle:"@hindi_tech_guru__",followers:"206K",categories:["Tech","AI"],image:"images/Tejas.jpg",instagram:"https://www.instagram.com/hindi_tech_guru__?igsh=ajl3ODAyOXlrZTU5",verified:true},
+{name:"Ritika Mehra",handle:"@ritikamehraverse",followers:"4,374",categories:["Skincare","Lifestyle"],image:"images/Ritikaa.jpg",instagram:"https://www.instagram.com/ritikamehraverse?igsh=MWVydTRhemVmeTR0dA==",verified:true},
+{name:"Sneha",handle:"@bloomwithher__",followers:"3,833",categories:["Fashion"],image:"images/Snehaa.jpg",instagram:"https://www.instagram.com/bloomwithher__?igsh=N3BieXAxNG9hc280"},
+{name:"Yashashvi Bhadauria",handle:"@geekydev.in",followers:"477K",categories:["Tech","AI"],image:"images/Yashh.jpg",instagram:"https://www.instagram.com/geekydev.in?igsh=MWhsZHE3ZGVrOXRzeg=="},
+{name:"Akansha Tripathi",handle:"@itsakansha_70",followers:"21.7K",categories:["Fashion","Beauty","Lifestyle"],image:"images/Akansha.jpg",instagram:"https://www.instagram.com/itsakansha_70?igsh=NWVucW5wNWM4cHoy"},
+{name:"Twinkle Soni",handle:"@twinklesonnii",followers:"38K",categories:["Lifestyle"],image:"images/Twinkle.jpg",instagram:"https://www.instagram.com/twinklesonnii?igsh=MXFsdjY5OTVjeWh1Yg=="},
+{name:"CA Mohit Sardana",handle:"@mohitmoneyshow",followers:"1,978",categories:["Finance"],image:"images/Mohit.jpg",instagram:"https://www.instagram.com/mohitmoneyshow?igsh=MWI5cG12amZzNG1zNg=="},
+{name:"Vartika Rastogi",handle:"@byvartika7",followers:"7,080",categories:["Beauty","Fashion","Lifestyle"],image:"images/Vartika.jpg",instagram:"https://www.instagram.com/byvartika7?igsh=OGc2Z3RiNmRrMGg1"},
+{name:"Sneha Jain",handle:"@slaywithsneha",followers:"172K",categories:["Beauty","Travel","Lifestyle"],image:"images/Snehaaa.jpg",instagram:"https://www.instagram.com/slaywithsneha?igsh=MW1yNXprZHUxd2swdw=="},
+{name:"Vishi Prajapati",handle:"@reviewbyvisshi",followers:"3,816",categories:["Beauty","Lifestyle","Skincare","UGC"],image:"images/Vinita.jpg",instagram:"https://www.instagram.com/reviewbyvisshi?igsh=MTl3YnN0bHo3NjhpbQ=="},
+{name:"Guneet Kaur",handle:"@guneet.kaur.73",followers:"192K",categories:["Beauty","Lifestyle","Fashion"],image:"images/Guneet.jpg",instagram:"https://www.instagram.com/guneet.kaur.73?igsh=MWc4Z204bjgxYXlpaQ=="},
+{name:"Shruti Singh",handle:"@_shrutii__1",followers:"19K",categories:["Beauty","Lifestyle","Fashion"],image:"images/Shruti.jpg",instagram:"https://www.instagram.com/_shrutii__1?igsh=MTVrYmZxcnJld2M4cg=="},
+{name:"Monisha Mehta",handle:"@itsmonishamehta",followers:"299K",categories:["Travel","Lifestyle","Fashion"],image:"images/Monisha.jpg",instagram:"https://www.instagram.com/itsmonishamehta?igsi=MXYwYzFvdTF3aWxueg==",verified:true},
+{name:"Gyanendra",handle:"@inyour.pocket",followers:"120K",categories:["Tech"],image:"images/Gyanendra.jpg",instagram:"https://www.instagram.com/inyour.pocket?igsi=aTBmcDNvYXYwaDM1"}
+];
+const categories=["Tech","Tech UGC","UGC","AI","Beauty","Fashion","Skincare","Makeup","Lifestyle","Travel","Finance","Gaming","Food","Education","Design","Digital","Fitness","Sports","Music"];
+const $=id=>document.getElementById(id);
+const escapeHTML=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function countFollowers(v){const s=String(v||"").toUpperCase().replace(/,/g,"").trim();if(s.endsWith("K"))return (parseFloat(s)||0)*1000;if(s.endsWith("M"))return (parseFloat(s)||0)*1000000;return parseFloat(s)||0}
+function creatorTier(c){const n=countFollowers(c.followers);return n>=1000000?"Mega":n>=100000?"Macro":n>=10000?"Micro":"Nano"}
+function initials(name){return name.split(/\s+/).map(x=>x[0]||"").join("").slice(0,2).toUpperCase()}
+function photo(c){return c.image?'<img src="'+escapeHTML(c.image)+'" alt="'+escapeHTML(c.name)+'" loading="lazy" onerror="this.style.display=\'none\';this.parentElement.textContent=\''+escapeHTML(initials(c.name))+'\'">':escapeHTML(initials(c.name))}
+function badges(c){return (c.verified?'<span class="badge">✓ VERIFIED</span>':'')+(c.trusted?'<span class="badge gold">★ TRUSTED</span>':'')+'<span class="badge">'+creatorTier(c).toUpperCase()+' CREATOR</span>'}
+function card(c,featured=false){const tags=(c.categories||[]).map(x=>'<span class="tag">'+escapeHTML(x)+'</span>').join("");const insta=c.instagram&&c.instagram!=="#"?'<a class="mini-btn mini-light" href="'+escapeHTML(c.instagram)+'" target="_blank" rel="noopener noreferrer">Instagram ↗</a>':"";const contact='<a class="mini-btn mini-dark" href="mailto:contact@thev15company.in?subject='+encodeURIComponent("Creator collaboration enquiry - "+c.name)+'">Connect ↗</a>';return '<article class="'+(featured?'featured-card':'directory-card')+'"><div class="creator-top"><div class="avatar">'+photo(c)+'</div><div><div class="creator-name">'+escapeHTML(c.name)+'</div><div class="creator-handle">'+escapeHTML(c.handle||"Creator")+'</div></div></div><div class="creator-follower">'+escapeHTML(c.followers)+' followers'+(c.subscribers?' <span>· '+escapeHTML(c.subscribers)+' YouTube subscribers</span>':'')+'</div><div class="badges">'+badges(c)+'</div><div class="creator-tags">'+tags+'</div><div class="creator-card-actions">'+insta+contact+'</div></article>'}
+function renderFeatured(){const track=$("featuredTrack");track.innerHTML=creators.map(c=>card(c,true)).join("");}
+function renderDirectory(){const q=$("creatorSearch").value.trim().toLowerCase(),n=$("nicheFilter").value,t=$("tierFilter").value,s=$("sortFilter").value;let list=creators.filter(c=>(n==="All"||c.categories.includes(n))&&(t==="All"||creatorTier(c)===t)&&[c.name,c.handle,...c.categories].join(" ").toLowerCase().includes(q));if(s==="high")list.sort((a,b)=>countFollowers(b.followers)-countFollowers(a.followers));if(s==="low")list.sort((a,b)=>countFollowers(a.followers)-countFollowers(b.followers));if(s==="name")list.sort((a,b)=>a.name.localeCompare(b.name));$("directoryGrid").innerHTML=list.length?list.map(c=>card(c,false)).join(""):'<div class="empty">No creators found. Try another search or filter.</div>'}
+function renderNiches(){$("nicheGrid").innerHTML=categories.map(cat=>'<button class="niche-card" type="button" data-niche="'+escapeHTML(cat)+'"><div class="niche-name">'+escapeHTML(cat)+'</div><div class="niche-count">'+creators.filter(c=>c.categories.includes(cat)).length+' listed creators</div></button>').join("");$("nicheGrid").querySelectorAll("[data-niche]").forEach(b=>b.addEventListener("click",()=>{$("nicheFilter").value=b.dataset.niche;renderDirectory();$("creators").scrollIntoView({behavior:"smooth"})}))}
+categories.forEach(c=>{const o=document.createElement("option");o.value=c;o.textContent=c;$("nicheFilter").appendChild(o)});
+["creatorSearch","nicheFilter","tierFilter","sortFilter"].forEach(id=>$(id).addEventListener(id==="creatorSearch"?"input":"change",renderDirectory));
+function scrollCards(direction){const track=$("featuredTrack");const first=track.querySelector(".featured-card");const amount=first?first.getBoundingClientRect().width+17:300;track.scrollBy({left:direction*amount,behavior:"smooth"})}
+$("prevBtn").addEventListener("click",()=>scrollCards(-1));$("nextBtn").addEventListener("click",()=>scrollCards(1));
+$("featuredTrack").addEventListener("keydown",e=>{if(e.key==="ArrowRight")scrollCards(1);if(e.key==="ArrowLeft")scrollCards(-1)});
+$("menuBtn").addEventListener("click",()=>{const open=$("navLinks").classList.toggle("show");$("menuBtn").setAttribute("aria-expanded",String(open));$("menuBtn").textContent=open?"×":"☰"});
+document.querySelectorAll(".nav-links a").forEach(a=>a.addEventListener("click",()=>{$("navLinks").classList.remove("show");$("menuBtn").setAttribute("aria-expanded","false");$("menuBtn").textContent="☰"}));
+$("year").textContent=new Date().getFullYear();renderFeatured();renderDirectory();renderNiches();
+</script>
+</body>
+</html>
